@@ -5,9 +5,10 @@ public class Die {
 		//Variabel
 		private int value;
 		
+		
 		//Konstruktoer
-		public Die(int a) {
-			value = a; 
+		public Die() {
+			value = 1; 
 		}
 		
 		//Getter 
