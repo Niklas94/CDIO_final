@@ -7,11 +7,8 @@ public class Account {
 	private final int MONEYZERO = 0;
 	
 	public Account() {
-		
 		money = 30000;
-		
 	}
-	
 	
 	public void updateBalance(int money) 
 	{

@@ -16,9 +16,8 @@ public class Player {
 	private boolean isAlive = true;
 	private int sum;
 	
-	//Konstruktør
+	//Konstruktï¿½r
 	public Player(String name) {
-
 		this.name = name;
 		myAccount = new Account();
 		this.position = 0;
@@ -50,7 +49,6 @@ public class Player {
 		else
 			isAlive = true;
 	}
-	
 
 	public String getName() {
 		return name;
@@ -85,8 +83,6 @@ public class Player {
 				}
 			}
 		}
-		
-		
 	}
 	
 	public boolean isAlive() {
@@ -100,6 +96,5 @@ public class Player {
 	public int getSum(){
 		return this.sum;
 	}
-
 }
 
