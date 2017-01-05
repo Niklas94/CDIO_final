@@ -8,8 +8,14 @@ public class Card {
 	private String description;
 	private boolean ownable = false;
 	
+	//Set the id of the specific card. 
 	public void setId(int id) {
 		this.id = id;
+	}
+	
+	//Get the id of the specific card - only makes sense, when using through the CardManagement array of cards.
+	public int getId() {
+		return this.id;
 	}
 	
 	//Set Description of the card
@@ -17,6 +23,7 @@ public class Card {
 		this.description = description;
 	}
 	
+	//Return description of the specific card
 	public String getDescription() {
 		return this.description;
 	}

@@ -10,15 +10,21 @@ public class CardManagement {
 		
 	}
 	
-	public void createCardManagement() {
+	public void createCards() {
 		for (int i = 0; i < cardArr.length; i++) {
 			cardArr[i] = new Card(); //Lav et tomt kort
 			cardArr[i].setId(i); //Sæt det tomme korts id til at være i.
-			if (i < 2) {
-				//Do something
+			if (i < 3) {
+				cardArr[i].setValue(1000);
+				cardArr[i].setDescription("De modtager deres aktieudbytte. Modtag kr. 1.000 af banken.");
 			}
-			else if (1 < i && i < 4) {
-				//Do something else
+			else if (2 < i && i < 5) {
+				cardArr[i].setValue(-3000);
+				cardArr[i].setDescription("Betal kr. 3.000 for reparation af deres vogn.");
+			}
+			else if (i == 5) {
+				cardArr[i].setValue(-1000);
+				cardArr[i].setDescription("Betal deres bilforsikring kr. 1.000");
 			}
 		}
 	}
