@@ -14,7 +14,7 @@ public class Account {
 	{
 		this.money += money;		
 		if ( this.money < this.MONEYZERO )
-			this.money = 0;
+			this.money = this.MONEYZERO;
 	}
 	
 	public int getMoney() {
