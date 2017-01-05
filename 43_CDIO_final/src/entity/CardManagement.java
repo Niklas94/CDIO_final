@@ -3,13 +3,13 @@ package entity;
 public class CardManagement {
 
 	private Card[] cardArr;
-	
+
 	//Card Array
 	public CardManagement(int numberOfCardManagement) {
 		cardArr = new Card[numberOfCardManagement];
-		
+
 	}
-	
+
 	public void createCards() {
 		for (int i = 0; i < cardArr.length; i++) {
 			cardArr[i] = new Card(); //Lav et tomt kort
@@ -28,19 +28,23 @@ public class CardManagement {
 			}
 		}
 	}
-	
+
 	//Shuffle cards - current source: http://stackoverflow.com/questions/16313567/shuffling-a-deck-of-cards-redundancy-after-swapping-two-values
 	public void shuffleCards() {
 		Card[] cardArrShuffled = new Card[cardArr.length];
 		for (int i = 0; i < cardArr.length; i++) {
 			int r = (int) (Math.random() * cardArr.length); //Et tilfældigt tal fra 1 til og med længden af cardArr længden.
-			cardArrShuffled[i] = cardArr[r];
+			while (cardArr[r] == null) { //Hvis objektet er tom
+				r = (int) (Math.random() * cardArr.length);
+			}
+				cardArrShuffled[i] = cardArr[r];
+				cardArr[r] = null;
 		}
 		cardArr = cardArrShuffled;
 	}
-	
-	public Card pullCard() {
-		return cardArr[0];
+
+	public Card pullCard(int index) {
+		return cardArr[index];
 	}
-	
+
 }
