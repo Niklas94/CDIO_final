@@ -17,6 +17,10 @@ public class Card {
 		this.description = description;
 	}
 	
+	public String getDescription() {
+		return this.description;
+	}
+	
 	//Set Value
 	public void setValue(int value) {
 		this.value = value;
