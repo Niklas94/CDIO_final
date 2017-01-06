@@ -26,9 +26,9 @@ public class PlayerOwned {
 	private final int STREET_TOTAL_WHITE = 3;
 	private final int STREET_TOTAL_YELLOW = 3;
 	
-	private int breweryOwned;
-	private int fleetOwned;
-	private int streetOwned;
+	private int totalBreweryOwned;
+	private int totalFleetOwned;
+	private int totalStreetOwned;
 	
 	private Boolean[] streetBlue;
 	private Boolean[] streetGreen;
@@ -41,9 +41,9 @@ public class PlayerOwned {
 	
 	public PlayerOwned() {
 		
-		breweryOwned = 0;
-		fleetOwned = 0;
-		streetOwned = 0;
+		totalBreweryOwned = 0;
+		totalFleetOwned = 0;
+		totalStreetOwned = 0;
 		
 		streetBlue = new Boolean[STREET_TOTAL_BLUE];
 		streetGreen = new Boolean[STREET_TOTAL_GREEN];
@@ -59,28 +59,27 @@ public class PlayerOwned {
 	 * SETTERS
 	 */
 	
-	public void setBreweryOwned(int number) {
-		breweryOwned += number;
-		
+	public void setTotalBreweryOwned(int number) {
+		totalBreweryOwned += number;
 	}
 	
-	public void setFleetOwned(int number) {
-		fleetOwned += number;
+	public void setTotalFleetOwned(int number) {
+		totalFleetOwned += number;
 	}
 	
 	
-	public void setStreetOwned(int number) {
-			streetOwned += number;
+	public void setTotalStreetOwned(int number) {
+			totalStreetOwned += number;
 	}
 	
 	public void setStreetBlueOwned(int blueNumber, Boolean bool) {
 		if (bool == true) {
 			streetBlue[blueNumber-1] = bool;
-			streetOwned ++;
+			totalStreetOwned ++;
 		}
 		else {
 			streetBlue[blueNumber-1] = bool;
-			streetOwned --;
+			totalStreetOwned --;
 		}
 		
 	}
@@ -88,11 +87,11 @@ public class PlayerOwned {
 	public void setStreetGreenOwned(int greenNumber, Boolean bool) {
 		if (bool == true) {
 			streetGreen[greenNumber-1] = bool;
-			streetOwned ++;
+			totalStreetOwned ++;
 		}
 		else {
 			streetGreen[greenNumber-1] = bool;
-			streetOwned --;
+			totalStreetOwned --;
 		}
 		
 	}
@@ -100,11 +99,11 @@ public class PlayerOwned {
 	public void setStreetGreyOwned(int greyNumber, Boolean bool) {
 		if (bool == true) {
 			streetGrey[greyNumber-1] = bool;
-			streetOwned ++;
+			totalStreetOwned ++;
 		}
 		else {
 			streetGrey[greyNumber-1] = bool;
-			streetOwned --;
+			totalStreetOwned --;
 		}
 		
 	}
@@ -112,11 +111,11 @@ public class PlayerOwned {
 	public void setStreetPinkOwned(int pinkNumber, Boolean bool) {
 		if (bool == true) {
 			streetPink[pinkNumber-1] = bool;
-			streetOwned ++;
+			totalStreetOwned ++;
 		}
 		else {
 			streetPink[pinkNumber-1] = bool;
-			streetOwned --;
+			totalStreetOwned --;
 		}
 		
 	}
@@ -124,11 +123,11 @@ public class PlayerOwned {
 	public void setStreetPurpleOwned(int purpleNumber, Boolean bool) {
 		if (bool == true) {
 			streetPurple[purpleNumber-1] = bool;
-			streetOwned ++;
+			totalStreetOwned ++;
 		}
 		else {
 			streetPurple[purpleNumber-1] = bool;
-			streetOwned --;
+			totalStreetOwned --;
 		}
 		
 	}
@@ -136,11 +135,11 @@ public class PlayerOwned {
 	public void setStreetRedOwned(int redNumber, Boolean bool) {
 		if (bool == true) {
 			streetRed[redNumber-1] = bool;
-			streetOwned ++;
+			totalStreetOwned ++;
 		}
 		else {
 			streetRed[redNumber-1] = bool;
-			streetOwned --;
+			totalStreetOwned --;
 		}
 		
 	}
@@ -148,11 +147,11 @@ public class PlayerOwned {
 	public void setStreetWhiteOwned(int whiteNumber, Boolean bool) {
 		if (bool == true) {
 			streetWhite[whiteNumber-1] = bool;
-			streetOwned ++;
+			totalStreetOwned ++;
 		}
 		else {
 			streetWhite[whiteNumber-1] = bool;
-			streetOwned --;
+			totalStreetOwned --;
 		}
 		
 	}
@@ -160,11 +159,11 @@ public class PlayerOwned {
 	public void setStreetYellowOwned(int yellowNumber, Boolean bool) {
 		if (bool == true) {
 			streetYellow[yellowNumber-1] = bool;
-			streetOwned ++;
+			totalStreetOwned ++;
 		}
 		else {
 			streetYellow[yellowNumber-1] = bool;
-			streetOwned --;
+			totalStreetOwned --;
 		}
 		
 	}
@@ -175,16 +174,17 @@ public class PlayerOwned {
 	 * GETTERS
 	 */
 	
-	public int getBreweryOwned() {
-		return breweryOwned;
+	
+	public int getTotalBreweryOwned() {
+		return totalBreweryOwned;
 	}
 	
-	public int getFleetOwned() {
-		return fleetOwned;
+	public int getTotalFleetOwned() {
+		return totalFleetOwned;
 	}
 	
-	public int getStreetOwned() {
-		return streetOwned;
+	public int getTotalStreetOwned() {
+		return totalStreetOwned;
 		
 	}
 	
