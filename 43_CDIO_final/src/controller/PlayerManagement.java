@@ -2,7 +2,10 @@ package controller;
 
 import entity.Player;
 
- 
+/*Player names will be predefined (Player 1, Player 2, Player 3)
+ * must think of something to overcome this problem.
+ */
+
 
 public class PlayerManagement {
 	
@@ -16,15 +19,19 @@ public class PlayerManagement {
 		this.playerCount = numberOfPlayers;
 	}
 	
-	/*Error in player creation, cannot predefine player names. What do we do?
-	 * Don't we use the name only on the GUI?
+	//Error in player creation, cannot predefine player names. What do we do?
+	//Don't we use the name only on the GUI?
+	
 	//Creates the players.
-	public void createPlayers(String name) {
-		for (int i = 0; i < playerCount; i ++) {
-			this.player[i] = new Player(name);
+	public void createPlayers() {
+		for (int i = 0, j = 1; i < playerCount; i ++, j ++) {
+			/*Maybe needed because Player constructor wants a String.
+			Integer.toString(j);
+			*/
+			this.player[i] = new Player("Player " + j);
 		}
 	}
-	*/
+	
 	
 	//Updates total number of players.
 	public void updatePlayerCount(int count) {
