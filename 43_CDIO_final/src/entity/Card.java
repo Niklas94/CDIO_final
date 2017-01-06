@@ -47,5 +47,12 @@ public class Card {
 	public boolean isItOwnable() {
 		return ownable;
 	}
+
+	@Override
+	public String toString() {
+		return "Card [id=" + id + ", value=" + value + ", description=" + description + ", ownable=" + ownable + "]";
+	}
+	
+	
 	
 }

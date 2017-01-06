@@ -14,7 +14,7 @@ public class TestCardManagement {
 	
 	@Before
 	public void setUp() throws Exception {
-		cm = new CardManagement(10);
+		cm = new CardManagement(20);
 	}
 
 	@After
@@ -27,14 +27,16 @@ public class TestCardManagement {
 		
 		//Not a proper test - but try run the program, and you can see in the printoutline that it works.
 		cm.createCards();
-		for (int i = 0; i < 10; i++) {
-			System.out.println(cm.pullCard(i).getId());
+		for (int i = 0; i < 17; i++) {
+			System.out.println(cm.pullCard(i).toString());
 		}
 		System.out.println(""); //Line break
 		cm.shuffleCards();
-		for (int i = 0; i < 10; i++) {
-			System.out.println(cm.pullCard(i).getId());
+		for (int i = 0; i < 17; i++) {
+			System.out.println(cm.pullCard(i).toString());
 		}
+		
+		//Previous syso: "Id´en på kortet er: " + cm.pullCard(i).getId() + " og værdien af dette kort er: " + cm.pullCard(i).getValue() + " og beskrivelsen er: " + cm.pullCard(i).getDescription()
 		
 	}
 
