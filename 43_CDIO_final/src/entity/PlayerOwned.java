@@ -12,9 +12,6 @@ package entity;
 
 
 public class PlayerOwned {
-	
-	
-
 	private final int BREWERY_TOTAL_ALL = 2;
 	private final int FLEET_TOTAL_ALL = 4;
 	private final int STREET_TOTAL_ALL = 22;
@@ -31,9 +28,9 @@ public class PlayerOwned {
 	private int fleetOwned;
 	private int streetOwned;
 	
-	private 
 	
 	public PlayerOwned() {
+		
 		breweryOwned = 0;
 		fleetOwned = 0;
 		streetOwned = 0;
