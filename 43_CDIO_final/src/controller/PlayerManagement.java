@@ -16,12 +16,15 @@ public class PlayerManagement {
 		this.playerCount = numberOfPlayers;
 	}
 	
+	/*Error in player creation, cannot predefine player names. What do we do?
+	 * Don't we use the name only on the GUI?
 	//Creates the players.
 	public void createPlayers(String name) {
 		for (int i = 0; i < playerCount; i ++) {
 			this.player[i] = new Player(name);
 		}
 	}
+	*/
 	
 	//Updates total number of players.
 	public void updatePlayerCount(int count) {
