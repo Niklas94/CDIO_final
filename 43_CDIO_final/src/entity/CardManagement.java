@@ -78,7 +78,7 @@ public class CardManagement {
 		}
 	}
 
-	//Shuffle cards - current source: http://stackoverflow.com/questions/16313567/shuffling-a-deck-of-cards-redundancy-after-swapping-two-values
+	//Shuffle cards
 	public void shuffleCards() {
 		Card[] cardArrShuffled = new Card[cardArr.length];
 		for (int i = 0; i < cardArr.length; i++) {
