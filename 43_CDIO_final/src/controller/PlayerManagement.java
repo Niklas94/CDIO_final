@@ -3,9 +3,9 @@ import entity.Player;
 
 public class PlayerManagement {
 	
-	Player[] player;
-	int playerCount;
-	int playersLeft;
+	private Player[] player;
+	private int playerCount;
+	private int playersLeft;
 	
 	//Creates an array of total players.
 	public PlayerManagement(int numberOfPlayers) {
