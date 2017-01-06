@@ -2,21 +2,22 @@ package entity;
 
 
 import entity.Account;
-import entity.Ownable;
-import desktop_codebehind.Car;
-import desktop_resources.GUI;
+
 
 
 public class Player {
 
-	//Variabler
-	private String name; //Instans variabel
+	//Variables
+	private String name;
 	private Account myAccount;
-	private int BreweryOwned, fleetOwned, position;
+	/*Will make a subclass for Account class and put it there
+	private int breweryOwned, fleetOwned;
+	*/
+	private int position;
 	private boolean isAlive = true;
-	private int sum;
+
 	
-	//Konstrukt�r
+	//Constructor
 	public Player(String name) {
 		this.name = name;
 		myAccount = new Account();
@@ -24,25 +25,27 @@ public class Player {
 				
 	}
 
-	//Inkrementer antal fleet owned
+	/*Will make a subclass for Account class and put it there
 	public void updateFleetOwned() {
 		this.fleetOwned++;
 	}
+	
 
-	//getter
-	public int getFleetOwned(){ //Getter metode på fleetOwned, for at se hvor mange fleet en spiller har 
+	public int getFleetOwned(){ 
 		return fleetOwned;
 	}
+	
 
-	//Inkrementer antal brewery owned
 	public void updateBreweryOwned() {
-		BreweryOwned++;
+		breweryOwned++;
 	}
 	
 	public int getBreweryOwned() {
-		return BreweryOwned++;
+		return breweryOwned++;
 	}
+	*/
 	
+	//Checks if player money is zero or below, if so isAlive variable will be false, else true.
 	public void checkIfBankrupt() {
 		if (this.myAccount.getMoney() <= 0)
 			isAlive = false;
@@ -58,9 +61,6 @@ public class Player {
 		this.myAccount.updateBalance(money);
 	}
 
-	public void addField(int id) {
-
-	}
 
 	public Account getMyAccount() {
 		return myAccount;
@@ -74,6 +74,8 @@ public class Player {
 		this.position = position;
 	}
 
+	// Recheck removeOwnership(Board board) when Board class is complete
+	/*
 	public void removeOwnership(Board board) {
 		for (int i = 1; i < board.getSize() + 1; i++) {
 			if (board.getFelt(i) instanceof Ownable) {
@@ -84,17 +86,11 @@ public class Player {
 			}
 		}
 	}
+	*/
 	
 	public boolean isAlive() {
 		return isAlive;
 	}
-	
-	public void setSum(int sum){
-		this.sum = sum;
-	}
-	
-	public int getSum(){
-		return this.sum;
-	}
+
 }
 
