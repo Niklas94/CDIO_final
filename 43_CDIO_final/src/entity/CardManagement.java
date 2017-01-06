@@ -3,10 +3,12 @@ package entity;
 public class CardManagement {
 
 	private Card[] cardArr;
+	private Card[] nonOwnableCards;
 
 	//Card Array
-	public CardManagement(int numberOfCardManagement) {
-		cardArr = new Card[numberOfCardManagement];
+	public CardManagement(int numberOfCards) {
+		cardArr = new Card[numberOfCards];
+		nonOwnableCards = new Card[numberOfCards];
 	}
 
 	public void createCards() {
@@ -101,7 +103,7 @@ public class CardManagement {
 
 	//Return a card back into the deck
 	public void returnCardToDeck(Card card) {
-		cardArr[cardArr.length] = card;
+		cardArr[cardArr.length-1] = card;
 	}
 
 	public Card pullCard(int index) {
@@ -113,12 +115,24 @@ public class CardManagement {
 		//The card you pick 
 		Card topCard = cardArr[0];
 
+		if (!cardArr[0].isItOwnable()) {
+			for (int i = 0; i < cardArr.length; i++) {
+				if (nonOwnableCards[i] == null)
+					nonOwnableCards[i] = cardArr[0];
+			}
+		}
+		
 		//Moving all cards 1 down in index. Now the card at index 1, is now at index 0 - therefor the next top card which is pulled from the deck.
-		for (int i = cardArr.length-1; i > 0; i--) {
-			cardArr[i-1] = cardArr[i];
+		for (int i = 0; i < cardArr.length-1; i++) {
+			cardArr[i] = cardArr[i+1];
 		}
 		cardArr[cardArr.length-1] = null; //new Card(cardArr.length, 0, "Placeholder");
+		
 		return topCard;
+	}
+	
+	public Card getNonOwnableCard(int index) {
+		return nonOwnableCards[index];
 	}
 }
 

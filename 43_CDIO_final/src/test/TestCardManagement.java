@@ -6,6 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import entity.Card;
 import entity.CardManagement;
 
 public class TestCardManagement {
@@ -21,24 +22,6 @@ public class TestCardManagement {
 	public void tearDown() throws Exception {
 		cm = null;
 	}
-
-	//	@Test
-	//	public void testShuffleCardsPrint() {
-	//		
-	//		//Not a proper test - but try run the program, and you can see in the printoutline that it works.
-	//		cm.createCards();
-	//		for (int i = 0; i < 17; i++) {
-	//			System.out.println(cm.pullCard(i).toString());
-	//		}
-	//		System.out.println(""); //Line break
-	//		cm.shuffleCards();
-	//		for (int i = 0; i < 17; i++) {
-	//			System.out.println(cm.pullCard(i).toString());
-	//		}
-	//		System.out.println("");
-	//		//Previous syso: "Id´en på kortet er: " + cm.pullCard(i).getId() + " og værdien af dette kort er: " + cm.pullCard(i).getValue() + " og beskrivelsen er: " + cm.pullCard(i).getDescription()
-	//		
-	//	}
 
 	/*
 
@@ -70,37 +53,32 @@ public class TestCardManagement {
 		int actual = 0;
 		
 		cm.createCards();
-		cm.pullTopCard();
+		Card expected2 = cm.pullCard(0); //This method returns the card from the specific index. In this test, we obviously pick the first card.
+		Card actual2 = cm.pullTopCard(); //The method were testing - it is meant to return the top card while also moving all cards in the deck, 1 index down. 
 
-		for (int i = 0; i < 17; i++) {
-			if (cm.pullCard(i) == null) {
-				//Do nothing
-				System.out.println("Pulled a null card"); //Made this "if branch" to prevent nullPointerException...
+		for (int i = 0; i < 17; i++) { //This whole for loop is meant to test if the new cards at each index is the same as we would expect, after pulling the top card from the deck once.
+			if (cm.pullCard(i) == null) { //This if-statement is only made to prevent a nullPointerException. Since obviously when you pull a card from a deck, the deck will be 1 card smaller, until the card is returned.
+				System.out.println("Pulled a null card"); //But in our code, we specified the deck as an array which always is the same size, even when you pull a card. In our code, when pulling a card, we make the last index of the array pointing at no object, until A card is returned.
 			}
 			else if (cm.pullCard(i).getId() != i+2) {
 				System.out.println(cm.pullCard(i).getId() + " != " + (i+2));
 				actual++;
 			}
-			
 		}
-		System.out.println(actual);
 		assertEquals(expected, actual);
+		assertEquals(expected2, actual2);
 	}
 
-	//	@Test
-	//	public void testPullTopCard() {
-	//		
-	//		cm.createCards();
-	//		
-	//		for (int i = 0; i < 17; i++) {
-	//			System.out.println(cm.pullCard(i).getId());
-	//		}
-	//		
-	//		cm.pullTopCard();
-	//		
-	//		for (int i = 0; i < 17; i++) {
-	//			System.out.println(cm.pullCard(i).getId());
-	//		}
-	//	}
+	@Test
+	public void testReturnCardToDeck() {
+		
+		cm.createCards();
+		Card expected = cm.pullTopCard();
+		cm.returnCardToDeck(cm.getNonOwnableCard(0));
+		
+		Card actual = cm.pullCard(16);
+		assertEquals(expected, actual);
+
+	}
 
 }
