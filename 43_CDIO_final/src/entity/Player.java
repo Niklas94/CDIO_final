@@ -3,47 +3,27 @@ package entity;
 
 import entity.Account;
 
-
-
 public class Player {
 
-	//Variables
-	private String name;
 	private Account myAccount;
-	/*Will make a subclass for Account class and put it there
-	private int breweryOwned, fleetOwned;
-	*/
+	
+	private String name;
 	private int position;
-	private boolean isAlive = true;
+	private boolean isAlive;
 
 	
-	//Constructor
 	public Player(String name) {
-		this.name = name;
+		
 		myAccount = new Account();
+		this.name = name;
+		this.isAlive = true;
 		this.position = 0;
 				
 	}
-
-	/*Will make a subclass for Account class and put it there
-	public void updateFleetOwned() {
-		this.fleetOwned++;
-	}
 	
-
-	public int getFleetOwned(){ 
-		return fleetOwned;
-	}
-	
-
-	public void updateBreweryOwned() {
-		breweryOwned++;
-	}
-	
-	public int getBreweryOwned() {
-		return breweryOwned++;
-	}
-	*/
+	/*
+	 * SETTERS
+	 */
 	
 	//Checks if player money is zero or below, if so isAlive variable will be false, else true.
 	public void checkIfBankrupt() {
@@ -52,15 +32,53 @@ public class Player {
 		else
 			isAlive = true;
 	}
+	
+	public void updateBalance(int money) {
+		this.myAccount.updateBalance(money);
+	}
+	
+	public void setPosition(int position) {
+		this.position = position;
+	}
+	
+	public void setBreweryOwned(int breweryNumber, Boolean bool) {
+		myAccount.setBreweryOwned(breweryNumber, bool);
+	}
+	public void setFleetOwned(int fleetNumber, Boolean bool) {
+		myAccount.setFleetOwned(fleetNumber, bool);
+	}
+	public void setStreetBlueOwned(int blueNumber, Boolean bool) {
+		myAccount.setStreetBlueOwned(blueNumber, bool);
+	}
+	public void setStreetGreenOwned(int greenNumber, Boolean bool) {
+		myAccount.setStreetGreenOwned(greenNumber, bool);
+	}
+	public void setStreetGreyOwned(int greyNumber, Boolean bool) {
+		myAccount.setStreetGreyOwned(greyNumber, bool);
+	}
+	public void setStreetPinkOwned(int pinkNumber, Boolean bool) {
+		myAccount.setStreetPinkOwned(pinkNumber, bool);
+	}
+	public void setStreetPurpleOwned(int purpleNumber, Boolean bool) {
+		myAccount.setStreetPurpleOwned(purpleNumber, bool);
+	}
+	public void setStreetRedOwned(int redNumber, Boolean bool) {
+		myAccount.setStreetRedOwned(redNumber, bool);
+	}
+	public void setStreetWhiteOwned(int whiteNumber, Boolean bool) {
+		myAccount.setStreetWhiteOwned(whiteNumber, bool);
+	}
+	public void setStreetYellowOwned(int yellowNumber, Boolean bool) {
+		myAccount.setStreetYellowOwned(yellowNumber, bool);
+	}
+	
+	/*
+	 * GETTERS
+	 */
 
 	public String getName() {
 		return name;
 	}
-
-	public void updateBalance(int money) {
-		this.myAccount.updateBalance(money);
-	}
-
 
 	public Account getMyAccount() {
 		return myAccount;
@@ -70,8 +88,8 @@ public class Player {
 		return this.position;
 	}
 
-	public void setPosition(int position) {
-		this.position = position;
+	public boolean isAlive() {
+		return isAlive;
 	}
 
 	// Recheck removeOwnership(Board board) when Board class is complete
@@ -88,9 +106,8 @@ public class Player {
 	}
 	*/
 	
-	public boolean isAlive() {
-		return isAlive;
-	}
+
+
 
 }
 
