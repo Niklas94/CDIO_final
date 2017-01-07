@@ -97,6 +97,9 @@ public class CardManagement {
 			else if (23 < i && i < 26) {
 				cardArr[i].setDescription("Gå i fængsel. Ryk direkte til fængslet. Selv om de passerer Start, indkasserer de ikke kr. 4.000.");
 			}
+			else if (i == 26) {
+				cardArr[i].setDescription("Tag med den nærmeste færge - Flyt brikken frem, og hvis de passerer Start inkassér da kr. 4.000.");
+			}
 			//Add more
 		}
 	}
@@ -185,7 +188,7 @@ public class CardManagement {
 		else if (card.getId() == 21) { //Rådhuspladsen
 			player.setPosition(40);
 		}
-		else if (21 < card.getId() && card.getId() < 24) { //Fleets
+		else if ((21 < card.getId() && card.getId() < 24) || card.getId() == 26) { //Fleets
 			if (35 < player.getPosition())
 				player.setPosition(6);
 			else if (5 < player.getPosition())
