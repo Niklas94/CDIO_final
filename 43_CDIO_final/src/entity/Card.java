@@ -4,7 +4,7 @@ import java.lang.reflect.Array;
 
 public class Card {
 
-	private int id, value; //Add positionining?
+	private int id, value, position; //Add positionining?
 	private String description;
 	private boolean ownable = false;
 	
@@ -51,10 +51,19 @@ public class Card {
 	public boolean isItOwnable() {
 		return ownable;
 	}
+	
+	public void setPosition(int position) {
+		this.position = position;
+	}
+	
+	public int getPosition() {
+		return this.position;
+	}
 
 	@Override
 	public String toString() {
-		return "Card [id=" + id + ", value=" + value + ", description=" + description + ", ownable=" + ownable + "]";
+		return "Card [id=" + id + ", value=" + value + ", position=" + position + ", description=" + description
+				+ ", ownable=" + ownable + "]";
 	}
 	
 }

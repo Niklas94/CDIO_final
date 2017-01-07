@@ -21,7 +21,7 @@ public class CardManagement {
 
 			//From here and on, we give the card objects values, descriptions and may change the boolean ownable, depending on which specific card from the monopoly game, we are talking about.
 			//The descriptions and values are directly copied from the actual cards.
-
+			//The Easiser cards to implement (Value orientated):
 			if (i < 3) {
 				cardArr[i].setValue(1000);
 				cardArr[i].setDescription("De modtager deres aktieudbytte. Modtag kr. 1.000 af banken.");
@@ -74,6 +74,29 @@ public class CardManagement {
 				cardArr[i].setValue(-1000);
 				cardArr[i].setDescription("De har kørt frem for Fuld Stop. Betal kr. 1.000 i bøde");
 			}
+			//Slightly harder cards to implement (Position orientated):
+			else if (i == 17) {
+				cardArr[i].setPosition(-3);
+				cardArr[i].setDescription("Ryk tre felter tilbage.");
+			}
+			else if (i == 18) {
+				cardArr[i].setDescription("Ryk frem til Frederiksberg Allé. Hvis de passerer Start, indkassér kr. 4.000.");
+			}
+			else if (i == 19) {
+				cardArr[i].setDescription("Ryk frem til Start.");
+			}
+			else if (i == 20) {
+				cardArr[i].setDescription("Ryk frem til Grønningen. Hvis de passerer Start, indkassér da kr. 4.000.");
+			}
+			else if (i == 21) {
+				cardArr[i].setDescription("Tag ind på Rådhuspladsen.");
+			}
+			else if (21 < i && i < 24) {
+				cardArr[i].setDescription("Ryk brikken frem til det nærmeste rederi og betal ejeren to gange den leje, han ellers er berettiget til. Hvis selskabet ikke ejes af nogen kan de købe det af banken.");
+			}
+			else if (23 < i && i < 26) {
+				cardArr[i].setDescription("Gå i fængsel. Ryk direkte til fængslet. Selv om de passerer Start, indkasserer de ikke kr. 4.000.");
+			}
 			//Add more
 		}
 	}
@@ -83,9 +106,10 @@ public class CardManagement {
 	There are probably a better method to do this, but this method is doing the following:
 	Creating a temporary identical deck to the one we work with. 
 	Picking a random number between 1 to the number of cards in the original card deck.
-	Now lets say, at first the number is 5. It now places the card at the index of 5, at the top of this new identical deck, we created at the very beginning.
+	Now lets say, at first the number is 5. It now places the card at the index of 5, at the top (index 0) of this new identical deck we created at the very beginning.
 	Now we make the original decks array, at index 5, point at no object. This is to make sure, that we wont pick the same card again, and shuffle it into our new deck.
-	This is repeated until all cards have been picked
+	This is repeated until all cards have been picked.
+	In addition, no card will ever be at their original index. 
 
 	 */
 	public void shuffleCards() {
@@ -106,15 +130,18 @@ public class CardManagement {
 		cardArr[cardArr.length-1] = card;
 	}
 
+	//This method is, as of now (7. January 2017) only here, so we can test all the other methods.
 	public Card pullCard(int index) {
 		return cardArr[index];
 	}
 
+	//Pull the card, at the top of the deck
 	public Card pullTopCard() {
 
 		//The card you pick 
 		Card topCard = cardArr[0];
 
+		//
 		if (!cardArr[0].isItOwnable()) {
 			for (int i = 0; i < cardArr.length; i++) {
 				if (nonOwnableCards[i] == null)
@@ -122,7 +149,7 @@ public class CardManagement {
 			}
 		}
 		
-		//Moving all cards 1 down in index. Now the card at index 1, is now at index 0 - therefor the next top card which is pulled from the deck.
+		//Moving all cards 1 down in index. Now the card at index 1, is now at index 0 - therefore the next top card which is pulled from the deck.
 		for (int i = 0; i < cardArr.length-1; i++) {
 			cardArr[i] = cardArr[i+1];
 		}
@@ -134,6 +161,55 @@ public class CardManagement {
 	public Card getNonOwnableCard(int index) {
 		return nonOwnableCards[index];
 	}
+	
+	//Meant to update the balance on a specific player account.
+	public void updateMoney(Card card, Player player) {
+		player.updateBalance(card.getValue());
+	}
+	
+	//Meant to update the position of a specific player.
+	public void updatePosition(Card card, Player player) {
+		
+		if (card.getId() == 17) { //Move back 3 squares/fields
+			player.setPosition(player.getPosition() - 3);
+		}
+		else if (card.getId() == 18) { //Frederiksberg Alle
+			player.setPosition(12);
+		}
+		else if (card.getId() == 19) { //Start
+			player.setPosition(1);
+		}
+		else if (card.getId() == 20) { //Grønningen
+			player.setPosition(25);
+		}
+		else if (card.getId() == 21) { //Rådhuspladsen
+			player.setPosition(40);
+		}
+		else if (21 < card.getId() && card.getId() < 24) { //Fleets
+			if (35 < player.getPosition())
+				player.setPosition(6);
+			else if (5 < player.getPosition())
+				player.setPosition(16);
+			else if (15 < player.getPosition())
+				player.setPosition(26);
+			else if (25 < player.getPosition())
+				player.setPosition(36);
+			//Missing an if / else statement, that checks if the specific field is owned, to double up the payment.
+		}
+		else if (23 < card.getId() && card.getId() < 26) { //Prison
+			player.setPosition(31);
+		}
+		
+	}
+	
+	//Meant to check, what the player has to update, based on the ID of the specific card.
+	public void update(Card card, Player player) {
+		if (card.getId() < 17)
+			this.updateMoney(card, player);
+		else if (17 < card.getId() && card.getId() < 26)
+			this.updatePosition(card, player);
+	}
+	
 }
 
 
