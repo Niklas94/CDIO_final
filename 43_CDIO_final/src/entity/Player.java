@@ -91,6 +91,7 @@ public class Player {
 	public boolean isAlive() {
 		return isAlive;
 	}
+	
 
 	// Recheck removeOwnership(Board board) when Board class is complete
 	/*
@@ -107,6 +108,7 @@ public class Player {
 	*/
 	
 
+	
 
 
 }
