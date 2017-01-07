@@ -26,17 +26,18 @@ public class Player {
 	 */
 	
 	//Checks if player money is zero or below, if so isAlive variable will be false, else true.
+
+	
+	public void updateBalance(int money) {
+		this.myAccount.updateBalance(money);
+	}
+	
 	public void checkIfBankrupt() {
 		if (this.myAccount.getMoney() <= 0)
 			isAlive = false;
 		else
 			isAlive = true;
 	}
-	
-	public void updateBalance(int money) {
-		this.myAccount.updateBalance(money);
-	}
-	
 	public void setPosition(int position) {
 		this.position = position;
 	}
