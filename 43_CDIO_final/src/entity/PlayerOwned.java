@@ -1,5 +1,6 @@
 package entity;
 
+import java.util.Arrays;
 
 /*
  * This Class is for the player to find out how many and which fields it is owning.
@@ -13,23 +14,13 @@ package entity;
 
 
 public class PlayerOwned {
-	private final int BREWERY_TOTAL_ALL = 2;
-	private final int FLEET_TOTAL_ALL = 4;
-	
-	private final int STREET_TOTAL_ALL = 22;
-	private final int STREET_TOTAL_BLUE = 2;
-	private final int STREET_TOTAL_GREEN = 3;
-	private final int STREET_TOTAL_GREY = 3;
-	private final int STREET_TOTAL_PINK = 3;
-	private final int STREET_TOTAL_PURPLE = 2;
-	private final int STREET_TOTAL_RED = 3;
-	private final int STREET_TOTAL_WHITE = 3;
-	private final int STREET_TOTAL_YELLOW = 3;
 	
 	private int totalBreweryOwned;
 	private int totalFleetOwned;
 	private int totalStreetOwned;
 	
+	private Boolean[] brewery;
+	private Boolean[] fleet;
 	private Boolean[] streetBlue;
 	private Boolean[] streetGreen;
 	private Boolean[] streetGrey;
@@ -45,31 +36,67 @@ public class PlayerOwned {
 		totalFleetOwned = 0;
 		totalStreetOwned = 0;
 		
-		streetBlue = new Boolean[STREET_TOTAL_BLUE];
-		streetGreen = new Boolean[STREET_TOTAL_GREEN];
-		streetGrey = new Boolean[STREET_TOTAL_GREY];
-		streetPink = new Boolean[STREET_TOTAL_PINK];
-		streetPurple = new Boolean[STREET_TOTAL_PURPLE];
-		streetRed = new Boolean[STREET_TOTAL_RED];
-		streetWhite = new Boolean[STREET_TOTAL_WHITE];
-		streetYellow = new Boolean[STREET_TOTAL_YELLOW];
+		brewery = new Boolean[2];
+		fleet = new Boolean[4];
+		streetBlue = new Boolean[2];
+		streetGreen = new Boolean[3];
+		streetGrey = new Boolean[3];
+		streetPink = new Boolean[3];
+		streetPurple = new Boolean[2];
+		streetRed = new Boolean[3];
+		streetWhite = new Boolean[3];
+		streetYellow = new Boolean[3];
+		
+		Arrays.fill(brewery, false);
+		Arrays.fill(fleet, false);
+		Arrays.fill(streetBlue, false);
+		Arrays.fill(streetGreen, false);
+		Arrays.fill(streetGrey, false);
+		Arrays.fill(streetPink, false);
+		Arrays.fill(streetPurple, false);
+		Arrays.fill(streetRed, false);
+		Arrays.fill(streetWhite, false);
+		Arrays.fill(streetYellow, false);
+		
 	}
 	
 	/*
-	 * SETTERS
+	 *SETTERS
+	 *
+	 *<-- All setters work like written on the next lines. Please read. -->
+	 * 
+	 *Calling the method like this "setBreweryOwned(1, true)" will give
+	 * the value true on the first brewery field for the user and increment totalBreweryOwned.
+	 * Doing so will let us know if player owns it or not. 
+	 * Calling "setBreweryOwned(1, false)" will set the value false on the first field
+	 * letting us know the player is not owning the field anymore and decrement totalBreweryOwned.
 	 */
 	
-	public void setTotalBreweryOwned(int number) {
-		totalBreweryOwned += number;
+	
+	
+	public void setBreweryOwned(int breweryNumber, Boolean bool) {
+		if (bool == true) {
+			brewery[breweryNumber-1] = bool;
+			totalBreweryOwned ++;
+		}
+		else {
+			brewery[breweryNumber-1] = bool;
+			totalBreweryOwned --;
+		}
+		
 	}
 	
-	public void setTotalFleetOwned(int number) {
-		totalFleetOwned += number;
-	}
 	
-	
-	public void setTotalStreetOwned(int number) {
-			totalStreetOwned += number;
+	public void setFleetOwned(int fleetNumber, Boolean bool) {
+		if (bool == true) {
+			fleet[fleetNumber-1] = bool;
+			totalFleetOwned ++;
+		}
+		else {
+			fleet[fleetNumber-1] = bool;
+			totalFleetOwned --;
+		}
+		
 	}
 	
 	public void setStreetBlueOwned(int blueNumber, Boolean bool) {
@@ -170,9 +197,13 @@ public class PlayerOwned {
 	
 	
 	
-	/*
-	 * GETTERS
+	/* GETTERS
+	 * 
+	 * Calling the method "getFleetOwned(2)" either gives true or false 
+	 * on the second fleet field that is on the board.
+	 * 
 	 */
+	
 	
 	
 	public int getTotalBreweryOwned() {
@@ -189,5 +220,34 @@ public class PlayerOwned {
 	}
 	
 	
-	
+	public Boolean getBreweryOwned(int breweryNumber) {
+		return brewery[breweryNumber-1];
+	}
+	public Boolean getFleetOwned(int fleetNumber) {
+		return fleet[fleetNumber-1];
+	}
+	public Boolean getStreetBlueOwned(int blueNumber) {
+		return streetBlue[blueNumber-1];
+	}
+	public Boolean getStreetGreenOwned(int greenNumber) {
+		return streetGreen[greenNumber-1];
+	}
+	public Boolean getStreetGreyOwned(int greyNumber) {
+		return streetGrey[greyNumber-1];
+	}
+	public Boolean getStreetPinkOwned(int pinkNumber) {
+		return streetPink[pinkNumber-1];
+	}
+	public Boolean getStreetPurpleOwned(int purpleNumber) {
+		return streetPurple[purpleNumber-1];
+	}
+	public Boolean getStreetRedOwned(int redNumber) {
+		return streetRed[redNumber-1];
+	}
+	public Boolean getStreetWhiteOwned(int whiteNumber) {
+		return streetWhite[whiteNumber-1];
+	}
+	public Boolean getStreetYellowOwned(int yellowNumber) {
+		return streetYellow[yellowNumber-1];
+	}
 }
