@@ -4,9 +4,13 @@ import java.lang.reflect.Array;
 
 public class Card {
 
-	private int id, value;
+	private int id, value; //Add positionining?
 	private String description;
 	private boolean ownable = false;
+	
+	public Card() {
+		
+	}
 	
 	//Set the id of the specific card. 
 	public void setId(int id) {
@@ -52,7 +56,5 @@ public class Card {
 	public String toString() {
 		return "Card [id=" + id + ", value=" + value + ", description=" + description + ", ownable=" + ownable + "]";
 	}
-	
-	
 	
 }

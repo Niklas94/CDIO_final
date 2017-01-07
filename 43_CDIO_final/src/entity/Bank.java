@@ -2,8 +2,6 @@ package entity;
 
 public class Bank {
 
-	private Account x[];
-	private 
-	
+	private Account x[]; 
 	
 }

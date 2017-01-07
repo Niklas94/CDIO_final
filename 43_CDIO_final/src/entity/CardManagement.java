@@ -3,25 +3,25 @@ package entity;
 public class CardManagement {
 
 	private Card[] cardArr;
+	private Card[] nonOwnableCards;
 
 	//Card Array
-	public CardManagement(int numberOfCardManagement) {
-		cardArr = new Card[numberOfCardManagement];
-
+	public CardManagement(int numberOfCards) {
+		cardArr = new Card[numberOfCards];
+		nonOwnableCards = new Card[numberOfCards];
 	}
 
 	public void createCards() {
-		
+
 		//First we create the desired amount of cards - these card objects have nothing but id.
-		
+
 		for (int i = 0; i < cardArr.length; i++) {
 			cardArr[i] = new Card(); //Lav et tomt kort
 			cardArr[i].setId(i+1); //Sæt det tomme korts id til at være i.
-			
-		//From here and on, we give the card objects values, descriptions and may change the boolean ownable, depending on which specific card from the monopoly game, we are talking about.
-		//The descriptions and values are directly copied from the actual cards.
-			
-			
+
+			//From here and on, we give the card objects values, descriptions and may change the boolean ownable, depending on which specific card from the monopoly game, we are talking about.
+			//The descriptions and values are directly copied from the actual cards.
+
 			if (i < 3) {
 				cardArr[i].setValue(1000);
 				cardArr[i].setDescription("De modtager deres aktieudbytte. Modtag kr. 1.000 af banken.");
@@ -78,22 +78,62 @@ public class CardManagement {
 		}
 	}
 
-	//Shuffle cards
+	/*Shuffle cards
+
+	There are probably a better method to do this, but this method is doing the following:
+	Creating a temporary identical deck to the one we work with. 
+	Picking a random number between 1 to the number of cards in the original card deck.
+	Now lets say, at first the number is 5. It now places the card at the index of 5, at the top of this new identical deck, we created at the very beginning.
+	Now we make the original decks array, at index 5, point at no object. This is to make sure, that we wont pick the same card again, and shuffle it into our new deck.
+	This is repeated until all cards have been picked
+
+	 */
 	public void shuffleCards() {
 		Card[] cardArrShuffled = new Card[cardArr.length];
 		for (int i = 0; i < cardArr.length; i++) {
-			int r = (int) (Math.random() * cardArr.length); //Et tilfældigt tal fra 1 til og med længden af cardArr længden.
-			while (cardArr[r] == null) { //Hvis objektet er tom
+			int r = (int) (Math.random() * cardArr.length); //A random number from 1 to the card arrays length.
+			while (cardArr[r] == null || r == i) { //If the object at the specific index is null or r == i, pick a new number. We want to shuffle properly!
 				r = (int) (Math.random() * cardArr.length);
 			}
-				cardArrShuffled[i] = cardArr[r];
-				cardArr[r] = null;
+			cardArrShuffled[i] = cardArr[r];
+			cardArr[r] = null;
 		}
 		cardArr = cardArrShuffled;
+	}
+
+	//Return a card back into the deck
+	public void returnCardToDeck(Card card) {
+		cardArr[cardArr.length-1] = card;
 	}
 
 	public Card pullCard(int index) {
 		return cardArr[index];
 	}
 
+	public Card pullTopCard() {
+
+		//The card you pick 
+		Card topCard = cardArr[0];
+
+		if (!cardArr[0].isItOwnable()) {
+			for (int i = 0; i < cardArr.length; i++) {
+				if (nonOwnableCards[i] == null)
+					nonOwnableCards[i] = cardArr[0];
+			}
+		}
+		
+		//Moving all cards 1 down in index. Now the card at index 1, is now at index 0 - therefor the next top card which is pulled from the deck.
+		for (int i = 0; i < cardArr.length-1; i++) {
+			cardArr[i] = cardArr[i+1];
+		}
+		cardArr[cardArr.length-1] = null; //new Card(cardArr.length, 0, "Placeholder");
+		
+		return topCard;
+	}
+	
+	public Card getNonOwnableCard(int index) {
+		return nonOwnableCards[index];
+	}
 }
+
+
