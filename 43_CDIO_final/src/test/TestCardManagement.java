@@ -49,7 +49,6 @@ public class TestCardManagement {
 
 		int expected = 0;
 		int actual = 0;
-		
 		cm.createCards();
 		Card expected2 = cm.pullCard(0); //This method returns the card from the specific index. In this test, we obviously pick the first card.
 		Card actual2 = cm.pullTopCard(); //The method were testing - it is meant to return the top card while also moving all cards in the deck, 1 index down. 
