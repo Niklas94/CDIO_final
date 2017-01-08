@@ -23,6 +23,24 @@ public class TestCard {
 	public void tearDown() throws Exception {
 		card = null;	
 	}
+	
+	@Test
+	public void testSetID() {
+		
+		//Testing setID method.
+		
+		//Default value
+		int expected = 0;
+		int actual = card.getId();
+		assertEquals(expected, actual);
+		
+		//After setting the value
+		int expected2 = 27;
+		card.setId(27);
+		int actual2 = card.getId();
+		assertEquals(expected2, actual2);
+		
+	}
 
 	@Test
 	public void testSetValue() {
@@ -38,7 +56,6 @@ public class TestCard {
 		card.setValue(100);
 		int actual2 = card.getValue();
 		assertEquals(expected2, actual2);
-		
 		}
 	
 	@Test
@@ -71,8 +88,7 @@ public class TestCard {
 		String expected2 = "I am working";
 		card.setDescription("I am working");
 		String actual2 = card.getDescription();
-		assertEquals(expected2, actual2);
-		
+		assertEquals(expected2, actual2);	
 	}
 
 }

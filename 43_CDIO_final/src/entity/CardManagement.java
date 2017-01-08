@@ -144,7 +144,7 @@ public class CardManagement {
 		//The card you pick 
 		Card topCard = cardArr[0];
 
-		//
+		//If card is NOT ownable, store it in another array for non ownable cards.
 		if (!cardArr[0].isItOwnable()) {
 			for (int i = 0; i < cardArr.length; i++) {
 				if (nonOwnableCards[i] == null)
@@ -156,8 +156,8 @@ public class CardManagement {
 		for (int i = 0; i < cardArr.length-1; i++) {
 			cardArr[i] = cardArr[i+1];
 		}
+		//this.returnCardToDeck(topCard); //The line below and the for loop about 10 lines above this line, did basically the same as this, but in a slightly different way. Keeping both things for now, just in case.
 		cardArr[cardArr.length-1] = null; //new Card(cardArr.length, 0, "Placeholder");
-		
 		return topCard;
 	}
 	
