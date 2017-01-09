@@ -17,7 +17,7 @@ public class Player {
 	
 	public Player(String name) {
 
-		myAccount = new Account();
+		myAccount = new Account(this);
 		playerOwn = new PlayerOwned();
 		this.name = name;
 		this.isAlive = true;
@@ -198,7 +198,7 @@ public class Player {
 	}
 	
 	// Get total owned White Streets
-	public void getTotalStreetWiteOwned() {
+	public void getTotalStreetWhiteOwned() {
 		playerOwn.getTotalStreetWhiteOwned();
 	}
 	
