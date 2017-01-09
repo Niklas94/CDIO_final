@@ -27,5 +27,7 @@ public class Account {
 	public int getMoney() {
 		return money;
 	}
+	
+	
 
 }

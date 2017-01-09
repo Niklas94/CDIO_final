@@ -11,6 +11,10 @@ public class Player {
 	private int position;
 	private boolean isAlive;
 
+	/*
+	 * Constructor
+	 */
+	
 	public Player(String name) {
 
 		myAccount = new Account();
