@@ -2,23 +2,64 @@ package test;
 
 import static org.junit.Assert.*;
 
+import java.lang.reflect.Array;
+import java.lang.reflect.Field;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import entity.PlayerOwned;
+
 public class TestPlayerOwned {
+	
+	PlayerOwned playerOwned;
 
 	@Before
 	public void setUp() throws Exception {
+		playerOwned = new PlayerOwned();
+		
 	}
 
 	@After
 	public void tearDown() throws Exception {
+		playerOwned = null;
 	}
 
 	@Test
 	public void testPlayerOwned() {
-		fail("Not yet implemented");
+		// Testing if variables get initialized with the int value 1
+		int actual = 0;
+		int expected = playerOwned.getTotalBreweryOwned();
+		assertEquals(actual, expected);
+		expected = playerOwned.getTotalFleetOwned();
+		assertEquals(actual, expected);
+		expected = playerOwned.getTotalStreetBlueOwned();
+		assertEquals(actual, expected);
+		expected = playerOwned.getTotalStreetGreenOwned();
+		assertEquals(actual, expected);
+		expected = playerOwned.getTotalStreetGreyOwned();
+		assertEquals(actual, expected);
+		expected = playerOwned.getTotalStreetPinkOwned();
+		assertEquals(actual, expected);
+		expected = playerOwned.getTotalStreetPurpleOwned();
+		assertEquals(actual, expected);
+		expected = playerOwned.getTotalStreetRedOwned();
+		assertEquals(actual, expected);
+		expected = playerOwned.getTotalStreetWhiteOwned();
+		assertEquals(actual, expected);
+		expected = playerOwned.getTotalStreetYellowOwned();
+		assertEquals(actual, expected);
+		expected = playerOwned.getTotalStreetOwned();
+		assertEquals(actual, expected);
+		
+		// Testing if the arrays get initialized with the given value
+		Boolean[] actualArray = {false, false};
+		Boolean[] expectedArray = (Boolean[]) Array.newInstance(Boolean.class, 2);
+		
+		
+		
+		
 	}
 
 	@Test
