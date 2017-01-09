@@ -75,7 +75,5 @@ public class TestCardManagement {
 		
 		Card actual = cm.pullCard(26);
 		assertEquals(expected, actual);
-
 	}
-
 }

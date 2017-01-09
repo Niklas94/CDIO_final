@@ -1,5 +1,14 @@
 package entity;
 
-public class OwnableCard {
+public class OwnableCard extends Card {
 
+	private boolean Owned;
+	
+	public OwnableCard() {
+		Owned = false;
+	}
+	
+	public boolean isItOwned() {
+		return Owned;
+	}
 }
