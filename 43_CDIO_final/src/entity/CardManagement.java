@@ -21,6 +21,7 @@ public class CardManagement {
 		String str;
 		String desc;
 
+		//Creation of the different type of cards, and what variables they have to caontain, based on the type.
 		int i = 0;
 		while((str = br.readLine()) != null && i < numberOfCards){
 			String type = str.split(";")[0]; //Read the type of the card
@@ -28,19 +29,22 @@ public class CardManagement {
 			case "MoneyCard": 
 				int amount = Integer.parseInt(str.split(";")[1]); //Read the amount of money a player receives / loses
 				desc = str.split(";")[2]; //Description of the card
-				cardArr[i++] = new MoneyCard(amount, desc);
+				cardArr[i++] = new MoneyCard(amount, desc, i);
 				break;
 			case "PositionCard":
 				int amount2 = Integer.parseInt(str.split(";")[1]);
 				desc = str.split(";")[2];
-				cardArr[i++] = new PositionCard(amount2, desc);
+				cardArr[i++] = new PositionCard(amount2, desc, i);
 				break;
 			case "FleetCard":
 				desc = str.split(";")[1];
-				cardArr[i++] = new FleetCard(desc);
+				cardArr[i++] = new FleetCard(desc, i);
+				break;
 			}
 		}
+		br.close();
 	}
+	
 	/*Shuffle cards
 
 	There are probably a better method to do this, but this method is doing the following:
@@ -95,17 +99,20 @@ public class CardManagement {
 
 	public void useCard(Card card, Player player) {
 		if (card instanceof MoneyCard)
-			player.updateBalance(((MoneyCard) card).getValue());
+			player.updateBalance(((MoneyCard) card).useCard());
 		else if (card instanceof PositionCard){
-			card.useCard(player.getPosition());
-			player.setPosition(((PositionCard) card).getPosition());
-			
+			int a = ((PositionCard)card).useCard();
+			if (a < 0)
+				player.setPosition(player.getPosition() - 3);
+			else
+				player.setPosition(((PositionCard) card).useCard());
 		}
 		else if (card instanceof FleetCard) {
-			player.setPosition(((FleetCard) card).nearestFleet(player.getPosition()));
+			player.setPosition(((FleetCard) card).useCard(player.getPosition()));
 		}
-		else if (card instanceof OwnableCard)
-			System.out.println("Do something");
+		else if (card instanceof OwnableCard) {
+			//Do something
+		}
 	}
 }
 
