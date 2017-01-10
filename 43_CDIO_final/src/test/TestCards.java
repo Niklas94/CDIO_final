@@ -29,7 +29,7 @@ public class TestCards {
 		card3 = new FleetCard("Fleet card");
 		card4 = new SpecialCard("Special card");
 		pm.createPlayers();
-		card5 = new PlayerBirthdayCard("Player birthday card", pm.getPlayers());
+		//card5 = new PlayerBirthdayCard("Player birthday card", pm.getPlayers());
 		
 	}
 
