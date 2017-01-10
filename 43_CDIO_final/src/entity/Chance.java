@@ -17,10 +17,10 @@ public class Chance extends NonOwnable {
 	public void landOnField(Player player) {
 		// TODO Auto-generated method stub
 		//GUI.displayChanceCard(cm.pullCard(0).getDescription()); //Method to display text
-		cm.pullTopCard().useCard(player); //Perform the action of the card
+		//cm.pullTopCard().useCard(player); //Perform the action of the card
 
 		int cardId = cm.pullTopCard().getID();
-		cm.returnCardToDeck(cardId);
+		cm.returnCardToDeck(cm.pullCard(cardId));
 		
 	}
 
