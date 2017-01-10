@@ -5,7 +5,7 @@ import desktop_resources.GUI;
 
 public class Chance extends NonOwnable {
 	
-	CardManagement cm;
+	private static CardManagement cm;
 	
 	public Chance(int id, CardManagement cm) {
 		super(id);

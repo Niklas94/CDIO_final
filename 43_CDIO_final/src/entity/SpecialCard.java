@@ -12,15 +12,15 @@ public class SpecialCard extends Card {
 	@Override
 	public void useCard(Player player) {
 		
-//		if (this.getDescription().charAt(2) == 'e') {
-//			value -= 800 * numberOfHouses - 2300 * numberOfHotels;
-//		}
-//		else if (this.getDescription().charAt(2) == 'i') {
-//			value -= 500 * numberOfHouses - 2000 * numberOfHotels;
-//		}
-//		else if (this.getDescription().charAt(2) == ' ') {
-//			if (player.getTotalValue() < 15000)
-//				player.updateBalance(40000);
-//		}
+		if (this.getDescription().charAt(2) == 'e') {
+			value -= 800 *  - 2300 * numberOfHotels;
+		}
+		else if (this.getDescription().charAt(2) == 'i') {
+			value -= 500 * numberOfHouses - 2000 * numberOfHotels;
+		}
+		else if (this.getDescription().charAt(2) == ' ') {
+			if (player.getTotalValue() < 15000)
+				player.updateBalance(40000);
+		}
 	}
 }
