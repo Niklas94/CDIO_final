@@ -6,7 +6,7 @@ public class GUI {
 	private static String name;
 
 	public static int numberOfPlayers() {
-		numberPlayers = desktop_resources.GUI.getUserInteger("Indtast antal spillere" + " mellem 3 og 6.");
+		numberPlayers = desktop_resources.GUI.getUserInteger("Indtast antal spillere mellem 3 og 6.");
 		return numberPlayers;
 	}
 
