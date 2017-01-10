@@ -460,12 +460,25 @@ public class PlayerOwned {
 	public int getTotalFleetOwned() {
 		return totalFleetOwned;
 	}
+	
+	// Get total owned Houses (ALL)
+	public int getTotalHousesOwned() {
+		return totalHousesOwned;
+
+	}
+	
+	// Get total owned Hotels (ALL)
+	public int getTotalHotelsOwned() {
+		return totalHotelsOwned;
+
+	}
 
 	// Get total owned Streets (ALL)
 	public int getTotalStreetOwned() {
 		return totalStreetOwned;
 
 	}
+	
 
 	// Get total owned Blue Streets
 	public int getTotalStreetBlueOwned() {
@@ -507,19 +520,6 @@ public class PlayerOwned {
 		return totalStreetYellowOwned;
 	}
 	
-	// 
-	
-	// Get total owned Houses (ALL)
-	public int getTotalHousesOwned() {
-		return totalHousesOwned;
-
-	}
-	
-	// Get total owned Hotels (ALL)
-	public int getTotalHotelsOwned() {
-		return totalHotelsOwned;
-
-	}
 	
 	// Get total owned Houses on Blue Streets
 	public int getTotalHousesOnBlue() {
