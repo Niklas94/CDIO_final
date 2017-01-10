@@ -342,48 +342,48 @@ public class PlayerOwned {
 	
 	public void setHouseOnStreetBlue(int blueNumber, int houses) {
 			houseOnStreetBlue[blueNumber - 1] = houses;
-			totalHousesOwned = houses;
+			totalHousesOwned += houses;
 			totalHousesOnStreetBlue = houses;
 	}
 	
 	public void setHouseOnStreetGreen(int greenNumber, int houses) {
 		houseOnStreetGreen[greenNumber - 1] = houses;
-		totalHousesOwned = houses;
+		totalHousesOwned += houses;
 		totalHousesOnStreetGreen = houses;
 }
 
 	public void setHouseOnStreetGrey(int greyNumber, int houses) {
 		houseOnStreetGrey[greyNumber - 1] = houses;
-		totalHousesOwned = houses;
+		totalHousesOwned += houses;
 		totalHousesOnStreetGrey = houses;
 }
 	
 	public void setHouseOnStreetPink(int pinkNumber, int houses) {
 		houseOnStreetPink[pinkNumber - 1] = houses;
-		totalHousesOwned = houses;
+		totalHousesOwned += houses;
 		totalHousesOnStreetPink = houses;
 }
 	
 	public void setHouseOnStreetPurple(int purpleNumber, int houses) {
 		houseOnStreetPurple[purpleNumber - 1] = houses;
-		totalHousesOwned = houses;
+		totalHousesOwned += houses;
 		totalHousesOnStreetPurple = houses;
 }
 	
 	public void setHouseOnStreetRed(int redNumber, int houses) {
 		houseOnStreetRed[redNumber - 1] = houses;
-		totalHousesOwned = houses;
+		totalHousesOwned += houses;
 		totalHousesOnStreetRed = houses;
 }
 
 	public void setHouseOnStreetWhite(int whiteNumber, int houses) {
 		houseOnStreetWhite[whiteNumber - 1] = houses;
-		totalHousesOwned = houses;
+		totalHousesOwned += houses;
 		totalHousesOnStreetWhite = houses;
 }
 	public void setHouseOnStreetYellow(int yellowNumber, int houses) {
 		houseOnStreetYellow[yellowNumber - 1] = houses;
-		totalHousesOwned = houses;
+		totalHousesOwned += houses;
 		totalHousesOnStreetYellow = houses;
 }
 	
