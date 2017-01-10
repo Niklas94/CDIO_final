@@ -33,6 +33,8 @@ public class Player {
 	public void updateBalance(int money) {
 		this.myAccount.updateBalance(money);
 	}
+	
+
 
 	// Checks if player money is zero or below, if so isAlive variable will be
 	// false, else true.
@@ -116,6 +118,10 @@ public class Player {
 	// Get player alive status
 	public boolean isAlive() {
 		return isAlive;
+	}
+	
+	public Account getAccount() {
+	return this.myAccount;
 	}
 
 	// Get player owned status on Brewery 1 or 2
