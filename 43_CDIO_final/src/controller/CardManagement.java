@@ -1,6 +1,16 @@
-package entity;
+package controller;
 
 import java.io.FileReader;
+
+import entity.Card;
+import entity.FleetCard;
+import entity.MoneyCard;
+import entity.OwnableCard;
+import entity.Player;
+import entity.PlayerBirthdayCard;
+import entity.PositionCard;
+import entity.SpecialCard;
+
 import java.io.BufferedReader;
 
 public class CardManagement {
