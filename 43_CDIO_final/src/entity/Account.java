@@ -32,96 +32,96 @@ public class Account {
 	}
 	
 	// Get player owned status on Brewery 1 or 2
-	public void getBreweryOwned(int breweryNumber) {
-		player.getBreweryOwned(breweryNumber);
+	public boolean getBreweryOwned(int breweryNumber) {
+		return player.getBreweryOwned(breweryNumber);
 	}
 	// Get player owned status on Fleet 1, 2, 3 or 4
-	public void getFleetOwned(int fleetNumber) {
-		player.getFleetOwned(fleetNumber);
+	public boolean getFleetOwned(int fleetNumber) {
+		return player.getFleetOwned(fleetNumber);
 	}
 	// Get player owned status on Blue Street 1 or 2
-	public void getStreetBlueOwned(int blueNumber) {
-		player.getStreetBlueOwned(blueNumber);
+	public boolean getStreetBlueOwned(int blueNumber) {
+		return player.getStreetBlueOwned(blueNumber);
 	}
 	// Get player owned status on Green Street 1, 2 or 3
-	public void getStreetGreenOwned(int greenNumber) {
-		player.getStreetGreenOwned(greenNumber);
+	public boolean getStreetGreenOwned(int greenNumber) {
+		return player.getStreetGreenOwned(greenNumber);
 	}
 	// Get player owned status on Grey Street 1, 2 or 3
-	public void getStreetGreyOwned(int greyNumber) {
-		player.getStreetGreyOwned(greyNumber);
+	public boolean getStreetGreyOwned(int greyNumber) {
+		return player.getStreetGreyOwned(greyNumber);
 	}
 	// Get player owned status on Pink Street 1, 2 or 3
-	public void getStreetPinkOwned(int pinkNumber) {
-		player.getStreetPinkOwned(pinkNumber);
+	public boolean getStreetPinkOwned(int pinkNumber) {
+		return player.getStreetPinkOwned(pinkNumber);
 	}
 	// Get player owned status on Purple Street 1 or 2
-	public void getStreetPurpleOwned(int purpleNumber) {
-		player.getStreetPurpleOwned(purpleNumber);
+	public boolean getStreetPurpleOwned(int purpleNumber) {
+		return player.getStreetPurpleOwned(purpleNumber);
 	}
 	// Get player owned status on Red Street 1, 2 or 3
-	public void getStreetRedOwned(int redNumber) {
-		player.getStreetRedOwned(redNumber);
+	public boolean getStreetRedOwned(int redNumber) {
+		return player.getStreetRedOwned(redNumber);
 	}
 	// Get player owned status on White Street 1, 2 or 3
-	public void getStreetWhiteOwned(int whiteNumber) {
-		player.getStreetWhiteOwned(whiteNumber);
+	public boolean getStreetWhiteOwned(int whiteNumber) {
+		return player.getStreetWhiteOwned(whiteNumber);
 	}
 	// Get player owned status on Yellow Street 1, 2 or 3
-	public void getStreetYellowOwned(int yellowNumber) {
-		player.getStreetYellowOwned(yellowNumber);
+	public boolean getStreetYellowOwned(int yellowNumber) {
+		return player.getStreetYellowOwned(yellowNumber);
 	}
 	// Get total owned Brewery
-	public void getTotalBreweryOwned() {
-		player.getTotalBreweryOwned();
+	public int getTotalBreweryOwned() {
+		return player.getTotalBreweryOwned();
 	}
 	// Get total owned Fleet
-	public void getTotalFleetOwned() {
-		player.getTotalFleetOwned();
+	public int getTotalFleetOwned() {
+		return player.getTotalFleetOwned();
 	}
 	// Get total owned streets
-	public void getTotalStreetOwned() {
-		player.getTotalStreetOwned();
+	public int getTotalStreetOwned() {
+		return player.getTotalStreetOwned();
 	}
 	
 	// Get total owned Blue Streets
-	public void getTotalStreetBlueOwned() {
-		player.getTotalStreetBlueOwned();
+	public int getTotalStreetBlueOwned() {
+		return player.getTotalStreetBlueOwned();
 	}
 	
 	// Get total owned Green Streets
-	public void getTotalStreetGreenOwned() {
-		player.getTotalStreetGreenOwned();
+	public int getTotalStreetGreenOwned() {
+		return player.getTotalStreetGreenOwned();
 	}
 	
 	// Get total owned Grey Streets
-	public void getTotalStreetGreyOwned() {
-		player.getTotalStreetGreyOwned();
+	public int getTotalStreetGreyOwned() {
+		return player.getTotalStreetGreyOwned();
 	}
 	
 	// Get total owned Pink Streets
-	public void getTotalStreetPinkOwned() {
-		player.getTotalStreetPinkOwned();
+	public int getTotalStreetPinkOwned() {
+		return player.getTotalStreetPinkOwned();
 	}
 	
 	// Get total owned Purple Streets
-	public void getTotalStreetPurpleOwned() {
-		player.getTotalStreetPurpleOwned();
+	public int getTotalStreetPurpleOwned() {
+		return player.getTotalStreetPurpleOwned();
 	}
 	
 	// Get total owned Red Streets
-	public void getTotalStreetRedOwned() {
-		player.getTotalStreetRedOwned();
+	public int getTotalStreetRedOwned() {
+		return player.getTotalStreetRedOwned();
 	}
 	
 	// Get total owned White Streets
-	public void getTotalStreetWiteOwned() {
-		player.getTotalStreetWhiteOwned();
+	public int getTotalStreetWiteOwned() {
+		return player.getTotalStreetWhiteOwned();
 	}
 	
 	// Get total owned Yellow Streets
-	public void getTotalStreetYellowOwned() {
-		player.getTotalStreetYellowOwned();
+	public int getTotalStreetYellowOwned() {
+		return player.getTotalStreetYellowOwned();
 	}
 
 }

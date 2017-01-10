@@ -1,5 +1,6 @@
 package entity;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 /*
@@ -65,6 +66,9 @@ public class PlayerOwned {
 		streetRed = new Boolean[3];
 		streetWhite = new Boolean[3];
 		streetYellow = new Boolean[3];
+		
+		
+		
 
 		Arrays.fill(brewery, false);
 		Arrays.fill(fleet, false);
@@ -296,43 +300,43 @@ public class PlayerOwned {
 		return totalStreetYellowOwned;
 	}
 	// Get owned status on Brewery 1 or 2
-	public Boolean getBreweryOwned(int breweryNumber) {
+	public boolean getBreweryOwned(int breweryNumber) {
 		return brewery[breweryNumber - 1];
 	}
 	// Get owned status on Fleet 1, 2, 3 or 4
-	public Boolean getFleetOwned(int fleetNumber) {
+	public boolean getFleetOwned(int fleetNumber) {
 		return fleet[fleetNumber - 1];
 	}
 	// Get owned status on Blue Street 1 or 2
-	public Boolean getStreetBlueOwned(int blueNumber) {
+	public boolean getStreetBlueOwned(int blueNumber) {
 		return streetBlue[blueNumber - 1];
 	}
 	// Get owned status on Green Street 1, 2 or 3
-	public Boolean getStreetGreenOwned(int greenNumber) {
+	public boolean getStreetGreenOwned(int greenNumber) {
 		return streetGreen[greenNumber - 1];
 	}
 	// Get owned status on Grey Street 1, 2 or 3
-	public Boolean getStreetGreyOwned(int greyNumber) {
+	public boolean getStreetGreyOwned(int greyNumber) {
 		return streetGrey[greyNumber - 1];
 	}
 	// Get owned status on Pink Street 1, 2 or 3
-	public Boolean getStreetPinkOwned(int pinkNumber) {
+	public boolean getStreetPinkOwned(int pinkNumber) {
 		return streetPink[pinkNumber - 1];
 	}
 	// Get owned status on Purple Street 1 or 2
-	public Boolean getStreetPurpleOwned(int purpleNumber) {
+	public boolean getStreetPurpleOwned(int purpleNumber) {
 		return streetPurple[purpleNumber - 1];
 	}
 	// Get owned status on Red Street 1, 2 or 3
-	public Boolean getStreetRedOwned(int redNumber) {
+	public boolean getStreetRedOwned(int redNumber) {
 		return streetRed[redNumber - 1];
 	}
 	// Get owned status on White Street 1, 2 or 3
-	public Boolean getStreetWhiteOwned(int whiteNumber) {
+	public boolean getStreetWhiteOwned(int whiteNumber) {
 		return streetWhite[whiteNumber - 1];
 	}
 	// Get owned status on Yellow Street 1, 2 or 3
-	public Boolean getStreetYellowOwned(int yellowNumber) {
+	public boolean getStreetYellowOwned(int yellowNumber) {
 		return streetYellow[yellowNumber - 1];
 	}
 
