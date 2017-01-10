@@ -114,7 +114,10 @@ public class TestPlayerOwned_new {
 
 	@Test
 	public void testSetHouseOnStreetBlue() {
-		fail("Not yet implemented");
+		int actual = playerOwned.getTotalHousesOnBlue();
+		playerOwned.setHouseOnStreetBlue(1, 2);
+		int expected = 2;
+		assertEquals(actual, expected);
 	}
 
 	@Test

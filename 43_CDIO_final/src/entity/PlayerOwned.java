@@ -339,9 +339,9 @@ public class PlayerOwned {
 	 */
 
 	public void setHouseOnStreetBlue(int blueNumber, int houses) {
-		houseOnStreetBlue[blueNumber - 1] = houses;
+		houseOnStreetBlue[blueNumber - 1] += houses;
 		totalHousesOwned += houses;
-		totalHousesOnStreetBlue = houses;
+		totalHousesOnStreetBlue += houses;
 	}
 
 	public void setHouseOnStreetGreen(int greenNumber, int houses) {
