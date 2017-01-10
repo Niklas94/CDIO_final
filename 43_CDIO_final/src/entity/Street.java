@@ -22,14 +22,14 @@ public class Street extends Ownable {
 	}
 
 	@Override
-	public void buySquare(Player player) {
+	public void buySquare(String player) {
 		// TODO Auto-generated method stub
 		this.owner = player;
 		
 	}
 
 	@Override
-	public Player getOwner() {
+	public String getOwner() {
 		// TODO Auto-generated method stub
 		return owner;
 	}
