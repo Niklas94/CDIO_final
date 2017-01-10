@@ -119,6 +119,11 @@ public class PlayerManagement {
 	public int getPlayersLeft() {
 		return playersLeft;
 	}
+	
+	// Getter to return player
+	public Player[] getPlayerArray() {
+		return player;
+	}
 
 	// Get player owned status on Brewery 1 or 2
 	public boolean getBreweryOwned(int breweryNumber, int playerNumber) {
