@@ -4,10 +4,10 @@ public class MoneyCard extends Card {
 	
 	private int amount;
 	
-	public MoneyCard(int amount, String desc, int index) {
+	public MoneyCard(int amount, String desc) {
 		this.amount = amount;
 		super.setDescription(desc);
-		super.setId(index);
+//		super.setId(index);
 	}
 
 	@Override

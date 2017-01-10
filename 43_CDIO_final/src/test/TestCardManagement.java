@@ -38,8 +38,7 @@ public class TestCardManagement {
 		cm.shuffleCards();
 
 		for (int i = 0; i < 27; i++) {
-			System.out.println(cm.pullCard(i).getId());
-			if (i+1 != cm.pullCard(i).getId()) //I plus i with 1, since each card has an id 1 greater than the index they are located at in the array. Example: card at index 0, has the id 1.
+			if ( != cm.pullCard(i)) //I plus i with 1, since each card has an id 1 greater than the index they are located at in the array. Example: card at index 0, has the id 1.
 				actual++;
 		}
 		assertEquals(expected, actual);

@@ -4,7 +4,7 @@ public class OwnableCard extends Card {
 
 	private boolean Owned;
 	
-	public OwnableCard() {
+	public OwnableCard(String desc) {
 		Owned = false;
 	}
 	
@@ -17,4 +17,9 @@ public class OwnableCard extends Card {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	
+//	public boolean useCard(Player player) {
+//	
+//	}
+	
 }

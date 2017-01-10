@@ -9,16 +9,6 @@ public abstract class Card {
 	
 	public abstract int useCard();
 	
-	//Set the id of the specific card. 
-	public void setId(int id) {
-		this.id = id; //+1 because index =/= id
-	}
-	
-	//Get the id of the specific card - only makes sense, when using through the CardManagement array of cards.
-	public int getId() {
-		return this.id;
-	}
-	
 	//Set Description of the card
 	public void setDescription(String description) {
 		this.description = description;

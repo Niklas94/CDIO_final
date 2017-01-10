@@ -4,10 +4,10 @@ public class PositionCard extends Card {
 
 	private int position;
 	
-	public PositionCard(int position, String desc, int index) {
+	public PositionCard(int position, String desc) {
 		this.position = position;
 		super.setDescription(desc);
-		super.setId(index);
+//		super.setId(index);
 	}
 
 	@Override

@@ -29,16 +29,16 @@ public class CardManagement {
 			case "MoneyCard": 
 				int amount = Integer.parseInt(str.split(";")[1]); //Read the amount of money a player receives / loses
 				desc = str.split(";")[2]; //Description of the card
-				cardArr[i++] = new MoneyCard(amount, desc, i);
+				cardArr[i++] = new MoneyCard(amount, desc);
 				break;
 			case "PositionCard":
 				int amount2 = Integer.parseInt(str.split(";")[1]);
 				desc = str.split(";")[2];
-				cardArr[i++] = new PositionCard(amount2, desc, i);
+				cardArr[i++] = new PositionCard(amount2, desc);
 				break;
 			case "FleetCard":
 				desc = str.split(";")[1];
-				cardArr[i++] = new FleetCard(desc, i);
+				cardArr[i++] = new FleetCard(desc);
 				break;
 			}
 		}
@@ -111,7 +111,7 @@ public class CardManagement {
 			player.setPosition(((FleetCard) card).useCard(player.getPosition()));
 		}
 		else if (card instanceof OwnableCard) {
-			//Do something
+			//player.setOwnedCard(card);
 		}
 	}
 }

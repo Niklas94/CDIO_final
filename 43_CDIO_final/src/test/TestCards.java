@@ -19,9 +19,9 @@ public class TestCards {
 	
 	@Before
 	public void setUp() throws Exception {
-		card1 = new MoneyCard(0, "0", 0);
-		card2 = new PositionCard(0, "0", 1);
-		card3 = new FleetCard("0", 2);
+		card1 = new MoneyCard(0, "0");
+		card2 = new PositionCard(0, "0");
+		card3 = new FleetCard("0");
 	}
 
 	@After
@@ -30,27 +30,9 @@ public class TestCards {
 		card2 = null;
 		card3 = null;
 	}
-	
-	@Test
-	public void testSetID() {
-		
-		//Testing setID method.
-		
-		//Default value
-		int expected = 0;
-		int actual = card1.getId();
-		assertEquals(expected, actual);
-		
-		//After setting the value
-		int expected2 = 27;
-		card1.setId(27); 
-		int actual2 = card1.getId();
-		assertEquals(expected2, actual2);
-		
-	}
 
 	@Test
-	public void testSetValue() {
+	public void testMoneyCardValue() {
 		//Testing to see, if the setValue() method works.
 		
 		//First we test, if the value at first is 0.
@@ -60,7 +42,7 @@ public class TestCards {
 		
 		//Then we see, if we can manipulate the value of the card, by recreating the object.
 		int expected2 = 100;
-		card1 = new MoneyCard(100, "0", 0);
+		card1 = new MoneyCard(100, "0");
 		int actual2 = card1.useCard();
 		assertEquals(expected2, actual2);
 		}
@@ -88,7 +70,6 @@ public class TestCards {
 		//There are fleet fields on fields nr. 6 - 16 - 26 and 36.
 		//Chance fields are on: 3 - 8 - 18 - 23 - 34 - 37.
 		//We assume the players position to be equal to chance fields nr.
-		
 		int expected1 = 6, expected2 = 6, expected3 = 16, expected4 = 26, expected5 = 36, expected6 = 36;
 		int actual1 = ((FleetCard)card3).useCard(3);
 		int actual2 = ((FleetCard)card3).useCard(8);
@@ -103,5 +84,4 @@ public class TestCards {
 		assertEquals(expected5, actual5);
 		assertEquals(expected6, actual6);
 	}
-	
 }

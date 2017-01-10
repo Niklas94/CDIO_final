@@ -3,9 +3,9 @@ import entity.Card;
 
 public class FleetCard extends Card {
 
-	public FleetCard(String desc, int index) {
+	public FleetCard(String desc) {
 		super.setDescription(desc);
-		super.setId(index);
+		//super.setId(index);
 	}
 
 	@Override
@@ -14,20 +14,19 @@ public class FleetCard extends Card {
 		return 0;
 	}
 	
-	public int useCard(int position) {
+	public int useCard(int playerPosition) {
 		// TODO Auto-generated method stub
 		int nearestFleet;
 		
-		if (position >= 3 && position <= 8)
+		if (playerPosition >= 3 && playerPosition <= 8)
 			return nearestFleet = 6;
-		else if (position == 18)
+		else if (playerPosition == 18)
 			return nearestFleet = 16;
-		else if (position == 23)
+		else if (playerPosition == 23)
 			return nearestFleet = 26;
-		else if (position >= 34 && position <= 37)
+		else if (playerPosition >= 34 && playerPosition <= 37)
 			return nearestFleet = 36;
 		else
 			return 0;
 	}
-	
 }
