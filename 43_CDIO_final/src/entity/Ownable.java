@@ -1,21 +1,20 @@
 package entity;
 
-public abstract class Ownable {
-	int price;
+public abstract class Ownable extends Square {
+	
 	String name;
-int basevalue;
+	int price;
+	int rent;
+	Player owner;
 
-	public Ownable (String name, int price) {
-		this.price = price;
-		this.name = name;
-
-	}
-	public int getPrice() {
-		return price;
+	public Ownable(int id) {
+		super(id);
 	}
 	
-	public int getValue() {
-		
-		return basevalue;
-	}
+	
+	public abstract int getPrice();
+	public abstract int getRent();
+	public abstract void buySquare(Player player);
+	public abstract Player getOwner();
+	
 }
