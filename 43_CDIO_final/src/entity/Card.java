@@ -4,10 +4,9 @@ import java.lang.reflect.Array;
 
 public abstract class Card {
 
-	private int id;
 	private String description;
 	
-	public abstract int useCard();
+	public abstract void useCard(Player player);
 	
 	//Set Description of the card
 	public void setDescription(String description) {

@@ -105,7 +105,7 @@ public class Board {
         Color fgColor = getColor(getValue("foregroundColor", values));
         String subText = getValue("subText", values);
         String description = getValue("description", values);
-        String rent = getValue("leje", values);
+        String rent = getValue("rent", values);
         guiField[index] = new Street.Builder()
             .setTitle(title)
             .setBgColor(bgColor)
@@ -126,7 +126,7 @@ public class Board {
         	picture = "tuborg.png";
         String subText = getValue("subText", values);
         String description = getValue("description", values);
-        String rent = getValue("leje", values);
+        String rent = getValue("rent", values);
         guiField[index] = new Brewery.Builder()
         	.setPicture(picture)
             .setTitle(title)
@@ -142,7 +142,7 @@ public class Board {
         String title = getValue("title", values);
         String subText = getValue("subText", values);
         String description = getValue("description", values);
-        String rent = getValue("leje", values);
+        String rent = getValue("rent", values);
         guiField[index] = new Shipping.Builder()
             .setTitle(title)
             .setSubText(subText)
