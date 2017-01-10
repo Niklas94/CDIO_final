@@ -654,4 +654,44 @@ public class PlayerOwned {
 		return houseOnStreetYellow[yellowNumber - 1];
 	}
 
+	// Get total owned Hotels on a specific field at one of the Blue Streets
+	public int getHotelsOnBlueStreet(int blueNumber) {
+		return hotelOnStreetBlue[blueNumber - 1];
+	}
+
+	// Get total owned Hotels on a specific field at one of the Green Streets
+	public int getHotelsOnGreenStreet(int greenNumber) {
+		return hotelOnStreetGreen[greenNumber - 1];
+	}
+
+	// Get total owned Hotels on a specific field at one of the Grey Streets
+	public int getHotelsOnGreyStreet(int greyNumber) {
+		return hotelOnStreetGrey[greyNumber - 1];
+	}
+
+	// Get total owned Hotels on a specific field at one of the Pink Streets
+	public int getHotelsOnPinkStreet(int pinkNumber) {
+		return hotelOnStreetPink[pinkNumber - 1];
+	}
+
+	// Get total owned Hotels on a specific field at one of the Purple Streets
+	public int getHotelsOnPurpleStreet(int purpleNumber) {
+		return hotelOnStreetPurple[purpleNumber - 1];
+	}
+
+	// Get total owned Hotels on a specific field at one of the Red Streets
+	public int getHotelsOnRedStreet(int redNumber) {
+		return hotelOnStreetRed[redNumber - 1];
+	}
+
+	// Get total owned Hotels on a specific field at one of the White Streets
+	public int getHotelsOnWhiteStreet(int whiteNumber) {
+		return hotelOnStreetWhite[whiteNumber - 1];
+	}
+
+	// Get total owned Hotels on a specific field at one of the Yellow Streets
+	public int getHotelsOnYellowStreet(int yellowNumber) {
+		return hotelOnStreetYellow[yellowNumber - 1];
+	}
+
 }
