@@ -1,22 +1,53 @@
 package entity;
 
 public class Street extends Ownable {
+	
+	
 
-	public Street(String name, int price) {
-		super(name,price);
+	public Street(int id) {
+		super(id);
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public int getPrice() {
 		// TODO Auto-generated method stub
-		return price;
+		return this.price;
 	}
 
 	@Override
-	public int getValue() {
+	public int getRent() {
 		// TODO Auto-generated method stub
-		return basevalue;
+		return this.rent;
 	}
+
+	@Override
+	public void buySquare(Player player) {
+		// TODO Auto-generated method stub
+		this.owner = player;
+		
+	}
+
+	@Override
+	public Player getOwner() {
+		// TODO Auto-generated method stub
+		return owner;
+	}
+
+	@Override
+	public void landOnField(Player player) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int getId() {
+		// TODO Auto-generated method stub
+		return this.id;
+	}
+	
+
+
 
 
 }

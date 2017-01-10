@@ -1,21 +1,51 @@
 package entity;
 
 public class Fleet extends Ownable {
-
-	public Fleet(String name, int price) {
-		super(name, price);
 	
+	
+
+	public Fleet(int id) {
+		super(id);
+		// TODO Auto-generated constructor stub
 	}
-@Override
-public int getPrice() {
-	
-	return price*5;
-}
 
-@Override
-public int getValue() {
-	int count_of_fleet_owned_by_owner = 3; //Get value from bank in reality
-	return basevalue*count_of_fleet_owned_by_owner;
-}
+	@Override
+	public int getPrice() {
+		// TODO Auto-generated method stub
+		return this.price;
+	}
+
+	@Override
+	public int getRent() {
+		// TODO Auto-generated method stub
+		return this.rent;
+	}
+
+	@Override
+	public void buySquare(Player player) {
+		// TODO Auto-generated method stub
+		this.owner = player;
+		
+	}
+
+	@Override
+	public Player getOwner() {
+		// TODO Auto-generated method stub
+		return owner;
+	}
+
+	@Override
+	public void landOnField(Player player) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int getId() {
+		// TODO Auto-generated method stub
+		return this.id;
+	}
+
+
 		
 }

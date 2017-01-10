@@ -18,10 +18,25 @@ public class Board {
 
 	public String[] squares = new String[40];
 	public Field[] guiField = new Field[40];
+	public Square[] logicField = new Square[40];
 
 	public Board(){
 
 	}
+
+	public Square getOwnableSquare(int id){
+		for(int i = 0; i < logicField.length; i++){
+			if(logicField[i].getId() == id){
+				if(logicField[i] instanceof Ownable){
+					return logicField[i];
+				}
+			}
+			
+		}
+		System.out.println("this square is not ownable.");
+		return null;		
+	}
+	
 
 	public void createBoard() throws Exception{
 		FileReader file = new FileReader("Squares.txt");
@@ -82,112 +97,112 @@ public class Board {
 	}
 
 	public void createStart(String[] values, int index){
-		
+
 		Color bgColor = getColor(getValue("backgroundColor", values));
-        Color fgColor = getColor(getValue("foregroundColor", values));
-        String title = getValue("title", values);
-        String subText = getValue("subText", values);
-        String description = getValue("description", values);
-        guiField[index] = new Start.Builder()
-            .setBgColor(bgColor)
-            .setFgColor(fgColor)
-            .setTitle(title)
-            .setSubText(subText)
-            .setDescription(description)
-            .build();
-        
+		Color fgColor = getColor(getValue("foregroundColor", values));
+		String title = getValue("title", values);
+		String subText = getValue("subText", values);
+		String description = getValue("description", values);
+		guiField[index] = new Start.Builder()
+				.setBgColor(bgColor)
+				.setFgColor(fgColor)
+				.setTitle(title)
+				.setSubText(subText)
+				.setDescription(description)
+				.build();
+
 
 	}
-	
+
 	public void createStreet(String[] values, int index){
-        String title = getValue("title", values);
-        Color bgColor = getColor(getValue("backgroundColor", values));
-        Color fgColor = getColor(getValue("foregroundColor", values));
-        String subText = getValue("subText", values);
-        String description = getValue("description", values);
-        String rent = getValue("rent", values);
-        guiField[index] = new Street.Builder()
-            .setTitle(title)
-            .setBgColor(bgColor)
-            .setFgColor(fgColor) 
-            .setSubText(subText)
-            .setDescription(description)
-            .setRent(rent)
-            .build();
+		String title = getValue("title", values);
+		Color bgColor = getColor(getValue("backgroundColor", values));
+		Color fgColor = getColor(getValue("foregroundColor", values));
+		String subText = getValue("subText", values);
+		String description = getValue("description", values);
+		String rent = getValue("rent", values);
+		guiField[index] = new Street.Builder()
+				.setTitle(title)
+				.setBgColor(bgColor)
+				.setFgColor(fgColor) 
+				.setSubText(subText)
+				.setDescription(description)
+				.setRent(rent)
+				.build();
 	}
-	
+
 	public void createBrewery(String[] values, int index){
 		//String picture = getValue("picture", values);
 		String picture;
-        String title = getValue("title", values);
-        if(index == 28)
-        	picture = "cocacola.png";
-        else
-        	picture = "tuborg.png";
-        String subText = getValue("subText", values);
-        String description = getValue("description", values);
-        String rent = getValue("rent", values);
-        guiField[index] = new Brewery.Builder()
-        	.setPicture(picture)
-            .setTitle(title)
-            .setSubText(subText)
-            .setDescription(description)
-            .setRent(rent)
-            .build();
+		String title = getValue("title", values);
+		if(index == 28)
+			picture = "cocacola.png";
+		else
+			picture = "tuborg.png";
+		String subText = getValue("subText", values);
+		String description = getValue("description", values);
+		String rent = getValue("rent", values);
+		guiField[index] = new Brewery.Builder()
+				.setPicture(picture)
+				.setTitle(title)
+				.setSubText(subText)
+				.setDescription(description)
+				.setRent(rent)
+				.build();
 
 
 	}
-	
+
 	public void createFleet(String[] values, int index){
-        String title = getValue("title", values);
-        String subText = getValue("subText", values);
-        String description = getValue("description", values);
-        String rent = getValue("rent", values);
-        guiField[index] = new Shipping.Builder()
-            .setTitle(title)
-            .setSubText(subText)
-            .setDescription(description)
-            .setRent(rent)
-            .build();
+		String title = getValue("title", values);
+		String subText = getValue("subText", values);
+		String description = getValue("description", values);
+		String rent = getValue("rent", values);
+		guiField[index] = new Shipping.Builder()
+				.setTitle(title)
+				.setSubText(subText)
+				.setDescription(description)
+				.setRent(rent)
+				.build();
 
 	}
-	
+
 	public void createParking(String[] values, int index){
-        String title = getValue("title", values);
-        String subText = getValue("subText", values);
-        String description = getValue("description", values);
-        guiField[index] = new Refuge.Builder()
-            .setTitle(title)
-            .setSubText(subText)
-            .setDescription(description)
-            .build();
+		String title = getValue("title", values);
+		String subText = getValue("subText", values);
+		String description = getValue("description", values);
+		guiField[index] = new Refuge.Builder()
+				.setTitle(title)
+				.setSubText(subText)
+				.setDescription(description)
+				.build();
 
 	}
-	
+
 	public void createJail(String[] values, int index){
-        String title = getValue("title", values);
-        String subText = getValue("subText", values);
-        String description = getValue("description", values);
-        guiField[index] = new Jail.Builder()
-            .setTitle(title)
-            .setSubText(subText)
-            .setDescription(description)
-            .build();
+		String title = getValue("title", values);
+		String subText = getValue("subText", values);
+		String description = getValue("description", values);
+		guiField[index] = new Jail.Builder()
+				.setTitle(title)
+				.setSubText(subText)
+				.setDescription(description)
+				.build();
 	}
-	
+
 	public void createChance(int index){
-        guiField[index] = new Chance.Builder().build();
+		guiField[index] = new Chance.Builder().build();
 
 	}
 	public void createTax(String[] values, int index){
-        String title = getValue("title", values);
-        String subText = getValue("subText", values);
-        String description = getValue("description", values);
-        guiField[index] = new Tax.Builder()
-            .setTitle(title)
-            .setSubText(subText)
-            .setDescription(description)
-            .build();
+		String title = getValue("title", values);
+		String subText = getValue("subText", values);
+		String description = getValue("description", values);
+		guiField[index] = new Tax.Builder()
+				.setTitle(title)
+				.setSubText(subText)
+				.setDescription(description)
+				.build();
 	}
 
 	public String getValue(String refrence, String[] values){
@@ -199,12 +214,12 @@ public class Board {
 		System.out.println("Can't find value for: " + refrence);
 		return null;
 	}
-	
+
 	public Color getColor(String color){
 		int r = Integer.parseInt(color.split(",,")[0]);
-        int g = Integer.parseInt(color.split(",,")[1]);
-        int b = Integer.parseInt(color.split(",,")[2]);
-        return new Color(r, g, b);
+		int g = Integer.parseInt(color.split(",,")[1]);
+		int b = Integer.parseInt(color.split(",,")[2]);
+		return new Color(r, g, b);
 	}
 
 
