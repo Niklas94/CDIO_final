@@ -407,86 +407,85 @@ public class Player {
 	public int getTotalHotelsOnYellow() {
 		return playerOwn.getTotalHotelsOnYellow();
 	}
-	
+
 	// Get total owned Houses on a specific field at one of the Blue Streets
-		public int getHousesOnBlueStreet(int blueNumber) {
-			return playerOwn.getHousesOnBlueStreet(blueNumber);
-		}
+	public int getHousesOnBlueStreet(int blueNumber) {
+		return playerOwn.getHousesOnBlueStreet(blueNumber);
+	}
 
-		// Get total owned Houses on a specific field at one of the Green Streets
-		public int getHousesOnGreenStreet(int greenNumber) {
-			return playerOwn.getHousesOnGreenStreet(greenNumber);
-		}
+	// Get total owned Houses on a specific field at one of the Green Streets
+	public int getHousesOnGreenStreet(int greenNumber) {
+		return playerOwn.getHousesOnGreenStreet(greenNumber);
+	}
 
-		// Get total owned Houses on a specific field at one of the Grey Streets
-		public int getHousesOnGreyStreet(int greyNumber) {
-			return playerOwn.getHousesOnGreyStreet(greyNumber);
-		}
+	// Get total owned Houses on a specific field at one of the Grey Streets
+	public int getHousesOnGreyStreet(int greyNumber) {
+		return playerOwn.getHousesOnGreyStreet(greyNumber);
+	}
 
-		// Get total owned Houses on a specific field at one of the Pink Streets
-		public int getHousesOnPinkStreet(int pinkNumber) {
-			return playerOwn.getHousesOnPinkStreet(pinkNumber);
-		}
+	// Get total owned Houses on a specific field at one of the Pink Streets
+	public int getHousesOnPinkStreet(int pinkNumber) {
+		return playerOwn.getHousesOnPinkStreet(pinkNumber);
+	}
 
-		// Get total owned Houses on a specific field at one of the Purple Streets
-		public int getHousesOnPurpleStreet(int purpleNumber) {
-			return playerOwn.getHousesOnPurpleStreet(purpleNumber);
-		}
+	// Get total owned Houses on a specific field at one of the Purple Streets
+	public int getHousesOnPurpleStreet(int purpleNumber) {
+		return playerOwn.getHousesOnPurpleStreet(purpleNumber);
+	}
 
-		// Get total owned Houses on a specific field at one of the Red Streets
-		public int getHousesOnRedStreet(int redNumber) {
-			return playerOwn.getHousesOnRedStreet(redNumber);
-		}
+	// Get total owned Houses on a specific field at one of the Red Streets
+	public int getHousesOnRedStreet(int redNumber) {
+		return playerOwn.getHousesOnRedStreet(redNumber);
+	}
 
-		// Get total owned Houses on a specific field at one of the White Streets
-		public int getHousesOnWhiteStreet(int whiteNumber) {
-			return playerOwn.getHousesOnWhiteStreet(whiteNumber);
-		}
+	// Get total owned Houses on a specific field at one of the White Streets
+	public int getHousesOnWhiteStreet(int whiteNumber) {
+		return playerOwn.getHousesOnWhiteStreet(whiteNumber);
+	}
 
-		// Get total owned Houses on a specific field at one of the Yellow Streets
-		public int getHousesOnYellowStreet(int yellowNumber) {
-			return playerOwn.getHousesOnYellowStreet(yellowNumber);
-		}
+	// Get total owned Houses on a specific field at one of the Yellow Streets
+	public int getHousesOnYellowStreet(int yellowNumber) {
+		return playerOwn.getHousesOnYellowStreet(yellowNumber);
+	}
 
-		// Get total owned Hotels on a specific field at one of the Blue Streets
-		public int getHotelsOnBlueStreet(int blueNumber) {
-			return playerOwn.getHotelsOnBlueStreet(blueNumber);
-		}
+	// Get total owned Hotels on a specific field at one of the Blue Streets
+	public int getHotelsOnBlueStreet(int blueNumber) {
+		return playerOwn.getHotelsOnBlueStreet(blueNumber);
+	}
 
-		// Get total owned Hotels on a specific field at one of the Green Streets
-		public int getHotelsOnGreenStreet(int greenNumber) {
-			return playerOwn.getHotelsOnGreenStreet(greenNumber);
-		}
+	// Get total owned Hotels on a specific field at one of the Green Streets
+	public int getHotelsOnGreenStreet(int greenNumber) {
+		return playerOwn.getHotelsOnGreenStreet(greenNumber);
+	}
 
-		// Get total owned Hotels on a specific field at one of the Grey Streets
-		public int getHotelsOnGreyStreet(int greyNumber) {
-			return playerOwn.getHotelsOnGreyStreet(greyNumber);
-		}
+	// Get total owned Hotels on a specific field at one of the Grey Streets
+	public int getHotelsOnGreyStreet(int greyNumber) {
+		return playerOwn.getHotelsOnGreyStreet(greyNumber);
+	}
 
-		// Get total owned Hotels on a specific field at one of the Pink Streets
-		public int getHotelsOnPinkStreet(int pinkNumber) {
-			return playerOwn.getHotelsOnPinkStreet(pinkNumber);
-		}
+	// Get total owned Hotels on a specific field at one of the Pink Streets
+	public int getHotelsOnPinkStreet(int pinkNumber) {
+		return playerOwn.getHotelsOnPinkStreet(pinkNumber);
+	}
 
-		// Get total owned Hotels on a specific field at one of the Purple Streets
-		public int getHotelsOnPurpleStreet(int purpleNumber) {
-			return playerOwn.getHotelsOnPurpleStreet(purpleNumber);
-		}
+	// Get total owned Hotels on a specific field at one of the Purple Streets
+	public int getHotelsOnPurpleStreet(int purpleNumber) {
+		return playerOwn.getHotelsOnPurpleStreet(purpleNumber);
+	}
 
-		// Get total owned Hotels on a specific field at one of the Red Streets
-		public int getHotelsOnRedStreet(int redNumber) {
-			return playerOwn.getHotelsOnRedStreet(redNumber);
-		}
+	// Get total owned Hotels on a specific field at one of the Red Streets
+	public int getHotelsOnRedStreet(int redNumber) {
+		return playerOwn.getHotelsOnRedStreet(redNumber);
+	}
 
-		// Get total owned Hotels on a specific field at one of the White Streets
-		public int getHotelsOnWhiteStreet(int whiteNumber) {
-			return playerOwn.getHotelsOnWhiteStreet(whiteNumber);
-		}
+	// Get total owned Hotels on a specific field at one of the White Streets
+	public int getHotelsOnWhiteStreet(int whiteNumber) {
+		return playerOwn.getHotelsOnWhiteStreet(whiteNumber);
+	}
 
-		// Get total owned Hotels on a specific field at one of the Yellow Streets
-		public int getHotelsOnYellowStreet(int yellowNumber) {
-			return playerOwn.getHotelsOnYellowStreet(yellowNumber);
-		}
-
+	// Get total owned Hotels on a specific field at one of the Yellow Streets
+	public int getHotelsOnYellowStreet(int yellowNumber) {
+		return playerOwn.getHotelsOnYellowStreet(yellowNumber);
+	}
 
 }
