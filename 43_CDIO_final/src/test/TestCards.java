@@ -29,7 +29,8 @@ public class TestCards {
 		card3 = new FleetCard("Fleet card");
 		card4 = new SpecialCard("Special card");
 		pm.createPlayers();
-		card5 = new PlayerBirthdayCard("Player birthday card", players);
+		card5 = new PlayerBirthdayCard("Player birthday card", pm.getPlayers());
+		
 	}
 
 	@After
