@@ -11,7 +11,7 @@ public abstract class Card {
 	
 	//Set the id of the specific card. 
 	public void setId(int id) {
-		this.id = id;
+		this.id = id; //+1 because index =/= id
 	}
 	
 	//Get the id of the specific card - only makes sense, when using through the CardManagement array of cards.

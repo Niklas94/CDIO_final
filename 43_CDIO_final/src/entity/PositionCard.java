@@ -4,20 +4,17 @@ public class PositionCard extends Card {
 
 	private int position;
 	
-	public PositionCard(int position, String desc) {
+	public PositionCard(int position, String desc, int index) {
 		this.position = position;
 		super.setDescription(desc);
-	}
-	
-	public int getPosition() {
-		return position;
+		super.setId(index);
 	}
 
 	@Override
 	public int useCard() {
 		
 		// TODO Auto-generated method stub
-		return 0;
+		return position;
 	}
 	
 

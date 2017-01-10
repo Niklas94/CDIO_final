@@ -11,4 +11,10 @@ public class OwnableCard extends Card {
 	public boolean isItOwned() {
 		return Owned;
 	}
+
+	@Override
+	public int useCard() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
