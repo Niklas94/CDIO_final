@@ -105,14 +105,14 @@ public class PlayerOwned {
 		totalHousesOnStreetYellow= 0;
 		
 		totalHotelsOwned = 0;
-		totalHotelOnStreetBlue = 0;
-		totalHotelOnStreetGreen = 0;
-		totalHotelOnStreetGrey= 0;
-		totalHotelOnStreetPink= 0;
-		totalHotelOnStreetPurple= 0;
-		totalHotelOnStreetRed= 0;
-		totalHotelOnStreetWhite= 0;
-		totalHotelOnStreetYellow= 0;
+		totalHotelsOnStreetBlue = 0;
+		totalHotelsOnStreetGreen = 0;
+		totalHotelsOnStreetGrey= 0;
+		totalHotelsOnStreetPink= 0;
+		totalHotelsOnStreetPurple= 0;
+		totalHotelsOnStreetRed= 0;
+		totalHotelsOnStreetWhite= 0;
+		totalHotelsOnStreetYellow= 0;
 
 		// Initializes owned fields
 		brewery = new Boolean[2];
