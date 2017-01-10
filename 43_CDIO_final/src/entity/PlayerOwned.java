@@ -507,6 +507,62 @@ public class PlayerOwned {
 		return totalStreetYellowOwned;
 	}
 	
+	// 
+	
+	// Get total owned Houses (ALL)
+	public int getTotalHousesOwned() {
+		return totalHousesOwned;
+
+	}
+	
+	// Get total owned Hotels (ALL)
+	public int getTotalHotelsOwned() {
+		return totalHotelsOwned;
+
+	}
+	
+	// Get total owned Houses on Blue Streets
+	public int getTotalHousesOnBlue() {
+		return totalHousesOnStreetBlue;
+	}
+	
+	// Get total owned Houses on Green Streets
+	public int getTotalHousesOnGreen() {
+		return totalHousesOnStreetGreen;
+	}
+	
+	// Get total owned Houses on Grey Streets
+	public int getTotalHousesOnGrey() {
+		return totalHousesOnStreetGrey;
+	}
+	
+	// Get total owned Houses on Pink Streets
+	public int getTotalHousesOnPink() {
+		return totalHousesOnStreetPink;
+	}
+	
+	// Get total owned Houses on Purple Streets
+	public int getTotalHousesOnPurple() {
+		return totalHousesOnStreetPurple;
+	}
+	
+	// Get total owned Houses on Red Streets
+	public int getTotalHousesOnRed() {
+		return totalHousesOnStreetRed;
+	}
+	
+	// Get total owned Houses on White Streets
+	public int getTotalHousesOnWhite() {
+		return totalHousesOnStreetWhite;
+	}
+	
+	// Get total owned Houses on Yellow Streets
+	public int getTotalHousesOnYellow() {
+		return totalHousesOnStreetYellow;
+	}
+	
+	
+	
 	/*
 	 * Boolean VALUES on fields
 	 */
