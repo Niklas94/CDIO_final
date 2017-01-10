@@ -114,9 +114,6 @@ public class PlayerManagement {
 	public boolean isAlive(int playerNumber) {
 		return player[playerNumber - 1].isAlive();
 	}
-	
-	// Return Account
-	public get
 
 	// Getter to return players left.
 	public int getPlayersLeft() {
