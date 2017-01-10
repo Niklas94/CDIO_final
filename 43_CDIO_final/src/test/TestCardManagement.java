@@ -29,53 +29,44 @@ public class TestCardManagement {
 
 	 */
 	@Test
-	public void testShuffleCards() {
+	public void testShuffleCards() throws Exception {
 
-		int expected = 0;
+		int expected = 27;
 		int actual = 0;
 
 		cm.createCards();
 		cm.shuffleCards();
 
 		for (int i = 0; i < 27; i++) {
-			if (i+1 == cm.pullCard(i).getId()) //I plus i with 1, since each card has an id 1 greater than the index they are located at in the array. Example: card at index 0, has the id 1.
+			if ( != cm.pullCard(i)) //I plus i with 1, since each card has an id 1 greater than the index they are located at in the array. Example: card at index 0, has the id 1.
 				actual++;
 		}
 		assertEquals(expected, actual);
 	}
 
 	@Test
-	public void testPullTopCard() {
-
-		int expected = 0;
-		int actual = 0;
+	public void testPullTopCard() throws Exception {
+		
+		//First we create the cards
 		cm.createCards();
-		Card expected2 = cm.pullCard(0); //This method returns the card from the specific index. In this test, we obviously pick the first card.
-		Card actual2 = cm.pullTopCard(); //The method were testing - it is meant to return the top card while also moving all cards in the deck, 1 index down. 
-
-		for (int i = 0; i < 27; i++) { //This whole for loop is meant to test if the new cards at each index is the same as we would expect, after pulling the top card from the deck once.
-			if (cm.pullCard(i) == null) { //This if-statement is only made to prevent a nullPointerException. Since obviously when you pull a card from a deck, the deck will be 1 card smaller, until the card is returned.
-				System.out.println("Pulled a null card"); //But in our code, we specified the deck as an array which always is the same size, even when you pull a card. In our code, when pulling a card, we make the last index of the array pointing at no object, until A card is returned.
-			}
-			else if (cm.pullCard(i).getId() != i+2) {
-				System.out.println(cm.pullCard(i).getId() + " != " + (i+2));
-				actual++;
-			}
-		}
-		assertEquals(expected, actual);
+		
+		//Then we pull the top card, and gets the description of that card. That description is what we expect to get again, when we now pull the last card in the deck.
+		String expected1 = cm.pullTopCard().getDescription();
+		String actual1 = cm.pullCard(26).getDescription();
+		assertEquals(expected1, actual1);
+		
+		//Now we try again with the 2nd card in the deck. The 2nd card is obviously at the top now, since we alerady pulled the first one.
+		String expected2 = cm.pullTopCard().getDescription();
+		String actual2 = cm.pullCard(0).getDescription();
 		assertEquals(expected2, actual2);
 	}
 
 	@Test
-	public void testReturnCardToDeck() {
+	public void testReturnCardToDeck() throws Exception {
 		
 		cm.createCards();
 		Card expected = cm.pullTopCard(); //Expected card must be the one at the top.
-		cm.returnCardToDeck(cm.getNonOwnableCard(0));
-		
 		Card actual = cm.pullCard(26);
 		assertEquals(expected, actual);
-
 	}
-
 }

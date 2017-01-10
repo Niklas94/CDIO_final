@@ -1,109 +1,50 @@
 package entity;
 
+import java.io.FileReader;
+import java.io.BufferedReader;
+
 public class CardManagement {
 
 	private Card[] cardArr;
-	private Card[] nonOwnableCards;
+	private int numberOfCards;
 
 	//Card Array
 	public CardManagement(int numberOfCards) {
+		this.numberOfCards = numberOfCards;
 		cardArr = new Card[numberOfCards];
-		nonOwnableCards = new Card[numberOfCards];
 	}
 
-	public void createCards() {
+	public void createCards() throws Exception {
 
-		//First we create the desired amount of cards - these card objects have nothing but id.
+		FileReader file = new FileReader("Card Description.txt");
+		BufferedReader br = new BufferedReader(file);
+		String str;
+		String desc;
 
-		for (int i = 0; i < cardArr.length; i++) {
-			cardArr[i] = new Card(); //Lav et tomt kort
-			cardArr[i].setId(i+1); //Sæt det tomme korts id til at være i.
-
-			//From here and on, we give the card objects values, descriptions and may change the boolean ownable, depending on which specific card from the monopoly game, we are talking about.
-			//The descriptions and values are directly copied from the actual cards.
-			//The Easiser cards to implement (Value orientated):
-			if (i < 3) {
-				cardArr[i].setValue(1000);
-				cardArr[i].setDescription("De modtager deres aktieudbytte. Modtag kr. 1.000 af banken.");
+		//Creation of the different type of cards, and what variables they have to caontain, based on the type.
+		int i = 0;
+		while((str = br.readLine()) != null && i < numberOfCards){
+			String type = str.split(";")[0]; //Read the type of the card
+			switch(type){
+			case "MoneyCard": 
+				int amount = Integer.parseInt(str.split(";")[1]); //Read the amount of money a player receives / loses
+				desc = str.split(";")[2]; //Description of the card
+				cardArr[i++] = new MoneyCard(amount, desc);
+				break;
+			case "PositionCard":
+				int amount2 = Integer.parseInt(str.split(";")[1]);
+				desc = str.split(";")[2];
+				cardArr[i++] = new PositionCard(amount2, desc);
+				break;
+			case "FleetCard":
+				desc = str.split(";")[1];
+				cardArr[i++] = new FleetCard(desc);
+				break;
 			}
-			else if (2 < i && i < 5) {
-				cardArr[i].setValue(-3000);
-				cardArr[i].setDescription("Betal kr. 3.000 for reparation af deres vogn.");
-			}
-			else if (i == 5) {
-				cardArr[i].setValue(-1000);
-				cardArr[i].setDescription("Betal deres bilforsikring kr. 1.000.");
-			}
-			else if (5 < i && i < 8) {
-				cardArr[i].setValue(1000);
-				cardArr[i].setDescription("Deres præmieobligation er kommet ud. De modtager kr. 1.000 af banken.");
-			}
-			else if (i == 8) {
-				cardArr[i].setValue(-200);
-				cardArr[i].setDescription("De har været en tur i udlandet og haft for mange cigaretter med hjem. Betal told kr. 200.");
-			}
-			else if (i == 9) {
-				cardArr[i].setValue(500);
-				cardArr[i].setDescription("De har vundet i Klasselotteriet. Modtag kr. 500.");
-			}
-			else if (i == 10) {
-				cardArr[i].setValue(3000);
-				cardArr[i].setDescription("Kommunen har eftergivet et kvartals skat. Hæv i banken kr. 3.000.");
-			}
-			else if (i == 11) {
-				cardArr[i].setValue(-2000);
-				cardArr[i].setDescription("De har modtaget deres tandlægeregning. Betal kr. 2.000.");
-			}
-			else if (i == 12) {
-				cardArr[i].setValue(200);
-				cardArr[i].setDescription("Værdien af egen avl fra nyttehaven udgør kr. 200, som de modtager af banken.");
-			}
-			else if (i == 13) {
-				cardArr[i].setValue(1000);
-				cardArr[i].setDescription("Grundet dyrtiden har de fået gageforhøjelse. Modtag kr. 1.000.");
-			}
-			else if (i == 14) {
-				cardArr[i].setValue(1000);
-				cardArr[i].setDescription("De havde en række med elleve rigtige i tipning. Modtag kr. 1.000.");
-			}
-			else if (i == 15) {
-				cardArr[i].setValue(-200);
-				cardArr[i].setDescription("De har måttet vedtage en parkeringsbøde. Betal kr. 200 i bøde.");
-			}
-			else if (i == 16) {
-				cardArr[i].setValue(-1000);
-				cardArr[i].setDescription("De har kørt frem for Fuld Stop. Betal kr. 1.000 i bøde");
-			}
-			//Slightly harder cards to implement (Position orientated):
-			else if (i == 17) {
-				cardArr[i].setPosition(-3);
-				cardArr[i].setDescription("Ryk tre felter tilbage.");
-			}
-			else if (i == 18) {
-				cardArr[i].setDescription("Ryk frem til Frederiksberg Allé. Hvis de passerer Start, indkassér kr. 4.000.");
-			}
-			else if (i == 19) {
-				cardArr[i].setDescription("Ryk frem til Start.");
-			}
-			else if (i == 20) {
-				cardArr[i].setDescription("Ryk frem til Grønningen. Hvis de passerer Start, indkassér da kr. 4.000.");
-			}
-			else if (i == 21) {
-				cardArr[i].setDescription("Tag ind på Rådhuspladsen.");
-			}
-			else if (21 < i && i < 24) {
-				cardArr[i].setDescription("Ryk brikken frem til det nærmeste rederi og betal ejeren to gange den leje, han ellers er berettiget til. Hvis selskabet ikke ejes af nogen kan de købe det af banken.");
-			}
-			else if (23 < i && i < 26) {
-				cardArr[i].setDescription("Gå i fængsel. Ryk direkte til fængslet. Selv om de passerer Start, indkasserer de ikke kr. 4.000.");
-			}
-			else if (i == 26) {
-				cardArr[i].setDescription("Tag med den nærmeste færge - Flyt brikken frem, og hvis de passerer Start inkassér da kr. 4.000.");
-			}
-			//Add more
 		}
+		br.close();
 	}
-
+	
 	/*Shuffle cards
 
 	There are probably a better method to do this, but this method is doing the following:
@@ -144,75 +85,35 @@ public class CardManagement {
 		//The card you pick 
 		Card topCard = cardArr[0];
 
-		//If card is NOT ownable, store it in another array for non ownable cards.
-		if (!cardArr[0].isItOwnable()) {
-			for (int i = 0; i < cardArr.length; i++) {
-				if (nonOwnableCards[i] == null)
-					nonOwnableCards[i] = cardArr[0];
-			}
-		}
-		
 		//Moving all cards 1 down in index. Now the card at index 1, is now at index 0 - therefore the next top card which is pulled from the deck.
 		for (int i = 0; i < cardArr.length-1; i++) {
 			cardArr[i] = cardArr[i+1];
 		}
-		//this.returnCardToDeck(topCard); //The line below and the for loop about 10 lines above this line, did basically the same as this, but in a slightly different way. Keeping both things for now, just in case.
-		cardArr[cardArr.length-1] = null; //new Card(cardArr.length, 0, "Placeholder");
+
+		//Return card to the bottom of the deck
+		if (!(topCard instanceof OwnableCard))
+			this.returnCardToDeck(topCard); //The line below and the for loop about 10 lines above this line, did basically the same as this, but in a slightly different way. Keeping both things for now, just in case.
+
 		return topCard;
 	}
-	
-	public Card getNonOwnableCard(int index) {
-		return nonOwnableCards[index];
+
+	public void useCard(Card card, Player player) {
+		if (card instanceof MoneyCard)
+			player.updateBalance(((MoneyCard) card).useCard());
+		else if (card instanceof PositionCard){
+			int a = ((PositionCard)card).useCard();
+			if (a < 0)
+				player.setPosition(player.getPosition() - 3);
+			else
+				player.setPosition(((PositionCard) card).useCard());
+		}
+		else if (card instanceof FleetCard) {
+			player.setPosition(((FleetCard) card).useCard(player.getPosition()));
+		}
+		else if (card instanceof OwnableCard) {
+			//player.setOwnedCard(card);
+		}
 	}
-	
-	//Meant to update the balance on a specific player account.
-	public void updateMoney(Card card, Player player) {
-		player.updateBalance(card.getValue());
-	}
-	
-	//Meant to update the position of a specific player.
-	public void updatePosition(Card card, Player player) {
-		
-		if (card.getId() == 17) { //Move back 3 squares/fields
-			player.setPosition(player.getPosition() - 3);
-		}
-		else if (card.getId() == 18) { //Frederiksberg Alle
-			player.setPosition(12);
-		}
-		else if (card.getId() == 19) { //Start
-			player.setPosition(1);
-		}
-		else if (card.getId() == 20) { //Grønningen
-			player.setPosition(25);
-		}
-		else if (card.getId() == 21) { //Rådhuspladsen
-			player.setPosition(40);
-		}
-		else if ((21 < card.getId() && card.getId() < 24) || card.getId() == 26) { //Fleets
-			if (35 < player.getPosition())
-				player.setPosition(6);
-			else if (5 < player.getPosition())
-				player.setPosition(16);
-			else if (15 < player.getPosition())
-				player.setPosition(26);
-			else if (25 < player.getPosition())
-				player.setPosition(36);
-			//Missing an if / else statement, that checks if the specific field is owned, to double up the payment.
-		}
-		else if (23 < card.getId() && card.getId() < 26) { //Prison
-			player.setPosition(31);
-		}
-		
-	}
-	
-	//Meant to check, what the player has to update, based on the ID of the specific card.
-	public void update(Card card, Player player) {
-		if (card.getId() < 17)
-			this.updateMoney(card, player);
-		else if (17 < card.getId() && card.getId() < 26)
-			this.updatePosition(card, player);
-	}
-	
 }
 
 
