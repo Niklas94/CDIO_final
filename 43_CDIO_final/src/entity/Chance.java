@@ -18,6 +18,10 @@ public class Chance extends NonOwnable {
 		// TODO Auto-generated method stub
 		//GUI.displayChanceCard(cm.pullCard(0).getDescription()); //Method to display text
 		cm.pullTopCard().useCard(player); //Perform the action of the card
+
+		int cardId = cm.pullTopCard().getID();
+		cm.returnCardToDeck(cardId);
+		
 	}
 
 	@Override

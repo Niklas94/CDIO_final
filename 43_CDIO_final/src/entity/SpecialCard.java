@@ -13,14 +13,17 @@ public class SpecialCard extends Card {
 	public void useCard(Player player) {
 		
 		if (this.getDescription().charAt(2) == 'e') {
-			value -= 800 *  - 2300 * numberOfHotels;
+			value -= 800 * player.getTotalHousesOwned() - 2300 * player.getTotalHotelsOwned();
+			player.updateBalance(value);
 		}
 		else if (this.getDescription().charAt(2) == 'i') {
-			value -= 500 * numberOfHouses - 2000 * numberOfHotels;
+			value -= 500 * player.getTotalHousesOwned() - 2000 * player.getTotalHotelsOwned();
+			player.updateBalance(value);
 		}
 		else if (this.getDescription().charAt(2) == ' ') {
-			if (player.getTotalValue() < 15000)
+//			if (player.getTotalValue() < 15000)
 				player.updateBalance(40000);
 		}
+		
 	}
 }

@@ -8,7 +8,7 @@ public class OwnableCard extends Card {
 
 	@Override
 	public void useCard(Player player) {
-		//player.setCardOwned(this);
+		player.setJailCardOwned(this);
 	}
 
 }

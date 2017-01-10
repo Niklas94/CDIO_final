@@ -42,29 +42,34 @@ public class CardManagement {
 				int amount = Integer.parseInt(str.split(";")[1]); //Read the amount of money a player receives / loses
 				desc = str.split(";")[2]; //Description of the card
 				cardArr[i++] = new MoneyCard(amount, desc);
+				cardArr[i].setId(i);
 				break;
 			case "PositionCard":
 				int amount2 = Integer.parseInt(str.split(";")[1]);
 				desc = str.split(";")[2];
 				cardArr[i++] = new PositionCard(amount2, desc);
+				cardArr[i].setId(i);
 				break;
 			case "FleetCard":
 				desc = str.split(";")[1];
 				cardArr[i++] = new FleetCard(desc);
+				cardArr[i].setId(i);
 				break;
 			case "SpecialCard":
 				desc = str.split(";")[1];
 				cardArr[i++] = new SpecialCard(desc);
+				cardArr[i].setId(i);
 				break;
 			case "PlayerBirthdayCard":
 				desc = str.split(";")[1];
 				cardArr[i++] = new PlayerBirthdayCard(desc, players);
+				cardArr[i].setId(i);
 				break;
 			}
 		}
 		br.close();
 	}
-	
+
 	/*Shuffle cards
 
 	There are probably a better method to do this, but this method is doing the following:
@@ -91,6 +96,19 @@ public class CardManagement {
 
 	//Return a card back into the deck
 	public void returnCardToDeck(Card card) {
+		if (card instanceof OwnableCard) { //If the card one of the two ownable jailcards.
+			for (int i = 0; i < cardArr.length; i++) {
+				if (cardArr[i] == null) { //Find one of the two 'null' cards (basically what previously were a jailcard).
+					Card tempCard = card; //Save the returning jailcard into a temporary card.
+					for (int j = i; j < cardArr.length; j++) { //Move all the cards from the null card and above, one down in index.
+						cardArr[j] = cardArr[j+1];
+					}
+					cardArr[cardArr.length - 1] = tempCard; //Return the jailcard back into the deck.
+				}
+				break;
+			}
+		}
+
 		cardArr[cardArr.length-1] = card;
 	}
 
@@ -111,14 +129,11 @@ public class CardManagement {
 		}
 
 		//Return card to the bottom of the deck
-		if (!(topCard instanceof OwnableCard))
+		if (!(topCard instanceof OwnableCard)) {
 			this.returnCardToDeck(topCard); //The line below and the for loop about 10 lines above this line, did basically the same as this, but in a slightly different way. Keeping both things for now, just in case.
-
+			cardArr[cardArr.length-1] = null;
+		}
 		return topCard;
-	}
-
-	public void useCard(Card card, Player player) {
-		
 	}
 }
 
