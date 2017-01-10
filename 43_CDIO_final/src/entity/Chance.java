@@ -1,21 +1,23 @@
 package entity;
 
-import controller.CardManagement; 
+import controller.CardManagement;
+import desktop_resources.GUI; 
 
 public class Chance extends NonOwnable {
 	
-	private static Player[] players;
-	private static CardManagement cm = new CardManagement(31, players);
+	CardManagement cm;
 	
-	public Chance(int id) {
+	public Chance(int id, CardManagement cm) {
 		super(id);
+		this.cm = cm;
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void landOnField(Player player) {
 		// TODO Auto-generated method stub
-		cm.pullTopCard().useCard(player);
+		//GUI.displayChanceCard(cm.pullCard(0).getDescription()); //Method to display text
+		cm.pullTopCard().useCard(player); //Perform the action of the card
 	}
 
 	@Override
