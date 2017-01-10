@@ -10,7 +10,11 @@ public class BoardManagement {
 	
 	public BoardManagement() throws Exception{
 		board = new Board();
-		board.createBoard();
+		
+	}
+	
+	public void createBoard(CardManagement cm){
+		board.createBoard(cm);
 	}
 	
 	public Square getOwnableSquares(int id){

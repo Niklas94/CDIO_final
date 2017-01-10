@@ -1,7 +1,7 @@
 type::Start--title::START--subText::Modtag: 4000--description::Modtag kr. 4000, når de passerer start--backgroundColor::255,,0,,0--foregroundColor::0,,0,,0
-type::Street--title::Rødovrevej--subText::Pris:	1200--description::Rødovrevej--rent::Leje: 50--backgroundColor::75,,155,,225--foregroundColor::0,,0,,0
+type::Street--title::Rødovrevej--subText::Pris:	1200--description::Rødovrevej--rent::Leje: 50--backgroundColor::75,,155,,235--foregroundColor::0,,0,,0
 type::Chance
-type::Street--title::Hvidovrevej--subText::Pris: 1200--description::Hvidovrevej--rent::Leje: 50--backgroundColor::75,,155,,225--foregroundColor::0,,0,,0
+type::Street--title::Hvidovrevej--subText::Pris: 1200--description::Hvidovrevej--rent::Leje: 50--backgroundColor::75,,155,,235--foregroundColor::0,,0,,0
 type::Tax--title::10% el. 4000--subText::Betal indkomstskat 10% eller kr. 4000,- --description::Indkomstskat
 type::Fleet--title::SFL--subText::Pris:  4000--description::SFL Færge--rent::Leje: 500
 type::Street--title::Roskildevej--subText::Pris: 2000--description::Roskildevej--rent::Leje: 100--backgroundColor::255,,135,,120--foregroundColor::0,,0,,0
@@ -14,10 +14,10 @@ type::Brewery--title::Tuborg--subText::Pris: 3000--description::Tuborg bryggeri-
 type::Street--title::Bülowsvej--subText::Pris: 2800--description::Bülowsvej--rent::Leje: 200--backgroundColor::102,,204,,0--foregroundColor::0,,0,,0
 type::Street--title::Gammel Kongevej--subText::Pris: 3200--description::Gammel Kongevej--rent::Leje: 250--backgroundColor::102,,204,,0--foregroundColor::0,,0,,0
 type::Fleet--title::Kalundborg/\nÅrhus--subText::Pris: 4000--description::Kalundborg/Århus Færge--rent::Leje: 500
-type::Street--title::Bernstorffsvej--subText::Pris: 3600--description::Bernstorffsvej--rent::Leje: 300--backgroundColor::153,,153,,153--foregroundColor::0,,0,,0
+type::Street--title::Bernstorffsvej--subText::Pris: 3600--description::Bernstorffsvej--rent::Leje: 300--backgroundColor::255,,153,,51--foregroundColor::0,,0,,0
 type::Chance
-type::Street--title::Hellerupvej--subText::Pris: 3600--description::Hellerupvej--rent::Leje: 300--backgroundColor::153,,153,,153--foregroundColor::0,,0,,0
-type::Street--title::Strandvejen--subText::Pris: 4000--description::Strandvejen--rent::Leje: 350--backgroundColor::153,,153,,153--foregroundColor::0,,0,,0
+type::Street--title::Hellerupvej--subText::Pris: 3600--description::Hellerupvej--rent::Leje: 300--backgroundColor::255,,153,,51--foregroundColor::0,,0,,0
+type::Street--title::Strandvejen--subText::Pris: 4000--description::Strandvejen--rent::Leje: 350--backgroundColor::255,,153,,51--foregroundColor::0,,0,,0
 type::Parking--title::Den Danske Bank--subText::Parkering--description::Ta' en pause
 type::Street--title::Trianglen--subText::Pris: 4400--description::Trianglen--rent::Leje: 350--backgroundColor::255,,0,,0--foregroundColor::0,,0,,0
 type::Chance
@@ -35,6 +35,6 @@ type::Chance
 type::Street--title::Nygade--subText::Pris: 6400--description::Nygade--rent::Leje: 600--backgroundColor::255,,255,,50--foregroundColor::0,,0,,0
 type::Fleet--title::Halsskov/\nKnudshoved--subText::Pris: 4000--description::Halsskov/Knudshoved Færge--rent::Leje: 500
 type::Chance
-type::Street--title::Frederiks-\nberggade--subText::Pris: 7000--description::Frederiksberggade--rent::Leje: 700--backgroundColor::150,,60,,150--foregroundColor::255,,255,,255
+type::Street--title::Frederiks-\nberggade--subText::Pris: 7000--description::Frederiksberggade--rent::Leje: 700--backgroundColor::159,,27,,27--foregroundColor::255,,255,,255
 type::Tax--title::Betal 2000kr--subText::Betal ekstraordinær statsskat: kr. 2000,- --description::Ekstraordinær-\nstatsskat
-type::Street--title::Rådhuspladsen--subText::Pris: 8000--description::Rådhuspladsen--rent::Leje: 1000--backgroundColor::150,,60,,150--foregroundColor::255,,255,,255
+type::Street--title::Rådhuspladsen--subText::Pris: 8000--description::Rådhuspladsen--rent::Leje: 1000--backgroundColor::159,,27,,27--foregroundColor::255,,255,,255

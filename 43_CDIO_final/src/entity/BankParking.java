@@ -1,21 +1,22 @@
 package entity;
 
 public class BankParking extends NonOwnable {
+	
+	String name;
 
-	public BankParking(int id) {
+	public BankParking(int id, String name) {
 		super(id);
-		// TODO Auto-generated constructor stub
+		this.name = name;
 	}
 
 	@Override
 	public void landOnField(Player player) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
 	public int getId() {
-		// TODO Auto-generated method stub
 		return this.id;
 	}
 

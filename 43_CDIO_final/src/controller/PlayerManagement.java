@@ -97,6 +97,78 @@ public class PlayerManagement {
 	}
 
 	/*
+	 * Int VALUES on HOUSES
+	 */
+
+	public void setHouseOnStreetBlue(int blueNumber, int houses) {
+		player[blueNumber].setHouseOnStreetBlue(blueNumber, houses);
+	}
+
+	public void setHouseOnStreetGreen(int greenNumber, int houses) {
+		player[greenNumber].setHouseOnStreetGreen(greenNumber, houses);
+	}
+
+	public void setHouseOnStreetGrey(int greyNumber, int houses) {
+		player[greyNumber].setHouseOnStreetGrey(greyNumber, houses);
+	}
+
+	public void setHouseOnStreetPink(int pinkNumber, int houses) {
+		player[pinkNumber].setHouseOnStreetPink(pinkNumber, houses);
+	}
+
+	public void setHouseOnStreetPurple(int purpleNumber, int houses) {
+		player[purpleNumber].setHouseOnStreetPurple(purpleNumber, houses);
+	}
+
+	public void setHouseOnStreetRed(int redNumber, int houses) {
+		player[redNumber].setHouseOnStreetRed(redNumber, houses);
+	}
+
+	public void setHouseOnStreetWhite(int whiteNumber, int houses) {
+		player[whiteNumber].setHouseOnStreetWhite(whiteNumber, houses);
+	}
+
+	public void setHouseOnStreetYellow(int yellowNumber, int houses) {
+		player[yellowNumber].setHouseOnStreetYellow(yellowNumber, houses);
+	}
+
+	/*
+	 * Int VALUES on HOTELS
+	 */
+
+	public void setHotelOnStreetBlue(int blueNumber, int hotel) {
+		player[blueNumber].setHotelOnStreetBlue(blueNumber, hotel);
+	}
+
+	public void setHotelOnStreetGreen(int greenNumber, int hotel) {
+		player[greenNumber].setHotelOnStreetGreen(greenNumber, hotel);
+	}
+
+	public void setHotelOnStreetGrey(int greyNumber, int hotel) {
+		player[greyNumber].setHotelOnStreetGrey(greyNumber, hotel);
+	}
+
+	public void setHotelOnStreetPink(int pinkNumber, int hotel) {
+		player[pinkNumber].setHotelOnStreetPink(pinkNumber, hotel);
+	}
+
+	public void setHotelOnStreetPurple(int purpleNumber, int hotel) {
+		player[purpleNumber].setHotelOnStreetPurple(purpleNumber, hotel);
+	}
+
+	public void setHotelOnStreetRed(int redNumber, int hotel) {
+		player[redNumber].setHotelOnStreetRed(redNumber, hotel);
+	}
+
+	public void setHotelOnStreetWhite(int whiteNumber, int hotel) {
+		player[whiteNumber].setHotelOnStreetWhite(whiteNumber, hotel);
+	}
+
+	public void setHotelOnStreetYellow(int yellowNumber, int hotel) {
+		player[yellowNumber].setHotelOnStreetYellow(yellowNumber, hotel);
+	}
+
+	/*
 	 * GETTERS
 	 */
 
@@ -119,7 +191,7 @@ public class PlayerManagement {
 	public int getPlayersLeft() {
 		return playersLeft;
 	}
-	
+
 	// Getter to return player
 	public Player[] getPlayerArray() {
 		return player;
@@ -228,6 +300,17 @@ public class PlayerManagement {
 	// Get total owned Yellow Streets
 	public int getTotalStreetYellowOwned(int playerNumber) {
 		return player[playerNumber - 1].getTotalStreetYellowOwned();
+	}
+
+	// Get total owned Houses (ALL)
+	public int getTotalHousesOwned(int playerNumber) {
+		return player[playerNumber].getTotalHousesOwned();
+	}
+
+	// Get total owned Hotels (ALL)
+	public int getTotalHotelsOwned(int playerNumber) {
+		return player[playerNumber].getTotalHotelsOwned();
+
 	}
 
 }

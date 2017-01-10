@@ -20,9 +20,12 @@ public class CardManagement {
 	private Player[] players;
 
 	//Card Array
-	public CardManagement(int numberOfCards, Player[] players) {
+	public CardManagement(int numberOfCards) {
 		this.numberOfCards = numberOfCards;
 		cardArr = new Card[numberOfCards];
+	}
+	
+	public void getPlayerArray(Player[] players) {
 		this.players = players;
 	}
 

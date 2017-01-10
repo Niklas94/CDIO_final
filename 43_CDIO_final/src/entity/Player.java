@@ -110,6 +110,78 @@ public class Player {
 	}
 
 	/*
+	 * Int VALUES on HOUSES
+	 */
+
+	public void setHouseOnStreetBlue(int blueNumber, int houses) {
+		playerOwn.setHouseOnStreetBlue(blueNumber, houses);
+	}
+
+	public void setHouseOnStreetGreen(int greenNumber, int houses) {
+		playerOwn.setHouseOnStreetGreen(greenNumber, houses);
+	}
+
+	public void setHouseOnStreetGrey(int greyNumber, int houses) {
+		playerOwn.setHouseOnStreetGrey(greyNumber, houses);
+	}
+
+	public void setHouseOnStreetPink(int pinkNumber, int houses) {
+		playerOwn.setHouseOnStreetPink(pinkNumber, houses);
+	}
+
+	public void setHouseOnStreetPurple(int purpleNumber, int houses) {
+		playerOwn.setHouseOnStreetPurple(purpleNumber, houses);
+	}
+
+	public void setHouseOnStreetRed(int redNumber, int houses) {
+		playerOwn.setHouseOnStreetRed(redNumber, houses);
+	}
+
+	public void setHouseOnStreetWhite(int whiteNumber, int houses) {
+		playerOwn.setHouseOnStreetWhite(whiteNumber, houses);
+	}
+
+	public void setHouseOnStreetYellow(int yellowNumber, int houses) {
+		playerOwn.setHouseOnStreetYellow(yellowNumber, houses);
+	}
+
+	/*
+	 * Int VALUES on HOTELS
+	 */
+
+	public void setHotelOnStreetBlue(int blueNumber, int hotel) {
+		playerOwn.setHotelOnStreetBlue(blueNumber, hotel);
+	}
+
+	public void setHotelOnStreetGreen(int greenNumber, int hotel) {
+		playerOwn.setHotelOnStreetGreen(greenNumber, hotel);
+	}
+
+	public void setHotelOnStreetGrey(int greyNumber, int hotel) {
+		playerOwn.setHotelOnStreetGrey(greyNumber, hotel);
+	}
+
+	public void setHotelOnStreetPink(int pinkNumber, int hotel) {
+		playerOwn.setHotelOnStreetPink(pinkNumber, hotel);
+	}
+
+	public void setHotelOnStreetPurple(int purpleNumber, int hotel) {
+		playerOwn.setHotelOnStreetPurple(purpleNumber, hotel);
+	}
+
+	public void setHotelOnStreetRed(int redNumber, int hotel) {
+		playerOwn.setHotelOnStreetRed(redNumber, hotel);
+	}
+
+	public void setHotelOnStreetWhite(int whiteNumber, int hotel) {
+		playerOwn.setHotelOnStreetWhite(whiteNumber, hotel);
+	}
+
+	public void setHotelOnStreetYellow(int yellowNumber, int hotel) {
+		playerOwn.setHotelOnStreetYellow(yellowNumber, hotel);
+	}
+
+	/*
 	 * GETTERS
 	 */
 
@@ -254,6 +326,86 @@ public class Player {
 	public int getTotalHotelsOwned() {
 		return playerOwn.getTotalHotelsOwned();
 
+	}
+
+	// Get total owned Houses on Blue Streets
+	public int getTotalHousesOnBlue() {
+		return playerOwn.getTotalHousesOnBlue();
+	}
+
+	// Get total owned Houses on Green Streets
+	public int getTotalHousesOnGreen() {
+		return playerOwn.getTotalHousesOnGreen();
+	}
+
+	// Get total owned Houses on Grey Streets
+	public int getTotalHousesOnGrey() {
+		return playerOwn.getTotalHousesOnGrey();
+	}
+
+	// Get total owned Houses on Pink Streets
+	public int getTotalHousesOnPink() {
+		return playerOwn.getTotalHousesOnPink();
+	}
+
+	// Get total owned Houses on Purple Streets
+	public int getTotalHousesOnPurple() {
+		return playerOwn.getTotalHousesOnPurple();
+	}
+
+	// Get total owned Houses on Red Streets
+	public int getTotalHousesOnRed() {
+		return playerOwn.getTotalHousesOnRed();
+	}
+
+	// Get total owned Houses on White Streets
+	public int getTotalHousesOnWhite() {
+		return playerOwn.getTotalHousesOnWhite();
+	}
+
+	// Get total owned Houses on Yellow Streets
+	public int getTotalHousesOnYellow() {
+		return playerOwn.getTotalHousesOnYellow();
+	}
+
+	// Get total owned Hotels on Blue Streets
+	public int getTotalHotelsOnBlue() {
+		return playerOwn.getTotalHotelsOnBlue();
+	}
+
+	// Get total owned Hotels on Green Streets
+	public int getTotalHotelsOnGreen() {
+		return playerOwn.getTotalHotelsOnGreen();
+	}
+
+	// Get total owned Hotels on Grey Streets
+	public int getTotalHotelsOnGrey() {
+		return playerOwn.getTotalHotelsOnGrey();
+	}
+
+	// Get total owned Hotels on Pink Streets
+	public int getTotalHotelsOnPink() {
+		return playerOwn.getTotalHotelsOnPink();
+	}
+
+	// Get total owned Hotels on Purple Streets
+	public int getTotalHotelsOnPurple() {
+		return playerOwn.getTotalHotelsOnPurple();
+	}
+
+	// Get total owned Hotels on Red Streets
+	public int getTotalHotelsOnRed() {
+		return playerOwn.getTotalHotelsOnRed();
+	}
+
+	// Get total owned Hotels on White Streets
+	public int getTotalHotelsOnWhite() {
+		return playerOwn.getTotalHotelsOnWhite();
+	}
+
+	// Get total owned Hotels on Yellow Streets
+	public int getTotalHotelsOnYellow() {
+		return playerOwn.getTotalHotelsOnYellow();
 	}
 
 }
