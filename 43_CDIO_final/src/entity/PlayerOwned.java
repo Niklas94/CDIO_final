@@ -38,14 +38,14 @@ public class PlayerOwned {
 	private int totalHousesOnStreetYellow;
 	
 	private int totalHotelsOwned;
-	private int totalHotelOnStreetBlue;
-	private int totalHotelOnStreetGreen;
-	private int totalHotelOnStreetGrey;
-	private int totalHotelOnStreetPink;
-	private int totalHotelOnStreetPurple;
-	private int totalHotelOnStreetRed;
-	private int totalHotelOnStreetWhite;
-	private int totalHotelOnStreetYellow;
+	private int totalHotelsOnStreetBlue;
+	private int totalHotelsOnStreetGreen;
+	private int totalHotelsOnStreetGrey;
+	private int totalHotelsOnStreetPink;
+	private int totalHotelsOnStreetPurple;
+	private int totalHotelsOnStreetRed;
+	private int totalHotelsOnStreetWhite;
+	private int totalHotelsOnStreetYellow;
 
 	private Boolean[] brewery;
 	private Boolean[] fleet;
@@ -394,48 +394,48 @@ public class PlayerOwned {
 	public void setHotelOnStreetBlue(int blueNumber, int hotel) {
 		houseOnStreetBlue[blueNumber - 1] = hotel;
 		totalHotelsOwned = hotel;
-		totalHotelOnStreetBlue = hotel;
+		totalHotelsOnStreetBlue = hotel;
 }
 	public void setHotelOnStreetGreen(int greenNumber, int hotel) {
 		houseOnStreetGreen[greenNumber - 1] = hotel;
 		totalHotelsOwned = hotel;
-		totalHotelOnStreetGreen = hotel;
+		totalHotelsOnStreetGreen = hotel;
 }
 	
 	public void setHotelOnStreetGrey(int greyNumber, int hotel) {
 		houseOnStreetGrey[greyNumber - 1] = hotel;
 		totalHotelsOwned = hotel;
-		totalHotelOnStreetGrey = hotel;
+		totalHotelsOnStreetGrey = hotel;
 }
 	
 	public void setHotelOnStreetPink(int pinkNumber, int hotel) {
 		houseOnStreetPink[pinkNumber - 1] = hotel;
 		totalHotelsOwned = hotel;
-		totalHotelOnStreetPink = hotel;
+		totalHotelsOnStreetPink = hotel;
 }
 	
 	public void setHotelOnStreetPurple(int purpleNumber, int hotel) {
 		houseOnStreetPurple[purpleNumber - 1] = hotel;
 		totalHotelsOwned = hotel;
-		totalHotelOnStreetPurple = hotel;
+		totalHotelsOnStreetPurple = hotel;
 }
 	
 	public void setHotelOnStreetRed(int redNumber, int hotel) {
 		houseOnStreetRed[redNumber - 1] = hotel;
 		totalHotelsOwned = hotel;
-		totalHotelOnStreetRed = hotel;
+		totalHotelsOnStreetRed = hotel;
 }
 	
 	public void setHotelOnStreetWhite(int whiteNumber, int hotel) {
 		houseOnStreetWhite[whiteNumber - 1] = hotel;
 		totalHotelsOwned = hotel;
-		totalHotelOnStreetWhite = hotel;
+		totalHotelsOnStreetWhite = hotel;
 }
 	
 	public void setHotelOnStreetYellow(int yellowNumber, int hotel) {
 		houseOnStreetYellow[yellowNumber - 1] = hotel;
 		totalHotelsOwned = hotel;
-		totalHotelOnStreetYellow = hotel;
+		totalHotelsOnStreetYellow = hotel;
 }
 	
 	/*
@@ -559,6 +559,46 @@ public class PlayerOwned {
 	// Get total owned Houses on Yellow Streets
 	public int getTotalHousesOnYellow() {
 		return totalHousesOnStreetYellow;
+	}
+	
+	// Get total owned Hotels on Blue Streets
+	public int getTotalHotelsOnBlue() {
+		return totalHotelsOnStreetBlue;
+	}
+	
+	// Get total owned Hotels on Green Streets
+	public int getTotalHotelsOnGreen() {
+		return totalHotelsOnStreetGreen;
+	}
+	
+	// Get total owned Hotels on Grey Streets
+	public int getTotalHotelsOnGrey() {
+		return totalHotelsOnStreetGrey;
+	}
+	
+	// Get total owned Hotels on Pink Streets
+	public int getTotalHotelsOnPink() {
+		return totalHotelsOnStreetPink;
+	}
+	
+	// Get total owned Hotels on Purple Streets
+	public int getTotalHotelsOnPurple() {
+		return totalHotelsOnStreetPurple;
+	}
+	
+	// Get total owned Hotels on Red Streets
+	public int getTotalHotelsOnRed() {
+		return totalHotelsOnStreetRed;
+	}
+	
+	// Get total owned Hotels on White Streets
+	public int getTotalHotelsOnWhite() {
+		return totalHotelsOnStreetWhite;
+	}
+	
+	// Get total owned Hotels on Yellow Streets
+	public int getTotalHotelsOnYellow() {
+		return totalHotelsOnStreetYellow;
 	}
 	
 	
