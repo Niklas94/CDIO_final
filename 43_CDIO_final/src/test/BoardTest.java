@@ -6,9 +6,13 @@ import desktop_resources.GUI;
 
 public class BoardTest {
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		BoardManagement bM = new BoardManagement();
+		try {
+			BoardManagement bM = new BoardManagement();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		GUI.addPlayer("John Rambo", 10000);
 
 	}

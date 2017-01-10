@@ -11,8 +11,10 @@ import desktop_fields.Street;
 import desktop_fields.Tax;
 import desktop_resources.GUI;
 import java.io.FileReader;
+import java.io.IOException;
 import java.awt.Color;
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 
 public class Board {
 
@@ -36,62 +38,69 @@ public class Board {
 		System.out.println("this square is not ownable.");
 		return null;		
 	}
-	
 
-	public void createBoard() throws Exception{
-		FileReader file = new FileReader("Squares.txt");
-		BufferedReader br = new BufferedReader(file);
-		String str = br.readLine();
-		int index = 0;
 
-		for(int i = 0; i < squares.length ; i++){
-			squares[i] = str;
-			str = br.readLine();
-		}
-		br.close();
+	public void createBoard() {
+		FileReader file;
+		try {
+			file = new FileReader("Squares.txt");
+			BufferedReader br = new BufferedReader(file);
+			String str = br.readLine();
+			int index = 0;
 
-		for(int i = 0; i < squares.length; i++){
-			String[] values = squares[i].split("--");
-
-			switch(getValue("type", values)) {
-			case "Start":
-				createStart(values, index);
-				index++;
-				break;
-			case "Street":
-				createStreet(values, index);
-				index++;
-				break;
-			case "Brewery":
-				createBrewery(values, index);
-				index++;
-				break;
-			case "Fleet":
-				createFleet(values, index);
-				index++;
-				break;
-			case "Parking":
-				createParking(values, index);
-				index++;
-				break;
-			case "Jail":
-				createJail(values, index);
-				index++;
-				break;
-			case "Chance":
-				createChance(index);
-				index++;
-				break;
-			case "Tax":
-				createTax(values, index);
-				index++;
-				break;
-			default:
-				break;
+			for(int i = 0; i < squares.length ; i++){
+				squares[i] = str;
+				str = br.readLine();
 			}
-			GUI.create(guiField);
-		}
+			br.close();
 
+			for(int i = 0; i < squares.length; i++){
+				String[] values = squares[i].split("--");
+
+				switch(getValue("type", values)) {
+				case "Start":
+					createStart(values, index);
+					index++;
+					break;
+				case "Street":
+					createStreet(values, index);
+					index++;
+					break;
+				case "Brewery":
+					createBrewery(values, index);
+					index++;
+					break;
+				case "Fleet":
+					createFleet(values, index);
+					index++;
+					break;
+				case "Parking":
+					createParking(values, index);
+					index++;
+					break;
+				case "Jail":
+					createJail(values, index);
+					index++;
+					break;
+				case "Chance":
+					createChance(index);
+					index++;
+					break;
+				case "Tax":
+					createTax(values, index);
+					index++;
+					break;
+				default:
+					break;
+				}
+				GUI.create(guiField);
+			}
+
+//		} catch (FileNotFoundException e) {
+//			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
 
 	}
