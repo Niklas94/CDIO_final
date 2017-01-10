@@ -120,7 +120,7 @@ public class Player {
 		return isAlive;
 	}
 	
-	public Account setAccount() {
+	public Account getAccount() {
 	return this.myAccount;
 	}
 
