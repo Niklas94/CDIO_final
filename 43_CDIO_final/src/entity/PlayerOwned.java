@@ -26,26 +26,36 @@ public class PlayerOwned {
 	private int totalStreetRedOwned;
 	private int totalStreetWhiteOwned;
 	private int totalStreetYellowOwned;
+	
+	private int totalHousesOwned;
+	private int totalHousesOnStreetBlue;
+	private int totalHousesOnStreetGreen;
+	private int totalHousesOnStreetGrey;
+	private int totalHousesOnStreetPink;
+	private int totalHousesOnStreetPurple;
+	private int totalHousesOnStreetRed;
+	private int totalHousesOnStreetWhite;
+	private int totalHousesOnStreetYellow;
 
 	private Boolean[] brewery;
 	private Boolean[] fleet;
-	private Boolean[] streetBlue;
-	private Boolean[] streetGreen;
-	private Boolean[] streetGrey;
-	private Boolean[] streetPink;
-	private Boolean[] streetPurple;
-	private Boolean[] streetRed;
-	private Boolean[] streetWhite;
-	private Boolean[] streetYellow;
+	private Boolean[] streetOnBlue;
+	private Boolean[] streetOnGreen;
+	private Boolean[] streetOnGrey;
+	private Boolean[] streetOnPink;
+	private Boolean[] streetOnPurple;
+	private Boolean[] streetOnRed;
+	private Boolean[] streetOnWhite;
+	private Boolean[] streetOnYellow;
 	
-	private int[] houseStreetBlue;
-	private int[] houseStreetGreen;
-	private int[] houseStreetGrey;
-	private int[] houseStreetPink;
-	private int[] houseStreetPurple;
-	private int[] houseStreetRed;
-	private int[] houseStreetWhite;
-	private int[] houseStreetYellow;
+	private int[] houseOnStreetBlue;
+	private int[] houseOnStreetGreen;
+	private int[] houseOnStreetGrey;
+	private int[] houseOnStreetPink;
+	private int[] houseOnStreetPurple;
+	private int[] houseOnStreetRed;
+	private int[] houseOnStreetWhite;
+	private int[] houseOnStreetYellow;
 
 	/*
 	 * Constructor
@@ -64,50 +74,60 @@ public class PlayerOwned {
 		totalStreetWhiteOwned = 0;
 		totalStreetYellowOwned = 0;
 		totalStreetOwned = 0;
+		
+		totalHousesOwned = 0;
+		totalHousesOnStreetBlue = 0;
+		totalHousesOnStreetGreen = 0;
+		totalHousesOnStreetGrey= 0;
+		totalHousesOnStreetPink= 0;
+		totalHousesOnStreetPurple= 0;
+		totalHousesOnStreetRed= 0;
+		totalHousesOnStreetWhite= 0;
+		totalHousesOnStreetYellow= 0;
 
 		// Initializes owned fields
 		brewery = new Boolean[2];
 		fleet = new Boolean[4];
-		streetBlue = new Boolean[2];
-		streetGreen = new Boolean[3];
-		streetGrey = new Boolean[3];
-		streetPink = new Boolean[3];
-		streetPurple = new Boolean[2];
-		streetRed = new Boolean[3];
-		streetWhite = new Boolean[3];
-		streetYellow = new Boolean[3];
+		streetOnBlue = new Boolean[2];
+		streetOnGreen = new Boolean[3];
+		streetOnGrey = new Boolean[3];
+		streetOnPink = new Boolean[3];
+		streetOnPurple = new Boolean[2];
+		streetOnRed = new Boolean[3];
+		streetOnWhite = new Boolean[3];
+		streetOnYellow = new Boolean[3];
 		
 		//Initializes owned houses array sizes
-		houseStreetBlue = new int[2];
-		houseStreetGreen = new int[3];
-		houseStreetGrey = new int[3];
-		houseStreetPink = new int[3];
-		houseStreetPurple = new int[2];
-		houseStreetRed = new int[3];
-		houseStreetWhite = new int[3];
-		houseStreetYellow = new int[3];
+		houseOnStreetBlue = new int[2];
+		houseOnStreetGreen = new int[3];
+		houseOnStreetGrey = new int[3];
+		houseOnStreetPink = new int[3];
+		houseOnStreetPurple = new int[2];
+		houseOnStreetRed = new int[3];
+		houseOnStreetWhite = new int[3];
+		houseOnStreetYellow = new int[3];
 
 		//Initializes owned field arrays values to false
 		Arrays.fill(brewery, false);
 		Arrays.fill(fleet, false);
-		Arrays.fill(streetBlue, false);
-		Arrays.fill(streetGreen, false);
-		Arrays.fill(streetGrey, false);
-		Arrays.fill(streetPink, false);
-		Arrays.fill(streetPurple, false);
-		Arrays.fill(streetRed, false);
-		Arrays.fill(streetWhite, false);
-		Arrays.fill(streetYellow, false);
+		Arrays.fill(streetOnBlue, false);
+		Arrays.fill(streetOnGreen, false);
+		Arrays.fill(streetOnGrey, false);
+		Arrays.fill(streetOnPink, false);
+		Arrays.fill(streetOnPurple, false);
+		Arrays.fill(streetOnRed, false);
+		Arrays.fill(streetOnWhite, false);
+		Arrays.fill(streetOnYellow, false);
 		
 		//Initializes owned house arrays value to 0
-		Arrays.fill(houseStreetBlue, 0);
-		Arrays.fill(houseStreetGreen, 0);
-		Arrays.fill(houseStreetGrey, 0);
-		Arrays.fill(houseStreetPink, 0);
-		Arrays.fill(houseStreetPurple, 0);
-		Arrays.fill(houseStreetRed, 0);
-		Arrays.fill(houseStreetWhite, 0);
-		Arrays.fill(houseStreetYellow, 0);
+		Arrays.fill(houseOnStreetBlue, 0);
+		Arrays.fill(houseOnStreetGreen, 0);
+		Arrays.fill(houseOnStreetGrey, 0);
+		Arrays.fill(houseOnStreetPink, 0);
+		Arrays.fill(houseOnStreetPurple, 0);
+		Arrays.fill(houseOnStreetRed, 0);
+		Arrays.fill(houseOnStreetWhite, 0);
+		Arrays.fill(houseOnStreetYellow, 0);
 
 	}
 
@@ -159,11 +179,11 @@ public class PlayerOwned {
 	// Set the Blue Street to owned or not by its number and a boolean value.
 	public void setStreetBlueOwned(int blueNumber, Boolean bool) {
 		if (bool == true) {
-			streetBlue[blueNumber - 1] = bool;
+			streetOnBlue[blueNumber - 1] = bool;
 			totalStreetOwned++;
 			totalStreetBlueOwned++;
 		} else {
-			streetBlue[blueNumber - 1] = bool;
+			streetOnBlue[blueNumber - 1] = bool;
 			totalStreetOwned--;
 			totalStreetBlueOwned--;
 		}
@@ -173,11 +193,11 @@ public class PlayerOwned {
 	// Set the Green Street to owned or not by its number and a boolean value.
 	public void setStreetGreenOwned(int greenNumber, Boolean bool) {
 		if (bool == true) {
-			streetGreen[greenNumber - 1] = bool;
+			streetOnGreen[greenNumber - 1] = bool;
 			totalStreetOwned++;
 			totalStreetGreenOwned++;
 		} else {
-			streetGreen[greenNumber - 1] = bool;
+			streetOnGreen[greenNumber - 1] = bool;
 			totalStreetOwned--;
 			totalStreetGreenOwned--;
 		}
@@ -187,11 +207,11 @@ public class PlayerOwned {
 	// Set the Grey Street to owned or not by its number and a boolean value.
 	public void setStreetGreyOwned(int greyNumber, Boolean bool) {
 		if (bool == true) {
-			streetGrey[greyNumber - 1] = bool;
+			streetOnGrey[greyNumber - 1] = bool;
 			totalStreetOwned++;
 			totalStreetGreyOwned++;
 		} else {
-			streetGrey[greyNumber - 1] = bool;
+			streetOnGrey[greyNumber - 1] = bool;
 			totalStreetOwned--;
 			totalStreetGreyOwned--;
 		}
@@ -201,11 +221,11 @@ public class PlayerOwned {
 	// Set the Pink Street to owned or not by its number and a boolean value.
 	public void setStreetPinkOwned(int pinkNumber, Boolean bool) {
 		if (bool == true) {
-			streetPink[pinkNumber - 1] = bool;
+			streetOnPink[pinkNumber - 1] = bool;
 			totalStreetOwned++;
 			totalStreetPinkOwned++;
 		} else {
-			streetPink[pinkNumber - 1] = bool;
+			streetOnPink[pinkNumber - 1] = bool;
 			totalStreetOwned--;
 			totalStreetPinkOwned--;
 		}
@@ -215,11 +235,11 @@ public class PlayerOwned {
 	// Set the Purple Street to owned or not by its number and a boolean value.
 	public void setStreetPurpleOwned(int purpleNumber, Boolean bool) {
 		if (bool == true) {
-			streetPurple[purpleNumber - 1] = bool;
+			streetOnPurple[purpleNumber - 1] = bool;
 			totalStreetOwned++;
 			totalStreetPurpleOwned++;
 		} else {
-			streetPurple[purpleNumber - 1] = bool;
+			streetOnPurple[purpleNumber - 1] = bool;
 			totalStreetOwned--;
 			totalStreetPurpleOwned--;
 		}
@@ -229,11 +249,11 @@ public class PlayerOwned {
 	// Set the Red Street to owned or not by its number and a boolean value.
 	public void setStreetRedOwned(int redNumber, Boolean bool) {
 		if (bool == true) {
-			streetRed[redNumber - 1] = bool;
+			streetOnRed[redNumber - 1] = bool;
 			totalStreetOwned++;
 			totalStreetRedOwned++;
 		} else {
-			streetRed[redNumber - 1] = bool;
+			streetOnRed[redNumber - 1] = bool;
 			totalStreetOwned--;
 			totalStreetRedOwned--;
 		}
@@ -243,11 +263,11 @@ public class PlayerOwned {
 	// Set the White Street to owned or not by its number and a boolean value.
 	public void setStreetWhiteOwned(int whiteNumber, Boolean bool) {
 		if (bool == true) {
-			streetWhite[whiteNumber - 1] = bool;
+			streetOnWhite[whiteNumber - 1] = bool;
 			totalStreetOwned++;
 			totalStreetWhiteOwned++;
 		} else {
-			streetWhite[whiteNumber - 1] = bool;
+			streetOnWhite[whiteNumber - 1] = bool;
 			totalStreetOwned--;
 			totalStreetWhiteOwned--;
 		}
@@ -257,11 +277,11 @@ public class PlayerOwned {
 	// Set the Yellow Street to owned or not by its number and a boolean value.
 	public void setStreetYellowOwned(int yellowNumber, Boolean bool) {
 		if (bool == true) {
-			streetYellow[yellowNumber - 1] = bool;
+			streetOnYellow[yellowNumber - 1] = bool;
 			totalStreetOwned++;
 			totalStreetYellowOwned++;
 		} else {
-			streetYellow[yellowNumber - 1] = bool;
+			streetOnYellow[yellowNumber - 1] = bool;
 			totalStreetOwned--;
 			totalStreetYellowOwned--;
 		}
@@ -272,17 +292,29 @@ public class PlayerOwned {
 	 * Int VALUES on HOUSES
 	 */
 	
-	public void setHouseStreetBlueOwned(int blueNumber, Boolean bool) {
-		if (bool == true) {
-			streetYellow[yellowNumber - 1] = bool;
-			totalStreetOwned++;
-			totalStreetYellowOwned++;
-		} else {
-			streetYellow[yellowNumber - 1] = bool;
-			totalStreetOwned--;
-			totalStreetYellowOwned--;
-		}
+	public void setHouseOnStreetBlue(int blueNumber, int houses) {
+			houseOnStreetBlue[blueNumber - 1] = houses;
+			totalHousesOwned = houses;
+			totalHousesOnStreetBlue = houses;
 	}
+	
+	public void setHouseOnStreetGreen(int greenNumber, int houses) {
+		houseOnStreetGreen[greenNumber - 1] = houses;
+		totalHousesOwned = houses;
+		totalHousesOnStreetGreen = houses;
+}
+
+	public void setHouseOnStreetGrey(int greyNumber, int houses) {
+		houseOnStreetGrey[greyNumber - 1] = houses;
+		totalHousesOwned = houses;
+		totalHousesOnStreetGrey = houses;
+}
+	
+	public void setHouseOnStreetGrey(int greyNumber, int houses) {
+		houseOnStreetGrey[greyNumber - 1] = houses;
+		totalHousesOwned = houses;
+		totalHousesOnStreetGrey = houses;
+}
 
 	/*
 	 * GETTERS
@@ -369,42 +401,42 @@ public class PlayerOwned {
 
 	// Get owned status on Blue Street 1 or 2
 	public boolean getStreetBlueOwned(int blueNumber) {
-		return streetBlue[blueNumber - 1];
+		return streetOnBlue[blueNumber - 1];
 	}
 
 	// Get owned status on Green Street 1, 2 or 3
 	public boolean getStreetGreenOwned(int greenNumber) {
-		return streetGreen[greenNumber - 1];
+		return streetOnGreen[greenNumber - 1];
 	}
 
 	// Get owned status on Grey Street 1, 2 or 3
 	public boolean getStreetGreyOwned(int greyNumber) {
-		return streetGrey[greyNumber - 1];
+		return streetOnGrey[greyNumber - 1];
 	}
 
 	// Get owned status on Pink Street 1, 2 or 3
 	public boolean getStreetPinkOwned(int pinkNumber) {
-		return streetPink[pinkNumber - 1];
+		return streetOnPink[pinkNumber - 1];
 	}
 
 	// Get owned status on Purple Street 1 or 2
 	public boolean getStreetPurpleOwned(int purpleNumber) {
-		return streetPurple[purpleNumber - 1];
+		return streetOnPurple[purpleNumber - 1];
 	}
 
 	// Get owned status on Red Street 1, 2 or 3
 	public boolean getStreetRedOwned(int redNumber) {
-		return streetRed[redNumber - 1];
+		return streetOnRed[redNumber - 1];
 	}
 
 	// Get owned status on White Street 1, 2 or 3
 	public boolean getStreetWhiteOwned(int whiteNumber) {
-		return streetWhite[whiteNumber - 1];
+		return streetOnWhite[whiteNumber - 1];
 	}
 
 	// Get owned status on Yellow Street 1, 2 or 3
 	public boolean getStreetYellowOwned(int yellowNumber) {
-		return streetYellow[yellowNumber - 1];
+		return streetOnYellow[yellowNumber - 1];
 	}
 
 }

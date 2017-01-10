@@ -114,13 +114,15 @@ public class PlayerManagement {
 	public boolean isAlive(int playerNumber) {
 		return player[playerNumber - 1].isAlive();
 	}
-	
-	// Return Account
-	public get
 
 	// Getter to return players left.
 	public int getPlayersLeft() {
 		return playersLeft;
+	}
+	
+	// Getter to return player
+	public Player[] getPlayerArray() {
+		return player;
 	}
 
 	// Get player owned status on Brewery 1 or 2
