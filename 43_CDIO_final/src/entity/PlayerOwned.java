@@ -39,13 +39,13 @@ public class PlayerOwned {
 	private Boolean[] streetYellow;
 
 	/*
-	 * Constructor 
+	 * Constructor
 	 */
-	
+
 	public PlayerOwned() {
 
 		totalBreweryOwned = 0;
-		totalFleetOwned = 0;		
+		totalFleetOwned = 0;
 		totalStreetBlueOwned = 0;
 		totalStreetGreenOwned = 0;
 		totalStreetGreyOwned = 0;
@@ -66,9 +66,6 @@ public class PlayerOwned {
 		streetRed = new Boolean[3];
 		streetWhite = new Boolean[3];
 		streetYellow = new Boolean[3];
-		
-		
-		
 
 		Arrays.fill(brewery, false);
 		Arrays.fill(fleet, false);
@@ -299,42 +296,52 @@ public class PlayerOwned {
 	public int getTotalStreetYellowOwned() {
 		return totalStreetYellowOwned;
 	}
+
 	// Get owned status on Brewery 1 or 2
 	public boolean getBreweryOwned(int breweryNumber) {
 		return brewery[breweryNumber - 1];
 	}
+
 	// Get owned status on Fleet 1, 2, 3 or 4
 	public boolean getFleetOwned(int fleetNumber) {
 		return fleet[fleetNumber - 1];
 	}
+
 	// Get owned status on Blue Street 1 or 2
 	public boolean getStreetBlueOwned(int blueNumber) {
 		return streetBlue[blueNumber - 1];
 	}
+
 	// Get owned status on Green Street 1, 2 or 3
 	public boolean getStreetGreenOwned(int greenNumber) {
 		return streetGreen[greenNumber - 1];
 	}
+
 	// Get owned status on Grey Street 1, 2 or 3
 	public boolean getStreetGreyOwned(int greyNumber) {
 		return streetGrey[greyNumber - 1];
 	}
+
 	// Get owned status on Pink Street 1, 2 or 3
 	public boolean getStreetPinkOwned(int pinkNumber) {
 		return streetPink[pinkNumber - 1];
 	}
+
 	// Get owned status on Purple Street 1 or 2
 	public boolean getStreetPurpleOwned(int purpleNumber) {
 		return streetPurple[purpleNumber - 1];
 	}
+
 	// Get owned status on Red Street 1, 2 or 3
 	public boolean getStreetRedOwned(int redNumber) {
 		return streetRed[redNumber - 1];
 	}
+
 	// Get owned status on White Street 1, 2 or 3
 	public boolean getStreetWhiteOwned(int whiteNumber) {
 		return streetWhite[whiteNumber - 1];
 	}
+
 	// Get owned status on Yellow Street 1, 2 or 3
 	public boolean getStreetYellowOwned(int yellowNumber) {
 		return streetYellow[yellowNumber - 1];
