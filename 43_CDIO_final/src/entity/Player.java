@@ -6,6 +6,7 @@ public class Player {
 
 	private Account myAccount;
 	private PlayerOwned playerOwn;
+	private Card[] jailCards;
 
 	private String name;
 	private int position;
@@ -17,6 +18,7 @@ public class Player {
 
 	public Player(String name) {
 
+		jailCards = new Card[2];
 		myAccount = new Account(this);
 		playerOwn = new PlayerOwned();
 		this.name = name;
@@ -29,12 +31,18 @@ public class Player {
 	 * SETTERS
 	 */
 
+	// Set jailcard to owned
+	public void setJailCardOwned(Card card) {
+		for (int i = 0; i < jailCards.length; i++) {
+			if (jailCards[i] == null)
+				jailCards[i] = card;
+		}
+	}
+
 	// Update player balance
 	public void updateBalance(int money) {
 		this.myAccount.updateBalance(money);
 	}
-	
-
 
 	// Checks if player money is zero or below, if so isAlive variable will be
 	// false, else true.
@@ -105,6 +113,14 @@ public class Player {
 	 * GETTERS
 	 */
 
+	public Card getJailCard() {
+		for (int i = 0; i < jailCards.length; i++) {
+			if (jailCards[i] != null)
+				return jailCards[i];
+		}
+		return null;
+	}
+
 	// Get player name
 	public String getName() {
 		return name;
@@ -119,9 +135,9 @@ public class Player {
 	public boolean isAlive() {
 		return isAlive;
 	}
-	
+
 	public Account getAccount() {
-	return this.myAccount;
+		return this.myAccount;
 	}
 
 	// Get player owned status on Brewery 1 or 2
@@ -228,12 +244,12 @@ public class Player {
 	public int getTotalStreetYellowOwned() {
 		return playerOwn.getTotalStreetYellowOwned();
 	}
-	
+
 	// Get total owned Houses (ALL)
 	public int getTotalHousesOwned() {
 		return playerOwn.getTotalHousesOwned();
 	}
-	
+
 	// Get total owned Hotels (ALL)
 	public int getTotalHotelsOwned() {
 		return playerOwn.getTotalHotelsOwned();
