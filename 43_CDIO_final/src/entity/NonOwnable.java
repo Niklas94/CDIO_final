@@ -1,5 +1,11 @@
 package entity;
 
-public class NonOwnable {
+public abstract class NonOwnable extends Square {
+
+	public NonOwnable(int id) {
+		super(id);
+		// TODO Auto-generated constructor stub
+	}
+
 
 }
