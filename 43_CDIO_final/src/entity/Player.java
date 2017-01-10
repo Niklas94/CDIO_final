@@ -228,5 +228,16 @@ public class Player {
 	public int getTotalStreetYellowOwned() {
 		return playerOwn.getTotalStreetYellowOwned();
 	}
+	
+	// Get total owned Houses (ALL)
+	public int getTotalHousesOwned() {
+		return playerOwn.getTotalHousesOwned();
+	}
+	
+	// Get total owned Hotels (ALL)
+	public int getTotalHotelsOwned() {
+		return playerOwn.getTotalHotelsOwned();
+
+	}
 
 }
