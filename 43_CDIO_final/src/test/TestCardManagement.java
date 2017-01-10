@@ -8,14 +8,16 @@ import org.junit.Test;
 
 import entity.Card;
 import entity.CardManagement;
+import entity.Player;
 
 public class TestCardManagement {
 
 	CardManagement cm;
+	Player[] players;
 
 	@Before
 	public void setUp() throws Exception {
-		cm = new CardManagement(27);
+		cm = new CardManagement(31, players);
 	}
 
 	@After
