@@ -31,15 +31,25 @@ public class TestCardManagement {
 	@Test
 	public void testShuffleCards() throws Exception {
 
-		int expected = 27;
-		int actual = 0;
-
+		String[] beforeShuffling, afterShuffling;
+		beforeShuffling = new String[27];
+		//afterShuffling = new String[27];
+		int expected = 27, actual = 0;
+		
 		cm.createCards();
-		cm.shuffleCards();
 
 		for (int i = 0; i < 27; i++) {
-			if ( != cm.pullCard(i)) //I plus i with 1, since each card has an id 1 greater than the index they are located at in the array. Example: card at index 0, has the id 1.
+			beforeShuffling[i] = cm.pullTopCard().getDescription();
+			System.out.println(beforeShuffling[i]);
+		}
+		
+		System.out.println("");
+		cm.shuffleCards();
+		
+		for (int i = 0; i < 27; i++) {
+			if (cm.pullCard(i).getDescription() != beforeShuffling[i])
 				actual++;
+			System.out.println(cm.pullCard(i).getDescription());
 		}
 		assertEquals(expected, actual);
 	}
