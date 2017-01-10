@@ -5,28 +5,17 @@ public class FleetCard extends Card {
 
 	public FleetCard(String desc) {
 		super.setDescription(desc);
-		//super.setId(index);
 	}
 
 	@Override
-	public int useCard() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	
-	public int useCard(int playerPosition) {
-		// TODO Auto-generated method stub
-		int nearestFleet;
-		
-		if (playerPosition >= 3 && playerPosition <= 8)
-			return nearestFleet = 6;
-		else if (playerPosition == 18)
-			return nearestFleet = 16;
-		else if (playerPosition == 23)
-			return nearestFleet = 26;
-		else if (playerPosition >= 34 && playerPosition <= 37)
-			return nearestFleet = 36;
-		else
-			return 0;
+	public void useCard(Player player) {
+		if (player.getPosition() >= 3 && player.getPosition() <= 8)
+			player.setPosition(6);
+		else if (player.getPosition() == 18)
+			player.setPosition(16);
+		else if (player.getPosition() == 23)
+			player.setPosition(26);
+		else if (player.getPosition() >= 34 && player.getPosition() <= 37)
+			player.setPosition(36);	
 	}
 }

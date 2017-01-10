@@ -1,25 +1,14 @@
 package entity;
 
 public class OwnableCard extends Card {
-
-	private boolean Owned;
 	
 	public OwnableCard(String desc) {
-		Owned = false;
-	}
-	
-	public boolean isItOwned() {
-		return Owned;
+		super.setDescription(desc);
 	}
 
 	@Override
-	public int useCard() {
-		// TODO Auto-generated method stub
-		return 0;
+	public void useCard(Player player) {
+		//player.setCardOwned(this);
 	}
-	
-//	public boolean useCard(Player player) {
-//	
-//	}
-	
+
 }

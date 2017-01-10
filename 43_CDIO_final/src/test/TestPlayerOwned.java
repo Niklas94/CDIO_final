@@ -2,14 +2,14 @@ package test;
 
 import static org.junit.Assert.*;
 
-import java.lang.reflect.Array;
-import java.lang.reflect.Field;
+
+
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import desktop_fields.Brewery;
+
 import entity.PlayerOwned;
 
 public class TestPlayerOwned {

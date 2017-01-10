@@ -7,11 +7,13 @@ public class CardManagement {
 
 	private Card[] cardArr;
 	private int numberOfCards;
+	private Player[] players;
 
 	//Card Array
-	public CardManagement(int numberOfCards) {
+	public CardManagement(int numberOfCards, Player[] players) {
 		this.numberOfCards = numberOfCards;
 		cardArr = new Card[numberOfCards];
+		this.players = players;
 	}
 
 	public void createCards() throws Exception {
@@ -39,6 +41,14 @@ public class CardManagement {
 			case "FleetCard":
 				desc = str.split(";")[1];
 				cardArr[i++] = new FleetCard(desc);
+				break;
+			case "SpecialCard":
+				desc = str.split(";")[1];
+				cardArr[i++] = new SpecialCard(desc);
+				break;
+			case "PlayerBirthdayCard":
+				desc = str.split(";")[1];
+				cardArr[i++] = new PlayerBirthdayCard(desc, players);
 				break;
 			}
 		}
@@ -98,21 +108,7 @@ public class CardManagement {
 	}
 
 	public void useCard(Card card, Player player) {
-		if (card instanceof MoneyCard)
-			player.updateBalance(((MoneyCard) card).useCard());
-		else if (card instanceof PositionCard){
-			int a = ((PositionCard)card).useCard();
-			if (a < 0)
-				player.setPosition(player.getPosition() - 3);
-			else
-				player.setPosition(((PositionCard) card).useCard());
-		}
-		else if (card instanceof FleetCard) {
-			player.setPosition(((FleetCard) card).useCard(player.getPosition()));
-		}
-		else if (card instanceof OwnableCard) {
-			//player.setOwnedCard(card);
-		}
+		
 	}
 }
 
