@@ -1,22 +1,23 @@
 package entity;
 
 public class Chance extends NonOwnable {
+	
+	String name;
 
-	public Chance(int id) {
+	public Chance(int id, String name) {
 		super(id);
-		// TODO Auto-generated constructor stub
+		this.name = name;
 	}
 
 	@Override
 	public void landOnField(Player player) {
-		// TODO Auto-generated method stub
+		
 		
 		
 	}
 
 	@Override
 	public int getId() {
-		// TODO Auto-generated method stub
 		return this.id;
 	}
 

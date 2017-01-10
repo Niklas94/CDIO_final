@@ -14,7 +14,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.awt.Color;
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
+//import java.io.FileNotFoundException;
+
 
 public class Board {
 
@@ -96,7 +97,7 @@ public class Board {
 				GUI.create(guiField);
 			}
 
-//		} catch (FileNotFoundException e) {
+//		} catch (FileNotFoundException e) { // Remember to uncomment the import as well
 //			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -119,7 +120,8 @@ public class Board {
 				.setSubText(subText)
 				.setDescription(description)
 				.build();
-
+		
+		logicField[index] = new entity.Start(index + 1, title);
 
 	}
 
@@ -138,10 +140,14 @@ public class Board {
 				.setDescription(description)
 				.setRent(rent)
 				.build();
+		
+		int price = Integer.parseInt(subText.split(":")[1].trim());
+		int rentForLogic = Integer.parseInt(rent.split(":")[1].trim());
+		logicField[index] = new entity.Street(index + 1, title, price, rentForLogic);
+		
 	}
 
 	public void createBrewery(String[] values, int index){
-		//String picture = getValue("picture", values);
 		String picture;
 		String title = getValue("title", values);
 		if(index == 28)
@@ -158,6 +164,10 @@ public class Board {
 				.setDescription(description)
 				.setRent(rent)
 				.build();
+		
+		int price = Integer.parseInt(subText.split(":")[1].trim());
+//		int rentForLogic = Integer.parseInt(rent.split(":")[1].trim());
+		logicField[index] = new entity.Brewery(index + 1, title, price);
 
 
 	}
@@ -173,6 +183,10 @@ public class Board {
 				.setDescription(description)
 				.setRent(rent)
 				.build();
+		
+		int price = Integer.parseInt(subText.split(":")[1].trim());
+		int rentForLogic = Integer.parseInt(rent.split(":")[1].trim());
+		logicField[index] = new entity.Fleet(index + 1, title, price, rentForLogic);
 
 	}
 
@@ -185,6 +199,8 @@ public class Board {
 				.setSubText(subText)
 				.setDescription(description)
 				.build();
+		
+		logicField[index] = new entity.BankParking(index + 1, title);
 
 	}
 
@@ -197,6 +213,9 @@ public class Board {
 				.setSubText(subText)
 				.setDescription(description)
 				.build();
+		
+		logicField[index] = new entity.Prison(index + 1, title);
+		
 	}
 
 	public void createChance(int index){
@@ -212,6 +231,9 @@ public class Board {
 				.setSubText(subText)
 				.setDescription(description)
 				.build();
+		
+		logicField[index] = new entity.Prison(index + 1, title);
+		
 	}
 
 	public String getValue(String refrence, String[] values){

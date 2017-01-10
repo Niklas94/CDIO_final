@@ -2,8 +2,11 @@ package entity;
 
 public class Brewery extends Ownable {
 
-	public Brewery(int id) {
+	public Brewery(int id, String name, int price) {
 		super(id);
+		this.name = name;
+		this.price = price;
+//		this.rent = rent; 		// if we use this then remember to add a parameter in the constructor
 	}
 
 	@Override
