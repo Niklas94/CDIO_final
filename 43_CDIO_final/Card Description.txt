@@ -25,3 +25,7 @@ PositionCard;30;Gå i fængsel. Ryk direkte til fængslet. Selv om de passerer S
 FleetCard;Tag med den nærmeste færge - Flyt brikken frem, og hvis de passerer Start inkassér da kr. 4.000.
 FleetCard;Ryk brikken frem til det nærmeste rederi og betal ejeren to gange den leje, han ellers er berettiget til. Hvis selskabet ikke ejes af nogen kan de købe det af banken.
 FleetCard;Ryk brikken frem til det nærmeste rederi og betal ejeren to gange den leje, han ellers er berettiget til. Hvis selskabet ikke ejes af nogen kan de købe det af banken.
+SpecialCard;Ejendomsskatterne er steget, ekstraudgifterne er: kr. 800 pr. hus, kr. 2.300 pr. hotel.
+SpecialCard;Oliepriserne er steget, og de skal betale: kr. 500 pr. hus. kr. 2.000 pr. hotel.
+SpecialCard;De modtager Matador-legatet for værdig trængende stort kr. 40.000. Ved værdig trængende forstås at deres formue, d.v.s. deres kontante penge + skøder + bygninger ikke overstiger kr. 15.000.
+PlayerBirthdayCard;Det der deres fødselsdag. Modtag af hver medspiller kr. 200.

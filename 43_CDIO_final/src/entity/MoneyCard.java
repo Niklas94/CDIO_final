@@ -7,13 +7,11 @@ public class MoneyCard extends Card {
 	public MoneyCard(int amount, String desc) {
 		this.amount = amount;
 		super.setDescription(desc);
-//		super.setId(index);
 	}
 
 	@Override
-	public int useCard() {
-		// TODO Auto-generated method stub
-		return amount;
+	public void useCard(Player player) {
+		player.updateBalance(amount);
 	}
 	
 }
