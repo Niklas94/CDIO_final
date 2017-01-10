@@ -14,18 +14,17 @@ public class PlayerBirthdayCard extends Card {
 	public void useCard(Player player) {
 		for (int i = 0; i < players.length; i++) {
 			if(players[i] != player && players[i].isAlive()) {
-				if(players[i].getMyAccount().getMoney() >= 200) {
+				if(players[i].getAccount().getMoney() >= 200) {
 					players[i].updateBalance(-200);
 					amount += 200;
 				}
 				else {
-					players[i].updateBalance(players[i].getMyAccount().getMoney());
-					amount += players[i].getMyAccount().getMoney();
+					players[i].updateBalance(players[i].getAccount().getMoney());
+					amount += players[i].getAccount().getMoney();
 				}
 			}
 		}
 		player.updateBalance(amount);
 		amount = 0;
 	}
-
 }

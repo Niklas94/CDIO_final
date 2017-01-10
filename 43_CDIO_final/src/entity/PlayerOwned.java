@@ -37,6 +37,15 @@ public class PlayerOwned {
 	private Boolean[] streetRed;
 	private Boolean[] streetWhite;
 	private Boolean[] streetYellow;
+	
+	private int[] houseStreetBlue;
+	private int[] houseStreetGreen;
+	private int[] houseStreetGrey;
+	private int[] houseStreetPink;
+	private int[] houseStreetPurple;
+	private int[] houseStreetRed;
+	private int[] houseStreetWhite;
+	private int[] houseStreetYellow;
 
 	/*
 	 * Constructor
@@ -56,6 +65,7 @@ public class PlayerOwned {
 		totalStreetYellowOwned = 0;
 		totalStreetOwned = 0;
 
+		// Initializes owned fields
 		brewery = new Boolean[2];
 		fleet = new Boolean[4];
 		streetBlue = new Boolean[2];
@@ -66,7 +76,18 @@ public class PlayerOwned {
 		streetRed = new Boolean[3];
 		streetWhite = new Boolean[3];
 		streetYellow = new Boolean[3];
+		
+		//Initializes owned houses array sizes
+		houseStreetBlue = new int[2];
+		houseStreetGreen = new int[3];
+		houseStreetGrey = new int[3];
+		houseStreetPink = new int[3];
+		houseStreetPurple = new int[2];
+		houseStreetRed = new int[3];
+		houseStreetWhite = new int[3];
+		houseStreetYellow = new int[3];
 
+		//Initializes owned field arrays values to false
 		Arrays.fill(brewery, false);
 		Arrays.fill(fleet, false);
 		Arrays.fill(streetBlue, false);
@@ -77,6 +98,16 @@ public class PlayerOwned {
 		Arrays.fill(streetRed, false);
 		Arrays.fill(streetWhite, false);
 		Arrays.fill(streetYellow, false);
+		
+		//Initializes owned house arrays value to 0
+		Arrays.fill(houseStreetBlue, 0);
+		Arrays.fill(houseStreetGreen, 0);
+		Arrays.fill(houseStreetGrey, 0);
+		Arrays.fill(houseStreetPink, 0);
+		Arrays.fill(houseStreetPurple, 0);
+		Arrays.fill(houseStreetRed, 0);
+		Arrays.fill(houseStreetWhite, 0);
+		Arrays.fill(houseStreetYellow, 0);
 
 	}
 
@@ -96,6 +127,11 @@ public class PlayerOwned {
 	 * etc.
 	 */
 
+	
+	/*
+	 *Boolean VALUES on fields 
+	 */
+	 
 	// Set the Brewery to owned or not by its number and a boolean value.
 	public void setBreweryOwned(int breweryNumber, Boolean bool) {
 		if (bool == true) {
@@ -231,6 +267,22 @@ public class PlayerOwned {
 		}
 
 	}
+	
+	/*
+	 * Int VALUES on HOUSES
+	 */
+	
+	public void setHouseStreetBlueOwned(int blueNumber, Boolean bool) {
+		if (bool == true) {
+			streetYellow[yellowNumber - 1] = bool;
+			totalStreetOwned++;
+			totalStreetYellowOwned++;
+		} else {
+			streetYellow[yellowNumber - 1] = bool;
+			totalStreetOwned--;
+			totalStreetYellowOwned--;
+		}
+	}
 
 	/*
 	 * GETTERS
@@ -239,6 +291,10 @@ public class PlayerOwned {
 	 * second fleet field that is on the board.
 	 * 
 	 * 
+	 */
+	
+	/*
+	 * Int VALUES on totals
 	 */
 
 	// Get total owned Brewery
@@ -296,6 +352,10 @@ public class PlayerOwned {
 	public int getTotalStreetYellowOwned() {
 		return totalStreetYellowOwned;
 	}
+	
+	/*
+	 * Boolean VALUES on fields
+	 */
 
 	// Get owned status on Brewery 1 or 2
 	public boolean getBreweryOwned(int breweryNumber) {
