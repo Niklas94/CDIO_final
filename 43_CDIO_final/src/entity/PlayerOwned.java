@@ -1,6 +1,6 @@
 package entity;
 
-import java.lang.reflect.Array;
+
 import java.util.Arrays;
 
 /*
@@ -393,48 +393,48 @@ public class PlayerOwned {
 	
 	public void setHotelOnStreetBlue(int blueNumber, int hotel) {
 		houseOnStreetBlue[blueNumber - 1] = hotel;
-		totalHotelsOwned = hotel;
+		totalHotelsOwned += hotel;
 		totalHotelsOnStreetBlue = hotel;
 }
 	public void setHotelOnStreetGreen(int greenNumber, int hotel) {
 		houseOnStreetGreen[greenNumber - 1] = hotel;
-		totalHotelsOwned = hotel;
+		totalHotelsOwned += hotel;
 		totalHotelsOnStreetGreen = hotel;
 }
 	
 	public void setHotelOnStreetGrey(int greyNumber, int hotel) {
 		houseOnStreetGrey[greyNumber - 1] = hotel;
-		totalHotelsOwned = hotel;
+		totalHotelsOwned += hotel;
 		totalHotelsOnStreetGrey = hotel;
 }
 	
 	public void setHotelOnStreetPink(int pinkNumber, int hotel) {
 		houseOnStreetPink[pinkNumber - 1] = hotel;
-		totalHotelsOwned = hotel;
+		totalHotelsOwned += hotel;
 		totalHotelsOnStreetPink = hotel;
 }
 	
 	public void setHotelOnStreetPurple(int purpleNumber, int hotel) {
 		houseOnStreetPurple[purpleNumber - 1] = hotel;
-		totalHotelsOwned = hotel;
+		totalHotelsOwned += hotel;
 		totalHotelsOnStreetPurple = hotel;
 }
 	
 	public void setHotelOnStreetRed(int redNumber, int hotel) {
 		houseOnStreetRed[redNumber - 1] = hotel;
-		totalHotelsOwned = hotel;
+		totalHotelsOwned += hotel;
 		totalHotelsOnStreetRed = hotel;
 }
 	
 	public void setHotelOnStreetWhite(int whiteNumber, int hotel) {
 		houseOnStreetWhite[whiteNumber - 1] = hotel;
-		totalHotelsOwned = hotel;
+		totalHotelsOwned += hotel;
 		totalHotelsOnStreetWhite = hotel;
 }
 	
 	public void setHotelOnStreetYellow(int yellowNumber, int hotel) {
 		houseOnStreetYellow[yellowNumber - 1] = hotel;
-		totalHotelsOwned = hotel;
+		totalHotelsOwned += hotel;
 		totalHotelsOnStreetYellow = hotel;
 }
 	
