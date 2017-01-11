@@ -17,7 +17,8 @@ public class TestCardManagement {
 
 	@Before
 	public void setUp() throws Exception {
-		cm = new CardManagement(31, players);
+		cm = new CardManagement(31);
+		cm.getPlayerArray(players);
 	}
 
 	@After

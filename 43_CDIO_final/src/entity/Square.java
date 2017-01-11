@@ -8,7 +8,6 @@ public abstract class Square {
 		this.id = id;
 	}
 	
-	public abstract void landOnField(Player player);
 	public abstract int getId();
 	
 //	public abstract Ownable getOwnableSquare(int id);

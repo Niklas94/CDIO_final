@@ -1,11 +1,14 @@
 package entity;
 
+import desktop_resources.GUI;
+
 public class Brewery extends Ownable {
 
 	public Brewery(int id, String name, int price) {
 		super(id);
 		this.name = name;
 		this.price = price;
+		this.isOwned = false;
 //		this.rent = rent; 		// if we use this then remember to add a parameter in the constructor
 	}
 
@@ -22,6 +25,7 @@ public class Brewery extends Ownable {
 	@Override
 	public void buySquare(String player) {
 		this.owner = player;
+		this.isOwned = true;
 	}
 
 	@Override
@@ -30,13 +34,13 @@ public class Brewery extends Ownable {
 	}
 
 	@Override
-	public void landOnField(Player player) {
-		
+	public int getId() {
+		return this.id;
 	}
 
 	@Override
-	public int getId() {
-		return this.id;
+	public boolean isOwned() {
+		return isOwned;
 	}
 
 }

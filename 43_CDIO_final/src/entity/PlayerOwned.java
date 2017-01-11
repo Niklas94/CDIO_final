@@ -211,15 +211,8 @@ public class PlayerOwned {
 	}
 
 	// Set the Fleet to owned or not by its number and a boolean value.
-	public void setFleetOwned(int fleetNumber, Boolean bool) {
-		if (bool == true) {
-			fleet[fleetNumber - 1] = bool;
+	public void setFleetOwned() {
 			totalFleetOwned++;
-		} else {
-			fleet[fleetNumber - 1] = bool;
-			totalFleetOwned--;
-		}
-
 	}
 
 	// Set the Blue Street to owned or not by its number and a boolean value.

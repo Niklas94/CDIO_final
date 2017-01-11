@@ -27,7 +27,7 @@ public class GUI {
 
 	public static void pressEnter(String name) {
 
-		desktop_resources.GUI.showMessage(name + " tryk enter for at kaste med terningerne");
+		desktop_resources.GUI.showMessage(name + " tryk OK for at kaste med terningerne");
 
 	}
 
@@ -35,6 +35,14 @@ public class GUI {
 
 		desktop_resources.GUI.showMessage("Du har kastet: " + sum);
 
+	}
+	
+	public static boolean buyField(){
+		String answer = desktop_resources.GUI.getUserSelection("Feltet er ikke ejet. Vil du gerne købe feltet?", "Ja", "Nej");
+		if(answer == "Ja")
+			return true;
+		else
+			return false;
 	}
 
 }

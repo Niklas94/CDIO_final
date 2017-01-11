@@ -11,7 +11,6 @@ public class Start extends NonOwnable {
 
 	@Override
 	public void landOnField(Player player) {
-
 		
 	}
 
