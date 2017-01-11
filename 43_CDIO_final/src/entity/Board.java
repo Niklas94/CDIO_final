@@ -24,7 +24,6 @@ public class Board {
 	public String[] squares = new String[40];
 	public Field[] guiField = new Field[40];
 	public Square[] logicField = new Square[40];
-	private CardManagement cm;
 	private BoardManagement bm;
 
 	public Board(BoardManagement bm){
@@ -40,7 +39,7 @@ public class Board {
 		return logicField[id];
 	}
 
-	public void createBoard(CardManagement cm) {
+	public void createBoard(CardManagement cm, Dicecup cup) {
 		FileReader file;
 		try {
 			file = new FileReader("Squares.txt");
@@ -67,7 +66,7 @@ public class Board {
 					index++;
 					break;
 				case "Brewery":
-					createBrewery(values, index);
+					createBrewery(values, index, cup);
 					index++;
 					break;
 				case "Fleet":
@@ -83,7 +82,7 @@ public class Board {
 					index++;
 					break;
 				case "Chance":
-					createChance(index);
+					createChance(index, cm);
 					index++;
 					break;
 				case "Tax":
@@ -148,7 +147,7 @@ public class Board {
 
 	}
 
-	public void createBrewery(String[] values, int index){
+	public void createBrewery(String[] values, int index, Dicecup cup){
 		String picture;
 		String title = getValue("title", values);
 		if(index == 28)
@@ -168,7 +167,7 @@ public class Board {
 
 		int price = Integer.parseInt(subText.split(":")[1].trim());
 		//		int rentForLogic = Integer.parseInt(rent.split(":")[1].trim());
-		logicField[index] = new entity.Brewery(index + 1, title, price, bm);
+		logicField[index] = new entity.Brewery(index + 1, title, price, bm, cup);
 
 
 	}
@@ -219,7 +218,7 @@ public class Board {
 
 	}
 
-	public void createChance(int index){
+	public void createChance(int index, CardManagement cm){
 		guiField[index] = new Chance.Builder().build();
 		logicField[index] = new entity.Chance(index, cm, "Chance", bm);
 

@@ -11,11 +11,11 @@ public class Game {
 	public static void main(String[] args) throws Exception{
 
 		Dicecup cup = new Dicecup();
-		CardManagement cM = new CardManagement(31);
+		CardManagement cM = new CardManagement();
 		PlayerManagement pM = new PlayerManagement();
 		Bank bank = new Bank();
 		BoardManagement bM = new BoardManagement(bank);
-		bM.createBoard(cM);
+		bM.createBoard(cM, cup);
 		pM.createPlayers();
 		bank.fillPlayerArray(pM.getPlayerArray());
 		bank.getBM(bM);

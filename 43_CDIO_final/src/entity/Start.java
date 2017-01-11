@@ -4,11 +4,13 @@ import controller.BoardManagement;
 
 public class Start extends NonOwnable {
 	
-	String name;
+	private BoardManagement bm;
+	private String name;
 
 	public Start(int id, String name, BoardManagement bm) {
-		super(id, bm);
+		super(id);
 		this.name = name;
+		this.bm = bm;
 	}
 
 	@Override

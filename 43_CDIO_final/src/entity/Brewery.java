@@ -8,7 +8,7 @@ public class Brewery extends Ownable {
 	private BoardManagement bm;
 
 	public Brewery(int id, String name, int price, BoardManagement bm, Dicecup cup) {
-		super(id, bm);
+		super(id);
 		this.name = name;
 		this.price = price;
 		this.isOwned = false;

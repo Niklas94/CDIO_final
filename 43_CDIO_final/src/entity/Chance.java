@@ -5,13 +5,16 @@ import controller.CardManagement;
 
 public class Chance extends Square {
 	
+	private BoardManagement bm;
 	private CardManagement cm;
-	String name;
+	private String name;
 
 	public Chance(int id, CardManagement cm, String name, BoardManagement bm) {
-		super(id, bm);
+		super(id);
 		this.name = name;
 		this.cm = cm;
+		this.bm = bm;
+		
 	}
 
 	@Override

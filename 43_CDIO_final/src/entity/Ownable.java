@@ -1,6 +1,6 @@
 package entity;
 
-import controller.BoardManagement;
+
 
 public abstract class Ownable extends Square {
 	
@@ -10,8 +10,8 @@ public abstract class Ownable extends Square {
 	String owner;
 	boolean isOwned;
 
-	public Ownable(int id, BoardManagement bm) {
-		super(id, bm);
+	public Ownable(int id) {
+		super(id);
 	}
 	
 	public abstract int getPrice();

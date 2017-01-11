@@ -1,6 +1,7 @@
 package controller;
 
 import entity.Board;
+import entity.Dicecup;
 import entity.Ownable;
 import entity.Player;
 import entity.Bank;
@@ -18,8 +19,8 @@ public class BoardManagement {
 
 	}
 
-	public void createBoard(CardManagement cm){
-		board.createBoard(cm);
+	public void createBoard(CardManagement cm, Dicecup cup){
+		board.createBoard(cm, cup);
 	}
 
 	public Object getSquare(int id){

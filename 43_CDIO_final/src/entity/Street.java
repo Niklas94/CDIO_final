@@ -8,7 +8,7 @@ public class Street extends Ownable {
 	private BoardManagement bm;
 	
 	public Street(int id, String name, int price, int rent, BoardManagement bm) {
-		super(id, bm);
+		super(id);
 		this.name = name;
 		this.price = price;
 		this.rent = rent;

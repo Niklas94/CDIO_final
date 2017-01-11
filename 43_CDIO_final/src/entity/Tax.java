@@ -3,10 +3,12 @@ package entity;
 import controller.BoardManagement;
 
 public class Tax extends Square {
+	
+	private BoardManagement bm;
 
 	public Tax(int id, BoardManagement bm) {
-		super(id, bm);
-		// TODO Auto-generated constructor stub
+		super(id);
+		this.bm = bm;
 	}
 
 	@Override

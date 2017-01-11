@@ -4,11 +4,13 @@ import controller.BoardManagement;
 
 public class Prison extends Square {
 	
-	String name;
+	private BoardManagement bm;
+	private String name;
 
 	public Prison(int id, String name, BoardManagement bm) {
-		super(id, bm);
+		super(id);
 		this.name = name;
+		this.bm = bm;
 	}
 
 	@Override
