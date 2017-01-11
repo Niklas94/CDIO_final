@@ -3,6 +3,7 @@ package controller;
 import controller.BoardManagement;
 import entity.Bank;
 import entity.Dicecup;
+import entity.Player;
 import desktop_resources.GUI;
 
 
@@ -20,7 +21,7 @@ public class Game {
 		bank.fillPlayerArray(pM.getPlayerArray());
 		bank.getBM(bM);
 		cM.getPlayerArray(pM.getPlayerArray());
-		entity.Player[] players = pM.getPlayerArray();
+		Player[] players = pM.getPlayerArray();
 		boolean gameOn = true;
 		
 		while(gameOn){
@@ -30,6 +31,8 @@ public class Game {
 				pM.setPosition(pM.getPlayer(i), cup.getSum());
 				GUI.setDice(cup.getX(0).getValue(), cup.getX(1).getValue());
 
+				
+				
 				for(int j = 0; j < players.length; j++){
 					GUI.setBalance(pM.getPlayer(j).getName(), pM.getPlayer(j).getBalance());
 					{
