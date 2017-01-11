@@ -27,7 +27,7 @@ public class Player {
 		this.name = name;
 		this.isAlive = true;
 		this.position = 1;
-		
+
 
 	}
 
@@ -47,19 +47,17 @@ public class Player {
 	public void updateBalance(int money) {
 		this.myAccount.updateBalance(money);
 	}
-	
+
 	public int getBalance(){
 		return this.myAccount.getMoney();
 	}
 
 	// Checks if player money is zero or below, if so isAlive variable will be
 	// false, else true.
-	public void checkIfBankrupt() {
-		if (this.myAccount.getMoney() <= 0)
-			isAlive = false;
-		else
-			isAlive = true;
-
+	public boolean checkIfBankrupt() {
+		if (this.myAccount.getMoney() < 0)
+			this.isAlive = false;
+		return isAlive;
 	}
 
 	// Set player position

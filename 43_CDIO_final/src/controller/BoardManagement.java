@@ -7,7 +7,7 @@ import entity.Bank;
 
 public class BoardManagement {
 	
-	Board board;
+	private Board board;
 	//private Player[] players; //Need this for the chance field
 	
 	public BoardManagement() throws Exception{
@@ -19,13 +19,12 @@ public class BoardManagement {
 		board.createBoard(cm);
 	}
 	
-	public Ownable getOwnableSquare(int id){
-		if(board.getSquare(id) instanceof Ownable){
-			Ownable o = (Ownable)board.getOwnableSquare(id);
-			return o;
-		}
-		else
-			return null;
+	public Object getSquare(int id){
+		return this.board.logicField[id];
+	}
+	
+	public int getNumberOfSquares(){
+		return this.board.logicField.length;
 	}
 	
 	public boolean isOwned(int id) {

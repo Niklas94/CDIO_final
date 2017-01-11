@@ -2,7 +2,7 @@ package controller;
 
 import boundary.GUI;
 import desktop_codebehind.Car;
-import entity.Dicecup;
+import desktop_fields.Ownable;
 import entity.Player;
 
 public class PlayerManagement {
@@ -10,7 +10,6 @@ public class PlayerManagement {
 	private Player[] player;
 	private int playerCount;
 	private int playersLeft;
-
 	// Initialize an array of total players.
 	public PlayerManagement() {
 		
@@ -50,6 +49,7 @@ public class PlayerManagement {
 		this.playerCount = count;
 	}
 	
+
 	public Player getPlayer(int a){
 		return player[a];
 	}

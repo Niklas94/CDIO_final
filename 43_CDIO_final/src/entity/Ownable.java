@@ -19,5 +19,8 @@ public abstract class Ownable extends Square {
 	public abstract void buySquare(String player);
 	public abstract String getOwner();
 	public abstract boolean isOwned();
+	public void removeOwner(){
+		this.owner=null;
+	}
 	
 }

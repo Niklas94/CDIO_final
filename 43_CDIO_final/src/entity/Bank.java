@@ -1,5 +1,6 @@
 package entity;
 
+import controller.BoardManagement;
 import desktop_resources.GUI;
 
 public class Bank {
@@ -12,8 +13,18 @@ public class Bank {
 	}
 
 	public void buyField(Player player, int price) {
-		
-		
+
+
+	}
+
+	public void removeOwnership(boolean isAlive, Player player, BoardManagement bM){
+		if(!isAlive) {
+			for(int i=0; i < bM.getNumberOfSquares();i++){
+				if(bM.getSquare(i) instanceof Ownable)
+					if (((Ownable) bM.getSquare(i)).getOwner() == player.getName())
+						((Ownable) bM.getSquare(i)).removeOwner();
+			}
+		}
 	}
 
 	public void payRent(Player player, Ownable o, int sum) {
@@ -37,7 +48,7 @@ public class Bank {
 			}
 		}
 
-		
+
 	}
 
 }
