@@ -49,7 +49,11 @@ public class Fleet extends Ownable {
 
 	@Override
 	public void landOnField(Player player) {
-		
+		if(!this.isOwned){
+			bm.buyField(player, price);
+		}
+		else
+			bm.payRent(player, owner, rent);
 	}
 
 

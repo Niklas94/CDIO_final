@@ -3,7 +3,7 @@ package entity;
 import controller.BoardManagement;
 
 public class Brewery extends Ownable {
-	
+
 	private Dicecup cup;
 	private BoardManagement bm;
 
@@ -14,7 +14,7 @@ public class Brewery extends Ownable {
 		this.isOwned = false;
 		this.cup = cup;
 		this.bm = bm;
-//		this.rent = rent; 		// if we use this then remember to add a parameter in the constructor
+		//		this.rent = rent; 		// if we use this then remember to add a parameter in the constructor
 	}
 
 	@Override
@@ -50,9 +50,14 @@ public class Brewery extends Ownable {
 
 	@Override
 	public void landOnField(Player player) {
-		int sum = cup.getSum();
-		bm.payBreweryRent(player, owner, rent, sum);
-		
+		if(!this.isOwned){
+			bm.buyField(player, price);
+		}
+		else{	
+			int sum = cup.getSum();
+			bm.payBreweryRent(player, owner, rent, sum);
+		}
+
 	}
 
 }

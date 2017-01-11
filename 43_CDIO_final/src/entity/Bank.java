@@ -41,13 +41,19 @@ public class Bank {
 	}
 
 	public void payRent(Player player, String owner, int rent) {
-		if(player.getBalance() < rent)
-			rent = player.getBalance();
 		if(bm.getSquare(player.getPosition() - 1) instanceof Fleet){
 			for(int i = 0; i < players.length; i++){
 				if(players[i].getName() == owner)
 					rent = (int) (rent / (8 / Math.pow(2, players[i].getTotalFleetOwned() - 1)));
 			}
+		}
+		if(player.getBalance() < rent){
+			rent = player.getBalance();
+		}
+		player.updateBalance(-rent);
+		for(int i = 0; i < players.length; i++){
+			if(players[i].getName() == owner)
+				players[i].updateBalance(rent);
 		}
 	}
 	public void payBreweryRent(Player player, String owner, int rent, int sum){

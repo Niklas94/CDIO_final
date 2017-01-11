@@ -55,7 +55,6 @@ public class Street extends Ownable {
 		}
 		else
 			bm.payRent(player, owner, rent);
-		
 	}
 
 }

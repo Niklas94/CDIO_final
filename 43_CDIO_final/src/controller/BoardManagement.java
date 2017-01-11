@@ -44,8 +44,10 @@ public class BoardManagement {
 
 	public void buyField(Player player, int price){
 		if(GUI.buyField()){
-			if(bank.buyField(player, price))
+			if(bank.buyField(player, price)){
 				board.getOwnableSquare(player.getPosition() - 1).buySquare(player.getName());
+				desktop_resources.GUI.setHouses(player.getPosition() - 1, 1);
+			}
 		}
 	}
 
