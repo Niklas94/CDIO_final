@@ -6,7 +6,6 @@ public abstract class Card {
 
 	private String description;
 	private int id;
-	private CardManagement cm;
 	
 	public abstract void useCard(Player player, CardManagement cm);
 	

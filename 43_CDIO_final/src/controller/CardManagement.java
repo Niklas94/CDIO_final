@@ -107,8 +107,8 @@ public class CardManagement {
 						cardArr[j] = cardArr[j+1];
 					}
 					cardArr[cardArr.length - 1] = tempCard; //Return the jailcard back into the deck.
+					break;
 				}
-				break;
 			}
 		}
 

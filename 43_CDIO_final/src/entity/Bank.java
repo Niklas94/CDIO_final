@@ -1,7 +1,6 @@
 package entity;
 
 import controller.BoardManagement;
-import desktop_resources.GUI;
 
 public class Bank {
 
