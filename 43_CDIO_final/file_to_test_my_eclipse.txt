@@ -1,0 +1,1 @@
+I am testing my eclipse, it won't save my password settings in store.
