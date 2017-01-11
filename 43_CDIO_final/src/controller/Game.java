@@ -21,7 +21,7 @@ public class Game {
 		entity.Player[] players = pM.getPlayerArray();
 		Dicecup cup = new Dicecup();
 		boolean gameOn = true;
-
+		
 		while(gameOn){
 			for(int i = 0; i < pM.getPlayerArray().length; i++){
 				boundary.GUI.pressEnter(pM.getPlayer(i).getName());
