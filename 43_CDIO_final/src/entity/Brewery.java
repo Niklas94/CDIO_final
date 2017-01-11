@@ -3,12 +3,17 @@ package entity;
 import controller.BoardManagement;
 
 public class Brewery extends Ownable {
+	
+	private Dicecup cup;
+	private BoardManagement bm;
 
-	public Brewery(int id, String name, int price, BoardManagement bm) {
+	public Brewery(int id, String name, int price, BoardManagement bm, Dicecup cup) {
 		super(id, bm);
 		this.name = name;
 		this.price = price;
 		this.isOwned = false;
+		this.cup = cup;
+		this.bm = bm;
 //		this.rent = rent; 		// if we use this then remember to add a parameter in the constructor
 	}
 
@@ -45,6 +50,8 @@ public class Brewery extends Ownable {
 
 	@Override
 	public void landOnField(Player player) {
+		int sum = cup.getSum();
+		bm.payBreweryRent(player, owner, rent, sum);
 		
 	}
 

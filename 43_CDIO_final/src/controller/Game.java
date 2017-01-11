@@ -10,6 +10,7 @@ public class Game {
 
 	public static void main(String[] args) throws Exception{
 
+		Dicecup cup = new Dicecup();
 		CardManagement cM = new CardManagement(31);
 		PlayerManagement pM = new PlayerManagement();
 		Bank bank = new Bank();
@@ -17,9 +18,9 @@ public class Game {
 		bM.createBoard(cM);
 		pM.createPlayers();
 		bank.fillPlayerArray(pM.getPlayerArray());
+		bank.getBM(bM);
 		cM.getPlayerArray(pM.getPlayerArray());
 		entity.Player[] players = pM.getPlayerArray();
-		Dicecup cup = new Dicecup();
 		boolean gameOn = true;
 
 		while(gameOn){

@@ -42,12 +42,18 @@ public class BoardManagement {
 	}
 
 	public void buyField(Player player, int price){
-		if(GUI.buyField())
-			bank.buyField(player, price);
+		if(GUI.buyField()){
+			if(bank.buyField(player, price))
+				board.getOwnableSquare(player.getPosition() - 1).buySquare(player.getName());
+		}
 	}
 
 	public void payRent(Player player, String owner, int rent){
 		bank.payRent(player, owner, rent);
+	}
+	
+	public void payBreweryRent(Player player, String owner, int rent, int sum){
+		bank.payBreweryRent(player, owner, rent, sum);
 	}
 
 }

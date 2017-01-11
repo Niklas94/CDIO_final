@@ -1,11 +1,11 @@
 package entity;
 
 import controller.BoardManagement;
-import desktop_resources.GUI;
 
 public class Bank {
 
-	Player[] players;
+	private Player[] players;
+	private BoardManagement bm;
 
 
 	public Bank() {
@@ -15,9 +15,18 @@ public class Bank {
 	public void fillPlayerArray(Player[] players){
 		this.players = players;
 	}
+	
+	public void getBM(BoardManagement bm){
+		this.bm = bm;
+	}
 
-	public void buyField(Player player, int price) {
-
+	public boolean buyField(Player player, int price) {
+		if(player.getBalance() >= price){
+			player.updateBalance(-price);
+			return true;
+		}
+		else
+			return false;
 
 	}
 
@@ -31,7 +40,18 @@ public class Bank {
 		}
 	}
 
-	public void payRent(Player player, String owner, int rent) {		
+	public void payRent(Player player, String owner, int rent) {
+		if(player.getBalance() < rent)
+			rent = player.getBalance();
+		if(bm.getSquare(player.getPosition() - 1) instanceof Fleet){
+			for(int i = 0; i < players.length; i++){
+				if(players[i].getName() == owner)
+					rent = (int) (rent / (8 / Math.pow(2, players[i].getTotalFleetOwned() - 1)));
+			}
+		}
+	}
+	public void payBreweryRent(Player player, String owner, int rent, int sum){
+		
 	}
 
 }
