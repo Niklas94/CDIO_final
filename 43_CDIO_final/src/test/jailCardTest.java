@@ -9,7 +9,7 @@ import entity.OwnableCard;
 import desktop_resources.GUI;
 
 
-public class gameTest {
+public class jailCardTest {
 
 	public static void main(String[] args) throws Exception{
 
