@@ -1,7 +1,5 @@
 package entity;
 
-import desktop_codebehind.Car;
-import desktop_resources.GUI;
 import entity.Account;
 
 public class Player {

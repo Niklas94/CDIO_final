@@ -1,7 +1,5 @@
 package entity;
 
-import desktop_resources.GUI;
-
 public class Street extends Ownable {
 
 

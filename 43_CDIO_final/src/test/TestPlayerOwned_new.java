@@ -35,7 +35,7 @@ public class TestPlayerOwned_new {
 	public void testSetFleetOwned() {
 		boolean actual = playerOwned.getFleetOwned(1);
 		assertFalse(actual);
-		playerOwned.setFleetOwned(1, true);
+		//playerOwned.setFleetOwned(1, true);
 		actual = playerOwned.getFleetOwned(1);
 		assertTrue(actual);
 	}

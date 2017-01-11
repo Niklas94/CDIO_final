@@ -45,28 +45,28 @@ public class CardManagement {
 				int amount = Integer.parseInt(str.split(";")[1]); //Read the amount of money a player receives / loses
 				desc = str.split(";")[2]; //Description of the card
 				cardArr[i++] = new MoneyCard(amount, desc);
-				cardArr[i].setId(i);
+				//cardArr[i].setId(i);
 				break;
 			case "PositionCard":
 				int amount2 = Integer.parseInt(str.split(";")[1]);
 				desc = str.split(";")[2];
 				cardArr[i++] = new PositionCard(amount2, desc);
-				cardArr[i].setId(i);
+				//cardArr[i].setId(i);
 				break;
 			case "FleetCard":
 				desc = str.split(";")[1];
 				cardArr[i++] = new FleetCard(desc);
-				cardArr[i].setId(i);
+				//cardArr[i].setId(i);
 				break;
 			case "SpecialCard":
 				desc = str.split(";")[1];
 				cardArr[i++] = new SpecialCard(desc);
-				cardArr[i].setId(i);
+				//cardArr[i].setId(i);
 				break;
 			case "PlayerBirthdayCard":
 				desc = str.split(";")[1];
 				cardArr[i++] = new PlayerBirthdayCard(desc, players);
-				cardArr[i].setId(i);
+				//cardArr[i].setId(i);
 				break;
 			}
 		}

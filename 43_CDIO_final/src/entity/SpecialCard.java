@@ -1,5 +1,7 @@
 package entity;
 
+import controller.CardManagement;
+
 public class SpecialCard extends Card {
 
 	private int value;
@@ -8,10 +10,9 @@ public class SpecialCard extends Card {
 		super.setDescription(desc);
 		value = 0;
 	}
-	
+
 	@Override
-	public void useCard(Player player) {
-		
+	public void useCard(Player player, CardManagement cm) {
 		if (this.getDescription().charAt(2) == 'e') {
 			value -= 800 * player.getTotalHousesOwned() - 2300 * player.getTotalHotelsOwned();
 			player.updateBalance(value);
@@ -24,6 +25,6 @@ public class SpecialCard extends Card {
 //			if (player.getTotalValue() < 15000)
 				player.updateBalance(40000);
 		}
-		
+		cm.returnCardToDeck(this);
 	}
 }

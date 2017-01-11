@@ -7,18 +7,22 @@ import org.junit.Before;
 import org.junit.Test;
 
 import controller.CardManagement;
+import controller.PlayerManagement;
 import entity.Card;
 import entity.Player;
 
 public class TestCardManagement {
 
 	CardManagement cm;
+	PlayerManagement pM;
 	Player[] players;
 
 	@Before
 	public void setUp() throws Exception {
 		cm = new CardManagement(31);
-		cm.getPlayerArray(players);
+		pM = new PlayerManagement();
+//		pM.createPlayers();
+//		cm.getPlayerArray(pM.getPlayerArray());
 	}
 
 	@After
@@ -34,7 +38,7 @@ public class TestCardManagement {
 	@Test
 	public void testShuffleCards() throws Exception {
 
-		String[] beforeShuffling, afterShuffling;
+		String[] beforeShuffling;
 		beforeShuffling = new String[31];
 		int expected = 31, actual = 0;
 		
@@ -50,6 +54,8 @@ public class TestCardManagement {
 				actual++;
 		}
 		assertEquals(expected, actual);
+		
+		cm.returnCardToDeck(cm.pullTopCard());
 	}
 
 	@Test
@@ -74,6 +80,7 @@ public class TestCardManagement {
 		
 		cm.createCards();
 		Card expected = cm.pullTopCard(); //Expected card must be the one at the top.
+		cm.returnCardToDeck(expected);
 		Card actual = cm.pullCard(30);
 		assertEquals(expected, actual);
 	}

@@ -1,13 +1,14 @@
 package entity;
 
-import java.lang.reflect.Array;
+import controller.CardManagement;
 
 public abstract class Card {
 
 	private String description;
 	private int id;
+	private CardManagement cm;
 	
-	public abstract void useCard(Player player);
+	public abstract void useCard(Player player, CardManagement cm);
 	
 	//Set id
 	public void setId(int id) {

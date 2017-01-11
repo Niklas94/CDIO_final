@@ -1,7 +1,5 @@
 package entity;
 
-import desktop_resources.GUI;
-
 public class Brewery extends Ownable {
 
 	public Brewery(int id, String name, int price) {

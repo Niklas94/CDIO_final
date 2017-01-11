@@ -17,9 +17,9 @@ public class Chance extends NonOwnable {
 	public void landOnField(Player player) {
 		//cm.pullTopCard().useCard(player); //Perform the action of the card
 
-		int cardId = cm.pullTopCard().getID();
-		cm.returnCardToDeck(cm.pullCard(cardId));
-		cm.pullTopCard().useCard(player); //Perform the action of the card
+//		int cardId = cm.pullTopCard().getID();
+//		cm.returnCardToDeck(cm.pullCard(cardId));
+		cm.pullTopCard().useCard(player, cm); //Perform the action of the card
 	}
 
 	@Override
