@@ -1,14 +1,20 @@
 package entity;
 
+
+import controller.BoardManagement;
+
 public class Street extends Ownable {
 
-
-	public Street(int id, String name, int price, int rent) {
-		super(id);
+	private BoardManagement bm;
+	
+	public Street(int id, String name, int price, int rent, BoardManagement bm) {
+		super(id, bm);
 		this.name = name;
 		this.price = price;
 		this.rent = rent;
 		this.isOwned = false;
+		this.bm = bm;
+		
 	}
 
 	@Override
@@ -40,6 +46,16 @@ public class Street extends Ownable {
 	@Override
 	public boolean isOwned(){
 		return isOwned;
+	}
+
+	@Override
+	public void landOnField(Player player) {
+		if(!this.isOwned){
+			bm.buyField(player, price);
+		}
+		else
+			bm.payRent(player, owner, rent);
+		
 	}
 
 }

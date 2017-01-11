@@ -13,6 +13,8 @@ import desktop_resources.GUI;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.BufferedReader;
+
+import controller.BoardManagement;
 //import java.io.FileNotFoundException;
 import controller.CardManagement;
 import java.awt.Color;
@@ -23,16 +25,17 @@ public class Board {
 	public Field[] guiField = new Field[40];
 	public Square[] logicField = new Square[40];
 	private CardManagement cm;
-	
-	public Board(){
-		
+	private BoardManagement bm;
+
+	public Board(BoardManagement bm){
+		this.bm = bm;		
 	}
 
 	public Ownable getOwnableSquare(int id){
-			Ownable o = (Ownable) logicField[id];
-			return o;
+		Ownable o = (Ownable) logicField[id];
+		return o;
 	}
-	
+
 	public Square getSquare(int id) {
 		return logicField[id];
 	}
@@ -93,15 +96,15 @@ public class Board {
 				GUI.create(guiField);
 			}
 
-//		} catch (FileNotFoundException e) { // Remember to uncomment the import as well
-//			e.printStackTrace();
+			//		} catch (FileNotFoundException e) { // Remember to uncomment the import as well
+			//			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
 
 	}
-	
+
 
 
 	public void createStart(String[] values, int index){
@@ -118,8 +121,8 @@ public class Board {
 				.setSubText(subText)
 				.setDescription(description)
 				.build();
-		
-		logicField[index] = new entity.Start(index + 1, title);
+
+		logicField[index] = new entity.Start(index + 1, title, bm);
 
 	}
 
@@ -138,11 +141,11 @@ public class Board {
 				.setDescription(description)
 				.setRent(rent)
 				.build();
-		
+
 		int price = Integer.parseInt(subText.split(":")[1].trim());
 		int rentForLogic = Integer.parseInt(rent.split(":")[1].trim());
-		logicField[index] = new entity.Street(index + 1, title, price, rentForLogic);
-		
+		logicField[index] = new entity.Street(index + 1, title, price, rentForLogic, bm);
+
 	}
 
 	public void createBrewery(String[] values, int index){
@@ -162,10 +165,10 @@ public class Board {
 				.setDescription(description)
 				.setRent(rent)
 				.build();
-		
+
 		int price = Integer.parseInt(subText.split(":")[1].trim());
-//		int rentForLogic = Integer.parseInt(rent.split(":")[1].trim());
-		logicField[index] = new entity.Brewery(index + 1, title, price);
+		//		int rentForLogic = Integer.parseInt(rent.split(":")[1].trim());
+		logicField[index] = new entity.Brewery(index + 1, title, price, bm);
 
 
 	}
@@ -181,10 +184,10 @@ public class Board {
 				.setDescription(description)
 				.setRent(rent)
 				.build();
-		
+
 		int price = Integer.parseInt(subText.split(":")[1].trim());
 		int rentForLogic = Integer.parseInt(rent.split(":")[1].trim());
-		logicField[index] = new entity.Fleet(index + 1, title, price, rentForLogic);
+		logicField[index] = new entity.Fleet(index + 1, title, price, rentForLogic, bm);
 
 	}
 
@@ -197,8 +200,8 @@ public class Board {
 				.setSubText(subText)
 				.setDescription(description)
 				.build();
-		
-		logicField[index] = new entity.BankParking(index + 1, title);
+
+		logicField[index] = new entity.BankParking(index + 1, title, bm);
 
 	}
 
@@ -211,14 +214,14 @@ public class Board {
 				.setSubText(subText)
 				.setDescription(description)
 				.build();
-		
-		logicField[index] = new entity.Prison(index + 1, title);
-		
+
+		logicField[index] = new entity.Prison(index + 1, title, bm);
+
 	}
 
 	public void createChance(int index){
 		guiField[index] = new Chance.Builder().build();
-		logicField[index] = new entity.Chance(index, cm, "Chance");
+		logicField[index] = new entity.Chance(index, cm, "Chance", bm);
 
 	}
 	public void createTax(String[] values, int index){
@@ -230,9 +233,9 @@ public class Board {
 				.setSubText(subText)
 				.setDescription(description)
 				.build();
-		
-		logicField[index] = new entity.Prison(index + 1, title);
-		
+
+		logicField[index] = new entity.Prison(index + 1, title, bm);
+
 	}
 
 	public String getValue(String reference, String[] values){
@@ -251,7 +254,5 @@ public class Board {
 		int b = Integer.parseInt(color.split(",,")[2]);
 		return new Color(r, g, b);
 	}
-
-
 
 }

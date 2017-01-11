@@ -1,22 +1,23 @@
 package entity;
 
-public class Tax extends NonOwnable {
+import controller.BoardManagement;
 
-	public Tax(int id) {
-		super(id);
+public class Tax extends Square {
+
+	public Tax(int id, BoardManagement bm) {
+		super(id, bm);
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void landOnField(Player player) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public int getId() {
-		// TODO Auto-generated method stub
 		return this.id;
 	}
+
 
 }

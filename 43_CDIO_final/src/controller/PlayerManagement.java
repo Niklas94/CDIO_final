@@ -9,7 +9,6 @@ public class PlayerManagement {
 	private Player[] player;
 	private int playerCount;
 	private int playersLeft;
-
 	// Initialize an array of total players.
 	public PlayerManagement() {
 		
@@ -49,6 +48,7 @@ public class PlayerManagement {
 		this.playerCount = count;
 	}
 	
+
 	public Player getPlayer(int a){
 		return player[a];
 	}

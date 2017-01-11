@@ -1,11 +1,13 @@
 package entity;
 
-public class BankParking extends NonOwnable {
+import controller.BoardManagement;
+
+public class BankParking extends Square {
 	
 	String name;
 
-	public BankParking(int id, String name) {
-		super(id);
+	public BankParking(int id, String name, BoardManagement bm) {
+		super(id, bm);
 		this.name = name;
 	}
 

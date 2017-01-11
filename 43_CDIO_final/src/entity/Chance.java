@@ -1,14 +1,15 @@
 package entity;
 
+import controller.BoardManagement;
 import controller.CardManagement;
 
-public class Chance extends NonOwnable {
+public class Chance extends Square {
 	
 	private CardManagement cm;
 	String name;
 
-	public Chance(int id, CardManagement cm, String name) {
-		super(id);
+	public Chance(int id, CardManagement cm, String name, BoardManagement bm) {
+		super(id, bm);
 		this.name = name;
 		this.cm = cm;
 	}
