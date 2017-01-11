@@ -1,17 +1,19 @@
 package entity;
 
 import controller.BoardManagement;
-import desktop_resources.GUI;
+
 
 public class Street extends Ownable {
 
-
+	private BoardManagement bm;
+	
 	public Street(int id, String name, int price, int rent, BoardManagement bm) {
 		super(id, bm);
 		this.name = name;
 		this.price = price;
 		this.rent = rent;
 		this.isOwned = false;
+		this.bm = bm;
 		
 	}
 
@@ -48,7 +50,11 @@ public class Street extends Ownable {
 
 	@Override
 	public void landOnField(Player player) {
-		
+		if(!this.isOwned){
+			bm.buyField(player, price);
+		}
+		else
+			bm.payRent(player, owner, rent);
 		
 	}
 

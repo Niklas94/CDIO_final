@@ -12,10 +12,11 @@ public class Game {
 
 		CardManagement cM = new CardManagement(31);
 		PlayerManagement pM = new PlayerManagement();
-		BoardManagement bM = new BoardManagement();
+		Bank bank = new Bank();
+		BoardManagement bM = new BoardManagement(bank);
 		bM.createBoard(cM);
 		pM.createPlayers();
-		Bank bank = new Bank(pM.getPlayerArray());
+		bank.fillPlayerArray(pM.getPlayerArray());
 		cM.getPlayerArray(pM.getPlayerArray());
 		entity.Player[] players = pM.getPlayerArray();
 		Dicecup cup = new Dicecup();
