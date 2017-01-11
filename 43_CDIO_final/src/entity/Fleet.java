@@ -1,11 +1,11 @@
 package entity;
 
-import desktop_resources.GUI;
+import controller.BoardManagement;
 
 public class Fleet extends Ownable {
 
-	public Fleet(int id, String name, int price, int rent) {
-		super(id);
+	public Fleet(int id, String name, int price, int rent, BoardManagement bm) {
+		super(id, bm);
 		this.name = name;
 		this.price = price;
 		this.rent = rent;
@@ -42,6 +42,11 @@ public class Fleet extends Ownable {
 	@Override
 	public boolean isOwned() {
 		return isOwned;
+	}
+
+	@Override
+	public void landOnField(Player player) {
+		
 	}
 
 

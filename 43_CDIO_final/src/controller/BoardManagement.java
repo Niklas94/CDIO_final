@@ -1,6 +1,9 @@
 package controller;
+
 import entity.Board;
 import entity.Ownable;
+import entity.Player;
+import entity.Bank;
 
 public class BoardManagement {
 	
@@ -8,7 +11,7 @@ public class BoardManagement {
 	//private Player[] players; //Need this for the chance field
 	
 	public BoardManagement() throws Exception{
-		board = new Board();
+		board = new Board(this);
 		
 	}
 	
@@ -34,6 +37,10 @@ public class BoardManagement {
 			return true;
 		else
 			return false;
+	}
+	
+	public void buyField(Player player, int price){
+		
 	}
 
 

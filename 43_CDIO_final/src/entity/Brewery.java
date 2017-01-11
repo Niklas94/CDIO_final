@@ -1,11 +1,12 @@
 package entity;
 
-import desktop_resources.GUI;
+import controller.BoardManagement;
+
 
 public class Brewery extends Ownable {
 
-	public Brewery(int id, String name, int price) {
-		super(id);
+	public Brewery(int id, String name, int price, BoardManagement bm) {
+		super(id, bm);
 		this.name = name;
 		this.price = price;
 		this.isOwned = false;
@@ -41,6 +42,11 @@ public class Brewery extends Ownable {
 	@Override
 	public boolean isOwned() {
 		return isOwned;
+	}
+
+	@Override
+	public void landOnField(Player player) {
+		
 	}
 
 }

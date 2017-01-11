@@ -11,15 +11,9 @@ public class Bank {
 		this.players = players;
 	}
 
-	public void buyField(Player player, Ownable o) {
-		if (o.getPrice() <= player.getBalance()) {
-			o.buySquare(player.getName());
-			player.updateBalance(-o.getPrice());
-			GUI.setHouses(player.getPosition(), 1);
-			if (o instanceof Fleet){
-				player.setFleetOwned();
-			}
-		}
+	public void buyField(Player player, int price) {
+		
+		
 	}
 
 	public void payRent(Player player, Ownable o, int sum) {
