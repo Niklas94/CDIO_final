@@ -39,7 +39,7 @@ public class GUI {
 	
 	public static boolean buyField(){
 		String answer = desktop_resources.GUI.getUserSelection("Feltet er ikke ejet. Vil du gerne købe feltet?", "Ja", "Nej");
-		if(answer == "Ja")
+		if("Ja".equalsIgnoreCase(answer))
 			return true;
 		else
 			return false;
