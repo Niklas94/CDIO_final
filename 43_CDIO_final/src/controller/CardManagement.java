@@ -15,14 +15,11 @@ import java.io.BufferedReader;
 
 public class CardManagement {
 
-	private Card[] cardArr;
-	private int numberOfCards;
+	private Card[] cardArr = new Card[31];
 	private Player[] players;
 
 	//Card Array
-	public CardManagement(int numberOfCards) {
-		this.numberOfCards = numberOfCards;
-		cardArr = new Card[numberOfCards];
+	public CardManagement() {
 	}
 	
 	public void getPlayerArray(Player[] players) {
@@ -38,7 +35,7 @@ public class CardManagement {
 
 		//Creation of the different type of cards, and what variables they have to caontain, based on the type.
 		int i = 0;
-		while((str = br.readLine()) != null && i < numberOfCards){
+		while((str = br.readLine()) != null && i < cardArr.length){
 			String type = str.split(";")[0]; //Read the type of the card
 			switch(type){
 			case "MoneyCard": 
@@ -107,8 +104,8 @@ public class CardManagement {
 						cardArr[j] = cardArr[j+1];
 					}
 					cardArr[cardArr.length - 1] = tempCard; //Return the jailcard back into the deck.
+					break;
 				}
-				break;
 			}
 		}
 

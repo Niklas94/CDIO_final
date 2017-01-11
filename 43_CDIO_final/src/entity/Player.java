@@ -6,26 +6,23 @@ public class Player {
 
 	private Account myAccount;
 	private PlayerOwned playerOwn;
-	private Card[] jailCards;
+	private OwnableCard[] jailCards;
 
 	private String name;
 	private int position;
-	private boolean isAlive;
-	private boolean inJail = false;
+	private boolean isAlive, inJail = false;
 
 	/*
 	 * Constructor
 	 */
 
 	public Player(String name) {
-
-		jailCards = new Card[2];
+		jailCards = new OwnableCard[2];
 		myAccount = new Account(this);
 		playerOwn = new PlayerOwned();
 		this.name = name;
 		this.isAlive = true;
 		this.position = 1;
-
 
 	}
 
@@ -34,10 +31,22 @@ public class Player {
 	 */
 
 	// Set jailcard to owned
-	public void setJailCardOwned(Card card) {
+	public void setJailCardOwned(OwnableCard card) {
 		for (int i = 0; i < jailCards.length; i++) {
-			if (jailCards[i] == null)
+			if (jailCards[i] == null) {
 				jailCards[i] = card;
+				break;
+			}
+		}
+	}
+
+	//Remove ONE jailcard from the player, if he owns any.
+	public void removeJailCardOwned() {
+		for (int i = 0; i < jailCards.length; i++) {
+			if (jailCards[i] != null) {
+				jailCards[i] = null;
+				break;
+			}
 		}
 	}
 
@@ -189,12 +198,12 @@ public class Player {
 	 * GETTERS
 	 */
 
-	public Card getJailCard() {
+	public Boolean getJailCard() {
 		for (int i = 0; i < jailCards.length; i++) {
-			if (jailCards[i] != null)
-				return jailCards[i];
+			if (this.jailCards[i] != null)
+				return true;
 		}
-		return null;
+		return false;
 	}
 
 	// Get player name

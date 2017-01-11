@@ -14,14 +14,14 @@ public class OwnableCard extends Card {
 	@Override
 	public void useCard(Player player, CardManagement cm) {
 		// TODO Auto-generated method stub
-
 		if (!isOwned) {
-			player.setJailCardOwned(this);
 			isOwned = true;
+			player.setJailCardOwned(this);
 		}
 		else {
-			cm.returnCardToDeck(this);
 			isOwned = false;
+			player.removeJailCardOwned();
+			cm.returnCardToDeck(this);
 		}
 	}
 
