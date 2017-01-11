@@ -7,5 +7,6 @@ public abstract class NonOwnable extends Square {
 		// TODO Auto-generated constructor stub
 	}
 
+	public abstract void landOnField(Player player);
 
 }

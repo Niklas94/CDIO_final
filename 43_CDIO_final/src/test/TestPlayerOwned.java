@@ -39,15 +39,15 @@ public class TestPlayerOwned {
 		assertTrue(actual);
 	}
 
-	@Test
-	public void testSetFleetOwned() {
-		boolean actual = playerOwned.getFleetOwned(1);
-		assertFalse(actual);
-		playerOwned.setFleetOwned(1, true);
-		actual = playerOwned.getFleetOwned(1);
-		assertTrue(actual);
-		
-	}
+//	@Test
+//	public void testSetFleetOwned() {
+//		boolean actual = playerOwned.getFleetOwned(1);
+//		assertFalse(actual);
+//		playerOwned.setFleetOwned(1, true);
+//		actual = playerOwned.getFleetOwned(1);
+//		assertTrue(actual);
+//		
+//	}
 
 	@Test
 	public void testSetStreetBlueOwned() {

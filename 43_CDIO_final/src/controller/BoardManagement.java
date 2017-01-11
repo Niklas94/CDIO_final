@@ -1,7 +1,6 @@
 package controller;
-
 import entity.Board;
-import entity.Square;
+import entity.Ownable;
 
 public class BoardManagement {
 	
@@ -17,8 +16,24 @@ public class BoardManagement {
 		board.createBoard(cm);
 	}
 	
-	public Square getOwnableSquares(int id){
-		return board.getOwnableSquare(id);
+	public Ownable getOwnableSquare(int id){
+		if(board.getSquare(id) instanceof Ownable){
+			Ownable o = (Ownable)board.getOwnableSquare(id);
+			return o;
+		}
+		else
+			return null;
+	}
+	
+	public boolean isOwned(int id) {
+			return ((Ownable) board.getSquare(id)).isOwned();
+	}
+	
+	public boolean ownable(int id){
+		if(board.getSquare(id) instanceof Ownable)
+			return true;
+		else
+			return false;
 	}
 
 

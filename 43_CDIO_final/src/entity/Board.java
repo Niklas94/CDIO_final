@@ -12,13 +12,10 @@ import desktop_fields.Tax;
 import desktop_resources.GUI;
 import java.io.FileReader;
 import java.io.IOException;
-
-import controller.CardManagement;
-
-import java.awt.Color;
 import java.io.BufferedReader;
 //import java.io.FileNotFoundException;
-
+import controller.CardManagement;
+import java.awt.Color;
 
 public class Board {
 
@@ -31,19 +28,14 @@ public class Board {
 		
 	}
 
-	public Square getOwnableSquare(int id){
-		for(int i = 0; i < logicField.length; i++){
-			if(logicField[i].getId() == id){
-				if(logicField[i] instanceof Ownable){
-					return logicField[i];
-				}
-			}
-			
-		}
-		System.out.println("this square is not ownable.");
-		return null;		
+	public Ownable getOwnableSquare(int id){
+			Ownable o = (Ownable) logicField[id];
+			return o;
 	}
-
+	
+	public Square getSquare(int id) {
+		return logicField[id];
+	}
 
 	public void createBoard(CardManagement cm) {
 		FileReader file;
@@ -109,6 +101,8 @@ public class Board {
 
 
 	}
+	
+
 
 	public void createStart(String[] values, int index){
 
@@ -241,13 +235,13 @@ public class Board {
 		
 	}
 
-	public String getValue(String refrence, String[] values){
+	public String getValue(String reference, String[] values){
 		for(String a : values){
-			if(a.split("::")[0].equalsIgnoreCase(refrence)){
+			if(a.split("::")[0].equalsIgnoreCase(reference)){
 				return a.split("::")[1];
 			}
 		}
-		System.out.println("Can't find value for: " + refrence);
+		System.out.println("Can't find value for: " + reference);
 		return null;
 	}
 

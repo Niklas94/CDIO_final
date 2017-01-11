@@ -28,8 +28,8 @@ public class Dicecup {
 		return sum;
 	}
 	
-	public Die[] getX() {
-		return x;
+	public Die getX(int a) {
+		return x[a];
 	}
 	
 }
