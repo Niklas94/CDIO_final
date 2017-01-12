@@ -44,5 +44,9 @@ public class GUI {
 		else
 			return false;
 	}
+	
+	public static void playerOwnsField(String owner){
+		desktop_resources.GUI.showMessage(owner + ", du er landet paa dit eget felt.");
+	}
 
 }

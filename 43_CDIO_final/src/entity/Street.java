@@ -53,8 +53,10 @@ public class Street extends Ownable {
 		if(!this.isOwned){
 			bm.buyField(player, price);
 		}
-		else
+		else if(isOwned && player.getName() != owner)
 			bm.payRent(player, owner, rent);
+		else
+			bm.playerOwnsField(owner);
 	}
 
 }

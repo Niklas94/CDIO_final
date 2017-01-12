@@ -58,5 +58,9 @@ public class BoardManagement {
 	public void payBreweryRent(Player player, String owner, int rent, int sum){
 		bank.payBreweryRent(player, owner, rent, sum);
 	}
+	
+	public void playerOwnsField(String owner){
+		GUI.playerOwnsField(owner);
+	}
 
 }
