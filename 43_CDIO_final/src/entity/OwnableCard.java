@@ -14,6 +14,7 @@ public class OwnableCard extends Card {
 	@Override
 	public void useCard(Player player, CardManagement cm) {
 		// TODO Auto-generated method stub
+		System.out.println(super.getDescription());
 		if (!isOwned) {
 			isOwned = true;
 			player.setJailCardOwned(this);

@@ -2,6 +2,7 @@ package controller;
 
 import java.io.FileReader;
 
+import entity.Bank;
 import entity.Card;
 import entity.FleetCard;
 import entity.MoneyCard;
@@ -16,10 +17,14 @@ import java.io.BufferedReader;
 public class CardManagement {
 
 	private Card[] cardArr = new Card[31]; //Change the number to create more cards - remember to add type, value and such in "Card Description.txt" file
-	private Player[] players;
-
+	private Player[] players; //SpecialBirthday Card.
+	private Bank bank;
+	private BoardManagement bm;
+	
 	//Card Array
-	public CardManagement() {
+	public CardManagement(Bank bank, BoardManagement bm) {
+		this.bank = bank;
+		this.bm = bm;
 	}
 	
 	public void getPlayerArray(Player[] players) {
@@ -52,7 +57,7 @@ public class CardManagement {
 				break;
 			case "FleetCard":
 				desc = str.split(";")[1];
-				cardArr[i++] = new FleetCard(desc);
+				cardArr[i++] = new FleetCard(desc, bank, bm);
 				//cardArr[i].setId(i);
 				break;
 			case "SpecialCard":

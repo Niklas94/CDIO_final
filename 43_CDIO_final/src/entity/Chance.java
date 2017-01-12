@@ -3,7 +3,7 @@ package entity;
 import controller.BoardManagement;
 import controller.CardManagement;
 
-public class Chance extends Square {
+public class Chance extends NonOwnable {
 	
 	private BoardManagement bm;
 	private CardManagement cm;

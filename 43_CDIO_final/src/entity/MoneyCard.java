@@ -15,6 +15,7 @@ public class MoneyCard extends Card {
 	public void useCard(Player player, CardManagement cm) {
 		player.updateBalance(amount);
 		cm.returnCardToDeck(this);
+		System.out.println(super.getDescription());
 	}
 	
 }

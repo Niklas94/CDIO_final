@@ -13,6 +13,7 @@ public class SpecialCard extends Card {
 
 	@Override
 	public void useCard(Player player, CardManagement cm) {
+		System.out.println(super.getDescription());
 		if (this.getDescription().charAt(2) == 'e') {
 			value -= 800 * player.getTotalHousesOwned() - 2300 * player.getTotalHotelsOwned();
 			player.updateBalance(value);

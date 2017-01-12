@@ -2,7 +2,7 @@ package entity;
 
 import controller.BoardManagement;
 
-public class Prison extends Square {
+public class Prison extends NonOwnable {
 	
 	private BoardManagement bm;
 	private String name;

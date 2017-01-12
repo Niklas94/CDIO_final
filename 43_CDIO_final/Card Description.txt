@@ -1,31 +1,31 @@
-MoneyCard;1000;De modtager deres aktieudbytte. Modtag kr. 1.000 af banken.
-MoneyCard;1000;De modtager deres aktieudbytte. Modtag kr. 1.000 af banken.
-MoneyCard;1000;De modtager deres aktieudbytte. Modtag kr. 1.000 af banken.
-MoneyCard;-3000;Betal kr. 3.000 for reparation af deres vogn.
-MoneyCard;-3000;Betal kr. 3.000 for reparation af deres vogn.
-MoneyCard;-1000;Betal deres bilforsikring kr. 1.000.
+FleetCard;Tag med den nærmeste færge - Flyt brikken frem, og hvis De passerer Start inkassér da kr. 4.000.
+FleetCard;Ryk brikken frem til det nærmeste rederi og betal ejeren to gange den leje, han ellers er berettiget til. Hvis selskabet ikke ejes af nogen kan De købe det af banken.
+FleetCard;Ryk brikken frem til det nærmeste rederi og betal ejeren to gange den leje, han ellers er berettiget til. Hvis selskabet ikke ejes af nogen kan De købe det af banken.
+SpecialCard;Ejendomsskatterne er steget, ekstraudgifterne er: kr. 800 pr. hus, kr. 2.300 pr. hotel.
+SpecialCard;Oliepriserne er steget, og De skal betale: kr. 500 pr. hus. kr. 2.000 pr. hotel.
+SpecialCard;De modtager Matador-legatet for værdig trængende stort kr. 40.000. Ved værdig trængende forstås at Deres formue, d.v.s. Deres kontante penge + skøder + bygninger ikke overstiger kr. 15.000.
+PlayerBirthdayCard;Det er Deres fødselsdag. Modtag af hver medspiller kr. 200.
+MoneyCard;1000;De modtager Deres aktieudbytte. Modtag kr. 1.000 af banken.
+MoneyCard;1000;De modtager Deres aktieudbytte. Modtag kr. 1.000 af banken.
+MoneyCard;1000;De modtager Deres aktieudbytte. Modtag kr. 1.000 af banken.
+MoneyCard;-3000;Betal kr. 3.000 for reparation af Deres vogn.
+MoneyCard;-3000;Betal kr. 3.000 for reparation af Deres vogn.
+MoneyCard;-1000;Betal Deres bilforsikring kr. 1.000.
 MoneyCard;1000;Deres præmieobligation er kommet ud. De modtager kr. 1.000 af banken.
 MoneyCard;1000;Deres præmieobligation er kommet ud. De modtager kr. 1.000 af banken.
 MoneyCard;-200;De har været en tur i udlandet og haft for mange cigaretter med hjem. Betal told kr. 200.
 MoneyCard;500;De har vundet i Klasselotteriet. Modtag kr. 500.
 MoneyCard;3000;Kommunen har eftergivet et kvartals skat. Hæv i banken kr. 3.000.
-MoneyCard;-2000;De har modtaget deres tandl�geregning. Betal kr. 2.000.
-MoneyCard;200;Værdien af egen avl fra nyttehaven udgør kr. 200, som de modtager af banken.
-MoneyCard;1000;Grundet dyrtiden har de fået gageforhøjelse. Modtag kr. 1.000.
+MoneyCard;-2000;De har modtaget Deres tandl�geregning. Betal kr. 2.000.
+MoneyCard;200;Værdien af egen avl fra nyttehaven udgør kr. 200, som De modtager af banken.
+MoneyCard;1000;Grundet dyrtiden har De fået gageforhøjelse. Modtag kr. 1.000.
 MoneyCard;1000;De havde en række med elleve rigtige i tipning. Modtag kr. 1.000.
 MoneyCard;-200;De har måttet vedtage en parkeringsbøde. Betal kr. 200 i bøde.
 MoneyCard;-1000;De har kørt frem for Fuld Stop. Betal kr. 1.000 i bøde.
 PositionCard;-3;Ryk tre felter tilbage.
-PositionCard;11;Ryk frem til Frederiksberg Alle. Hvis de passerer Start, indkasser kr. 4.000.
-PositionCard;0;Ryk frem til Start.
-PositionCard;24;Ryk frem til Grønningen. Hvis de passerer Start, indkasser da kr. 4.000.
-PositionCard;39;Tag ind på Rådhuspladsen.
-PositionCard;30;Gå i fængsel. Ryk direkte til fængslet. Selv om de passerer Start, indkasserer de ikke kr. 4.000.
-PositionCard;30;Gå i fængsel. Ryk direkte til fængslet. Selv om de passerer Start, indkasserer de ikke kr. 4.000.
-FleetCard;Tag med den nærmeste færge - Flyt brikken frem, og hvis de passerer Start inkassér da kr. 4.000.
-FleetCard;Ryk brikken frem til det nærmeste rederi og betal ejeren to gange den leje, han ellers er berettiget til. Hvis selskabet ikke ejes af nogen kan de købe det af banken.
-FleetCard;Ryk brikken frem til det nærmeste rederi og betal ejeren to gange den leje, han ellers er berettiget til. Hvis selskabet ikke ejes af nogen kan de købe det af banken.
-SpecialCard;Ejendomsskatterne er steget, ekstraudgifterne er: kr. 800 pr. hus, kr. 2.300 pr. hotel.
-SpecialCard;Oliepriserne er steget, og de skal betale: kr. 500 pr. hus. kr. 2.000 pr. hotel.
-SpecialCard;De modtager Matador-legatet for værdig trængende stort kr. 40.000. Ved værdig trængende forstås at deres formue, d.v.s. deres kontante penge + skøder + bygninger ikke overstiger kr. 15.000.
-PlayerBirthdayCard;Det der deres fødselsdag. Modtag af hver medspiller kr. 200.
+PositionCard;12;Ryk frem til Frederiksberg Alle. Hvis De passerer Start, indkasser kr. 4.000.
+PositionCard;1;Ryk frem til Start.
+PositionCard;25;Ryk frem til Grønningen. Hvis De passerer Start, indkasser da kr. 4.000.
+PositionCard;40;Tag ind på Rådhuspladsen.
+PositionCard;31;Gå i fængsel. Ryk direkte til fængslet. Selv om De passerer Start, indkasserer De ikke kr. 4.000.
+PositionCard;31;Gå i fængsel. Ryk direkte til fængslet. Selv om De passerer Start, indkasserer De ikke kr. 4.000.

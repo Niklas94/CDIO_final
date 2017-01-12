@@ -13,7 +13,7 @@ public class jailCardTest {
 
 	public static void main(String[] args) throws Exception{
 
-		CardManagement cM = new CardManagement(31);
+		CardManagement cM = new CardManagement();
 		PlayerManagement pM = new PlayerManagement();
 		Bank bank = new Bank();
 		BoardManagement bM = new BoardManagement(bank);

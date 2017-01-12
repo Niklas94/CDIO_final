@@ -2,10 +2,9 @@ package entity;
 
 import controller.BoardManagement;
 
-public class BankParking extends Square {
+public class BankParking extends NonOwnable {
 	
 	private BoardManagement bm;
-	
 	String name;
 
 	public BankParking(int id, String name, BoardManagement bm) {

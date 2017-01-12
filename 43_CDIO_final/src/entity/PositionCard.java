@@ -15,6 +15,7 @@ public class PositionCard extends Card {
 
 	@Override
 	public void useCard(Player player, CardManagement cm) {
+		System.out.println(super.getDescription());
 		if (position >= 0){
 			player.setPosition(position);
 		}
