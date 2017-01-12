@@ -14,15 +14,15 @@ public class SpecialCard extends Card {
 	@Override
 	public void useCard(Player player, CardManagement cm) {
 		System.out.println(super.getDescription());
-		if (this.getDescription().charAt(2) == 'e') {
-			value -= 800 * player.getTotalHousesOwned() - 2300 * player.getTotalHotelsOwned();
-			player.updateBalance(value);
+		if (this.getDescription().equals("Ejendomsskatterne er steget, ekstraudgifterne er: kr. 800 pr. hus, kr. 2.300 pr. hotel.")) {
+			value = 800 * player.getTotalHousesOwned() + 2300 * player.getTotalHotelsOwned();
+			player.updateBalance(-value);
 		}
-		else if (this.getDescription().charAt(2) == 'i') {
-			value -= 500 * player.getTotalHousesOwned() - 2000 * player.getTotalHotelsOwned();
-			player.updateBalance(value);
+		else if (this.getDescription().equals("Oliepriserne er steget, og De skal betale: kr. 500 pr. hus. kr. 2.000 pr. hotel.")) {
+			value = 500 * player.getTotalHousesOwned() + 2000 * player.getTotalHotelsOwned();
+			player.updateBalance(-value);
 		}
-		else if (this.getDescription().charAt(2) == ' ') {
+		else if (this.getDescription().charAt(3) == ' ') {
 //			if (player.getTotalValue() < 15000)
 				player.updateBalance(40000);
 		}

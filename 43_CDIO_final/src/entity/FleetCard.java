@@ -19,7 +19,7 @@ public class FleetCard extends Card {
 		if (player.getPosition() >= 3 && player.getPosition() <= 8) {
 			player.setPosition(6);
 			if (bm.returnFleet(player.getPosition()).isOwned && bm.returnFleet(player.getPosition()).getOwner() != player.getName()) {
-				bank.payRent(player, bm.returnFleet(player.getPosition()).getOwner(), bm.returnFleet(player.getPosition()).getRent());
+				bank.payRent(player, bm.returnFleet(player.getPosition()).getOwner(), bm.returnFleet(player.getPosition()).getRent() * 2);
 			}
 			else if (!bm.returnFleet(player.getPosition()).isOwned) {
 				bm.buyField(player, bm.returnFleet(player.getPosition()).getPrice());
@@ -29,7 +29,7 @@ public class FleetCard extends Card {
 		{
 			player.setPosition(16);
 			if (bm.returnFleet(player.getPosition()).isOwned && bm.returnFleet(player.getPosition()).getOwner() != player.getName()) {
-				bank.payRent(player, bm.returnFleet(player.getPosition()).getOwner(), bm.returnFleet(player.getPosition()).getRent());
+				bank.payRent(player, bm.returnFleet(player.getPosition()).getOwner(), bm.returnFleet(player.getPosition()).getRent() * 2);
 			}
 			else if (!bm.returnFleet(player.getPosition()).isOwned) {
 				bm.buyField(player, bm.returnFleet(player.getPosition()).getPrice());
@@ -38,7 +38,7 @@ public class FleetCard extends Card {
 		else if (player.getPosition() == 23) {
 			player.setPosition(26);
 			if (bm.returnFleet(player.getPosition()).isOwned && bm.returnFleet(player.getPosition()).getOwner() != player.getName()) {
-				bank.payRent(player, bm.returnFleet(player.getPosition()).getOwner(), bm.returnFleet(player.getPosition()).getRent());
+				bank.payRent(player, bm.returnFleet(player.getPosition()).getOwner(), bm.returnFleet(player.getPosition()).getRent() * 2);
 			}
 			else if (!bm.returnFleet(player.getPosition()).isOwned) {
 				bm.buyField(player, bm.returnFleet(player.getPosition()).getPrice());
@@ -47,7 +47,7 @@ public class FleetCard extends Card {
 		else if (player.getPosition() >= 34 && player.getPosition() <= 37) {
 			player.setPosition(36);	
 			if (bm.returnFleet(player.getPosition()).isOwned && bm.returnFleet(player.getPosition()).getOwner() != player.getName()) {
-				bank.payRent(player, bm.returnFleet(player.getPosition()).getOwner(), bm.returnFleet(player.getPosition()).getRent());
+				bank.payRent(player, bm.returnFleet(player.getPosition()).getOwner(), bm.returnFleet(player.getPosition()).getRent() * 2);
 			}
 			else if (!bm.returnFleet(player.getPosition()).isOwned) {
 				bm.buyField(player, bm.returnFleet(player.getPosition()).getPrice());
