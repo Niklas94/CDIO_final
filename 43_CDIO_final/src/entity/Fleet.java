@@ -28,8 +28,7 @@ public class Fleet extends Ownable {
 	@Override
 	public void buySquare(String player) {
 		this.owner = player;
-		this.isOwned = true;
-		
+		this.isOwned = true;	
 	}
 
 	@Override

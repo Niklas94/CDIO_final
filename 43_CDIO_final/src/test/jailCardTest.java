@@ -13,16 +13,18 @@ public class jailCardTest {
 
 	public static void main(String[] args) throws Exception{
 
-		CardManagement cM = new CardManagement(31);
+		
 		PlayerManagement pM = new PlayerManagement();
 		Bank bank = new Bank();
 		BoardManagement bM = new BoardManagement(bank);
-		bM.createBoard(cM);
+		CardManagement cM = new CardManagement(bank, bM);
+		Dicecup cup = new Dicecup();
+		bM.createBoard(cM, cup);
 		pM.createPlayers();
 		bank.fillPlayerArray(pM.getPlayerArray());
 		cM.getPlayerArray(pM.getPlayerArray());
 		entity.Player[] players = pM.getPlayerArray();
-		Dicecup cup = new Dicecup();
+		
 		boolean gameOn = true;
 		
 		System.err.println("The next statement should be false: Player doesnt have a jailcard.");

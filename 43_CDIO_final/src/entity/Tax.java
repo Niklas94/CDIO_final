@@ -2,7 +2,7 @@ package entity;
 
 import controller.BoardManagement;
 
-public class Tax extends Square {
+public class Tax extends NonOwnable {
 	
 	private BoardManagement bm;
 

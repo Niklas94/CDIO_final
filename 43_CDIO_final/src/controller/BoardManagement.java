@@ -2,8 +2,10 @@ package controller;
 
 import entity.Board;
 import entity.Dicecup;
+import entity.Fleet;
 import entity.Ownable;
 import entity.Player;
+import entity.Square;
 import entity.Bank;
 import boundary.GUI;
 
@@ -16,15 +18,18 @@ public class BoardManagement {
 	public BoardManagement(Bank bank) throws Exception{
 		board = new Board(this);
 		this.bank = bank;
-
+	}
+	
+	public Fleet returnFleet(int id) {
+		return (Fleet) this.board.logicField[id - 1];
 	}
 
 	public void createBoard(CardManagement cm, Dicecup cup){
 		board.createBoard(cm, cup);
 	}
 
-	public Object getSquare(int id){
-		return this.board.logicField[id];
+	public Square getSquare(int id){
+		return this.board.logicField[id - 1];
 	}
 
 	public int getNumberOfSquares(){
@@ -46,7 +51,9 @@ public class BoardManagement {
 		if(GUI.buyField()){
 			if(bank.buyField(player, price)){
 				board.getOwnableSquare(player.getPosition() - 1).buySquare(player.getName());
-				desktop_resources.GUI.setHouses(player.getPosition() - 1, 1);
+				if (board.getOwnableSquare(player.getPosition() - 1) instanceof Fleet)
+					player.setFleetOwned();
+				desktop_resources.GUI.setHouses(player.getPosition(), 1);
 			}
 		}
 	}

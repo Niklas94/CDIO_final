@@ -41,7 +41,7 @@ public class Bank {
 	}
 
 	public void payRent(Player player, String owner, int rent) {
-		if(bm.getSquare(player.getPosition() - 1) instanceof Fleet){
+		if(bm.getSquare(player.getPosition()) instanceof Fleet){
 			for(int i = 0; i < players.length; i++){
 				if(players[i].getName() == owner)
 					rent = (int) (rent / (8 / Math.pow(2, players[i].getTotalFleetOwned() - 1)));

@@ -6,21 +6,25 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import controller.BoardManagement;
 import controller.CardManagement;
 import controller.PlayerManagement;
+import entity.Bank;
 import entity.Card;
 import entity.Player;
 
 public class TestCardManagement {
 
 	CardManagement cm;
-	PlayerManagement pM;
+	PlayerManagement pm;
+	Bank bank;
+	BoardManagement bm;
 	Player[] players;
 
 	@Before
 	public void setUp() throws Exception {
-		cm = new CardManagement(31);
-		pM = new PlayerManagement();
+		cm = new CardManagement(bank, bm);
+		pm = new PlayerManagement();
 //		pM.createPlayers();
 //		cm.getPlayerArray(pM.getPlayerArray());
 	}
