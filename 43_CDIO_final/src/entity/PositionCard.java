@@ -16,7 +16,6 @@ public class PositionCard extends Card {
 
 	@Override
 	public boolean useCard(Player player) {
-		System.out.println(super.getDescription());
 		if (position >= 0){
 			player.setPosition(position);
 			bm.getSquare(player.getPosition()).landOnField(player);

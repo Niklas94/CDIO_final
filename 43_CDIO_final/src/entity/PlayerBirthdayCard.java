@@ -24,7 +24,6 @@ public class PlayerBirthdayCard extends Card {
 				}
 			}
 		}
-		System.out.println(super.getDescription());
 		player.updateBalance(amount);
 		amount = 0;
 		return true;

@@ -13,7 +13,6 @@ public class OwnableCard extends Card {
 	public boolean useCard(Player player) {
 		// TODO Auto-generated method stub
 		if (!this.getDescription().equals("Placeholder")) { //Making sure that a placeholder card wont do anything
-			System.out.println(super.getDescription());
 			if (!isOwned) {
 				isOwned = true;
 				player.setJailCardOwned(this);

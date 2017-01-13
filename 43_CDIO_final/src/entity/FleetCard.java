@@ -52,7 +52,6 @@ public class FleetCard extends Card {
 				bm.buyField(player, bm.returnFleet(player.getPosition()).getPrice());
 			}
 		}
-		System.out.println(super.getDescription());
 		return true;
 	}
 }
