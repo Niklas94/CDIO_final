@@ -18,8 +18,8 @@ public class CardManagement {
 
 	private Card[] cardArr = new Card[33]; //Change the number to create more cards - remember to add type, value and such in "Card Description.txt" file
 	private Player[] players; //SpecialBirthday Card.
-	private Bank bank;
-	private BoardManagement bm;
+	private Bank bank; //Fleet card
+	private BoardManagement bm; //Fleet and position card
 
 	//Card Array
 	public CardManagement(Bank bank, BoardManagement bm) {
@@ -107,7 +107,7 @@ public class CardManagement {
 	public void returnCardToDeck(Card card) {
 		if (card instanceof OwnableCard) { //If the card is one of the two ownable jailcards.
 			for (int i = 0; i < cardArr.length; i++) {
-				if (cardArr[i] == null) { //Find one of the two 'placeholder' cards (basically what previously were a jailcard).
+				if (cardArr[i].getDescription().equals("Placeholder")) { //Find one of the two 'placeholder' cards (basically what previously were a jailcard).
 					Card tempCard = card; //Save the returning jailcard into a temporary card.
 					for (int j = i; j < cardArr.length; j++) { //Move all the cards from the placeholder card and above, one down in index.
 						cardArr[j] = cardArr[j+1];
@@ -117,13 +117,19 @@ public class CardManagement {
 				}
 			}
 		}
-
 		cardArr[cardArr.length-1] = card;
 	}
 
 	//This method is, as of now (7. January 2017) only here, so we can test all the other methods.
 	public Card pullCard(int index) {
-		return cardArr[index];
+		Card topCard;
+		
+		if (!cardArr[index].getDescription().equals("Placeholder"))
+			return topCard = cardArr[index];
+		else if (!cardArr[index + 1].getDescription().equals("Placeholder"))
+			return topCard = cardArr[index + 1];
+		else
+			return topCard = cardArr[index + 2];
 	}
 
 	//Pull the card, at the top of the deck
@@ -137,18 +143,18 @@ public class CardManagement {
 		else if (!cardArr[0].getDescription().equals("Placeholder"))
 			topCard = cardArr[1];
 		else
-			topCard = cardArr[0];
+			topCard = cardArr[2];
 		
 		//Moving all cards 1 down in index. Now the card at index 1, is now at index 0 - therefore the next top card which is pulled from the deck.
 		for (int i = 0; i < cardArr.length-1; i++) {
 			cardArr[i] = cardArr[i+1];
 		}
-
-		//Return card to the bottom of the deck
-		if (!(topCard instanceof OwnableCard)) {
-			this.returnCardToDeck(topCard); //The line below and the for loop about 10 lines above this line, did basically the same as this, but in a slightly different way. Keeping both things for now, just in case.
+		
+		//Creating
+		if (topCard instanceof OwnableCard) {
 			cardArr[cardArr.length-1] = new OwnableCard("Placeholder");
 		}
+		
 		return topCard;
 	}
 }

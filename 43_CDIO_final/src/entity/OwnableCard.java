@@ -12,14 +12,16 @@ public class OwnableCard extends Card {
 	@Override
 	public boolean useCard(Player player) {
 		// TODO Auto-generated method stub
-		System.out.println(super.getDescription());
-		if (!isOwned) {
-			isOwned = true;
-			player.setJailCardOwned(this);
-		}
-		else {
-			isOwned = false;
-			player.useJailCardOwned();
+		if (!this.getDescription().equals("Placeholder")) { //Making sure that a placeholder card wont do anything
+			System.out.println(super.getDescription());
+			if (!isOwned) {
+				isOwned = true;
+				player.setJailCardOwned(this);
+			}
+			else {
+				isOwned = false;
+				player.useJailCardOwned();
+			}
 		}
 		return false; //This is only here, so the method can be used...
 	}
