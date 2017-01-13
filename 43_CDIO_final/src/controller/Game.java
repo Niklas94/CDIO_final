@@ -8,7 +8,11 @@ import entity.Player;
 public class Game {
 
 	public static void main(String[] args) throws Exception{
-
+		new Game().go();
+	}
+	
+	public void go() throws Exception {
+		
 		Dicecup cup = new Dicecup();
 		PlayerManagement pM = new PlayerManagement();
 		Bank bank = new Bank();
@@ -25,7 +29,6 @@ public class Game {
 		boolean gameOn = true;
 
 		while(gameOn){
-
 
 			for(int i = 0; i < pM.getPlayerArray().length; i++) {
 
@@ -52,25 +55,7 @@ public class Game {
 				}
 
 				else {
-					String a = GUI.getUserButtonPressed("Du er fængslet og kan komme ud ved enten at betale 1.000 kr, kaste to ens eller bruge et løsladelseskort. Hvad vælger du?", "Betale 1.000 kr.", "Prøve at kaste to ens", "Bruger mit løsladelseskort");
-					if (a.equals("Betale 1.000 kr.")) {
-
-					}
-					else if (a.equals("Prøve at kaste to ens")) {
-						boundary.GUI.pressEnter(pM.getPlayer(i).getName());
-						cup.rollDice();
-						if (cup.equalDice())
-							pM.getPlayer(i).inJail();
-					}
-					else if (a.equals("Bruger mit løsladelseskort")) {
-						if (pM.getPlayer(i).getJailCard()) {
-							pM.getPlayer(i).useJailCardOwned();
-							pM.getPlayer(i).inJail();
-						}
-						else {
-
-						}
-					}
+					bM.getSquare(pM.getPlayer(i).getPosition()).landOnField(pM.getPlayer(i));
 				}
 
 				if (cup.equalDice()) {

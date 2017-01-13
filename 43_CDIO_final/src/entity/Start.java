@@ -1,16 +1,11 @@
 package entity;
 
-import controller.BoardManagement;
-
 public class Start extends NonOwnable {
-	
-	private BoardManagement bm;
-	private String name;
 
-	public Start(int id, String name, BoardManagement bm) {
+	public Start(int id, String name, String type) {
 		super(id);
 		this.name = name;
-		this.bm = bm;
+		this.type = type;
 	}
 
 	@Override

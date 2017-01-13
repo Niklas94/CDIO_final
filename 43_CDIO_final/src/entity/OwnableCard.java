@@ -1,7 +1,5 @@
 package entity;
 
-import controller.CardManagement;
-
 public class OwnableCard extends Card {
 
 	private boolean isOwned;
@@ -12,7 +10,7 @@ public class OwnableCard extends Card {
 	}
 
 	@Override
-	public void useCard(Player player, CardManagement cm) {
+	public boolean useCard(Player player) {
 		// TODO Auto-generated method stub
 		System.out.println(super.getDescription());
 		if (!isOwned) {
@@ -22,8 +20,9 @@ public class OwnableCard extends Card {
 		else {
 			isOwned = false;
 			player.useJailCardOwned();
-			cm.returnCardToDeck(this);
 		}
+		return false; //This is only here, so the method can be used...
 	}
+
 
 }

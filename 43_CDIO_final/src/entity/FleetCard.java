@@ -1,6 +1,5 @@
 package entity;
 import controller.BoardManagement;
-import controller.CardManagement;
 import entity.Card;
 
 public class FleetCard extends Card {
@@ -15,7 +14,7 @@ public class FleetCard extends Card {
 	}
 
 	@Override
-	public void useCard(Player player, CardManagement cm) {
+	public boolean useCard(Player player) {
 		if (player.getPosition() >= 3 && player.getPosition() <= 8) {
 			player.setPosition(6);
 			if (bm.returnFleet(player.getPosition()).isOwned && bm.returnFleet(player.getPosition()).getOwner() != player.getName()) {
@@ -54,6 +53,6 @@ public class FleetCard extends Card {
 			}
 		}
 		System.out.println(super.getDescription());
-		cm.returnCardToDeck(this);
+		return true;
 	}
 }

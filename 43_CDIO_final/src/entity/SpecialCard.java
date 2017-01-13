@@ -1,7 +1,5 @@
 package entity;
 
-import controller.CardManagement;
-
 public class SpecialCard extends Card {
 
 	private int value;
@@ -12,7 +10,7 @@ public class SpecialCard extends Card {
 	}
 
 	@Override
-	public void useCard(Player player, CardManagement cm) {
+	public boolean useCard(Player player) {
 		System.out.println(super.getDescription());
 		if (this.getDescription().equals("Ejendomsskatterne er steget, ekstraudgifterne er: kr. 800 pr. hus, kr. 2.300 pr. hotel.")) {
 			value = 800 * player.getTotalHousesOwned() + 2300 * player.getTotalHotelsOwned();
@@ -26,6 +24,6 @@ public class SpecialCard extends Card {
 //			if (player.getTotalValue() < 15000)
 				player.updateBalance(40000);
 		}
-		cm.returnCardToDeck(this);
+		return true;
 	}
 }

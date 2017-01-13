@@ -7,13 +7,14 @@ public class Brewery extends Ownable {
 	private Dicecup cup;
 	private BoardManagement bm;
 
-	public Brewery(int id, String name, int price, BoardManagement bm, Dicecup cup) {
+	public Brewery(int id, String name, int price, BoardManagement bm, Dicecup cup, String type) {
 		super(id);
 		this.name = name;
 		this.price = price;
 		this.isOwned = false;
 		this.cup = cup;
 		this.bm = bm;
+		this.type = type;
 		//		this.rent = rent; 		// if we use this then remember to add a parameter in the constructor
 	}
 

@@ -6,10 +6,11 @@ public class Tax extends NonOwnable {
 	
 	private BoardManagement bm;
 
-	public Tax(int id, BoardManagement bm, String name) {
+	public Tax(int id, BoardManagement bm, String name, String type) {
 		super(id);
 		this.bm = bm;
 		this.name = name;
+		this.type = type;
 	}
 
 	@Override

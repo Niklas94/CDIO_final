@@ -78,7 +78,7 @@ public class Board {
 					index++;
 					break;
 				case "Jail":
-					createJail(values, index);
+					createJail(values, index, cup);
 					index++;
 					break;
 				case "Chance":
@@ -105,7 +105,6 @@ public class Board {
 	}
 
 	public void createStart(String[] values, int index){
-
 		Color bgColor = getColor(getValue("backgroundColor", values));
 		Color fgColor = getColor(getValue("foregroundColor", values));
 		String title = getValue("title", values);
@@ -119,7 +118,7 @@ public class Board {
 				.setDescription(description)
 				.build();
 
-		logicField[index] = new entity.Start(index + 1, title, bm);
+		logicField[index] = new entity.Start(index + 1, title, "Start");
 
 	}
 
@@ -141,7 +140,7 @@ public class Board {
 
 		int price = Integer.parseInt(subText.split(":")[1].trim());
 		int rentForLogic = Integer.parseInt(rent.split(":")[1].trim());
-		logicField[index] = new entity.Street(index + 1, title, price, rentForLogic, bm);
+		logicField[index] = new entity.Street(index + 1, title, price, rentForLogic, bm, "Street");
 
 	}
 
@@ -165,7 +164,7 @@ public class Board {
 
 		int price = Integer.parseInt(subText.split(":")[1].trim());
 		//		int rentForLogic = Integer.parseInt(rent.split(":")[1].trim());
-		logicField[index] = new entity.Brewery(index + 1, title, price, bm, cup);
+		logicField[index] = new entity.Brewery(index + 1, title, price, bm, cup, "Brewery");
 
 
 	}
@@ -184,7 +183,7 @@ public class Board {
 
 		int price = Integer.parseInt(subText.split(":")[1].trim());
 		int rentForLogic = Integer.parseInt(rent.split(":")[1].trim());
-		logicField[index] = new entity.Fleet(index + 1, title, price, rentForLogic, bm);
+		logicField[index] = new entity.Fleet(index + 1, title, price, rentForLogic, bm, "Fleet");
 
 	}
 
@@ -198,11 +197,11 @@ public class Board {
 				.setDescription(description)
 				.build();
 
-		logicField[index] = new entity.BankParking(index + 1, title, bm);
+		logicField[index] = new entity.BankParking(index + 1, title, bm, "Parking");
 
 	}
 
-	public void createJail(String[] values, int index){
+	public void createJail(String[] values, int index, Dicecup cup){
 		String title = getValue("title", values);
 		String subText = getValue("subText", values);
 		String description = getValue("description", values);
@@ -212,13 +211,13 @@ public class Board {
 				.setDescription(description)
 				.build();
 
-		logicField[index] = new entity.Prison(index + 1, title, bm);
+		logicField[index] = new entity.Prison(index + 1, title, bm, cup, "Jail");
 
 	}
 
 	public void createChance(int index, CardManagement cm){
 		guiField[index] = new Chance.Builder().build();
-		logicField[index] = new entity.Chance(index, cm, "Chance field", bm);
+		logicField[index] = new entity.Chance(index, cm, "Chance field", bm, "Chance");
 
 	}
 	public void createTax(String[] values, int index){
@@ -231,7 +230,7 @@ public class Board {
 				.setDescription(description)
 				.build();
 
-		logicField[index] = new entity.Tax(index + 1, bm, "Tax field");
+		logicField[index] = new entity.Tax(index + 1, bm, "Tax field", "Tax");
 
 	}
 

@@ -3,6 +3,7 @@ package entity;
 public abstract class Square {
 	
 	int id;
+	String type;
 	
 	
 	public Square(int id){

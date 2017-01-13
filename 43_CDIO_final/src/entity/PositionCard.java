@@ -1,7 +1,6 @@
 package entity;
 
 import controller.BoardManagement;
-import controller.CardManagement;
 
 public class PositionCard extends Card {
 
@@ -16,7 +15,7 @@ public class PositionCard extends Card {
 	}
 
 	@Override
-	public void useCard(Player player, CardManagement cm) {
+	public boolean useCard(Player player) {
 		System.out.println(super.getDescription());
 		if (position >= 0){
 			player.setPosition(position);
@@ -26,6 +25,6 @@ public class PositionCard extends Card {
 		}
 		else
 			player.setPosition(player.getPosition() - 3);
-		cm.returnCardToDeck(this);
+		return true;
 	}
 }

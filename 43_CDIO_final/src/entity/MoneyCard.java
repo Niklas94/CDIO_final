@@ -1,7 +1,5 @@
 package entity;
 
-import controller.CardManagement;
-
 public class MoneyCard extends Card {
 	
 	private int amount;
@@ -12,10 +10,8 @@ public class MoneyCard extends Card {
 	}
 	
 	@Override
-	public void useCard(Player player, CardManagement cm) {
+	public boolean useCard(Player player) {
 		player.updateBalance(amount);
-		cm.returnCardToDeck(this);
-		System.out.println(super.getDescription());
+		return true;
 	}
-	
 }

@@ -6,13 +6,14 @@ public class Fleet extends Ownable {
 	
 	private BoardManagement bm;
 
-	public Fleet(int id, String name, int price, int rent, BoardManagement bm) {
+	public Fleet(int id, String name, int price, int rent, BoardManagement bm, String type) {
 		super(id);
 		this.name = name;
 		this.price = price;
 		this.rent = rent;
 		this.isOwned = false;
 		this.bm = bm;
+		this.type = type;
 	}
 
 	@Override
