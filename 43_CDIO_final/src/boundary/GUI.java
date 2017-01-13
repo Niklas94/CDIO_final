@@ -48,5 +48,9 @@ public class GUI {
 	public static void playerOwnsField(String owner){
 		desktop_resources.GUI.showMessage(owner + ", du er landet paa dit eget felt.");
 	}
+	
+	public static void fieldLandedOn(String player, String fieldName){
+		desktop_resources.GUI.showMessage(player +" landede på " + fieldName + ".");
+	}
 
 }

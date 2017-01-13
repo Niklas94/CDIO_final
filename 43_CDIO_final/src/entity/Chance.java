@@ -7,7 +7,6 @@ public class Chance extends NonOwnable {
 	
 	private BoardManagement bm;
 	private CardManagement cm;
-	private String name;
 
 	public Chance(int id, CardManagement cm, String name, BoardManagement bm) {
 		super(id);
@@ -19,6 +18,7 @@ public class Chance extends NonOwnable {
 
 	@Override
 	public void landOnField(Player player) {
+		bm.fieldLandedOn(player.getName(), this.name);
 		//cm.pullTopCard().useCard(player); //Perform the action of the card
 
 //		int cardId = cm.pullTopCard().getID();

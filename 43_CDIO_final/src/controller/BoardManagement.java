@@ -69,5 +69,9 @@ public class BoardManagement {
 	public void playerOwnsField(String owner){
 		GUI.playerOwnsField(owner);
 	}
+	
+	public void fieldLandedOn(String player, String fieldName){
+		GUI.fieldLandedOn(player, fieldName);
+	}
 
 }

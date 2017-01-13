@@ -220,7 +220,7 @@ public class Board {
 
 	public void createChance(int index, CardManagement cm){
 		guiField[index] = new Chance.Builder().build();
-		logicField[index] = new entity.Chance(index, cm, "Chance", bm);
+		logicField[index] = new entity.Chance(index, cm, "Chance field", bm);
 
 	}
 	public void createTax(String[] values, int index){
@@ -233,7 +233,7 @@ public class Board {
 				.setDescription(description)
 				.build();
 
-		logicField[index] = new entity.Prison(index + 1, title, bm);
+		logicField[index] = new entity.Tax(index + 1, bm, "Tax field");
 
 	}
 

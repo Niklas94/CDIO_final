@@ -5,7 +5,6 @@ import controller.BoardManagement;
 public class BankParking extends NonOwnable {
 	
 	private BoardManagement bm;
-	String name;
 
 	public BankParking(int id, String name, BoardManagement bm) {
 		super(id);
@@ -15,7 +14,7 @@ public class BankParking extends NonOwnable {
 
 	@Override
 	public void landOnField(Player player) {
-		
+		bm.fieldLandedOn(player.getName(), this.name);
 		
 	}
 

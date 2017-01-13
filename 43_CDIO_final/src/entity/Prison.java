@@ -5,7 +5,6 @@ import controller.BoardManagement;
 public class Prison extends NonOwnable {
 	
 	private BoardManagement bm;
-	private String name;
 
 	public Prison(int id, String name, BoardManagement bm) {
 		super(id);
@@ -15,8 +14,7 @@ public class Prison extends NonOwnable {
 
 	@Override
 	public void landOnField(Player player) {
-
-		
+		bm.fieldLandedOn(player.getName(), this.name);
 	}
 
 	@Override

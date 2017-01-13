@@ -37,13 +37,10 @@ public class Game {
 				pM.setPosition(pM.getPlayer(i), cup.getSum());
 				GUI.setDice(cup.getX(0).getValue(), cup.getX(1).getValue());
 				
-				GUI.showMessage(pM.getPlayer(i).getName() +" landede på " + bM.getSquare(pM.getPlayer(i).getPosition()));
 				bM.getSquare(pM.getPlayer(i).getPosition()).landOnField(pM.getPlayer(i));
 				
 				for(int j = 0; j < players.length; j++){
 					GUI.setBalance(pM.getPlayer(j).getName(), pM.getPlayer(j).getBalance());
-					{
-					}
 				}
 			}
 		}
