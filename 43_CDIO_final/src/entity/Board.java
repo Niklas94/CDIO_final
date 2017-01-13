@@ -104,8 +104,6 @@ public class Board {
 
 	}
 
-
-
 	public void createStart(String[] values, int index){
 
 		Color bgColor = getColor(getValue("backgroundColor", values));

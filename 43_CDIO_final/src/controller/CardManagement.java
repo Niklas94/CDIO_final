@@ -52,7 +52,7 @@ public class CardManagement {
 			case "PositionCard":
 				int amount2 = Integer.parseInt(str.split(";")[1]);
 				desc = str.split(";")[2];
-				cardArr[i++] = new PositionCard(amount2, desc);
+				cardArr[i++] = new PositionCard(amount2, desc, bm);
 				//cardArr[i].setId(i);
 				break;
 			case "FleetCard":

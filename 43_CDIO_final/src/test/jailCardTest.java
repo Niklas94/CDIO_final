@@ -6,7 +6,6 @@ import controller.PlayerManagement;
 import entity.Bank;
 import entity.Dicecup;
 import entity.OwnableCard;
-import desktop_resources.GUI;
 
 
 public class jailCardTest {

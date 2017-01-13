@@ -15,8 +15,8 @@ public class Prison extends NonOwnable {
 
 	@Override
 	public void landOnField(Player player) {
-
-		
+		player.inJail();
+		player.setPosition(11);
 	}
 
 	@Override
