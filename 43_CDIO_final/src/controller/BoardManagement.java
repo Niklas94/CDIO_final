@@ -46,6 +46,10 @@ public class BoardManagement {
 		else
 			return false;
 	}
+	
+	public String payTax(){
+		return GUI.payTax();
+	}
 
 	public void buyField(Player player, int price){
 		if(GUI.buyField()){

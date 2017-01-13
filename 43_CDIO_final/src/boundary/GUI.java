@@ -52,5 +52,9 @@ public class GUI {
 	public static void fieldLandedOn(String player, String fieldName){
 		desktop_resources.GUI.showMessage(player +" landede på " + fieldName + ".");
 	}
+	
+	public static String payTax(){
+		return desktop_resources.GUI.getUserButtonPressed("Betal indkomstskat. Enten 10% af dit fulde beløb eller 4.000kr. ", "10%", "4.000kr.");
+	}
 
 }
