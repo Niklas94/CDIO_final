@@ -24,6 +24,14 @@ public class Dicecup {
 		sum += x[1].getValue();
 	}
 
+	public boolean equalDice() {
+		if (x[0].getValue() == x[1].getValue())
+				return true;
+		else
+			return false;
+	}
+	
+	
 	public int getSum() {
 		return sum;
 	}

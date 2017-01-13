@@ -9,7 +9,7 @@ public class Player {
 	private OwnableCard[] jailCards;
 
 	private String name;
-	private int position;
+	private int position, goToJail;
 	private boolean isAlive, inJail = false;
 
 	/*
@@ -23,13 +23,27 @@ public class Player {
 		this.name = name;
 		this.isAlive = true;
 		this.position = 1;
-
 	}
 
 	/*
 	 * SETTERS
 	 */
-
+	
+	public void inJail() {
+		if (!inJail)
+			this.inJail = true;
+		else
+			this.inJail = false;
+	}
+	
+	public void incGoToJail() {
+		this.goToJail++;
+	}
+	
+	public void resetGoToJail() {
+		this.goToJail = 0;
+	}
+	
 	// Set jailcard to owned
 	public void setJailCardOwned(OwnableCard card) {
 		for (int i = 0; i < jailCards.length; i++) {
@@ -41,7 +55,7 @@ public class Player {
 	}
 
 	//Remove ONE jailcard from the player, if he owns any.
-	public void removeJailCardOwned() {
+	public void useJailCardOwned() {
 		for (int i = 0; i < jailCards.length; i++) {
 			if (jailCards[i] != null) {
 				jailCards[i] = null;
@@ -197,7 +211,15 @@ public class Player {
 	/*
 	 * GETTERS
 	 */
+	
+	public boolean jailStatus() { //returns the boolean inJail.
+		return this.inJail;
+	}
 
+	public int getGoToJail() {
+		return this.goToJail;
+	}
+	
 	public Boolean getJailCard() {
 		for (int i = 0; i < jailCards.length; i++) {
 			if (this.jailCards[i] != null)

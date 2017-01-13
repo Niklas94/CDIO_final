@@ -21,7 +21,7 @@ public class OwnableCard extends Card {
 		}
 		else {
 			isOwned = false;
-			player.removeJailCardOwned();
+			player.useJailCardOwned();
 			cm.returnCardToDeck(this);
 		}
 	}
