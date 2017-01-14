@@ -10,9 +10,9 @@ public class Game {
 	public static void main(String[] args) throws Exception{
 		new Game().go();
 	}
-	
+
 	public void go() throws Exception {
-		
+
 		Dicecup cup = new Dicecup();
 		PlayerManagement pM = new PlayerManagement();
 		Bank bank = new Bank();
@@ -33,21 +33,22 @@ public class Game {
 			for(int i = 0; i < pM.getPlayerArray().length; i++) {
 
 				if (!pM.getPlayer(i).jailStatus()) {
-					boundary.GUI.pressEnter(pM.getPlayer(i).getName());
+					boundary.GUI.pressEnter(players[i].getName());
 					cup.rollDice();
 
 					for(int j = 0; j < players.length; j++){
-						GUI.removeAllCars(pM.getPlayer(j).getName());
-						GUI.setCar(pM.getPlayer(j).getPosition(), pM.getPlayer(j).getName());
+						GUI.removeAllCars(players[j].getName());
+						GUI.setCar(players[j].getPosition(), players[j].getName());
 					}
 
-					pM.setPosition(pM.getPlayer(i), cup.getSum());
+					pM.setPosition(players[i], cup.getSum());
 					GUI.setDice(cup.getX(0).getValue(), cup.getX(1).getValue());
 
-					bM.getSquare(pM.getPlayer(i).getPosition()).landOnField(pM.getPlayer(i));
-
+					//if (pM.getPlayer(i).getPosition() - 1 == 31) {
+						bM.getSquare(players[i].getPosition()).landOnField(players[i]);
+					
 					for(int j = 0; j < players.length; j++){
-						GUI.setBalance(pM.getPlayer(j).getName(), pM.getPlayer(j).getBalance());
+						GUI.setBalance(players[j].getName(), players[j].getBalance());
 						{
 						}
 					}
@@ -55,15 +56,19 @@ public class Game {
 				}
 
 				else {
-					bM.getSquare(pM.getPlayer(i).getPosition()).landOnField(pM.getPlayer(i));
+					
+					bM.getSquare(players[i].getPosition()).landOnField(players[i]);
 				}
 
 				if (cup.equalDice()) {
-					pM.getPlayer(i).incGoToJail();
-					if (pM.getPlayer(i).getGoToJail() == 3) {System.out.println(pM.getPlayerName(i) + " røg i fængsel pga. 3 slag med to ens værdier");}
+					players[i].incGoToJail();
+					if (players[i].getGoToJail() == 3) {System.out.println(players[i].getName() + " røg i fængsel pga. 3 slag med to ens værdier");}
 					//pM.getPlayer(i).gotojail();
 					i -= 1;
 				}
+				else if (!cup.equalDice())
+					players[i].resetGoToJail();
+					
 
 
 

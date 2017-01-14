@@ -10,6 +10,13 @@ public class GUI {
 		return numberPlayers;
 	}
 
+	public static String prisonOptions(boolean prisonCard) {
+		if (prisonCard)
+			return desktop_resources.GUI.getUserButtonPressed("Du er fængslet og kan komme ud ved enten at betale 1.000 kr, kaste to ens eller bruge et løsladelseskort. Hvad vælger du?", "Betale 1.000 kr.", "Prøve at kaste to ens", "Bruger mit løsladelseskort");
+		else
+			return desktop_resources.GUI.getUserButtonPressed("Du er fængslet og kan komme ud ved enten at betale 1.000 kr eller ved at kaste to ens. Hvad vælger du?", "Betale 1.000 kr.", "Prøve at kaste to ens");
+	}
+
 	public static String playerNames() {
 		name = desktop_resources.GUI.getUserString("Hvad er dit navn?");
 		return name;
@@ -36,7 +43,7 @@ public class GUI {
 		desktop_resources.GUI.showMessage("Du har kastet: " + sum);
 
 	}
-	
+
 	public static boolean buyField(){
 		String answer = desktop_resources.GUI.getUserSelection("Feltet er ikke ejet. Vil du gerne købe feltet?", "Ja", "Nej");
 		if("Ja".equalsIgnoreCase(answer))
@@ -44,15 +51,15 @@ public class GUI {
 		else
 			return false;
 	}
-	
+
 	public static void playerOwnsField(String owner){
 		desktop_resources.GUI.showMessage(owner + ", du er landet paa dit eget felt.");
 	}
-	
+
 	public static void fieldLandedOn(String player, String fieldName){
 		desktop_resources.GUI.showMessage(player +" landede på " + fieldName + ".");
 	}
-	
+
 	public static String payTax(){
 		return desktop_resources.GUI.getUserButtonPressed("Betal indkomstskat. Enten 10% af dit fulde beløb eller 4.000kr. ", "10%", "4.000kr.");
 	}

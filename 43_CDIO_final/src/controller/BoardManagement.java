@@ -40,6 +40,15 @@ public class BoardManagement {
 		return ((Ownable) board.getSquare(id)).isOwned();
 	}
 
+	public String prisonOptions(boolean prisonCard) {
+		return GUI.prisonOptions(prisonCard);
+	}
+	
+	public void pressEnter(String name) {
+		GUI.pressEnter(name);
+	}
+	
+	
 	public boolean ownable(int id){
 		if(board.getSquare(id) instanceof Ownable)
 			return true;

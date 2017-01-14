@@ -6,11 +6,11 @@ public class Player {
 
 	private Account myAccount;
 	private PlayerOwned playerOwn;
-	private OwnableCard[] jailCards;
+	private Card[] jailCards;
 
 	private String name;
-	private int position, goToJail;
-	private boolean isAlive, inJail = false;
+	private int position, goToJail, turnsInJail;
+	private boolean isAlive = true, inJail = false;
 
 	/*
 	 * Constructor
@@ -28,24 +28,24 @@ public class Player {
 	/*
 	 * SETTERS
 	 */
-	
+
 	public void inJail() {
 		if (!inJail)
 			this.inJail = true;
 		else
 			this.inJail = false;
 	}
-	
+
 	public void incGoToJail() {
 		this.goToJail++;
 	}
-	
+
 	public void resetGoToJail() {
 		this.goToJail = 0;
 	}
-	
+
 	// Set jailcard to owned
-	public void setJailCardOwned(OwnableCard card) {
+	public void setJailCardOwned(Card card) {
 		for (int i = 0; i < jailCards.length; i++) {
 			if (jailCards[i] == null) {
 				jailCards[i] = card;
@@ -211,7 +211,7 @@ public class Player {
 	/*
 	 * GETTERS
 	 */
-	
+
 	public boolean jailStatus() { //returns the boolean inJail.
 		return this.inJail;
 	}
@@ -219,13 +219,20 @@ public class Player {
 	public int getGoToJail() {
 		return this.goToJail;
 	}
-	
+
 	public Boolean getJailCard() {
 		for (int i = 0; i < jailCards.length; i++) {
 			if (this.jailCards[i] != null)
 				return true;
 		}
 		return false;
+	}
+
+	public Card  returnJailCard() {
+		if (this.jailCards[0] != null)
+			return this.jailCards[0];
+		else
+			return this.jailCards[1];
 	}
 
 	// Get player name
@@ -521,6 +528,24 @@ public class Player {
 	// Get total owned Hotels on a specific field at one of the Yellow Streets
 	public int getHotelsOnYellowStreet(int yellowNumber) {
 		return playerOwn.getHotelsOnYellowStreet(yellowNumber);
+	}
+
+	/**
+	 * @return the turnsInJail
+	 */
+	public int getTurnsInJail() {
+		return turnsInJail;
+	}
+	
+	public void incTurnsInJail(){
+		this.turnsInJail++;
+	}
+
+	/**
+	 * @param turnsInJail the turnsInJail to set
+	 */
+	public void setTurnsInJail(int turnsInJail) {
+		this.turnsInJail = turnsInJail;
 	}
 
 }

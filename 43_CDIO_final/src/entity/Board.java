@@ -78,7 +78,7 @@ public class Board {
 					index++;
 					break;
 				case "Jail":
-					createJail(values, index, cup);
+					createJail(values, index, cup, cm);
 					index++;
 					break;
 				case "Chance":
@@ -201,7 +201,7 @@ public class Board {
 
 	}
 
-	public void createJail(String[] values, int index, Dicecup cup){
+	public void createJail(String[] values, int index, Dicecup cup, CardManagement cm){
 		String title = getValue("title", values);
 		String subText = getValue("subText", values);
 		String description = getValue("description", values);
@@ -211,7 +211,7 @@ public class Board {
 				.setDescription(description)
 				.build();
 
-		logicField[index] = new entity.Prison(index + 1, title, bm, cup, "Jail");
+		logicField[index] = new entity.Prison(index + 1, title, bm, cup, "Jail", cm);
 
 	}
 

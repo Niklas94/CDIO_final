@@ -109,7 +109,7 @@ public class CardManagement {
 			for (int i = 0; i < cardArr.length; i++) {
 				if (cardArr[i].getDescription().equals("Placeholder")) { //Find one of the two 'placeholder' cards (basically what previously were a jailcard).
 					Card tempCard = card; //Save the returning jailcard into a temporary card.
-					for (int j = i; j < cardArr.length; j++) { //Move all the cards from the placeholder card and above, one down in index.
+					for (int j = i; j < cardArr.length-1; j++) { //Move all the cards from the placeholder card and above, one down in index.
 						cardArr[j] = cardArr[j+1];
 					}
 					cardArr[cardArr.length - 1] = tempCard; //Return the jailcard back into the deck.
@@ -117,13 +117,14 @@ public class CardManagement {
 				}
 			}
 		}
-		cardArr[cardArr.length-1] = card;
+		else
+			cardArr[cardArr.length-1] = card;
 	}
 
 	//This method is, as of now (7. January 2017) only here, so we can test all the other methods.
 	public Card pullCard(int index) {
 		Card topCard;
-		
+
 		if (!cardArr[index].getDescription().equals("Placeholder"))
 			return topCard = cardArr[index];
 		else if (!cardArr[index + 1].getDescription().equals("Placeholder"))
@@ -136,7 +137,7 @@ public class CardManagement {
 	public Card pullTopCard() {
 
 		Card topCard;
-		
+
 		//The card you pick 
 		if (!cardArr[0].getDescription().equals("Placeholder"))
 			topCard = cardArr[0];
@@ -144,17 +145,17 @@ public class CardManagement {
 			topCard = cardArr[1];
 		else
 			topCard = cardArr[2];
-		
+
 		//Moving all cards 1 down in index. Now the card at index 1, is now at index 0 - therefore the next top card which is pulled from the deck.
 		for (int i = 0; i < cardArr.length-1; i++) {
 			cardArr[i] = cardArr[i+1];
 		}
-		
+
 		//Creating
 		if (topCard instanceof OwnableCard) {
-			cardArr[cardArr.length-1] = new OwnableCard("Placeholder");
+			return cardArr[cardArr.length-1] = new OwnableCard("Placeholder");
 		}
-		
+
 		return topCard;
 	}
 }
