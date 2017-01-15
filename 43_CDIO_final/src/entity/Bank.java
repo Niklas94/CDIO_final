@@ -136,9 +136,9 @@ public class Bank {
 	 */
 	public void checkOwnedStreets (Square[] squaresArr){
 		Square[] squares = squaresArr;
-		int blue = 2, green = 3, grey = 3, pink = 3, purple = 2, red = 3, white = 3, yellow = 3;
+		int blue = 2, green = 3, grey = 3, pink = 3, purple = 2, red = 3, white = 3, yellow = 3, orange = 3;
 		for(int j = 0; j < players.length; j++){
-			int blueOwned = 0, greenOwned = 0, greyOwned = 0, pinkOwned = 0, purpleOwned = 0, redOwned = 0, whiteOwned = 0, yellowOwned = 0;
+			int blueOwned = 0, greenOwned = 0, greyOwned = 0, pinkOwned = 0, purpleOwned = 0, redOwned = 0, whiteOwned = 0, yellowOwned = 0, orangeOwned = 0;
 			for(int i = 0; i < squares.length; i++){
 				if(squares[i].getType() == "Blue" && players[j].getName() == ((Ownable)squares[i]).getOwner())
 					blueOwned++;
@@ -156,6 +156,8 @@ public class Bank {
 					whiteOwned++;
 				else if(squares[i].getType() == "Yellow" && players[j].getName() == ((Ownable)squares[i]).getOwner())
 					yellowOwned++;
+				else if (squares[i].getType() == "Orange" && players[j].getName() == ((Ownable)squares[i]).getOwner())
+					orangeOwned++;
 			}
 			for(int i = 0; i < squares.length; i++){
 				if (blue == blueOwned)
@@ -181,6 +183,9 @@ public class Bank {
 						((Street)squares[i]).setRent();
 				if (yellow == yellowOwned)
 					if (squares[i].getType() == "Yellow")
+						((Street)squares[i]).setRent();
+				if (orange == orangeOwned)
+					if (squares[i].getType() == "Orange")
 						((Street)squares[i]).setRent();
 			}
 		}
