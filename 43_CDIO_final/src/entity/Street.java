@@ -6,7 +6,10 @@ import controller.BoardManagement;
 public abstract class Street extends Ownable {
 
 	
-	
+	private boolean canBuyHouse = false;
+	private int houses;
+	private boolean canBuyHotel = false;
+	private int hotel;
 	private BoardManagement bm;
 
 	/**
@@ -39,6 +42,7 @@ public abstract class Street extends Ownable {
 	
 	public void setRent(){
 		this.rent = 2 * this.originalRent;
+		canBuyHouse = true;
 	}
 	
 	/**
@@ -61,6 +65,9 @@ public abstract class Street extends Ownable {
 		return this.type;
 	}
 
+	public boolean CanBuyHouse() {
+		return this.canBuyHouse;
+	}
 	
 	/**
 	  * @return returns the price.

@@ -163,6 +163,12 @@ public class BoardManagement {
 				yellow++;
 		}
 	}
+	
+	public void buyHouse(Player player){
+		if(GUI.buyHouse(player.getName()))
+			GUI.whichStreet();
+		
+	}
 
 	public void checkOwnedStreets (Player player){
 		Square[] squares = board.getLogicField();

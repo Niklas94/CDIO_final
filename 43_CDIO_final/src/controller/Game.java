@@ -31,8 +31,13 @@ public class Game {
 
 		while(gameOn){
 			
+			
+			
 			for(int i = 0; i < pM.getPlayerArray().length; i++) {
 				boundary.GUI.newTurn(players[i].getName());
+				
+				bM.buyHouse(players[i]);
+				
 				if (!pM.getPlayer(i).jailStatus()) {
 					boundary.GUI.pressEnter(players[i].getName());
 					cup.rollDice();
