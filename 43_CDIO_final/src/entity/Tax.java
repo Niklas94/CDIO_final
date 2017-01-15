@@ -18,7 +18,10 @@ public class Tax extends NonOwnable {
 
 	/**
 	 * Updates balance by either 4000 or 10% depending on what you choose, or 2000 if you land on the other tax field.
+	 * @param player the player.
+	 * 
 	 */
+	
 	
 	@Override
 	public void landOnField(Player player) {
@@ -40,7 +43,7 @@ public class Tax extends NonOwnable {
 	}
 	
 	/**
-	 * Returns id for the Tax square.
+	 * @return Returns id for the Tax square.
 	 */
 
 	@Override
@@ -48,6 +51,10 @@ public class Tax extends NonOwnable {
 		return this.id;
 	}
 
+	/**
+	 * @return returns the type of the field.
+	 */
+	
 	@Override
 	public String getType() {
 		// TODO Auto-generated method stub
