@@ -22,7 +22,7 @@ public class FleetCard extends Card {
 				bank.payRent(player, bm.returnFleet(player.getPosition()).getOwner(), bm.returnFleet(player.getPosition()).getRent() * 2);
 			}
 			else if (!bm.returnFleet(player.getPosition()).isOwned) {
-				bm.buyField(player, bm.returnFleet(player.getPosition()).getPrice());
+				bm.buyField(player, bm.returnFleet(player.getPosition()).getPrice(), "Fleet");
 			}
 		}
 		else if (player.getPosition() == 18)
@@ -32,7 +32,7 @@ public class FleetCard extends Card {
 				bank.payRent(player, bm.returnFleet(player.getPosition()).getOwner(), bm.returnFleet(player.getPosition()).getRent() * 2);
 			}
 			else if (!bm.returnFleet(player.getPosition()).isOwned) {
-				bm.buyField(player, bm.returnFleet(player.getPosition()).getPrice());
+				bm.buyField(player, bm.returnFleet(player.getPosition()).getPrice(), "Fleet");
 			}
 		}
 		else if (player.getPosition() == 23) {
@@ -41,7 +41,7 @@ public class FleetCard extends Card {
 				bank.payRent(player, bm.returnFleet(player.getPosition()).getOwner(), bm.returnFleet(player.getPosition()).getRent() * 2);
 			}
 			else if (!bm.returnFleet(player.getPosition()).isOwned) {
-				bm.buyField(player, bm.returnFleet(player.getPosition()).getPrice());
+				bm.buyField(player, bm.returnFleet(player.getPosition()).getPrice(), "Fleet");
 			}
 		}
 		else if (player.getPosition() >= 34 && player.getPosition() <= 37) {
@@ -50,7 +50,7 @@ public class FleetCard extends Card {
 				bank.payRent(player, bm.returnFleet(player.getPosition()).getOwner(), bm.returnFleet(player.getPosition()).getRent() * 2);
 			}
 			else if (!bm.returnFleet(player.getPosition()).isOwned) {
-				bm.buyField(player, bm.returnFleet(player.getPosition()).getPrice());
+				bm.buyField(player, bm.returnFleet(player.getPosition()).getPrice(), "Fleet");
 			}
 		}
 	}
