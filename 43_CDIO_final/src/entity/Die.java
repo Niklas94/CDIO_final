@@ -2,30 +2,30 @@ package entity;
 
 public class Die {
 
-		//Variabel
+
 		private int value;
 		
 		
-		//Konstruktoer
+		/**
+		 * This constructs a die.
+		 */
+		
 		public Die() {
 			value = 1; 
 		}
 		
-		//Getter 
+		/**
+		 * @return returns the value of die.
+		 */
 		public int getValue() {
 			return value;
 		}
 		
-		//Setter 
-		public void setValue(int a) {
-			if (a > 0 && a < 7) {
-				value = a;
-			}
-			else
-				value = 1;
-		}
+
+		/**
+		 * rolls the die.
+		 */
 		
-		//Tilfaeldig vaerdi
 		public void rollDie() {
 			value = (int) (Math.random() * 6) + 1;  
 		}
