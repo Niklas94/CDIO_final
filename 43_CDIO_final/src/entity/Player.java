@@ -595,6 +595,10 @@ public class Player {
 		return turnsInJail;
 	}
 	
+	/**
+	 * increments the incTurnsInJail
+	 */
+	
 	public void incTurnsInJail(){
 		this.turnsInJail++;
 	}
