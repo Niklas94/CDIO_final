@@ -25,7 +25,7 @@ public class Fleet extends Ownable {
 		this.type = type;
 	}
 	/**
-	 * returns the price.
+	 * @return returns the price.
 	 */
 
 	@Override
@@ -34,7 +34,7 @@ public class Fleet extends Ownable {
 	}
 
 	/**
-	 * returns the rent.
+	 * @return returns the rent.
 	 */
 	
 	@Override
@@ -53,7 +53,7 @@ public class Fleet extends Ownable {
 	}
 
 	/**
-	 *	returns the owner. 	
+	 *	@return returns the owner. 	
 	 */
 	
 	@Override
@@ -62,7 +62,7 @@ public class Fleet extends Ownable {
 	}
 
 	/**
-	 * returns the square id.
+	 * @return returns the square id.
 	 */
 	
 	@Override
@@ -72,7 +72,7 @@ public class Fleet extends Ownable {
 
 	
 	/**
-	 * returns isOwned boolean value.
+	 * @return returns isOwned boolean value.
 	 */
 	
 	@Override
@@ -82,6 +82,7 @@ public class Fleet extends Ownable {
 	
 	/**
 	 * if the Fleet is not owned, the player purchases is. However, if the field is owned you pay an amount (rent) depending on which field it is.
+	 * @param player the player.
 	 */
 	@Override
 	public void landOnField(Player player) {
@@ -93,6 +94,10 @@ public class Fleet extends Ownable {
 			bm.payRent(player, owner, rent);
 	}
 
+	/**
+	 * @return returns the type.
+	 */
+	
 	@Override
 	public String getType() {
 		// TODO Auto-generated method stub
