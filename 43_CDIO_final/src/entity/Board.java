@@ -70,7 +70,7 @@ public class Board {
 
 	
 	/**
-	 * 
+	 * creates the board.
 	 * @param cm the controlling cardManagement.
 	 * @param cup the diceCup.
 	 * @param bm the controlling boardManagement.
@@ -142,7 +142,7 @@ public class Board {
 	}
 	
 	/**
-	 * 
+	 * creates the start.
 	 * @param values the values.
 	 * @param index the index.
 	 */
@@ -166,7 +166,7 @@ public class Board {
 	}
 	
 	/**
-	 * 
+	 * creates the streets.
 	 * @param values the values.
 	 * @param index the index.
 	 * @param bm the controlling boardManagement.
@@ -230,7 +230,7 @@ public class Board {
 	}
 	
 	/**
-	 * 
+	 * creates the Brewery.
 	 * @param values the values.
 	 * @param index the index.
 	 * @param cup the diceCup.
@@ -263,7 +263,7 @@ public class Board {
 	}
 
 	/**
-	 * 
+	 * creates the Fleet.
 	 * @param values the values.
 	 * @param index the index.
 	 * @param bm the controlling boardManagement.
@@ -329,12 +329,26 @@ public class Board {
 		logicField[index] = new entity.Prison(index + 1, title, bm, cup, "Jail", cm);
 
 	}
+	
+	/**
+	 * creates the Chance.
+	 * @param index the index.
+	 * @param cm the controlling cardManagement.
+	 * @param bm the controlling boardManagement.
+	 */
 
 	public void createChance(int index, CardManagement cm, BoardManagement bm){
 		guiField[index] = new Chance.Builder().build();
 		logicField[index] = new entity.Chance(index, cm, "Chance field", bm, "Chance");
 
 	}
+	
+	/**
+	 * creates the tax.
+	 * @param values the values.
+	 * @param index the inedx.
+	 * @param bm the controlling boardManagement.
+	 */
 	public void createTax(String[] values, int index, BoardManagement bm){
 		String title = getValue("title", values);
 		String subText = getValue("subText", values);
@@ -348,6 +362,13 @@ public class Board {
 		logicField[index] = new entity.Tax(index + 1, bm, "Tax field", "Tax");
 
 	}
+	
+	/**
+	 * gets the value
+	 * @param reference the reference.
+	 * @param values the values.
+	 * @return returns after it splits.
+	 */
 
 	public String getValue(String reference, String[] values){
 		for(String a : values){
@@ -358,6 +379,12 @@ public class Board {
 		System.out.println("Can't find value for: " + reference);
 		return null;
 	}
+	
+	/**
+	 * gets the color
+	 * @param color the color.
+	 * @return returns the color.
+	 */
 
 	public Color getColor(String color){
 		int r = Integer.parseInt(color.split(",,")[0]);
