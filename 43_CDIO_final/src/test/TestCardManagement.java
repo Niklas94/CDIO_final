@@ -42,18 +42,16 @@ public class TestCardManagement {
 	@Test
 	public void testShuffleCards() throws Exception {
 
-		String[] beforeShuffling;
-		beforeShuffling = new String[33];
-		int expected = 33, actual = 0;
-		
 		cm.createCards();
+		String[] beforeShuffling = new String[32];
+		int expected = 32, actual = 0;
 
-		for (int i = 0; i < 33; i++) {
+		for (int i = 0; i < 32; i++) {
 			beforeShuffling[i] = cm.pullTopCard().getDescription();
 		}
 		cm.shuffleCards();
 		
-		for (int i = 0; i < 33; i++) {
+		for (int i = 0; i < 32; i++) {
 			if (cm.pullCard(i).getDescription() != beforeShuffling[i])
 				actual++;
 		}
@@ -67,16 +65,19 @@ public class TestCardManagement {
 		
 		//First we create the cards
 		cm.createCards();
-		cm.shuffleCards();
 		
-		//Then we pull the top card, and gets the description of that card. That description is what we expect to get again, when we now pull the last card in the deck.
-		String expected1 = cm.pullTopCard().getDescription();
-		String actual1 = cm.pullCard(32).getDescription();
+		//Then we pull the top card, and gets the description of that card. We now return the card. The description we saved, is what we expect to get again, when we now pull the last card in the deck.
+		Card card1 = cm.pullTopCard();
+		String expected1 = card1.getDescription();
+		cm.returnCardToDeck(card1);
+		String actual1 = cm.pullCard(31).getDescription();
 		assertEquals(expected1, actual1);
 		
-		//Now we try again with the 2nd card in the deck. The 2nd card is obviously at the top now, since we alerady pulled the first one.
-		String expected2 = cm.pullTopCard().getDescription();
-		String actual2 = cm.pullCard(0).getDescription();
+		//Now we try again with the 2nd card in the deck. The 2nd card is obviously at the top now, since we already pulled the first one.
+		Card card2 = cm.pullTopCard();
+		String expected2 = card2.getDescription();
+		cm.returnCardToDeck(card2);
+		String actual2 = cm.pullCard(31).getDescription();
 		assertEquals(expected2, actual2);
 	}
 
@@ -86,7 +87,7 @@ public class TestCardManagement {
 		cm.createCards();
 		Card expected = cm.pullTopCard(); //Expected card must be the one at the top.
 		cm.returnCardToDeck(expected);
-		Card actual = cm.pullCard(33);
+		Card actual = cm.pullCard(31);
 		assertEquals(expected, actual);
 	}
 }
