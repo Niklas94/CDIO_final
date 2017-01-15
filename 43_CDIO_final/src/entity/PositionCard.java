@@ -7,6 +7,12 @@ public class PositionCard extends Card {
 	private int position;
 	private BoardManagement bm;
 	
+	/**
+	 * This constructs the position card with a position, description and bm.
+	 * @param position the position of the player.
+	 * @param desc the description of the card.
+	 * @param bm the controlling boardManagement.
+	 */
 	public PositionCard(int position, String desc, BoardManagement bm) {
 		this.position = position;
 		super.setDescription(desc);
@@ -14,6 +20,11 @@ public class PositionCard extends Card {
 		
 	}
 
+	/**
+	 * uses the card.
+	 * @param player the player.
+	 */
+	
 	@Override
 	public void useCard(Player player) {
 		if (position >= 0){

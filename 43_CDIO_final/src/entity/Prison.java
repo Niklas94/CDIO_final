@@ -30,6 +30,7 @@ public class Prison extends NonOwnable {
 
 	/**
 	 * Depending on how many turns you have been on the prison square, you get consequences. 
+	 * @param player the player.
 	 */
 	
 	@Override
@@ -69,7 +70,7 @@ public class Prison extends NonOwnable {
 	}
 
 	/**
-	 * returns the square id.
+	 * @return returns the square id.
 	 */
 	
 	@Override
@@ -78,7 +79,7 @@ public class Prison extends NonOwnable {
 	}
 
 	/**
-	 * returns the type.
+	 * @return returns the type.
 	 */
 	
 	@Override

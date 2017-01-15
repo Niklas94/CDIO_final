@@ -7,7 +7,7 @@ public abstract class Ownable extends Square {
 
 
 	protected String name;
-	protected int price, rent, housePrice, hotelPrice;
+	protected int price, originalRent, rent, housePrice, hotelPrice;
 	protected String owner;
 	protected boolean isOwned;
 
@@ -30,6 +30,9 @@ public abstract class Ownable extends Square {
 	 */
 	public abstract boolean isOwned();
 	
+	/**
+	 * removes the owner.
+	 */
 	public void removeOwner(){
 		this.owner=null;
 	}

@@ -75,7 +75,6 @@ public class Player {
 		this.goToJail = 0;
 	}
 
-	// Set jailcard to owned
 	
 	/**
 	 * gives jailCard to player.
