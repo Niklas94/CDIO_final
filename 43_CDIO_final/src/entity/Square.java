@@ -16,6 +16,7 @@ public abstract class Square {
 	
 	public abstract int getId();
 	public abstract void landOnField(Player player);
+	public abstract String getType();
 	
 //	public abstract Ownable getOwnableSquare(int id);
 //	public abstract NonOwnable getNonOwnableSquare(int id);
