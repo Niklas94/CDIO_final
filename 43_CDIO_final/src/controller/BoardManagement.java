@@ -76,6 +76,12 @@ public class BoardManagement {
 		return ((Ownable) board.getSquare(id)).isOwned();
 	}
 
+	/**
+	 * 
+	 * @param prisonCard
+	 * @return
+	 */
+	
 	public String prisonOptions(boolean prisonCard) {
 		return GUI.prisonOptions(prisonCard);
 	}
