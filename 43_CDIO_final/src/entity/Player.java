@@ -13,8 +13,10 @@ public class Player {
 	private boolean isAlive = true, inJail = false;
 	private String[] streetsOwned = new String[28];
 
-	/*
-	 * Constructor
+	
+	/**
+	 * This constructs a player with a given name.
+	 * @param name player name.
 	 */
 
 	public Player(String name) {
