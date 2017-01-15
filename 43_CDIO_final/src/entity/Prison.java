@@ -9,6 +9,16 @@ public class Prison extends NonOwnable {
 	private Dicecup cup;
 	private CardManagement cm;
 
+	/**
+	 * This constructs a prison square with an id, name, bm, cup, type and cm.
+	 * @param id id of the square.
+	 * @param name name of the square.
+	 * @param bm the controlling boardManagement.
+	 * @param cup the diceCup.
+	 * @param type the type of the square.
+	 * @param cm the controlling cardManagement.
+	 */
+	
 	public Prison(int id, String name, BoardManagement bm, Dicecup cup, String type, CardManagement cm) {
 		super(id);
 		this.name = name;
@@ -18,6 +28,10 @@ public class Prison extends NonOwnable {
 		this.cm = cm;
 	}
 
+	/**
+	 * Depending on how many turns you have been on the prison square, you get consequences. 
+	 */
+	
 	@Override
 	public void landOnField(Player player) {
 
@@ -54,9 +68,23 @@ public class Prison extends NonOwnable {
 		player.incTurnsInJail();
 	}
 
+	/**
+	 * returns the square id.
+	 */
+	
 	@Override
 	public int getId() {
 		return this.id;
+	}
+
+	/**
+	 * returns the type.
+	 */
+	
+	@Override
+	public String getType() {
+		// TODO Auto-generated method stub
+		return this.type;
 	}
 
 }

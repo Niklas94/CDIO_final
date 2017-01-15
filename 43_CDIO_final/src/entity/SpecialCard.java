@@ -4,11 +4,19 @@ public class SpecialCard extends Card {
 
 	private int value;
 	
+	/**
+	 * This constructs a special card with a description.
+	 * @param desc description of the card.
+	 */
 	public SpecialCard(String desc) {
 		super.setDescription(desc);
 		value = 0;
 	}
 
+	
+	/**
+	 * Uses the card and updates the players account.
+	 */
 	@Override
 	public void useCard(Player player) {
 		if (this.getDescription().equals("Ejendomsskatterne er steget, ekstraudgifterne er: kr. 800 pr. hus, kr. 2.300 pr. hotel.")) {

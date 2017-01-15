@@ -13,8 +13,10 @@ public class Player {
 	private boolean isAlive = true, inJail = false;
 	private String[] streetsOwned = new String[28];
 
-	/*
-	 * Constructor
+	
+	/**
+	 * This constructs a player with a given name.
+	 * @param name player name.
 	 */
 
 	public Player(String name) {
@@ -47,6 +49,10 @@ public class Player {
 		}
 	}
 
+	/**
+	 * changes the boolean value of inJail.
+	 */
+	
 	public void inJail() {
 		if (!inJail)
 			this.inJail = true;
@@ -54,16 +60,27 @@ public class Player {
 			this.inJail = false;
 	}
 
+	/**
+	 * increments incGoToJail.
+	 */
 	public void incGoToJail() {
 		this.goToJail++;
 	}
 
+	/**
+	 * resets goToJail.
+	 */
 
 	public void resetGoToJail() {
 		this.goToJail = 0;
 	}
 
 	// Set jailcard to owned
+	
+	/**
+	 * gives jailCard to player.
+	 * @param card the type of card.
+	 */
 	public void setJailCardOwned(Card card) {
 		for (int i = 0; i < jailCards.length; i++) {
 			if (jailCards[i] == null) {
@@ -76,6 +93,7 @@ public class Player {
 	/**
 	 * removes a Get-Out-Of-Jail-Card from the player.
 	 */
+	
 	public void useJailCardOwned() {
 		for (int i = 0; i < jailCards.length; i++) {
 			if (jailCards[i] != null) {
@@ -87,7 +105,7 @@ public class Player {
 
 	/**
 	 * Method to update a given player's balance.
-	 * @param money
+	 * @param money the amount of money.
 	 */
 	public void updateBalance(int money) {
 		this.myAccount.updateBalance(money);
@@ -109,11 +127,22 @@ public class Player {
 			this.isAlive = false;
 		return isAlive;
 	}
+	
+	/**
+	 * sets the position of a player.
+	 * @param position position of the player.
+	 */
 
 	// Set player position
 	public void setPosition(int position) {
 		this.position = position;
 	}
+	
+	/**
+	 * 
+	 * @param breweryNumber
+	 * @param bool
+	 */
 
 	// Set the Brewery to owned or not by its number and a boolean value.
 	public void setBreweryOwned(int breweryNumber, Boolean bool) {
@@ -565,6 +594,10 @@ public class Player {
 	public int getTurnsInJail() {
 		return turnsInJail;
 	}
+	
+	/**
+	 * increments the incTurnsInJail
+	 */
 	
 	public void incTurnsInJail(){
 		this.turnsInJail++;

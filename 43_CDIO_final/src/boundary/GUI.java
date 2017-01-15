@@ -53,7 +53,7 @@ public class GUI {
 	}
 
 	public static void playerOwnsField(String owner){
-		desktop_resources.GUI.showMessage(owner + ", du er landet paa dit eget felt.");
+		desktop_resources.GUI.showMessage(owner + ", du er landet på dit eget felt.");
 	}
 
 	public static void fieldLandedOn(String player, String fieldName){
@@ -63,12 +63,25 @@ public class GUI {
 	public static String payTax(){
 		return desktop_resources.GUI.getUserButtonPressed("Betal indkomstskat. Enten 10% af dit fulde beløb eller 4.000kr. ", "10%", "4.000kr.");
 	}
-	
+
 	public static void displayCardDescription(String desc) {
 		desktop_resources.GUI.displayChanceCard(desc);
 	}
-	
+
+
 	public static void newTurn(String name) {
 		desktop_resources.GUI.showMessage(name + ", det er din tur.");
+	}
+
+	public static boolean buyHouse(String player){
+		String answer = desktop_resources.GUI.getUserSelection(player + ", vil du gerne købe et hus?", "Ja", "Nej");
+		if("Ja".equalsIgnoreCase(answer))
+			return true;
+		else
+			return false;
+	}
+
+	public static int whichStreet(){
+		return desktop_resources.GUI.getUserInteger("Vælg det feltummer, hvor du gerne vil købe et hus (Sæt musen over feltet for at se, hvilket feltnummer det har).", 1, 40);
 	}
 }

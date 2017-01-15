@@ -30,35 +30,63 @@ public abstract class Street extends Ownable {
 		this.bm = bm;
 		this.type = type;
 	}
+	
+	@Override
+	public String getType(){
+		return this.type;
+	}
 
 	
+	/**
+	  * {@inheritDoc}
+	  */
 	
 	@Override
 	public int getPrice() {
 		return this.price;
 	}
 
+	/**
+	  * {@inheritDoc}
+	  */
+	
 	@Override
 	public int getRent() {
 		return this.rent;
 	}
 
+	/**
+	  * {@inheritDoc}
+	  */
+	
 	@Override
 	public void buySquare(String player) {
 		this.owner = player;
 		this.isOwned = true;
 	}
 
+	/**
+	  * {@inheritDoc}
+	  */
+	
 	@Override
 	public String getOwner() {
 		return owner;
 	}
 
+	/**
+	  * {@inheritDoc}
+	  */
+	
 	@Override
 	public int getId() {
 		return this.id;
 	}
-
+	
+	/**
+	  * {@inheritDoc}
+	  */
+	
 	@Override
 	public boolean isOwned(){
 		return isOwned;
