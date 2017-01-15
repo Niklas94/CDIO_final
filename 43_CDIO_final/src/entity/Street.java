@@ -33,6 +33,7 @@ public abstract class Street extends Ownable {
 	}
 	
 	/**
+<<<<<<< HEAD
 	 *   When all streets of a certain color have the same owner the rent is doubled using this method.
 	 */
 	
@@ -50,6 +51,9 @@ public abstract class Street extends Ownable {
 	
 	/**
 	 * @return returns the type of the field
+=======
+	 * @return returns the type of the square.
+>>>>>>> branch 'develop' of https://github.com/Niklas94/CDIO_final.git
 	 */
 	
 	@Override
@@ -59,7 +63,7 @@ public abstract class Street extends Ownable {
 
 	
 	/**
-	  * {@inheritDoc}
+	  * @return returns the price.
 	  */
 	
 	@Override
@@ -68,7 +72,7 @@ public abstract class Street extends Ownable {
 	}
 
 	/**
-	  * {@inheritDoc}
+	  * @return returns the rent.
 	  */
 	
 	@Override
@@ -77,7 +81,7 @@ public abstract class Street extends Ownable {
 	}
 
 	/**
-	  * {@inheritDoc}
+	  * @param player the player.
 	  */
 	
 	@Override
@@ -87,7 +91,7 @@ public abstract class Street extends Ownable {
 	}
 
 	/**
-	  * {@inheritDoc}
+	  * @return returns the owner.
 	  */
 	
 	@Override
@@ -96,7 +100,7 @@ public abstract class Street extends Ownable {
 	}
 
 	/**
-	  * {@inheritDoc}
+	  * @return returns the id of the square.
 	  */
 	
 	@Override
@@ -105,7 +109,7 @@ public abstract class Street extends Ownable {
 	}
 	
 	/**
-	  * {@inheritDoc}
+	  * @return returns the boolean value of isOwned.
 	  */
 	
 	@Override
@@ -115,6 +119,8 @@ public abstract class Street extends Ownable {
 
 	/**
 	 * if the Street is not owned, the player purchases is. However, if the field is owned you pay an amount (rent) depending on which field it is.
+	 * @param player the player.
+	 * 
 	 */
 	@Override
 	public void landOnField(Player player) {

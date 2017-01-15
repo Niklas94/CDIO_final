@@ -30,6 +30,9 @@ public abstract class Ownable extends Square {
 	 */
 	public abstract boolean isOwned();
 	
+	/**
+	 * removes the owner.
+	 */
 	public void removeOwner(){
 		this.owner=null;
 	}

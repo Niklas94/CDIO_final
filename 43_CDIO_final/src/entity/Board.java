@@ -21,18 +21,36 @@ import java.awt.Color;
 
 public class Board {
 
-	public String[] squares = new String[40];
-	public Field[] guiField = new Field[40];
-	public Square[] logicField = new Square[40];
+
+	public String[] squares;
+	public Field[] guiField;
+	public Square[] logicField;
 
 
+	/**
+	 * This constructs the board.
+	 */
+	
 	public Board(){
-			
+		
+			squares =  new String[40];
+			guiField = new Field[40];
+			logicField = new Square[40];
 	}
+	
+	/**
+	 * @return returns the logicFields.
+	 */
 	
 	public Square[] getLogicField(){
 		return logicField;
 	}
+	
+	/**
+	 * get the ownable squares.
+	 * @param id id of the square id.
+	 * @return returns the ligicField as ownable.
+	 */
 
 	public Ownable getOwnableSquare(int id){
 		Ownable o = (Ownable) logicField[id];
@@ -40,10 +58,24 @@ public class Board {
 	}
 
 	
+	/**
+	 * get the squares
+	 * @param id id of the square.
+	 * @return returns the logicField.
+	 */
+	
 	public Square getSquare(int id) {
 		return logicField[id];
 	}
 
+	
+	/**
+	 * creates the board.
+	 * @param cm the controlling cardManagement.
+	 * @param cup the diceCup.
+	 * @param bm the controlling boardManagement.
+	 */
+	
 	public void createBoard(CardManagement cm, Dicecup cup, BoardManagement bm) {
 		FileReader file;
 		try {
@@ -108,6 +140,12 @@ public class Board {
 
 
 	}
+	
+	/**
+	 * creates the start.
+	 * @param values the values.
+	 * @param index the index.
+	 */
 
 	public void createStart(String[] values, int index){
 		Color bgColor = getColor(getValue("backgroundColor", values));
@@ -126,6 +164,13 @@ public class Board {
 		logicField[index] = new entity.Start(index + 1, title, "Start");
 
 	}
+	
+	/**
+	 * creates the streets.
+	 * @param values the values.
+	 * @param index the index.
+	 * @param bm the controlling boardManagement.
+	 */
 
 	public void createStreet(String[] values, int index, BoardManagement bm){
 		String title = getValue("title", values);
@@ -175,6 +220,14 @@ public class Board {
 		}
 //		logicField[index] = new entity.Street(index + 1, title, price, rentForLogic, bm, "Street");
 	}
+	
+	/**
+	 * creates the Brewery.
+	 * @param values the values.
+	 * @param index the index.
+	 * @param cup the diceCup.
+	 * @param bm the controlling boardManagement.
+	 */
 
 	public void createBrewery(String[] values, int index, Dicecup cup, BoardManagement bm){
 		String picture;
@@ -201,6 +254,12 @@ public class Board {
 
 	}
 
+	/**
+	 * creates the Fleet.
+	 * @param values the values.
+	 * @param index the index.
+	 * @param bm the controlling boardManagement.
+	 */
 	public void createFleet(String[] values, int index, BoardManagement bm){
 		String title = getValue("title", values);
 		String subText = getValue("subText", values);
@@ -218,6 +277,13 @@ public class Board {
 		logicField[index] = new entity.Fleet(index + 1, title, price, rentForLogic, bm, "Fleet");
 
 	}
+	
+	/**
+	 * creates the parking.
+	 * @param values the values.
+	 * @param index the index.
+	 * @param bm the controlling boardManagement.
+	 */
 
 	public void createParking(String[] values, int index, BoardManagement bm){
 		String title = getValue("title", values);
@@ -232,6 +298,15 @@ public class Board {
 		logicField[index] = new entity.BankParking(index + 1, title, bm, "Parking");
 
 	}
+	
+	/**
+	 * creates the jail.
+	 * @param values the values.
+	 * @param index the inedx.
+	 * @param cup the diceCup.
+	 * @param cm the controlling cardManagement.
+	 * @param bm the controlling boardManagement.
+	 */
 
 	public void createJail(String[] values, int index, Dicecup cup, CardManagement cm, BoardManagement bm){
 		String title = getValue("title", values);
@@ -246,12 +321,26 @@ public class Board {
 		logicField[index] = new entity.Prison(index + 1, title, bm, cup, "Jail", cm);
 
 	}
+	
+	/**
+	 * creates the Chance.
+	 * @param index the index.
+	 * @param cm the controlling cardManagement.
+	 * @param bm the controlling boardManagement.
+	 */
 
 	public void createChance(int index, CardManagement cm, BoardManagement bm){
 		guiField[index] = new Chance.Builder().build();
 		logicField[index] = new entity.Chance(index, cm, "Chance field", bm, "Chance");
 
 	}
+	
+	/**
+	 * creates the tax.
+	 * @param values the values.
+	 * @param index the inedx.
+	 * @param bm the controlling boardManagement.
+	 */
 	public void createTax(String[] values, int index, BoardManagement bm){
 		String title = getValue("title", values);
 		String subText = getValue("subText", values);
@@ -265,6 +354,13 @@ public class Board {
 		logicField[index] = new entity.Tax(index + 1, bm, "Tax field", "Tax");
 
 	}
+	
+	/**
+	 * gets the value
+	 * @param reference the reference.
+	 * @param values the values.
+	 * @return returns after it splits.
+	 */
 
 	public String getValue(String reference, String[] values){
 		for(String a : values){
@@ -275,6 +371,12 @@ public class Board {
 		System.out.println("Can't find value for: " + reference);
 		return null;
 	}
+	
+	/**
+	 * gets the color
+	 * @param color the color.
+	 * @return returns the color.
+	 */
 
 	public Color getColor(String color){
 		int r = Integer.parseInt(color.split(",,")[0]);

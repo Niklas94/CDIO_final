@@ -26,7 +26,12 @@ public class Account {
 	/*
 	 * GETTERS
 	 */
-
+	
+	/**
+	 * 
+	 * @return returns the money.
+	 */
+	
 	public int getMoney() {
 		return money;
 	}

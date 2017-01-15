@@ -46,16 +46,16 @@ public class PlayerManagement {
 
 /**
  * Updates the amount of players.
- * @param count
+ * @param count number to update the playercount.
  */
 	public void updatePlayerCount(int count) {
 		this.playerCount = count;
 	}
 	
 /**
- * AHFGAGJGPEGRJIGJGFFDLKGDJGOI
- * @param a
- * @return
+ * gets the player
+ * @param a the player index id
+ * @return returns the player.
  */
 	public Player getPlayer(int a){
 		return player[a];
@@ -118,21 +118,40 @@ public class PlayerManagement {
 	public String getPlayerName(int playerNumber) {
 		return player[playerNumber].getName();
 	}
+	
+	/**
+	 * get the position of the player.
+	 * @param playerNumber the player number.
+	 * @return returns the player.
+	 */
 
 	// Getter to return the position of a player
 	public int getPosition(int playerNumber) {
 		return player[playerNumber].getPosition();
 	}
+	
+	/**
+	 * @param playerNumber the player number.
+	 * @return returns the player alive status.
+	 */
 
 	// Get player alive status
 	public boolean isAlive(int playerNumber) {
 		return player[playerNumber].isAlive();
 	}
 
+	/**
+	 * @return returns playersleft.
+	 */
+	
 	// Getter to return players left.
 	public int getPlayersLeft() {
 		return playersLeft;
 	}
+	
+	/**
+	 * @return returns the player.
+	 */
 
 	// Getter to return player
 	public Player[] getPlayerArray() {

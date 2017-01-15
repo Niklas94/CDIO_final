@@ -8,17 +8,42 @@ public class Bank {
 	private BoardManagement bm;
 
 
+	/**
+	 * This constructs the bank.
+	 */
+	
 	public Bank() {
 
 	}
+
+	
+	/**
+	 * fills the player array.
+	 * @param players the players
+	 */
+	
 
 	public void fillPlayerArray(Player[] players){
 		this.players = players;
 	}
 
+	
+	/**
+	 * get the bm.
+	 * @param bm the controlling boardManagement.
+	 */
+	
+
 	public void getBM(BoardManagement bm){
 		this.bm = bm;
 	}
+	
+	/**
+	 * buys the field.
+	 * @param player the player.
+	 * @param price the price of the field.
+	 * @return returns true or false
+	 */
 
 	public boolean buyField(Player player, int price) {
 		if(player.getBalance() >= price){
@@ -30,6 +55,13 @@ public class Bank {
 
 	}
 
+	/**
+	 * removes ownership.
+	 * @param isAlive boolean value.
+	 * @param player the player.
+	 * @param bM the controlling boardManagement.
+	 */
+	
 	public void removeOwnership(boolean isAlive, Player player, BoardManagement bM){
 		if(!isAlive) {
 			for(int i=0; i < bM.getNumberOfSquares();i++){
@@ -43,6 +75,13 @@ public class Bank {
 		}
 	}
 
+	/**
+	 * pays the rent.
+	 * @param player the player.
+	 * @param owner the owner.
+	 * @param rent the rent.
+	 */
+	
 	public void payRent(Player player, String owner, int rent) {
 		if(bm.getSquare(player.getPosition()) instanceof Fleet){
 			for(int i = 0; i < players.length; i++){
