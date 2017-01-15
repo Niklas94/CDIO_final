@@ -9,7 +9,7 @@ public class StreetPink extends Street {
 	 * @param id the id of square
 	 * @param name the name of the street
 	 * @param price the price of the street
-	 * @param rent 
+	 * @param rent the rent for the street
 	 * @param bm the controlling boardManagement
 	 * @param type the type of the field
 	 */

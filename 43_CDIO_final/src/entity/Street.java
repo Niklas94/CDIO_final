@@ -5,8 +5,22 @@ import controller.BoardManagement;
 
 public abstract class Street extends Ownable {
 
+	
+	
 	private BoardManagement bm;
 
+	/**
+	 * 	/**
+	 * This constructs a street with a specified id, name, price, rent, bm and type.
+	 * @param id the id of square
+	 * @param name the name of the street
+	 * @param price the price of the street
+	 * @param rent the rent for the street
+	 * @param bm the controlling boardManagement
+	 * @param type the type of the field
+	 */
+	
+	
 	public Street(int id, String name, int price, int rent, BoardManagement bm, String type) {
 		super(id);
 		this.name = name;
@@ -17,6 +31,8 @@ public abstract class Street extends Ownable {
 		this.type = type;
 	}
 
+	
+	
 	@Override
 	public int getPrice() {
 		return this.price;
