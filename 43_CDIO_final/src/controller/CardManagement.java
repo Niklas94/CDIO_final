@@ -102,10 +102,7 @@ public class CardManagement {
 	 */
 	
 	/**
-	 * Shuffle cards
-	 * 
-	 * This method creates a temporary identical deck to the one in the game.
-	 * 
+	 * Shuffles the card deck.
 	 */
 	public void shuffleCards() {
 		Card[] cardArrShuffled = new Card[cardArr.length];
@@ -120,7 +117,11 @@ public class CardManagement {
 		cardArr = cardArrShuffled;
 	}
 
-	//Return a card back into the deck
+	/**
+	 * Returns a card to the deck. When a card is used, it is immediately returned to the deck. This is also the case for ownable cards.
+	 * @param card
+	 * @see Chance class
+	 */
 	public void returnCardToDeck(Card card) {
 		if (card instanceof OwnableCard) { //If the card is one of the two ownable jailcards.
 			for (int i = 0; i < cardArr.length; i++) {
@@ -138,7 +139,11 @@ public class CardManagement {
 			cardArr[cardArr.length-1] = card;
 	}
 
-	//This method is, as of now (7. January 2017) only here, so we can test all the other methods.
+	/**
+	 * @param index - which card from the array that is pulled. 
+	 * @return the card from the specific index, unless the card is a placeholder card.
+	 * @see pullTopCard
+	 */
 	public Card pullCard(int index) {
 		Card topCard;
 
@@ -150,7 +155,12 @@ public class CardManagement {
 			return topCard = cardArr[index + 2];
 	}
 
-	//Pull the card, at the top of the deck
+	/**
+	 * Pulls the card, at the top of the deck (index 0). Moves all the other cards 1 down in index (index 31 goes to 30, 30 goes to 29 and so on...)
+	 * If the card is an ownable card, instead of returning the ownablecard that was picked and used, we instead return a "placeholder" card into the deck. 
+	 * @return the top card, unless its a placeholder card
+	 * @see Chance class
+	 */
 	public Card pullTopCard() {
 
 		Card topCard;
@@ -172,7 +182,6 @@ public class CardManagement {
 		if (topCard instanceof OwnableCard) {
 			return cardArr[cardArr.length-1] = new OwnableCard("Placeholder");
 		}
-
 		return topCard;
 	}
 }

@@ -24,7 +24,7 @@ public class Game {
 		bank.getBM(bM);
 		cM.getPlayerArray(pM.getPlayerArray());
 		cM.createCards();
-		//cM.shuffleCards();
+		cM.shuffleCards();
 		Player[] players = pM.getPlayerArray();
 		boolean gameOn = true;
 
