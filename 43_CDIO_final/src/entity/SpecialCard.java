@@ -19,10 +19,10 @@ public class SpecialCard extends Card {
 			value = 500 * player.getTotalHousesOwned() + 2000 * player.getTotalHotelsOwned();
 			player.updateBalance(-value);
 		}
-		else if (this.getDescription().charAt(3) == ' ') {
-//			if (player.getTotalValue() < 15000)
-				player.updateBalance(40000);
-		}
+//		else if (this.getDescription().charAt(3) == ' ') {
+////			if (player.getTotalValue() < 15000)
+//				player.updateBalance(40000);
+//		}
 		return true;
 	}
 }
