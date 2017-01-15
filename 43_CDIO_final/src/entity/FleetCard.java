@@ -7,12 +7,23 @@ public class FleetCard extends Card {
 	private Bank bank;
 	private BoardManagement bm;
 
+	/**
+	 * This constructs fleetCard with a description, bank and bm.
+	 * @param desc description of the card.
+	 * @param bank the bank.
+	 * @param bm the controlling boardManagement.
+	 */
+	
 	public FleetCard(String desc, Bank bank, BoardManagement bm) {
 		super.setDescription(desc);
 		this.bank = bank;
 		this.bm = bm;
 	}
 
+	
+	/**
+	 * uses the card.
+	 */
 
 	@Override
 	public void useCard(Player player) {
