@@ -10,8 +10,7 @@ public class MoneyCard extends Card {
 	}
 	
 	@Override
-	public boolean useCard(Player player) {
+	public void useCard(Player player) {
 		player.updateBalance(amount);
-		return true;
 	}
 }

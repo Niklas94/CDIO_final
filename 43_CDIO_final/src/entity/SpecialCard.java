@@ -10,7 +10,7 @@ public class SpecialCard extends Card {
 	}
 
 	@Override
-	public boolean useCard(Player player) {
+	public void useCard(Player player) {
 		if (this.getDescription().equals("Ejendomsskatterne er steget, ekstraudgifterne er: kr. 800 pr. hus, kr. 2.300 pr. hotel.")) {
 			value = 800 * player.getTotalHousesOwned() + 2300 * player.getTotalHotelsOwned();
 			player.updateBalance(-value);
@@ -23,6 +23,5 @@ public class SpecialCard extends Card {
 ////			if (player.getTotalValue() < 15000)
 //				player.updateBalance(40000);
 //		}
-		return true;
 	}
 }

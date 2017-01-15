@@ -24,10 +24,10 @@ public class Board {
 	public String[] squares = new String[40];
 	public Field[] guiField = new Field[40];
 	public Square[] logicField = new Square[40];
-	private BoardManagement bm;
+	private int blue, green, grey, pink, purple, red, white, yellow;
 
-	public Board(BoardManagement bm){
-		this.bm = bm;		
+	public Board(){
+			
 	}
 
 	public Ownable getOwnableSquare(int id){
@@ -35,11 +35,12 @@ public class Board {
 		return o;
 	}
 
+	
 	public Square getSquare(int id) {
 		return logicField[id];
 	}
 
-	public void createBoard(CardManagement cm, Dicecup cup) {
+	public void createBoard(CardManagement cm, Dicecup cup, BoardManagement bm) {
 		FileReader file;
 		try {
 			file = new FileReader("Squares.txt");
@@ -62,31 +63,31 @@ public class Board {
 					index++;
 					break;
 				case "Street":
-					createStreet(values, index);
+					createStreet(values, index, bm);
 					index++;
 					break;
 				case "Brewery":
-					createBrewery(values, index, cup);
+					createBrewery(values, index, cup, bm);
 					index++;
 					break;
 				case "Fleet":
-					createFleet(values, index);
+					createFleet(values, index, bm);
 					index++;
 					break;
 				case "Parking":
-					createParking(values, index);
+					createParking(values, index, bm);
 					index++;
 					break;
 				case "Jail":
-					createJail(values, index, cup, cm);
+					createJail(values, index, cup, cm, bm);
 					index++;
 					break;
 				case "Chance":
-					createChance(index, cm);
+					createChance(index, cm, bm);
 					index++;
 					break;
 				case "Tax":
-					createTax(values, index);
+					createTax(values, index, bm);
 					index++;
 					break;
 				default:
@@ -122,7 +123,7 @@ public class Board {
 
 	}
 
-	public void createStreet(String[] values, int index){
+	public void createStreet(String[] values, int index, BoardManagement bm){
 		String title = getValue("title", values);
 		Color bgColor = getColor(getValue("backgroundColor", values));
 		Color fgColor = getColor(getValue("foregroundColor", values));
@@ -140,11 +141,46 @@ public class Board {
 
 		int price = Integer.parseInt(subText.split(":")[1].trim());
 		int rentForLogic = Integer.parseInt(rent.split(":")[1].trim());
-		logicField[index] = new entity.Street(index + 1, title, price, rentForLogic, bm, "Street");
-
+		switch (getValue("color", values)) {
+		case "Blue":
+			logicField[index] = new entity.StreetBlue(index + 1, title, price, rentForLogic, bm, "StreetBlue");
+			blue++;
+			break;
+		case "Green":
+			logicField[index] = new entity.StreetGreen(index + 1, title, price, rentForLogic, bm, "StreetGreen");
+			green++;
+			break;
+		case "Grey":
+			logicField[index] = new entity.StreetGrey(index + 1, title, price, rentForLogic, bm, "StreetGrey");
+			grey++;
+			break;
+		case "Pink":
+			logicField[index] = new entity.StreetPink(index + 1, title, price, rentForLogic, bm, "StreetPink");
+			pink++;
+			break;
+		case "Purple":
+			logicField[index] = new entity.StreetPurple(index + 1, title, price, rentForLogic, bm, "StreetPurple");
+			purple++;
+			break;
+		case "Red":
+			logicField[index] = new entity.StreetRed(index + 1, title, price, rentForLogic, bm, "StreetRed");
+			red++;
+			break;
+		case "White":
+			logicField[index] = new entity.StreetWhite(index + 1, title, price, rentForLogic, bm, "StreetWhite");
+			white++;
+			break;
+		case "Yellow":
+			logicField[index] = new entity.StreetYellow(index + 1, title, price, rentForLogic, bm, "StreetYellow");
+			yellow++;
+			break;
+			default:
+				break;
+		}
+//		logicField[index] = new entity.Street(index + 1, title, price, rentForLogic, bm, "Street");
 	}
 
-	public void createBrewery(String[] values, int index, Dicecup cup){
+	public void createBrewery(String[] values, int index, Dicecup cup, BoardManagement bm){
 		String picture;
 		String title = getValue("title", values);
 		if(index == 28)
@@ -169,7 +205,7 @@ public class Board {
 
 	}
 
-	public void createFleet(String[] values, int index){
+	public void createFleet(String[] values, int index, BoardManagement bm){
 		String title = getValue("title", values);
 		String subText = getValue("subText", values);
 		String description = getValue("description", values);
@@ -187,7 +223,7 @@ public class Board {
 
 	}
 
-	public void createParking(String[] values, int index){
+	public void createParking(String[] values, int index, BoardManagement bm){
 		String title = getValue("title", values);
 		String subText = getValue("subText", values);
 		String description = getValue("description", values);
@@ -201,7 +237,7 @@ public class Board {
 
 	}
 
-	public void createJail(String[] values, int index, Dicecup cup, CardManagement cm){
+	public void createJail(String[] values, int index, Dicecup cup, CardManagement cm, BoardManagement bm){
 		String title = getValue("title", values);
 		String subText = getValue("subText", values);
 		String description = getValue("description", values);
@@ -215,12 +251,12 @@ public class Board {
 
 	}
 
-	public void createChance(int index, CardManagement cm){
+	public void createChance(int index, CardManagement cm, BoardManagement bm){
 		guiField[index] = new Chance.Builder().build();
 		logicField[index] = new entity.Chance(index, cm, "Chance field", bm, "Chance");
 
 	}
-	public void createTax(String[] values, int index){
+	public void createTax(String[] values, int index, BoardManagement bm){
 		String title = getValue("title", values);
 		String subText = getValue("subText", values);
 		String description = getValue("description", values);

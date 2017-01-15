@@ -3,10 +3,10 @@ package entity;
 
 import controller.BoardManagement;
 
-public class Street extends Ownable {
+public abstract class Street extends Ownable {
 
 	private BoardManagement bm;
-	
+
 	public Street(int id, String name, int price, int rent, BoardManagement bm, String type) {
 		super(id);
 		this.name = name;
@@ -15,7 +15,6 @@ public class Street extends Ownable {
 		this.isOwned = false;
 		this.bm = bm;
 		this.type = type;
-		
 	}
 
 	@Override
@@ -51,15 +50,16 @@ public class Street extends Ownable {
 
 	@Override
 	public void landOnField(Player player) {
+
 		bm.fieldLandedOn(player.getName(), this.name);
 		if(!this.isOwned){
 			bm.buyField(player, price);
 		}
 		else if(isOwned && player.getName() != owner)
 			bm.payRent(player, owner, rent);
-		else
+		else {
 			bm.playerOwnsField(owner);
+		}
 	}
-
 }
 

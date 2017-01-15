@@ -16,7 +16,7 @@ public class BoardManagement {
 	//private Player[] players; //Need this for the chance field
 
 	public BoardManagement(Bank bank) throws Exception{
-		board = new Board(this);
+		board = new Board();
 		this.bank = bank;
 	}
 	
@@ -25,7 +25,7 @@ public class BoardManagement {
 	}
 
 	public void createBoard(CardManagement cm, Dicecup cup){
-		board.createBoard(cm, cup);
+		board.createBoard(cm, cup, this);
 	}
 
 	public Square getSquare(int id){
