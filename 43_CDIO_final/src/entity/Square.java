@@ -5,6 +5,10 @@ public abstract class Square {
 	int id;
 	String type;
 	
+	/**
+	 * This constructs a square with the given id.
+	 * @param id id of the square.
+	 */
 	
 	public Square(int id){
 		this.id = id;
