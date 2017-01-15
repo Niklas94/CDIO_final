@@ -17,6 +17,7 @@ public class MoneyCard extends Card {
 	
 	/**
 	 * uses the card.
+	 * @param player the player.
 	 */
 	
 	@Override
