@@ -77,18 +77,26 @@ public class BoardManagement {
 	}
 
 	/**
-	 * 
-	 * @param prisonCard
-	 * @return
+	 * @param prisonCard boolean value.
+	 * @return returns the GUI.
 	 */
 	
 	public String prisonOptions(boolean prisonCard) {
 		return GUI.prisonOptions(prisonCard);
 	}
+	
+	/**
+	 * Tells GUI to press enter.
+	 * @param name the name.
+	 */
 
 	public void pressEnter(String name) {
 		GUI.pressEnter(name);
 	}
+	
+	/**
+	 * @param desc the card description.
+	 */
 
 	public void displayCardDescription(String desc) {
 		GUI.displayCardDescription(desc);
