@@ -13,7 +13,7 @@ public class Dicecup {
 	 */
 	
 	public Dicecup() {
-		x = new Die[2]; //Antal terninger
+		x = new Die[2];
 		x[0] = new Die();
 		x[1] = new Die();
 		sum = x[0].getValue() + x[1].getValue();
