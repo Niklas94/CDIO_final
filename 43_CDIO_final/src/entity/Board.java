@@ -24,7 +24,7 @@ public class Board {
 	public String[] squares = new String[40];
 	public Field[] guiField = new Field[40];
 	public Square[] logicField = new Square[40];
-	private int blue, green, grey, pink, purple, red, white, yellow;
+
 
 	public Board(){
 			
@@ -148,35 +148,27 @@ public class Board {
 		switch (getValue("color", values)) {
 		case "Blue":
 			logicField[index] = new entity.StreetBlue(index + 1, title, price, rentForLogic, bm, "Blue");
-			blue++;
 			break;
 		case "Green":
 			logicField[index] = new entity.StreetGreen(index + 1, title, price, rentForLogic, bm, "Green");
-			green++;
 			break;
 		case "Grey":
 			logicField[index] = new entity.StreetGrey(index + 1, title, price, rentForLogic, bm, "Grey");
-			grey++;
 			break;
 		case "Pink":
 			logicField[index] = new entity.StreetPink(index + 1, title, price, rentForLogic, bm, "Pink");
-			pink++;
 			break;
 		case "Purple":
 			logicField[index] = new entity.StreetPurple(index + 1, title, price, rentForLogic, bm, "Purple");
-			purple++;
 			break;
 		case "Red":
 			logicField[index] = new entity.StreetRed(index + 1, title, price, rentForLogic, bm, "Red");
-			red++;
 			break;
 		case "White":
 			logicField[index] = new entity.StreetWhite(index + 1, title, price, rentForLogic, bm, "White");
-			white++;
 			break;
 		case "Yellow":
 			logicField[index] = new entity.StreetYellow(index + 1, title, price, rentForLogic, bm, "Yellow");
-			yellow++;
 			break;
 			default:
 				break;

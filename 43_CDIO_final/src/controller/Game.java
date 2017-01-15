@@ -19,6 +19,7 @@ public class Game {
 		BoardManagement bM = new BoardManagement(bank);
 		CardManagement cM = new CardManagement(bank, bM);
 		bM.createBoard(cM, cup);
+		bM.setStreetAmmount();
 		pM.createPlayers();
 		bank.fillPlayerArray(pM.getPlayerArray());
 		bank.getBM(bM);

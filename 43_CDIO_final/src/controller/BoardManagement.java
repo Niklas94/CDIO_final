@@ -14,6 +14,7 @@ public class BoardManagement {
 	private Board board;
 	private Bank bank;
 	int blue, green, grey, pink, purple, red, white, yellow;
+	int blueOwned, greenOwned, greyOwned, pinkOwned, purpleOwned, redOwned, whiteOwned, yellowOwned;
 	//private Player[] players; //Need this for the chance field
 
 	public BoardManagement(Bank bank) throws Exception{
@@ -113,7 +114,11 @@ public class BoardManagement {
 			else if(squares[i].getType() == "Yellow")
 				yellow++;
 		}
-
 	}
-}
 
+	public void checkOwnedStreets (Player player){
+		Square[] squares = board.getLogicField();
+		bank.checkOwnedStreets(squares);
+	}
+	
+}

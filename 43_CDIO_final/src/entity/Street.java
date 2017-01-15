@@ -25,11 +25,32 @@ public abstract class Street extends Ownable {
 		super(id);
 		this.name = name;
 		this.price = price;
-		this.rent = rent;
+		this.originalRent = rent;
 		this.isOwned = false;
 		this.bm = bm;
 		this.type = type;
+		this.rent = this.originalRent;
 	}
+	
+	/**
+	 *   When all streets of a certain color have the same owner the rent is doubled using this method.
+	 */
+	
+	public void setRent(){
+		this.rent = 2 * this.originalRent;
+	}
+	
+	/**
+	 *   If a player goes bankrupt and loses ownership of his streets this method is called to revert the rent to the original price.
+	 */
+	
+	public void setOriginalRent(){
+		this.rent = this.originalRent;
+	}
+	
+	/**
+	 * @return returns the type of the field
+	 */
 	
 	@Override
 	public String getType(){
