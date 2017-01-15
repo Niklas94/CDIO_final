@@ -99,6 +99,15 @@ public class Bank {
 		}
 	}
 
+	/**
+	 * 
+	 * @param player paying the rent
+	 * @param owner of the field
+	 * @param rent of the brewery (100)
+	 * @param sum which the rent is multiplied by
+	 * 
+	 * if both breweries are owned by the same player, the rent is multiplied by two.
+	 */
 	public void payBreweryRent(Player player, String owner, int rent, int sum){
 
 		int totalBrewery = 0;
