@@ -7,7 +7,7 @@ public abstract class Card {
 
 	/**
 	 * Using the card for the specific player - e.g. a moneycard will update the balance for the player, with a specific amount.
-	 * @param player
+	 * @param player the player
 	 */
 	public abstract void useCard(Player player);
 
