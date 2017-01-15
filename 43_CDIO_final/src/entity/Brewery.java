@@ -95,9 +95,12 @@ public class Brewery extends Ownable {
 		if(!this.isOwned){
 			bm.buyField(player, price, type);
 		}
-		else{	
+		else if(isOwned && player.getName() != owner) {
 			int sum = cup.getSum();
 			bm.payBreweryRent(player, owner, rent, sum);
+		}
+		else {
+			bm.playerOwnsField(owner);
 		}
 
 	}

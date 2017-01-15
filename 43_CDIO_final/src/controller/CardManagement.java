@@ -16,7 +16,7 @@ import java.io.BufferedReader;
 
 public class CardManagement {
 
-	private Card[] cardArr = new Card[33]; //Change the number to create more cards - remember to add type, value and such in "Card Description.txt" file
+	private Card[] cardArr = new Card[32]; //Change the number to create more cards - remember to add type, value and such in "Card Description.txt" file
 	private Player[] players; //SpecialBirthday Card.
 	private Bank bank; //Fleet card
 	private BoardManagement bm; //Fleet and position card

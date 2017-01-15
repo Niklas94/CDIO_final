@@ -1,8 +1,5 @@
-OwnableCard;32 I anledning af kongens fødselsdag benådes De herved for fængsel. Dette kort kan opbevares, indtil de får brug for det.
-OwnableCard;33 I anledning af kongens fødselsdag benådes De herved for fængsel. Dette kort kan opbevares, indtil de får brug for det.
 SpecialCard;Ejendomsskatterne er steget, ekstraudgifterne er: kr. 800 pr. hus, kr. 2.300 pr. hotel.
 SpecialCard;Oliepriserne er steget, og De skal betale: kr. 500 pr. hus. kr. 2.000 pr. hotel.
-SpecialCard;De modtager Matador-legatet for værdig trængende stort kr. 40.000. Ved værdig trængende forstås at Deres formue, d.v.s. Deres kontante penge + skøder + bygninger ikke overstiger kr. 15.000.
 PlayerBirthdayCard;Det er Deres fødselsdag. Modtag af hver medspiller kr. 200.
 FleetCard;Tag med den nærmeste færge - Flyt brikken frem, og hvis De passerer Start inkassér da kr. 4.000.
 FleetCard;Ryk brikken frem til det nærmeste rederi og betal ejeren to gange den leje, han ellers er berettiget til. Hvis selskabet ikke ejes af nogen kan De købe det af banken.
@@ -31,3 +28,5 @@ PositionCard;25;Ryk frem til Grønningen. Hvis De passerer Start, indkasser da k
 PositionCard;40;Tag ind på Rådhuspladsen.
 PositionCard;31;Gå i fængsel. Ryk direkte til fængslet. Selv om De passerer Start, indkasserer De ikke kr. 4.000.
 PositionCard;31;Gå i fængsel. Ryk direkte til fængslet. Selv om De passerer Start, indkasserer De ikke kr. 4.000.
+OwnableCard;32 I anledning af kongens fødselsdag benådes De herved for fængsel. Dette kort kan opbevares, indtil de får brug for det.
+OwnableCard;33 I anledning af kongens fødselsdag benådes De herved for fængsel. Dette kort kan opbevares, indtil de får brug for det.

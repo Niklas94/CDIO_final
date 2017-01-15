@@ -11,33 +11,33 @@ public class Bank {
 	/**
 	 * This constructs the bank.
 	 */
-	
+
 	public Bank() {
 
 	}
 
-	
+
 	/**
 	 * fills the player array.
 	 * @param players the players
 	 */
-	
+
 
 	public void fillPlayerArray(Player[] players){
 		this.players = players;
 	}
 
-	
+
 	/**
 	 * get the bm.
 	 * @param bm the controlling boardManagement.
 	 */
-	
+
 
 	public void getBM(BoardManagement bm){
 		this.bm = bm;
 	}
-	
+
 	/**
 	 * buys the field.
 	 * @param player the player.
@@ -61,7 +61,7 @@ public class Bank {
 	 * @param player the player.
 	 * @param bM the controlling boardManagement.
 	 */
-	
+
 	public void removeOwnership(boolean isAlive, Player player, BoardManagement bM){
 		if(!isAlive) {
 			for(int i=0; i < bM.getNumberOfSquares();i++){
@@ -81,7 +81,7 @@ public class Bank {
 	 * @param owner the owner.
 	 * @param rent the rent.
 	 */
-	
+
 	public void payRent(Player player, String owner, int rent) {
 		if(bm.getSquare(player.getPosition()) instanceof Fleet){
 			for(int i = 0; i < players.length; i++){
@@ -98,8 +98,27 @@ public class Bank {
 				players[i].updateBalance(rent);
 		}
 	}
+
 	public void payBreweryRent(Player player, String owner, int rent, int sum){
 
+		int totalBrewery = 0;
+		for (int i = 0; i < bm.getNumberOfSquares(); i++) {
+			if (bm.getSquare(i) instanceof Brewery)
+				if (((Brewery) bm.getSquare(i)).getOwner() == owner)
+					totalBrewery++;
+		}
+		if (totalBrewery == 2)
+			rent = 2*rent*sum;
+		else
+			rent = rent*sum;
+		
+		if (player.getBalance() >= rent*sum) {
+			player.updateBalance(-rent);
+		}
+		else if (player.getBalance() < rent*sum) {
+			rent = player.getBalance();
+			player.updateBalance(-(rent+1));
+		}
 	}
 
 	public void checkOwnedStreets (Square[] squaresArr){
