@@ -30,22 +30,21 @@ public class Board {
 	/**
 	 * This constructs the board.
 	 */
-	
+
 	public Board(){
-		
-			squares =  new String[40];
-			guiField = new Field[40];
-			logicField = new Square[40];
+		squares =  new String[40];
+		guiField = new Field[40];
+		logicField = new Square[40];
 	}
-	
+
 	/**
 	 * @return returns the logicFields.
 	 */
-	
+
 	public Square[] getLogicField(){
 		return logicField;
 	}
-	
+
 	/**
 	 * get the ownable squares.
 	 * @param id id of the square id.
@@ -57,25 +56,25 @@ public class Board {
 		return o;
 	}
 
-	
+
 	/**
 	 * get the squares
 	 * @param id id of the square.
 	 * @return returns the logicField.
 	 */
-	
+
 	public Square getSquare(int id) {
 		return logicField[id];
 	}
 
-	
+
 	/**
 	 * creates the board.
 	 * @param cm the controlling cardManagement.
 	 * @param cup the diceCup.
 	 * @param bm the controlling boardManagement.
 	 */
-	
+
 	public void createBoard(CardManagement cm, Dicecup cup, BoardManagement bm) {
 		FileReader file;
 		try {
@@ -140,7 +139,7 @@ public class Board {
 
 
 	}
-	
+
 	/**
 	 * creates the start.
 	 * @param values the values.
@@ -164,7 +163,7 @@ public class Board {
 		logicField[index] = new entity.Start(index + 1, title, "Start");
 
 	}
-	
+
 	/**
 	 * creates the streets.
 	 * @param values the values.
@@ -215,12 +214,15 @@ public class Board {
 		case "Yellow":
 			logicField[index] = new entity.StreetYellow(index + 1, title, price, rentForLogic, bm, "Yellow");
 			break;
-			default:
-				break;
+		case "Orange":
+			logicField[index] = new entity.StreetOrange(index + 1, title, price, rentForLogic, bm, "Orange");
+			break;
+		default:
+			break;
 		}
-//		logicField[index] = new entity.Street(index + 1, title, price, rentForLogic, bm, "Street");
+		//		logicField[index] = new entity.Street(index + 1, title, price, rentForLogic, bm, "Street");
 	}
-	
+
 	/**
 	 * creates the Brewery.
 	 * @param values the values.
@@ -277,7 +279,7 @@ public class Board {
 		logicField[index] = new entity.Fleet(index + 1, title, price, rentForLogic, bm, "Fleet");
 
 	}
-	
+
 	/**
 	 * creates the parking.
 	 * @param values the values.
@@ -298,7 +300,7 @@ public class Board {
 		logicField[index] = new entity.BankParking(index + 1, title, bm, "Parking");
 
 	}
-	
+
 	/**
 	 * creates the jail.
 	 * @param values the values.
@@ -321,7 +323,7 @@ public class Board {
 		logicField[index] = new entity.Prison(index + 1, title, bm, cup, "Jail", cm);
 
 	}
-	
+
 	/**
 	 * creates the Chance.
 	 * @param index the index.
@@ -334,7 +336,7 @@ public class Board {
 		logicField[index] = new entity.Chance(index, cm, "Chance field", bm, "Chance");
 
 	}
-	
+
 	/**
 	 * creates the tax.
 	 * @param values the values.
@@ -354,7 +356,7 @@ public class Board {
 		logicField[index] = new entity.Tax(index + 1, bm, "Tax field", "Tax");
 
 	}
-	
+
 	/**
 	 * gets the value
 	 * @param reference the reference.
@@ -371,7 +373,7 @@ public class Board {
 		System.out.println("Can't find value for: " + reference);
 		return null;
 	}
-	
+
 	/**
 	 * gets the color
 	 * @param color the color.
