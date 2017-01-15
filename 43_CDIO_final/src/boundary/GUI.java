@@ -67,4 +67,8 @@ public class GUI {
 	public static void displayCardDescription(String desc) {
 		desktop_resources.GUI.displayChanceCard(desc);
 	}
+	
+	public static void newTurn(String name) {
+		desktop_resources.GUI.showMessage(name + ", det er din tur.");
+	}
 }

@@ -43,17 +43,17 @@ public class TestCardManagement {
 	public void testShuffleCards() throws Exception {
 
 		String[] beforeShuffling;
-		beforeShuffling = new String[31];
-		int expected = 31, actual = 0;
+		beforeShuffling = new String[33];
+		int expected = 33, actual = 0;
 		
 		cm.createCards();
 
-		for (int i = 0; i < 31; i++) {
+		for (int i = 0; i < 33; i++) {
 			beforeShuffling[i] = cm.pullTopCard().getDescription();
 		}
 		cm.shuffleCards();
 		
-		for (int i = 0; i < 31; i++) {
+		for (int i = 0; i < 33; i++) {
 			if (cm.pullCard(i).getDescription() != beforeShuffling[i])
 				actual++;
 		}
@@ -67,10 +67,11 @@ public class TestCardManagement {
 		
 		//First we create the cards
 		cm.createCards();
+		cm.shuffleCards();
 		
 		//Then we pull the top card, and gets the description of that card. That description is what we expect to get again, when we now pull the last card in the deck.
 		String expected1 = cm.pullTopCard().getDescription();
-		String actual1 = cm.pullCard(30).getDescription();
+		String actual1 = cm.pullCard(32).getDescription();
 		assertEquals(expected1, actual1);
 		
 		//Now we try again with the 2nd card in the deck. The 2nd card is obviously at the top now, since we alerady pulled the first one.
@@ -85,7 +86,7 @@ public class TestCardManagement {
 		cm.createCards();
 		Card expected = cm.pullTopCard(); //Expected card must be the one at the top.
 		cm.returnCardToDeck(expected);
-		Card actual = cm.pullCard(30);
+		Card actual = cm.pullCard(33);
 		assertEquals(expected, actual);
 	}
 }
