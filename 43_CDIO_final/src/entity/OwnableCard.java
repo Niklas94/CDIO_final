@@ -10,7 +10,7 @@ public class OwnableCard extends Card {
 	}
 
 	@Override
-	public boolean useCard(Player player) {
+	public void useCard(Player player) {
 		// TODO Auto-generated method stub
 		if (!this.getDescription().equals("Placeholder")) { //Making sure that a placeholder card wont do anything
 			if (!isOwned) {
@@ -22,8 +22,5 @@ public class OwnableCard extends Card {
 				player.useJailCardOwned();
 			}
 		}
-		return false; //This is only here, so the method can be used...
 	}
-
-
 }

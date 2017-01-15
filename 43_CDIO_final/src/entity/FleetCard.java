@@ -14,7 +14,7 @@ public class FleetCard extends Card {
 	}
 
 	@Override
-	public boolean useCard(Player player) {
+	public void useCard(Player player) {
 		if (player.getPosition() >= 3 && player.getPosition() <= 8) {
 			player.setPosition(6);
 			if (bm.returnFleet(player.getPosition()).isOwned && bm.returnFleet(player.getPosition()).getOwner() != player.getName()) {
@@ -52,6 +52,5 @@ public class FleetCard extends Card {
 				bm.buyField(player, bm.returnFleet(player.getPosition()).getPrice());
 			}
 		}
-		return true;
 	}
 }

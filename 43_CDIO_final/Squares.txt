@@ -1,40 +1,40 @@
 type::Start--title::START--subText::Modtag: 4000--description::Modtag kr. 4000, når de passerer start--backgroundColor::255,,0,,0--foregroundColor::0,,0,,0
-type::Street--title::Rødovrevej--subText::Pris:	1200--description::Rødovrevej--rent::Leje: 50--backgroundColor::75,,155,,235--foregroundColor::0,,0,,0
+type::Street--title::Rødovrevej--subText::Pris:	1200--description::Rødovrevej--rent::Leje: 50--backgroundColor::75,,155,,235--foregroundColor::0,,0,,0--color::Blue
 type::Chance
-type::Street--title::Hvidovrevej--subText::Pris: 1200--description::Hvidovrevej--rent::Leje: 50--backgroundColor::75,,155,,235--foregroundColor::0,,0,,0
+type::Street--title::Hvidovrevej--subText::Pris: 1200--description::Hvidovrevej--rent::Leje: 50--backgroundColor::75,,155,,235--foregroundColor::0,,0,,0--color::Blue
 type::Tax--title::10% el. 4000--subText::Betal indkomstskat 10% eller kr. 4000,- --description::Indkomstskat
 type::Fleet--title::SFL--subText::Pris:  4000--description::SFL Færge--rent::Leje: 4000
-type::Street--title::Roskildevej--subText::Pris: 2000--description::Roskildevej--rent::Leje: 100--backgroundColor::255,,135,,120--foregroundColor::0,,0,,0
+type::Street--title::Roskildevej--subText::Pris: 2000--description::Roskildevej--rent::Leje: 100--backgroundColor::255,,135,,120--foregroundColor::0,,0,,0--color::Pink
 type::Chance
-type::Street--title::Valby Langgade--subText::Pris: 2000--description::Valby Langgade--rent::Leje: 100--backgroundColor::255,,135,,120--foregroundColor::0,,0,,0
-type::Street--title::Allégade--subText::Pris: 2400--description::Allégade--rent::Leje: 150--backgroundColor::255,,135,,120--foregroundColor::0,,0,,0
+type::Street--title::Valby Langgade--subText::Pris: 2000--description::Valby Langgade--rent::Leje: 100--backgroundColor::255,,135,,120--foregroundColor::0,,0,,0--color::Pink
+type::Street--title::Allégade--subText::Pris: 2400--description::Allégade--rent::Leje: 150--backgroundColor::255,,135,,120--foregroundColor::0,,0,,0--color::Pink
 type::Jail--title::Fængsel--subText::Fængsel--description::På besøg i fængslet
-type::Street--title::Frederiks-\nberg Allé--subText::Pris:	2800--description::Frederiksberg Allé--rent::Leje: 200--backgroundColor::102,,204,,0--foregroundColor::0,,0,,0
+type::Street--title::Frederiks-\nberg Allé--subText::Pris:	2800--description::Frederiksberg Allé--rent::Leje: 200--backgroundColor::102,,204,,0--foregroundColor::0,,0,,0--color::Green
 type::Brewery--title::Tuborg--subText::Pris: 3000--description::Tuborg bryggeri--rent::Leje: 100 x [Terningslag]--picture::"tuborg.png"
-type::Street--title::Bülowsvej--subText::Pris: 2800--description::Bülowsvej--rent::Leje: 200--backgroundColor::102,,204,,0--foregroundColor::0,,0,,0
-type::Street--title::Gammel Kongevej--subText::Pris: 3200--description::Gammel Kongevej--rent::Leje: 250--backgroundColor::102,,204,,0--foregroundColor::0,,0,,0
+type::Street--title::Bülowsvej--subText::Pris: 2800--description::Bülowsvej--rent::Leje: 200--backgroundColor::102,,204,,0--foregroundColor::0,,0,,0--color::Green
+type::Street--title::Gammel Kongevej--subText::Pris: 3200--description::Gammel Kongevej--rent::Leje: 250--backgroundColor::102,,204,,0--foregroundColor::0,,0,,0--color::Green
 type::Fleet--title::Kalundborg/\nÅrhus--subText::Pris: 4000--description::Kalundborg/Århus Færge--rent::Leje: 4000
-type::Street--title::Bernstorffsvej--subText::Pris: 3600--description::Bernstorffsvej--rent::Leje: 300--backgroundColor::255,,153,,51--foregroundColor::0,,0,,0
+type::Street--title::Bernstorffsvej--subText::Pris: 3600--description::Bernstorffsvej--rent::Leje: 300--backgroundColor::255,,153,,51--foregroundColor::0,,0,,0--color::Orange
 type::Chance
-type::Street--title::Hellerupvej--subText::Pris: 3600--description::Hellerupvej--rent::Leje: 300--backgroundColor::255,,153,,51--foregroundColor::0,,0,,0
-type::Street--title::Strandvejen--subText::Pris: 4000--description::Strandvejen--rent::Leje: 350--backgroundColor::255,,153,,51--foregroundColor::0,,0,,0
+type::Street--title::Hellerupvej--subText::Pris: 3600--description::Hellerupvej--rent::Leje: 300--backgroundColor::255,,153,,51--foregroundColor::0,,0,,0--color::Orange
+type::Street--title::Strandvejen--subText::Pris: 4000--description::Strandvejen--rent::Leje: 350--backgroundColor::255,,153,,51--foregroundColor::0,,0,,0--color::Orange
 type::Parking--title::Den Danske Bank--subText::Parkering--description::Ta' en pause
-type::Street--title::Trianglen--subText::Pris: 4400--description::Trianglen--rent::Leje: 350--backgroundColor::255,,0,,0--foregroundColor::0,,0,,0
+type::Street--title::Trianglen--subText::Pris: 4400--description::Trianglen--rent::Leje: 350--backgroundColor::255,,0,,0--foregroundColor::0,,0,,0--color::Red
 type::Chance
-type::Street--title::Østerbrogade--subText::Pris: 4400--description::Østerbrogade--rent::Leje: 350--backgroundColor::255,,0,,0--foregroundColor::0,,0,,0
-type::Street--title::Grønningen--subText::Pris:	4800--description::Grønningen--rent::Leje: 400--backgroundColor::255,,0,,0--foregroundColor::0,,0,,0
+type::Street--title::Østerbrogade--subText::Pris: 4400--description::Østerbrogade--rent::Leje: 350--backgroundColor::255,,0,,0--foregroundColor::0,,0,,0--color::Red
+type::Street--title::Grønningen--subText::Pris:	4800--description::Grønningen--rent::Leje: 400--backgroundColor::255,,0,,0--foregroundColor::0,,0,,0--color::Red
 type::Fleet--title::DFDS--subText::Pris: 4000--description::DFDS Færge--rent::Leje: 4000
-type::Street--title::Bredgade--subText::Pris: 5200--description::Bredgade--rent::Leje: 450--backgroundColor::255,,255,,255--foregroundColor::0,,0,,0
-type::Street--title::Kgs. Nytorv--subText::Pris: 5200--description::Kongens Nytorv--rent::Leje: 450--backgroundColor::255,,255,,255--foregroundColor::0,,0,,0
+type::Street--title::Bredgade--subText::Pris: 5200--description::Bredgade--rent::Leje: 450--backgroundColor::255,,255,,255--foregroundColor::0,,0,,0--color::White
+type::Street--title::Kgs. Nytorv--subText::Pris: 5200--description::Kongens Nytorv--rent::Leje: 450--backgroundColor::255,,255,,255--foregroundColor::0,,0,,0--color::White
 type::Brewery--title::Coca Cola--subText::Pris: 3000--description::Coca Cola bryggeri--rent::Leje: 100 x [Terningslag]--picture::"cocacola.png"
-type::Street--title::Østergade--subText::Pris: 5600--description::Østergade--rent::Leje: 500--backgroundColor::255,,255,,255--foregroundColor::0,,0,,0
+type::Street--title::Østergade--subText::Pris: 5600--description::Østergade--rent::Leje: 500--backgroundColor::255,,255,,255--foregroundColor::0,,0,,0--color::White
 type::Jail--title::Gå i fængsel--subText::Gå i fængsel--description::De fængsles:  Slå to ens eller betal 1000;- for at komme ud
-type::Street--title::Amagertorv--subText::Pris:	6000--description::Amagertorv--rent::Leje: 550--backgroundColor::255,,255,,50--foregroundColor::0,,0,,0
-type::Street--title::Vimmelskaftet--subText::Pris: 6000--description::Vimmelskaftet--rent::Leje: 550--backgroundColor::255,,255,,50--foregroundColor::0,,0,,0
+type::Street--title::Amagertorv--subText::Pris:	6000--description::Amagertorv--rent::Leje: 550--backgroundColor::255,,255,,50--foregroundColor::0,,0,,0--color::Yellow
+type::Street--title::Vimmelskaftet--subText::Pris: 6000--description::Vimmelskaftet--rent::Leje: 550--backgroundColor::255,,255,,50--foregroundColor::0,,0,,0--color::Yellow
 type::Chance
-type::Street--title::Nygade--subText::Pris: 6400--description::Nygade--rent::Leje: 600--backgroundColor::255,,255,,50--foregroundColor::0,,0,,0
+type::Street--title::Nygade--subText::Pris: 6400--description::Nygade--rent::Leje: 600--backgroundColor::255,,255,,50--foregroundColor::0,,0,,0--color::Yellow
 type::Fleet--title::Halsskov/\nKnudshoved--subText::Pris: 4000--description::Halsskov/Knudshoved Færge--rent::Leje: 4000
 type::Chance
-type::Street--title::Frederiks-\nberggade--subText::Pris: 7000--description::Frederiksberggade--rent::Leje: 700--backgroundColor::159,,27,,27--foregroundColor::255,,255,,255
+type::Street--title::Frederiks-\nberggade--subText::Pris: 7000--description::Frederiksberggade--rent::Leje: 700--backgroundColor::159,,27,,27--foregroundColor::255,,255,,255--color::Purple
 type::Tax--title::Betal 2000kr--subText::Betal ekstraordinær statsskat: kr. 2000,- --description::Ekstraordinær-\nstatsskat
-type::Street--title::Rådhuspladsen--subText::Pris: 8000--description::Rådhuspladsen--rent::Leje: 1000--backgroundColor::159,,27,,27--foregroundColor::255,,255,,255
+type::Street--title::Rådhuspladsen--subText::Pris: 8000--description::Rådhuspladsen--rent::Leje: 1000--backgroundColor::159,,27,,27--foregroundColor::255,,255,,255--color::Purple

@@ -3,17 +3,16 @@ package entity;
 
 
 public abstract class Ownable extends Square {
-	
-	String name;
-	int price;
-	int rent;
-	String owner;
-	boolean isOwned;
+
+	protected String name;
+	protected int price, rent, housePrice, hotelPrice;
+	protected String owner;
+	protected boolean isOwned;
 
 	public Ownable(int id) {
 		super(id);
 	}
-	
+
 	public abstract int getPrice();
 	public abstract int getRent();
 	public abstract void buySquare(String player);
@@ -22,5 +21,4 @@ public abstract class Ownable extends Square {
 	public void removeOwner(){
 		this.owner=null;
 	}
-	
 }

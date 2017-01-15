@@ -7,7 +7,7 @@ public abstract class Card {
 	private String description;
 	private int id;
 	
-	public abstract boolean useCard(Player player);
+	public abstract void useCard(Player player);
 	
 	//Set id
 	public void setId(int id) {
