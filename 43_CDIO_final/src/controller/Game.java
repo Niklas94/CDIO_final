@@ -31,7 +31,7 @@ public class Game {
 		while(gameOn){
 
 			for(int i = 0; i < pM.getPlayerArray().length; i++) {
-
+				
 				if (!pM.getPlayer(i).jailStatus()) {
 					boundary.GUI.pressEnter(players[i].getName());
 					cup.rollDice();

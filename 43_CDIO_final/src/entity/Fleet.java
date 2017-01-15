@@ -59,6 +59,12 @@ public class Fleet extends Ownable {
 			bm.payRent(player, owner, rent);
 	}
 
+	@Override
+	public String getType() {
+		// TODO Auto-generated method stub
+		return this.type;
+	}
+
 
 		
 }

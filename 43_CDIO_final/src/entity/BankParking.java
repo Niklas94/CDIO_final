@@ -24,4 +24,10 @@ public class BankParking extends NonOwnable {
 		return this.id;
 	}
 
+	@Override
+	public String getType() {
+		// TODO Auto-generated method stub
+		return this.type;
+	}
+
 }

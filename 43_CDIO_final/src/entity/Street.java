@@ -16,6 +16,11 @@ public abstract class Street extends Ownable {
 		this.bm = bm;
 		this.type = type;
 	}
+	
+	@Override
+	public String getType(){
+		return this.type;
+	}
 
 	@Override
 	public int getPrice() {

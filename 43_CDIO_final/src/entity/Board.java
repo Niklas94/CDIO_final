@@ -29,6 +29,10 @@ public class Board {
 	public Board(){
 			
 	}
+	
+	public Square[] getLogicField(){
+		return logicField;
+	}
 
 	public Ownable getOwnableSquare(int id){
 		Ownable o = (Ownable) logicField[id];
