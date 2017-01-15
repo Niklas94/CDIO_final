@@ -17,6 +17,7 @@ public class Start extends NonOwnable {
 
 	/**
 	 * sets the land on field.
+	 * @param player the player.
 	 */
 	
 	@Override
@@ -25,7 +26,7 @@ public class Start extends NonOwnable {
 	}
 	
 	/**
-	 * returns the id of the field.
+	 * @return returns the id of the square.
 	 */
 
 	@Override
@@ -33,6 +34,9 @@ public class Start extends NonOwnable {
 		return this.id;
 	}
 
+	/**
+	 * @return returns the type of the square.
+	 */
 	@Override
 	public String getType() {
 		// TODO Auto-generated method stub
