@@ -130,6 +130,10 @@ public class Bank {
 		}
 	}
 
+	/**
+	 * This method checks all players, to see if any of them owns all fields of a specific type, e.g. the blue streets. If so, double the rent on those streets.
+	 * @param squaresArr
+	 */
 	public void checkOwnedStreets (Square[] squaresArr){
 		Square[] squares = squaresArr;
 		int blue = 2, green = 3, grey = 3, pink = 3, purple = 2, red = 3, white = 3, yellow = 3;
