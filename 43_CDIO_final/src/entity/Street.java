@@ -31,6 +31,10 @@ public abstract class Street extends Ownable {
 		this.type = type;
 	}
 	
+	/**
+	 * @return returns the type of the square.
+	 */
+	
 	@Override
 	public String getType(){
 		return this.type;
@@ -38,7 +42,7 @@ public abstract class Street extends Ownable {
 
 	
 	/**
-	  * {@inheritDoc}
+	  * @return returns the price.
 	  */
 	
 	@Override
@@ -47,7 +51,7 @@ public abstract class Street extends Ownable {
 	}
 
 	/**
-	  * {@inheritDoc}
+	  * @return returns the rent.
 	  */
 	
 	@Override
@@ -56,7 +60,7 @@ public abstract class Street extends Ownable {
 	}
 
 	/**
-	  * {@inheritDoc}
+	  * @param player the player.
 	  */
 	
 	@Override
@@ -66,7 +70,7 @@ public abstract class Street extends Ownable {
 	}
 
 	/**
-	  * {@inheritDoc}
+	  * @return returns the owner.
 	  */
 	
 	@Override
@@ -75,7 +79,7 @@ public abstract class Street extends Ownable {
 	}
 
 	/**
-	  * {@inheritDoc}
+	  * @return returns the id of the square.
 	  */
 	
 	@Override
@@ -84,7 +88,7 @@ public abstract class Street extends Ownable {
 	}
 	
 	/**
-	  * {@inheritDoc}
+	  * @return returns the boolean value of isOwned.
 	  */
 	
 	@Override
@@ -94,6 +98,8 @@ public abstract class Street extends Ownable {
 
 	/**
 	 * if the Street is not owned, the player purchases is. However, if the field is owned you pay an amount (rent) depending on which field it is.
+	 * @param player the player.
+	 * 
 	 */
 	@Override
 	public void landOnField(Player player) {
