@@ -20,6 +20,7 @@ public class Chance extends NonOwnable {
 	public void landOnField(Player player) {
 		bm.fieldLandedOn(player.getName(), this.name);
 		cm.pullCard(0).useCard(player);
+		bm.displayCardDescription(cm.pullCard(0).getDescription());
 		cm.returnCardToDeck(cm.pullTopCard());
 	}
 

@@ -27,10 +27,20 @@ public class CardManagement {
 		this.bm = bm;
 	}
 
+	/**
+	 * 
+	 * @param players - all the players in the game stored in a array
+	 * @see PlayerBirthdayCard
+	 */
 	public void getPlayerArray(Player[] players) {
 		this.players = players;
 	}
 
+	/**
+	 * 
+	 * @throws Exception - in case the text file "Card Description" does not exist or is renamed.
+	 * @see Card Description.txt
+	 */
 	public void createCards() throws Exception {
 
 		FileReader file = new FileReader("Card Description.txt");
@@ -89,6 +99,13 @@ public class CardManagement {
 	This is repeated until all cards have been picked.
 	In addition, no card will ever be at their original index. 
 
+	 */
+	
+	/**
+	 * Shuffle cards
+	 * 
+	 * This method creates a temporary identical deck to the one in the game.
+	 * 
 	 */
 	public void shuffleCards() {
 		Card[] cardArrShuffled = new Card[cardArr.length];

@@ -4,25 +4,27 @@ public abstract class Card {
 
 	private String description;
 	private int id;
-	
+
+	/**
+	 * Using the card for the specific player - e.g. a moneycard will update the balance for the player, with a specific amount.
+	 * @param player
+	 */
 	public abstract void useCard(Player player);
-	
-	//Set id
-	public void setId(int id) {
-		this.id = id;
-	}
-	
-	//Set Description of the card
+
+	/**
+	 * Sets the description of the card - description is pulled from the text file "Card Description". 
+	 * @param description of the card
+	 * @see CardManagement 	 
+	 */
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	//Get id
-	public int getID() {
-		return id;
-	}
-	
-	//Return description of the specific card
+
+
+	/**
+	 * Returns the description of the card.
+	 * @return description of the card
+	 */
 	public String getDescription() {
 		return this.description;
 	}

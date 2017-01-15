@@ -18,9 +18,9 @@ public class PlayerManagement {
 	 * SETTERS
 	 */
 
-	// Creates the players.
-	// Player names will be predefined (Player 1, Player 2, Player 3 ...)
-	
+	/**
+	 * Creates the amount of players and with it, the cars.
+	 */
 	public void createPlayers() {
 		do{
 			playerCount = GUI.numberOfPlayers();
@@ -44,17 +44,28 @@ public class PlayerManagement {
 		}
 	}
 
-	// Updates total number of players.
+/**
+ * Updates the amount of players.
+ * @param count
+ */
 	public void updatePlayerCount(int count) {
 		this.playerCount = count;
 	}
 	
-
+/**
+ * AHFGAGJGPEGRJIGJGFFDLKGDJGOI
+ * @param a
+ * @return
+ */
 	public Player getPlayer(int a){
 		return player[a];
 	}
 
-	// Set the position of a player.
+	/**
+	 * Sets the position of the player after he/she rolls the dice, making sure that there are no erors (IndexOutOfBounds) by using the "newpos" variable.
+	 * @param player
+	 * @param sum
+	 */
 	public void setPosition(Player player, int sum) {
 		desktop_resources.GUI.removeAllCars(player.getName());
 		player.setPosition(player.getPosition() + sum);
@@ -67,17 +78,27 @@ public class PlayerManagement {
 		desktop_resources.GUI.setCar(player.getPosition(), player.getName());
 		
 	}
-	
+	/**
+	 * Gives the player the option to buy a given Square.
+	 * @return true/false
+	 */
 	public boolean buyField() {
 		return GUI.buyField();
 	}
 
-	// Update player balance
+	/**
+	 * Updates a given player's balance. 
+	 * @param money
+	 * @param playerNumber
+	 */
 	public void updateBalance(int money, int playerNumber) {
 		player[playerNumber].updateBalance(money);
 	}
 
-	// Check if player is bankrupt.
+/**
+ * Checks if the player is bankrupt.
+ * @param playerNumber
+ */
 	public void getPlayerStatus(int playerNumber) {
 		player[playerNumber].checkIfBankrupt();
 	}
@@ -89,7 +110,11 @@ public class PlayerManagement {
 	 * GETTERS
 	 */
 
-	// Getter to return player name
+/**
+ * Gets a given player's name.
+ * @param playerNumber
+ * @return player[playerNumber].getName();
+ */
 	public String getPlayerName(int playerNumber) {
 		return player[playerNumber].getName();
 	}

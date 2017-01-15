@@ -143,35 +143,35 @@ public class Board {
 		int rentForLogic = Integer.parseInt(rent.split(":")[1].trim());
 		switch (getValue("color", values)) {
 		case "Blue":
-			logicField[index] = new entity.StreetBlue(index + 1, title, price, rentForLogic, bm, "StreetBlue");
+			logicField[index] = new entity.StreetBlue(index + 1, title, price, rentForLogic, bm, "Blue");
 			blue++;
 			break;
 		case "Green":
-			logicField[index] = new entity.StreetGreen(index + 1, title, price, rentForLogic, bm, "StreetGreen");
+			logicField[index] = new entity.StreetGreen(index + 1, title, price, rentForLogic, bm, "Green");
 			green++;
 			break;
 		case "Grey":
-			logicField[index] = new entity.StreetGrey(index + 1, title, price, rentForLogic, bm, "StreetGrey");
+			logicField[index] = new entity.StreetGrey(index + 1, title, price, rentForLogic, bm, "Grey");
 			grey++;
 			break;
 		case "Pink":
-			logicField[index] = new entity.StreetPink(index + 1, title, price, rentForLogic, bm, "StreetPink");
+			logicField[index] = new entity.StreetPink(index + 1, title, price, rentForLogic, bm, "Pink");
 			pink++;
 			break;
 		case "Purple":
-			logicField[index] = new entity.StreetPurple(index + 1, title, price, rentForLogic, bm, "StreetPurple");
+			logicField[index] = new entity.StreetPurple(index + 1, title, price, rentForLogic, bm, "Purple");
 			purple++;
 			break;
 		case "Red":
-			logicField[index] = new entity.StreetRed(index + 1, title, price, rentForLogic, bm, "StreetRed");
+			logicField[index] = new entity.StreetRed(index + 1, title, price, rentForLogic, bm, "Red");
 			red++;
 			break;
 		case "White":
-			logicField[index] = new entity.StreetWhite(index + 1, title, price, rentForLogic, bm, "StreetWhite");
+			logicField[index] = new entity.StreetWhite(index + 1, title, price, rentForLogic, bm, "White");
 			white++;
 			break;
 		case "Yellow":
-			logicField[index] = new entity.StreetYellow(index + 1, title, price, rentForLogic, bm, "StreetYellow");
+			logicField[index] = new entity.StreetYellow(index + 1, title, price, rentForLogic, bm, "Yellow");
 			yellow++;
 			break;
 			default:

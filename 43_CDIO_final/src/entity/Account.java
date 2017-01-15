@@ -13,10 +13,10 @@ public class Account {
 
 	}
 
-	/*
-	 * SETTERS
+	/**
+	 * Updates a given player's balance.
+	 * @param money
 	 */
-
 	public void updateBalance(int money) {
 		this.money += money;
 		if (this.money < this.MONEYZERO)

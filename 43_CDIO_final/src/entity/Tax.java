@@ -12,6 +12,10 @@ public class Tax extends NonOwnable {
 		this.name = name;
 		this.type = type;
 	}
+	
+	/**
+	 * Updates balance by either 4000 or 10% depending on what you choose, or 2000 if you land on the other tax field.
+	 */
 
 	@Override
 	public void landOnField(Player player) {

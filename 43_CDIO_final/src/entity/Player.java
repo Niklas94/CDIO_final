@@ -11,6 +11,7 @@ public class Player {
 	private String name;
 	private int position, goToJail, turnsInJail;
 	private boolean isAlive = true, inJail = false;
+	private String[] streetsOwned = new String[28];
 
 	/*
 	 * Constructor
@@ -29,6 +30,23 @@ public class Player {
 	 * SETTERS
 	 */
 
+	/**
+	 * @return the streetsOwned
+	 */
+	public String[] getStreetsOwned() {
+		return streetsOwned;
+	}
+
+	/**
+	 * @param streetsOwned the streetsOwned to set
+	 */
+	public void setStreetsOwned(String Street) {
+		for(int i = 0 ; i < streetsOwned.length ; i++){
+			if(streetsOwned[i] == null)
+				streetsOwned[i] = Street;
+		}
+	}
+
 	public void inJail() {
 		if (!inJail)
 			this.inJail = true;
@@ -39,6 +57,7 @@ public class Player {
 	public void incGoToJail() {
 		this.goToJail++;
 	}
+
 
 	public void resetGoToJail() {
 		this.goToJail = 0;
@@ -54,7 +73,9 @@ public class Player {
 		}
 	}
 
-	//Remove ONE jailcard from the player, if he owns any.
+	/**
+	 * removes a Get-Out-Of-Jail-Card from the player.
+	 */
 	public void useJailCardOwned() {
 		for (int i = 0; i < jailCards.length; i++) {
 			if (jailCards[i] != null) {
@@ -64,17 +85,25 @@ public class Player {
 		}
 	}
 
-	// Update player balance
+	/**
+	 * Method to update a given player's balance.
+	 * @param money
+	 */
 	public void updateBalance(int money) {
 		this.myAccount.updateBalance(money);
 	}
-
+/**
+ * Gets balance
+ * @return amount in given player's account.
+ */
 	public int getBalance(){
 		return this.myAccount.getMoney();
 	}
 
-	// Checks if player money is zero or below, if so isAlive variable will be
-	// false, else true.
+	/**
+	 * Checks if the player is bankrupt (below 0)
+	 * @return whether the player is bankrupt or not (isAlive).
+	 */
 	public boolean checkIfBankrupt() {
 		if (this.myAccount.getMoney() < 0)
 			this.isAlive = false;

@@ -48,6 +48,9 @@ public class BoardManagement {
 		GUI.pressEnter(name);
 	}
 	
+	public void displayCardDescription(String desc) {
+		GUI.displayCardDescription(desc);
+	}
 	
 	public boolean ownable(int id){
 		if(board.getSquare(id) instanceof Ownable)
@@ -60,13 +63,14 @@ public class BoardManagement {
 		return GUI.payTax();
 	}
 
-	public void buyField(Player player, int price){
+	public void buyField(Player player, int price, String color){
 		if(GUI.buyField()){
 			if(bank.buyField(player, price)){
 				board.getOwnableSquare(player.getPosition() - 1).buySquare(player.getName());
 				if (board.getOwnableSquare(player.getPosition() - 1) instanceof Fleet)
 					player.setFleetOwned();
 				desktop_resources.GUI.setHouses(player.getPosition(), 1);
+				player.setStreetsOwned(color);
 			}
 		}
 	}

@@ -13,6 +13,7 @@ public class FleetCard extends Card {
 		this.bm = bm;
 	}
 
+
 	@Override
 	public void useCard(Player player) {
 		if (player.getPosition() >= 3 && player.getPosition() <= 8) {

@@ -48,12 +48,15 @@ public class Brewery extends Ownable {
 	public boolean isOwned() {
 		return isOwned;
 	}
+	/**
+	 * if the Brewery is not owned, the player purchases is. However, if the field is owned you pay an amount (rent) depending on which field it is.
+	 */
 
 	@Override
 	public void landOnField(Player player) {
 		bm.fieldLandedOn(player.getName(), this.name);
 		if(!this.isOwned){
-			bm.buyField(player, price);
+			bm.buyField(player, price, type);
 		}
 		else{	
 			int sum = cup.getSum();
