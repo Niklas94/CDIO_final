@@ -21,13 +21,20 @@ import java.awt.Color;
 
 public class Board {
 
-	public String[] squares = new String[40];
-	public Field[] guiField = new Field[40];
-	public Square[] logicField = new Square[40];
+	public String[] squares;
+	public Field[] guiField;
+	public Square[] logicField;
 	private int blue, green, grey, pink, purple, red, white, yellow;
 
+	/**
+	 * 
+	 */
+	
 	public Board(){
-			
+		
+			squares =  new String[40];
+			guiField = new Field[40];
+			logicField = new Square[40];
 	}
 	
 	public Square[] getLogicField(){
