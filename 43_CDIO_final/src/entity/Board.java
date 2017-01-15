@@ -47,7 +47,7 @@ public class Board {
 	}
 	
 	/**
-	 * 
+	 * get the ownable squares.
 	 * @param id id of the square id.
 	 * @return returns the ligicField as ownable.
 	 */
@@ -59,7 +59,7 @@ public class Board {
 
 	
 	/**
-	 * 
+	 * get the squares
 	 * @param id id of the square.
 	 * @return returns the logicField.
 	 */
