@@ -68,11 +68,19 @@ public class Prison extends NonOwnable {
 		player.incTurnsInJail();
 	}
 
+	/**
+	 * returns the square id.
+	 */
+	
 	@Override
 	public int getId() {
 		return this.id;
 	}
 
+	/**
+	 * returns the type.
+	 */
+	
 	@Override
 	public String getType() {
 		// TODO Auto-generated method stub
