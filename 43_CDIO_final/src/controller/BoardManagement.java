@@ -15,28 +15,62 @@ public class BoardManagement {
 	private Bank bank;
 	int blue, green, grey, pink, purple, red, white, yellow;
 	//private Player[] players; //Need this for the chance field
+	
+	/**
+	 * This constructs the BoardManagement with a bank.
+	 * @param bank the bank.
+	 * @throws Exception
+	 */
 
 	public BoardManagement(Bank bank) throws Exception{
 		board = new Board();
 		this.bank = bank;
 	}
 
+	/**
+	 * return the fleet.
+	 * @param id the square id.
+	 * @return return the fleet.
+	 */
 
 	public Fleet returnFleet(int id) {
 		return (Fleet) this.board.logicField[id - 1];
 	}
+	
+	/**
+	 * create the board.
+	 * @param cm the controlling cardManagement.
+	 * @param cup the diceCup.
+	 */
 
 	public void createBoard(CardManagement cm, Dicecup cup){
 		board.createBoard(cm, cup, this);
 	}
+	
+	/**
+	 * get the squares.
+	 * @param id the square id.
+	 * @return returns the logicField.
+	 */
 
 	public Square getSquare(int id){
 		return this.board.logicField[id - 1];
 	}
+	
+	/**
+	 * get number of squares.
+	 * @return returns the total length of the logicfields.
+	 */
 
 	public int getNumberOfSquares(){
 		return this.board.logicField.length;
 	}
+	
+	/**
+	 * check if is owned.
+	 * @param id the square id.
+	 * @return returns true or false.
+	 */
 
 	public boolean isOwned(int id) {
 		return ((Ownable) board.getSquare(id)).isOwned();
