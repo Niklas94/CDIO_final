@@ -13,14 +13,15 @@ public class BoardManagement {
 
 	private Board board;
 	private Bank bank;
+	int blue, green, grey, pink, purple, red, white, yellow;
 	//private Player[] players; //Need this for the chance field
 
 	public BoardManagement(Bank bank) throws Exception{
 		board = new Board();
 		this.bank = bank;
 	}
-	
-	
+
+
 	public Fleet returnFleet(int id) {
 		return (Fleet) this.board.logicField[id - 1];
 	}
@@ -44,22 +45,22 @@ public class BoardManagement {
 	public String prisonOptions(boolean prisonCard) {
 		return GUI.prisonOptions(prisonCard);
 	}
-	
+
 	public void pressEnter(String name) {
 		GUI.pressEnter(name);
 	}
-	
+
 	public void displayCardDescription(String desc) {
 		GUI.displayCardDescription(desc);
 	}
-	
+
 	public boolean ownable(int id){
 		if(board.getSquare(id) instanceof Ownable)
 			return true;
 		else
 			return false;
 	}
-	
+
 	public String payTax(){
 		return GUI.payTax();
 	}
@@ -79,44 +80,40 @@ public class BoardManagement {
 	public void payRent(Player player, String owner, int rent){
 		bank.payRent(player, owner, rent);
 	}
-	
+
 	public void payBreweryRent(Player player, String owner, int rent, int sum){
 		bank.payBreweryRent(player, owner, rent, sum);
 	}
-	
+
 	public void playerOwnsField(String owner){
 		GUI.playerOwnsField(owner);
 	}
-	
+
 	public void fieldLandedOn(String player, String fieldName){
 		GUI.fieldLandedOn(player, fieldName);
 	}
-	
-	public void buyHouse(Player player){
-		if(GUI.buyHouse(player.getName())){
-			String[] streets = player.getStreetsOwned();
-			Square[] squares = board.getLogicField();
-			int blue = 0, green = 0, grey = 0, pink = 0, purple = 0, red = 0, white = 0, yellow = 0;
-			for(int i = 0; i < squares.length; i++){
-				if(squares[i].getType() == "Blue")
-					blue++;
-				else if(squares[i].getType() == "Green")
-					green++;
-				else if(squares[i].getType() == "Grey")
-					grey++;
-				else if(squares[i].getType() == "Pink")
-					pink++;
-				else if(squares[i].getType() == "Purple")
-					purple++;
-				else if(squares[i].getType() == "Red")
-					red++;
-				else if(squares[i].getType() == "White")
-					white++;
-				else if(squares[i].getType() == "Yellow")
-					yellow++;
-			}
-			
-		}
-	}
 
+	public void setStreetAmmount(){
+		Square[] squares = board.getLogicField();
+		for(int i = 0; i < squares.length; i++){
+			if(squares[i].getType() == "Blue")
+				blue++;
+			else if(squares[i].getType() == "Green")
+				green++;
+			else if(squares[i].getType() == "Grey")
+				grey++;
+			else if(squares[i].getType() == "Pink")
+				pink++;
+			else if(squares[i].getType() == "Purple")
+				purple++;
+			else if(squares[i].getType() == "Red")
+				red++;
+			else if(squares[i].getType() == "White")
+				white++;
+			else if(squares[i].getType() == "Yellow")
+				yellow++;
+		}
+
+	}
 }
+
