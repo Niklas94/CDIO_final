@@ -16,6 +16,7 @@ public class SpecialCard extends Card {
 	
 	/**
 	 * Uses the card and updates the players account.
+	 * @param player the player.
 	 */
 	@Override
 	public void useCard(Player player) {
