@@ -24,7 +24,7 @@ public class PlayerBirthdayCard extends Card {
 	@Override
 	public void useCard(Player player) {
 		for (int i = 0; i < players.length; i++) {
-			if(players[i] != player && players[i].isAlive()) {
+			if(players[i] != player && players[i].getStatus()) {
 				if(players[i].getAccount().getMoney() >= 200) {
 					players[i].updateBalance(-200);
 					amount += 200;

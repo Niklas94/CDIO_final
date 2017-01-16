@@ -19,7 +19,6 @@ public class Game {
 		BoardManagement bM = new BoardManagement(bank);
 		CardManagement cM = new CardManagement(bank, bM);
 		bM.createBoard(cM, cup);
-		bM.setStreetAmmount();
 		pM.createPlayers();
 		bank.fillPlayerArray(pM.getPlayerArray());
 		bank.getBM(bM);
@@ -30,15 +29,13 @@ public class Game {
 		boolean gameOn = true;
 
 		while(gameOn){
-			
-			
-			
+
+
+
 			for(int i = 0; i < pM.getPlayerArray().length; i++) {
 				boundary.GUI.newTurn(players[i].getName());
-				
-				bM.buyHouse(players[i]);
-				
-				if (!pM.getPlayer(i).jailStatus()) {
+
+				if (!players[i].jailStatus() && players[i].getStatus()) {
 					boundary.GUI.pressEnter(players[i].getName());
 					cup.rollDice();
 
@@ -51,31 +48,40 @@ public class Game {
 					GUI.setDice(cup.getX(0).getValue(), cup.getX(1).getValue());
 
 					//if (pM.getPlayer(i).getPosition() - 1 == 31) {
-						bM.getSquare(players[i].getPosition()).landOnField(players[i]);
-					
+					bM.getSquare(players[i].getPosition() - 1).landOnField(players[i]);
+					bM.checkOwnedStreets();
 					for(int j = 0; j < players.length; j++){
 						GUI.setBalance(players[j].getName(), players[j].getBalance());
-						{
-						}
 					}
+					players[i].checkIfBankrupt();
+					if(!players[i].getStatus()){
+						bank.removeOwnership(players[i]);
+						pM.updatePlayerCount();
+					}
+					bM.buyHouse(players[i]);
 
 				}
 
 				else {
-					
 					bM.getSquare(players[i].getPosition()).landOnField(players[i]);
 				}
 
 				if (cup.equalDice()) {
 					players[i].incGoToJail();
 					if (players[i].getGoToJail() == 3) {System.out.println(players[i].getName() + " røg i fængsel pga. 3 slag med to ens værdier");}
-					//pM.getPlayer(i).gotojail();
 					i -= 1;
 				}
 				else if (!cup.equalDice())
 					players[i].resetGoToJail();
-					
 
+				if(pM.winCheck()){
+					for(int k = 0; k < players.length; k++){
+						if(players[k].getStatus())
+							boundary.GUI.winnerFound(players[k].getName());
+					}
+					gameOn = false;
+					break;
+				}
 
 
 			}

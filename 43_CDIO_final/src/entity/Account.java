@@ -3,7 +3,7 @@ package entity;
 public class Account {
 
 	private int money;
-	private final int MONEYZERO = 0;
+	private final int MONEYZERO = -1;
 	private final int STARTMONEY = 30000;
 	private Player player;
 

@@ -57,7 +57,7 @@ public class GUI {
 	}
 
 	public static void fieldLandedOn(String player, String fieldName){
-		desktop_resources.GUI.showMessage(player +" landede på " + fieldName + ".");
+		desktop_resources.GUI.showMessage(player + " landede på " + fieldName + ".");
 	}
 
 	public static String payTax(){
@@ -74,7 +74,15 @@ public class GUI {
 	}
 
 	public static boolean buyHouse(String player){
-		String answer = desktop_resources.GUI.getUserSelection(player + ", vil du gerne købe et hus?", "Ja", "Nej");
+		String answer = desktop_resources.GUI.getUserSelection(player + ", vil du gerne købe et hus/hotel?", "Ja", "Nej");
+		if("Ja".equalsIgnoreCase(answer))
+			return true;
+		else
+			return false;
+	}
+	
+	public static boolean buyHouseAgain(String player) {
+		String answer = desktop_resources.GUI.getUserSelection(player + ", vil du gerne købe et hus/hotel på et andet felt?", "Ja", "Nej");
 		if("Ja".equalsIgnoreCase(answer))
 			return true;
 		else
@@ -82,6 +90,18 @@ public class GUI {
 	}
 
 	public static int whichStreet(){
-		return desktop_resources.GUI.getUserInteger("Vælg det feltummer, hvor du gerne vil købe et hus (Sæt musen over feltet for at se, hvilket feltnummer det har).", 1, 40);
+		return desktop_resources.GUI.getUserInteger("Vælg det feltummer, hvor du gerne vil købe et hus/hotel (Sæt musen over feltet for at se, hvilket feltnummer det har).", 1, 40);
+	}
+	
+	public static int whichStreetAgain() {
+		return desktop_resources.GUI.getUserInteger("Du valgte et ugyldigt felt. Prøv igen.).", 1, 40);
+	}
+	
+	public static void dontOwn() {
+		desktop_resources.GUI.showMessage("Du opfylder ikke kravene for at kunne købe huse/hotel på denne grund.");
+	}
+	
+	public static void cantAfford(){
+		desktop_resources.GUI.showMessage("Du har ikke råd til at købe et hus/hotel, på denne grund.");
 	}
 }

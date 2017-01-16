@@ -14,8 +14,8 @@ public class StreetOrange extends Street {
 	 * @param type the type of the field
 	 */
 	
-	public StreetOrange(int id, String name, int price, int rent, BoardManagement bm, String type) {
-		super(id, name, price, rent, bm, type);
+	public StreetOrange(int id, String name, int price, int rent, BoardManagement bm, String type, int house1, int house2, int house3, int house4, int hotel1, int housePrice) {
+		super(id, name, price, rent, bm, type, house1, house2, house3, house4, hotel1, housePrice);
 		// TODO Auto-generated constructor stub
 	}
 

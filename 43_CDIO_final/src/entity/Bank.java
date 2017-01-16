@@ -13,7 +13,7 @@ public class Bank {
 	 */
 
 	public Bank() {
-
+		
 	}
 
 
@@ -62,14 +62,15 @@ public class Bank {
 	 * @param bM the controlling boardManagement.
 	 */
 
-	public void removeOwnership(boolean isAlive, Player player, BoardManagement bM){
-		if(!isAlive) {
-			for(int i=0; i < bM.getNumberOfSquares();i++){
-				if(bM.getSquare(i) instanceof Ownable)
-					if (((Ownable) bM.getSquare(i)).getOwner() == player.getName()){
-						((Ownable) bM.getSquare(i)).removeOwner();
-						if(bM.getSquare(i) instanceof Street)
-							((Street) bm.getSquare(i)).setOriginalRent();
+	public void removeOwnership(Player player){
+		if(!player.getStatus()) {
+			for(int i=0; i < bm.getNumberOfSquares();i++){
+				if(bm.getSquare(i) instanceof Ownable)
+					if (((Ownable) bm.getSquare(i)).getOwner() == player.getName()){
+						((Ownable) bm.getSquare(i)).removeOwner();
+						if(bm.getSquare(i) instanceof Street) {
+							bm.replaceStreetField(i);
+						}
 					}
 			}
 		}
@@ -86,13 +87,16 @@ public class Bank {
 		if(bm.getSquare(player.getPosition()) instanceof Fleet){
 			for(int i = 0; i < players.length; i++){
 				if(players[i].getName() == owner)
-					rent = (int) (rent / (8 / Math.pow(2, players[i].getTotalFleetOwned() - 1)));
+					rent = (int) (rent / (8 / Math.pow(2, players[i].getFleetOwned() - 1)));
 			}
 		}
-		if(player.getBalance() < rent){
-			rent = player.getBalance();
+		if (player.getBalance() >= rent) {
+			player.updateBalance(-rent);
 		}
-		player.updateBalance(-rent);
+		else if (player.getBalance() < rent) {
+			rent = player.getBalance();
+			player.updateBalance(-(rent+1));
+		}
 		for(int i = 0; i < players.length; i++){
 			if(players[i].getName() == owner)
 				players[i].updateBalance(rent);
@@ -128,6 +132,15 @@ public class Bank {
 			rent = player.getBalance();
 			player.updateBalance(-(rent+1));
 		}
+		for(int i = 0; i < players.length; i++){
+			if(players[i].getName() == owner)
+				players[i].updateBalance(rent);
+		}
+	}
+	
+	public void buyHouse(Square square, Player player){
+		int housePrice = ((Street)square).getHousePrice();
+		player.updateBalance(-housePrice);
 	}
 
 	/**

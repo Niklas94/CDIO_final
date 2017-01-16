@@ -7,9 +7,8 @@ public abstract class Street extends Ownable {
 
 	
 	private boolean canBuyHouse = false;
-	private int houses;
+	private int houses, hotel, housePrice, house1, house2, house3, house4, hotel1;
 	private boolean canBuyHotel = false;
-	private int hotel;
 	private BoardManagement bm;
 
 	/**
@@ -24,7 +23,7 @@ public abstract class Street extends Ownable {
 	 */
 	
 	
-	public Street(int id, String name, int price, int rent, BoardManagement bm, String type) {
+	public Street(int id, String name, int price, int rent, BoardManagement bm, String type, int house1, int house2, int house3, int house4, int hotel1, int housePrice) {
 		super(id);
 		this.name = name;
 		this.price = price;
@@ -33,7 +32,15 @@ public abstract class Street extends Ownable {
 		this.bm = bm;
 		this.type = type;
 		this.rent = this.originalRent;
+		this.house1 = house1;
+		this.house2 = house2;
+		this.house3 = house3;
+		this.house4 = house4;
+		this.hotel1 = hotel1;
+		this.housePrice = housePrice;
 	}
+	
+	
 	
 	/**
 <<<<<<< HEAD
@@ -42,7 +49,26 @@ public abstract class Street extends Ownable {
 	
 	public void setRent(){
 		this.rent = 2 * this.originalRent;
-		canBuyHouse = true;
+		this.canBuyHouse = true;
+		if (houses == 1)
+			this.rent = house1;
+		else if (houses == 2)
+			this.rent = house2;
+		else if (houses == 3)
+			this.rent = house3;
+		else if (houses == 4){
+			this.rent = house4;
+			this.canBuyHotel = true;
+		}
+		else if (hotel == 1){
+			this.rent = hotel1;
+			this.canBuyHouse = false;
+			this.canBuyHotel = false;
+		}
+	}
+	
+	public void incHotel(){
+		this.hotel = 1;
 	}
 	
 	/**
@@ -65,8 +91,12 @@ public abstract class Street extends Ownable {
 		return this.type;
 	}
 
-	public boolean CanBuyHouse() {
+	public boolean canBuyHouse() {
 		return this.canBuyHouse;
+	}
+	
+	public boolean canBuyHotel() {
+		return this.canBuyHotel;
 	}
 	
 	/**
@@ -141,6 +171,20 @@ public abstract class Street extends Ownable {
 		else {
 			bm.playerOwnsField(owner);
 		}
+	}
+
+	public int getHousePrice(){
+		return this.housePrice;
+	}
+
+	public int getHouses() {
+		return houses;
+	}
+
+
+
+	public void setHouses(int houses) {
+		this.houses = houses;
 	}
 }
 

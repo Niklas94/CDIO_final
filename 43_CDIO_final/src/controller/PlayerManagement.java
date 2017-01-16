@@ -8,10 +8,11 @@ public class PlayerManagement {
 
 	private Player[] player;
 	private int playerCount;
+	private int originalPlayerCount;
 	private int playersLeft;
 	// Initialize an array of total players.
 	public PlayerManagement() {
-		
+
 	}
 
 	/*
@@ -25,9 +26,11 @@ public class PlayerManagement {
 		do{
 			playerCount = GUI.numberOfPlayers();
 		} while(playerCount < 3 || playerCount > 6);
-		
+
+		this.originalPlayerCount = this.playerCount;
+
 		player = new Player[playerCount];
-		
+
 		for (int i = 0; i < playerCount; i++) {
 			String chosenName = GUI.playerNames();
 			for(int j = 0; j < i; j++){
@@ -44,22 +47,28 @@ public class PlayerManagement {
 		}
 	}
 
-/**
- * Updates the amount of players.
- * @param count number to update the playercount.
- */
-	public void updatePlayerCount(int count) {
-		this.playerCount = count;
+	public boolean winCheck(){
+		int playersLeft = originalPlayerCount;
+
+		for(int i = 0; i < player.length; i++){
+			if(!player[i].getStatus())
+				playersLeft--;
+		}
+		if(playersLeft == 1)
+			return true;
+		else
+			return false;
+
 	}
-	
-/**
- * gets the player
- * @param a the player index id
- * @return returns the player.
- */
-	public Player getPlayer(int a){
-		return player[a];
+
+	/**
+	 * Updates the amount of players.
+	 * @param count number to update the playercount.
+	 */
+	public void updatePlayerCount() {
+		this.playerCount--;
 	}
+
 
 	/**
 	 * Sets the position of the player after he/she rolls the dice, making sure that there are no erors (IndexOutOfBounds) by using the "newpos" variable.
@@ -76,8 +85,9 @@ public class PlayerManagement {
 			desktop_resources.GUI.setBalance(player.getName(), player.getAccount().getMoney());
 		}
 		desktop_resources.GUI.setCar(player.getPosition(), player.getName());
-		
+
 	}
+
 	/**
 	 * Gives the player the option to buy a given Square.
 	 * @return true/false
@@ -95,60 +105,49 @@ public class PlayerManagement {
 		player[playerNumber].updateBalance(money);
 	}
 
-/**
- * Checks if the player is bankrupt.
- * @param playerNumber
- */
-	public void getPlayerStatus(int playerNumber) {
-		player[playerNumber].checkIfBankrupt();
-	}
-
-	
 
 
 	/*
 	 * GETTERS
 	 */
 
-/**
- * Gets a given player's name.
- * @param playerNumber
- * @return player[playerNumber].getName();
- */
-	public String getPlayerName(int playerNumber) {
-		return player[playerNumber].getName();
-	}
-	
 	/**
-	 * get the position of the player.
-	 * @param playerNumber the player number.
+	 * gets the player
+	 * @param a the player index id
 	 * @return returns the player.
 	 */
-
-	// Getter to return the position of a player
-	public int getPosition(int playerNumber) {
-		return player[playerNumber].getPosition();
+	public Player getPlayer(int a){
+		return player[a];
 	}
-	
+
+	/**
+	 * Checks if the player is bankrupt.
+	 * @param playerNumber
+	 */
+	public void getPlayerStatus(int playerNumber) {
+		player[playerNumber].checkIfBankrupt();
+	}
+
+
 	/**
 	 * @param playerNumber the player number.
 	 * @return returns the player alive status.
 	 */
 
 	// Get player alive status
-	public boolean isAlive(int playerNumber) {
-		return player[playerNumber].isAlive();
+	public boolean getStatus(int playerNumber) {
+		return player[playerNumber].getStatus();
 	}
 
 	/**
 	 * @return returns playersleft.
 	 */
-	
+
 	// Getter to return players left.
 	public int getPlayersLeft() {
 		return playersLeft;
 	}
-	
+
 	/**
 	 * @return returns the player.
 	 */
@@ -157,7 +156,5 @@ public class PlayerManagement {
 	public Player[] getPlayerArray() {
 		return player;
 	}
-
-
 
 }

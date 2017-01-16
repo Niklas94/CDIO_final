@@ -22,9 +22,10 @@ import java.awt.Color;
 public class Board {
 
 
-	public String[] squares;
-	public Field[] guiField;
-	public Square[] logicField;
+	private String[] squares;
+	private Field[] guiField;
+	private Square[] logicField;
+	private Square[] backupField;
 
 
 	/**
@@ -41,8 +42,19 @@ public class Board {
 	 * @return returns the logicFields.
 	 */
 
-	public Square[] getLogicField(){
+	public Square getLogicField(int id){
+		return logicField[id];
+	}
+	
+	public void replaceStreetField(int id) {
+		this.logicField[id] = this.backupField[id];
+	}
+	public Square[] getLogicArr() {
 		return logicField;
+	}
+	
+	public void setGuifieldOwner(String owner, int id){
+		guiField[id].setSubText("Ejer: " + owner);
 	}
 
 	/**
@@ -137,7 +149,7 @@ public class Board {
 			e.printStackTrace();
 		}
 
-
+		backupField = logicField;
 	}
 
 	/**
@@ -178,6 +190,12 @@ public class Board {
 		String subText = getValue("subText", values);
 		String description = getValue("description", values);
 		String rent = getValue("rent", values);
+		int housePrice = Integer.parseInt(getValue("housePrice", values));
+		int house1Rent = Integer.parseInt(getValue("house1Rent", values));
+		int house2Rent = Integer.parseInt(getValue("house2Rent", values));
+		int house3Rent = Integer.parseInt(getValue("house3Rent", values));
+		int house4Rent = Integer.parseInt(getValue("house4Rent", values));
+		int hotelRent = Integer.parseInt(getValue("hotelRent", values));
 		guiField[index] = new Street.Builder()
 				.setTitle(title)
 				.setBgColor(bgColor)
@@ -191,31 +209,31 @@ public class Board {
 		int rentForLogic = Integer.parseInt(rent.split(":")[1].trim());
 		switch (getValue("color", values)) {
 		case "Blue":
-			logicField[index] = new entity.StreetBlue(index + 1, title, price, rentForLogic, bm, "Blue");
+			logicField[index] = new entity.StreetBlue(index + 1, title, price, rentForLogic, bm, "Blue", house1Rent, house2Rent, house3Rent, house4Rent, hotelRent, housePrice);
 			break;
 		case "Green":
-			logicField[index] = new entity.StreetGreen(index + 1, title, price, rentForLogic, bm, "Green");
+			logicField[index] = new entity.StreetGreen(index + 1, title, price, rentForLogic, bm, "Green", house1Rent, house2Rent, house3Rent, house4Rent, hotelRent, housePrice);
 			break;
 		case "Grey":
-			logicField[index] = new entity.StreetGrey(index + 1, title, price, rentForLogic, bm, "Grey");
+			logicField[index] = new entity.StreetGrey(index + 1, title, price, rentForLogic, bm, "Grey", house1Rent, house2Rent, house3Rent, house4Rent, hotelRent, housePrice);
 			break;
 		case "Pink":
-			logicField[index] = new entity.StreetPink(index + 1, title, price, rentForLogic, bm, "Pink");
+			logicField[index] = new entity.StreetPink(index + 1, title, price, rentForLogic, bm, "Pink", house1Rent, house2Rent, house3Rent, house4Rent, hotelRent, housePrice);
 			break;
 		case "Purple":
-			logicField[index] = new entity.StreetPurple(index + 1, title, price, rentForLogic, bm, "Purple");
+			logicField[index] = new entity.StreetPurple(index + 1, title, price, rentForLogic, bm, "Purple", house1Rent, house2Rent, house3Rent, house4Rent, hotelRent, housePrice);
 			break;
 		case "Red":
-			logicField[index] = new entity.StreetRed(index + 1, title, price, rentForLogic, bm, "Red");
+			logicField[index] = new entity.StreetRed(index + 1, title, price, rentForLogic, bm, "Red", house1Rent, house2Rent, house3Rent, house4Rent, hotelRent, housePrice);
 			break;
 		case "White":
-			logicField[index] = new entity.StreetWhite(index + 1, title, price, rentForLogic, bm, "White");
+			logicField[index] = new entity.StreetWhite(index + 1, title, price, rentForLogic, bm, "White", house1Rent, house2Rent, house3Rent, house4Rent, hotelRent, housePrice);
 			break;
 		case "Yellow":
-			logicField[index] = new entity.StreetYellow(index + 1, title, price, rentForLogic, bm, "Yellow");
+			logicField[index] = new entity.StreetYellow(index + 1, title, price, rentForLogic, bm, "Yellow", house1Rent, house2Rent, house3Rent, house4Rent, hotelRent, housePrice);
 			break;
 		case "Orange":
-			logicField[index] = new entity.StreetOrange(index + 1, title, price, rentForLogic, bm, "Orange");
+			logicField[index] = new entity.StreetOrange(index + 1, title, price, rentForLogic, bm, "Orange", house1Rent, house2Rent, house3Rent, house4Rent, hotelRent, housePrice);
 			break;
 		default:
 			break;
