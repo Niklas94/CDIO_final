@@ -88,18 +88,6 @@ public class CardManagement {
 		}
 		br.close();
 	}
-
-	/*Shuffle cards
-
-	There are probably a better method to do this, but this method is doing the following:
-	Creating a temporary identical deck to the one we work with. 
-	Picking a random number between 1 to the number of cards in the original card deck.
-	Now lets say, at first the number is 5. It now places the card at the index of 5, at the top (index 0) of this new identical deck we created at the very beginning.
-	Now we make the original decks array, at index 5, point at no object. This is to make sure, that we wont pick the same card again, and shuffle it into our new deck.
-	This is repeated until all cards have been picked.
-	In addition, no card will ever be at their original index. 
-
-	 */
 	
 	/**
 	 * Shuffles the card deck.
