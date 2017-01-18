@@ -138,6 +138,12 @@ public class Bank {
 		}
 	}
 	
+	/**
+	 * This method updates the player balance when he buys a house.
+	 * @param square the square on which a house is bought.
+	 * @param player the player buying the house.
+	 */
+	
 	public void buyHouse(Square square, Player player){
 		int housePrice = ((Street)square).getHousePrice();
 		player.updateBalance(-housePrice);

@@ -56,7 +56,14 @@ public class BoardManagement {
 	public Square getSquare(int id){
 		return this.board.getLogicField(id);
 	}
-	
+
+	/**
+	 * When a player goes bankrupt this method replaces the fields
+	 * he owned with a copy of the original field to reset rent, houses
+	 * and hotels to the default values.
+	 * @param id the id for the field thats to be reset.
+	 */
+
 	public void replaceStreetField(int id) {
 		this.board.replaceStreetField(id);
 	}
@@ -106,6 +113,12 @@ public class BoardManagement {
 		GUI.displayCardDescription(desc);
 	}
 
+	/**
+	 * Checks whether a field extends Ownable or not.
+	 * @param id the id of the field in question.
+	 * @return returns whether the field is Ownable via true or false.
+	 */
+
 	public boolean ownable(int id){
 		if(board.getSquare(id) instanceof Ownable)
 			return true;
@@ -113,9 +126,22 @@ public class BoardManagement {
 			return false;
 	}
 
+	/*
+	 * Prompts the user to chose the amount of tax to pay.
+	 */
+
 	public String payTax(){
 		return GUI.payTax();
 	}
+
+	/**
+	 * This method checks whether the player want to buy
+	 * a field he landed on and if so calles the responsible
+	 * methods to buy it.
+	 * @param player the player which can buy the field.
+	 * @param price the price of said field.
+	 * @param color ignore, forgot to remove this parameter.
+	 */
 
 	public void buyField(Player player, int price, String color){
 		if(GUI.buyField()){
@@ -128,21 +154,57 @@ public class BoardManagement {
 		}
 	}
 
+	/**
+	 * This method makes the player pay rent if he landed on
+	 * a field that another player owns.
+	 * @param player the player who's to pay rent.
+	 * @param owner the owner who's to receive rent.
+	 * @param rent the amount of rent that is due.
+	 */
+
 	public void payRent(Player player, String owner, int rent){
 		bank.payRent(player, owner, rent);
 	}
+	
+	/**
+	 * This method makes the player pay rent if he landed on
+	 * a field that another player owns and said field is a brewery.
+	 * @param player the player who pays rent.
+	 * @param owner the owner of the field.
+	 * @param rent the base amount for the brewery.
+	 * @param sum the sum of the dice roll, needed to calculate brewery rent.
+	 */
 
 	public void payBreweryRent(Player player, String owner, int rent, int sum){
 		bank.payBreweryRent(player, owner, rent, sum);
 	}
+	
+	/**
+	 * this method tells the user he landed on his own field.
+	 * @param owner the player who landed on his own field.
+	 */
 
 	public void playerOwnsField(String owner){
 		GUI.playerOwnsField(owner);
 	}
+	
+	/**
+	 * This method tells the player which field he just landed on.
+	 * @param player the player who just landed on the field.
+	 * @param fieldName the name of the field he landed on.
+	 */
 
 	public void fieldLandedOn(String player, String fieldName){
 		GUI.fieldLandedOn(player, fieldName);
 	}
+	
+	/**
+	 * This method checks whether the player wants to buy any houses this turn
+	 * and if so which one and if that field meets the requirements. If the field 
+	 * meets said requirements sets the house, rent and has the bank update his
+	 * balance accordingly.
+	 * @param player the player in question.
+	 */
 
 	public void buyHouse(Player player){
 		if(GUI.buyHouse(player.getName())){
@@ -179,6 +241,12 @@ public class BoardManagement {
 			} while (GUI.buyHouseAgain(player.getName()));
 		}
 	}
+	
+	/**
+	 * This method is called in every players turn and checks if
+	 * any streets he owns have become eligible to buy houses
+	 * on, then proceeds to set the street house status to buyable.
+	 */
 
 	public void checkOwnedStreets (){
 		Square[] squares = board.getLogicArr();

@@ -25,13 +25,28 @@ public class Player {
 		this.position = 1;
 	}
 	
+	/**
+	 * If the player buys a fleet field this method is called to
+	 * update the amount of fleets he owns.
+	 */
+	
 	public void setFleetOwned(){
 		this.fleetOwned++;
 	}
 	
+	/**
+	 * Gets the amount of fleets a player owns.
+	 * @return returns the amount he owns.
+	 */
+	
 	public int getFleetOwned(){
 		return this.fleetOwned;
 	}
+	
+	/**
+	 * Used to check whether a player is alive or not, ie. whether hes bankrupt or not.
+	 * @return
+	 */
 	
 	public boolean getStatus(){
 		return this.isAlive;

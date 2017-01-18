@@ -46,6 +46,11 @@ public class PlayerManagement {
 			desktop_resources.GUI.setCar(player[i].getPosition(), player[i].getName());
 		}
 	}
+	
+	/**
+	 * Used to check whether there is only one player or not left alive.
+	 * @return false if multiple players are left, true if only one is.
+	 */
 
 	public boolean winCheck(){
 		int playersLeft = originalPlayerCount;

@@ -67,6 +67,10 @@ public abstract class Street extends Ownable {
 		}
 	}
 	
+	/**
+	 * When a hotel is bought on the street, this method sets its hotel amount to 1.
+	 */
+	
 	public void incHotel(){
 		this.hotel = 1;
 	}
@@ -90,10 +94,20 @@ public abstract class Street extends Ownable {
 	public String getType(){
 		return this.type;
 	}
+	
+	/**
+	 * Checks if a house can be bought on the street.
+	 * @return returns the boolean value whether a house can be bought.
+	 */
 
 	public boolean canBuyHouse() {
 		return this.canBuyHouse;
 	}
+	
+	/**
+	 * Checks whether a hotel can be bought on the street.
+	 * @return returns a boolean value whether a house can be bought.
+	 */
 	
 	public boolean canBuyHotel() {
 		return this.canBuyHotel;
@@ -172,16 +186,30 @@ public abstract class Street extends Ownable {
 			bm.playerOwnsField(owner);
 		}
 	}
+	
+	/**
+	 * Gets the price of houses on the particular street.
+	 * @return returns the house price.
+	 */
 
 	public int getHousePrice(){
 		return this.housePrice;
 	}
+	
+	/**
+	 * Checks how many houses have been bought on the street.
+	 * @return returns the amount of houses.
+	 */
 
 	public int getHouses() {
 		return houses;
 	}
 
-
+	/**
+	 * If a house is bought this updates the varible that keeps track
+	 * of how many houses are one it.
+	 * @param houses how many houses there are on the street.
+	 */
 
 	public void setHouses(int houses) {
 		this.houses = houses;

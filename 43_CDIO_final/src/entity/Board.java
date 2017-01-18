@@ -46,12 +46,30 @@ public class Board {
 		return logicField[id];
 	}
 	
+	/**
+	 * Used to set a street to its default state if a player goes
+	 * bankrupt and loses ownership of it.
+	 * @param id the id for the field.
+	 */
+	
 	public void replaceStreetField(int id) {
 		this.logicField[id] = this.backupField[id];
 	}
+	
+	/**
+	 * Gets the array of the logical fields.
+	 * @return returns the logical field array.
+	 */
+	
 	public Square[] getLogicArr() {
 		return logicField;
 	}
+	
+	/**
+	 * Sets the subtext of a field to display its owner when bought.
+	 * @param owner the player buying the field.
+	 * @param id the id of the field.
+	 */
 	
 	public void setGuifieldOwner(String owner, int id){
 		guiField[id].setSubText("Ejer: " + owner);
